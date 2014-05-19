@@ -1,0 +1,16 @@
+*/*.TXT
+*/*.pdf
+*/*.txt
+*/*.woff
+*/*.zip
+*/README
+Asana/Asana-Math
+LatinModern/latinmodern/
+Makefile
+NeoEuler/euler-otf-master/
+STIX/stix/
+TeXGyre*/texgyre*/
+XITS/xits/
+autom4te.cache/
+config.log
+config.status

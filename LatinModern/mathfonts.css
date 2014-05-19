@@ -1,0 +1,40 @@
+/*
+The Latin Modern fonts are released under the GUST font license, which is
+legally equivalent to the LaTeX Project Public License. See the files in this
+directory for details. The fonts can be obtained from several TeX distributions
+or package managers.
+
+The WOFF fonts have been obtained from
+http://www.gust.org.pl/projects/e-foundry/
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: Latin Modern;
+    src: local('LMRoman12-Regular'), local('LMRoman12-Regular'),
+         url('lmroman12-regular.woff');
+}
+@font-face {
+    font-family: Latin Modern;
+    src: local('LMRoman12-Bold'), url('lmroman12-bold.woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: Latin Modern;
+    src: local('LMRoman12-Italic'), url('lmroman12-italic.woff');
+    font-style: italic;
+}
+@font-face {
+    font-family: Latin Modern Math;
+    src: local('Latin Modern Math'), local('LatinModernMath-Regular'),
+         url('latinmodern-math.woff');
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: Latin Modern;
+}
+m|math {
+    font-family: Latin Modern Math;
+}

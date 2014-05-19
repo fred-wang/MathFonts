@@ -1,0 +1,45 @@
+/*
+The STIX fonts are released under the SIL Open Font License. See the files in
+this directory for details. The font can be obtained from several TeX
+distributions or package managers. 
+
+The WOFF fonts have been obtained from
+http://downloads.sourceforge.net/project/stixfonts/
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+
+@font-face {
+    font-family: STIX;
+    src: local('STIX-Regular'), url('STIX-regular.woff');
+}
+@font-face {
+    font-family: STIX;
+    src: local('STIX-Bold'), url('STIX-Bold.woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: STIX;
+    src: local('STIX-Italic'), url('STIX-Italic.woff');
+    font-style: italic;
+}
+@font-face {
+    font-family: STIX;
+    src: local('STIX-BoldItalic'), url('STIX-BoldItalic.woff');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: STIX Math;
+    src: local('STIX Math'), local('STIXMath-Regular'),
+         url('STIXMath-Regular.woff');
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: STIX;
+}
+m|math {
+    font-family: STIX Math;
+}

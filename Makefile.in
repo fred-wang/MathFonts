@@ -1,0 +1,217 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+# Build all the open source fonts
+all: Asana LatinModern NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+
+# Make all the commands for font generations PHONY as they are very fast.
+# The download operations are slower and will only be performed once.
+.PHONY: clean distclean Asana LatinModern NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+
+
+# Asana
+
+ASANA_URL="http://mirrors.ctan.org/fonts/Asana-Math.zip"
+OFL_LICENSE_URL="http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=OFL_plaintext&filename=OFL.txt"
+OFL_FAQ_URL="http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=OFL-FAQ_plaintext&filename=OFL-FAQ.txt"
+
+Asana/Asana-Math:
+	 # Get the package from CTAN and add the OFL text documents.
+	cd Asana; @WGET@ $(ASANA_URL); @UNZIP@ Asana-Math.zip; \
+	cd Asana-Math; @WGET@ $(OFL_FAQ_URL) -O OFL-FAQ.txt; \
+	@WGET@ $(OFL_LICENSE_URL) -O OFL.txt;
+
+Asana: Asana/Asana-Math
+	 # Keep only the otf files and doc and convert into WOFF.
+	cp $</* $@; cd $@; rm *.ttf; \
+	@SFNT2WOFF@ Asana-Math.otf; rm *.otf;
+	 # The Asana package on CTAN does not contain any OFL license, so we
+	 # complete the copyright information here.
+	cp $</OFL-FAQ.txt $@;
+	cp $</OFL.txt $@;
+	cd $@; \
+	cat OFL.txt | @GREP@ -v "additional Copyright Holder>" | \
+		@GREP@ -v "<additional Reserved Font Name>" \
+		> OFL-tmp.txt; mv OFL-tmp.txt OFL.txt; \
+	@SED@ -i "s/<dates>/2007\-2011/" OFL.txt; \
+	@SED@ -i "s/<Copyright Holder>/Apostolos Syropoulos/" OFL.txt; \
+	@SED@ -i "s/ (<URL|email>)//" OFL.txt; \
+	@SED@ -i "s/<Reserved Font Name>/Asana Math/" OFL.txt;
+
+# Latin Modern
+
+LATINMODERN_URL="http://www.gust.org.pl/projects/e-foundry/latin-modern/download/lm2.004otf.zip"
+LATINMODERN_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/latin-modern/download/lm-hist.txt/at_download/file"
+LATINMODERN_MANIFEST_URL="http://www.gust.org.pl/projects/e-foundry/latin-modern/download/manifest-latin-modern.txt/at_download/file"
+LATINMODERN_README_URL="http://www.gust.org.pl/projects/e-foundry/latin-modern/download/readme-latin-modern.txt/at_download/file"
+LATINMODERNMATH_URL="http://www.gust.org.pl/projects/e-foundry/lm-math/download/latinmodern-math-1958.zip"
+
+LatinModern/latinmodern:
+	 # Get the Latin Modern from GUST
+	cd LatinModern; wget $(LATINMODERN_URL); \
+	mkdir latinmodern; @UNZIP@ lm*otf.zip -d latinmodern;
+	wget $(LATINMODERN_HISTORY_URL) -O $@/lm-hist.txt
+	wget $(LATINMODERN_MANIFEST_URL) -O $@/MANIFEST-Latin-Modern.TXT
+	wget $(LATINMODERN_README_URL) -O $@/README-Latin-Modern.TXT
+	 # Get the Latin Modern Math from GUST
+	cd LatinModern; wget $(LATINMODERNMATH_URL); \
+	@UNZIP@ -j latinmodern-math-1958.zip -d latinmodern;
+
+LatinModern: LatinModern/latinmodern
+	 # Copy the fonts and doc and convert into WOFF
+	cp $@/latinmodern/*.txt $@/latinmodern/*.TXT $@
+	cp $@/latinmodern/lmroman12*.otf $@
+	cp $@/latinmodern/latinmodern-math.otf $@
+	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+
+# Neo Euler
+
+NEO_EULER_URL="https://github.com/khaledhosny/euler-otf/archive/master.zip"
+
+NeoEuler/euler-otf-master:
+	 # Get the package from GitHub
+	cd NeoEuler; @WGET@ $(NEO_EULER_URL); @UNZIP@ master.zip;
+
+NeoEuler: NeoEuler/euler-otf-master
+	 # Copy the fonts and doc and convert into WOFF
+	cp $</README $</OFL*.txt $</*.otf $@
+	cd $@; @SFNT2WOFF@ euler.otf; rm *.otf
+
+# TeXGyreBonum
+TEXGYREBONUM_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/qbk2.004otf.zip"
+TEXGYREBONUM_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/qbk-hist.txt/at_download/file"
+TEXGYREBONUM_MANIFEST_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/manifest-tex-gyre-bonum.txt/at_download/file"
+TEXGYREBONUM_README_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/readme-tex-gyre-bonum.txt/at_download/file"
+TEXGYREBONUMMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyrebonum-math-1002.zip"
+
+TeXGyreBonum/texgyrebonum:
+	 # Get the TeX Gyre Bonum from GUST
+	cd TeXGyreBonum; wget $(TEXGYREBONUM_URL); \
+	mkdir texgyrebonum; @UNZIP@ qbk*otf.zip -d texgyrebonum;
+	wget $(TEXGYREBONUM_HISTORY_URL) -O $@/qbk-hist.txt
+	wget $(TEXGYREBONUM_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Bonum.TXT
+	wget $(TEXGYREBONUM_README_URL) -O $@/README-TeX-Gyre-Bonum.TXT
+	 # Get the TeX Gyre Bonum Math from GUST
+	cd TeXGyreBonum; wget $(TEXGYREBONUMMATH_URL); \
+	@UNZIP@ -j texgyrebonum-math-*.zip -d texgyrebonum;
+
+TeXGyreBonum: TeXGyreBonum/texgyrebonum
+	 # Copy the fonts and doc and convert into WOFF
+	cp $@/texgyrebonum/*.txt $@/texgyrebonum/*.TXT $@/texgyrebonum/*.otf $@
+	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+
+# TeXGyrePagella
+TEXGYREPAGELLA_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/qpl2.004otf.zip"
+TEXGYREPAGELLA_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/qpl-hist.txt/at_download/file"
+TEXGYREPAGELLA_MANIFEST_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/manifest-tex-gyre-pagella.txt/at_download/file"
+TEXGYREPAGELLA_README_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/readme-tex-gyre-pagella.txt/at_download/file"
+TEXGYREPAGELLAMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyrepagella-math-1605.zip"
+
+TeXGyrePagella/texgyrepagella:
+	 # Get the TeX Gyre Pagella from GUST
+	cd TeXGyrePagella; wget $(TEXGYREPAGELLA_URL); \
+	mkdir texgyrepagella; @UNZIP@ qpl*otf.zip -d texgyrepagella;
+	wget $(TEXGYREPAGELLA_HISTORY_URL) -O $@/qpl-hist.txt
+	wget $(TEXGYREPAGELLA_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Pagella.TXT
+	wget $(TEXGYREPAGELLA_README_URL) -O $@/README-TeX-Gyre-Pagella.TXT
+	 # Get the TeX Gyre Pagella Math from GUST
+	cd TeXGyrePagella; wget $(TEXGYREPAGELLAMATH_URL); \
+	@UNZIP@ -j texgyrepagella-math-*.zip -d texgyrepagella;
+
+TeXGyrePagella: TeXGyrePagella/texgyrepagella
+	 # Copy the fonts and doc and convert into WOFF
+	cp $@/texgyrepagella/*.txt $@/texgyrepagella/*.TXT $@/texgyrepagella/*.otf $@
+	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+
+# TeXGyreSchola
+TEXGYRESCHOLA_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/schola/qcs2.005otf.zip"
+TEXGYRESCHOLA_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/schola/qcs-hist.txt/at_download/file"
+TEXGYRESCHOLA_MANIFEST_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/schola/manifest-tex-gyre-schola.txt/at_download/file"
+TEXGYRESCHOLA_README_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/schola/readme-tex-gyre-schola.txt/at_download/file"
+TEXGYRESCHOLAMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyreschola-math-1526.zip"
+
+TeXGyreSchola/texgyreschola:
+	 # Get the TeX Gyre Schola from GUST
+	cd TeXGyreSchola; wget $(TEXGYRESCHOLA_URL); \
+	mkdir texgyreschola; @UNZIP@ qcs*otf.zip -d texgyreschola;
+	wget $(TEXGYRESCHOLA_HISTORY_URL) -O $@/qcs-hist.txt
+	wget $(TEXGYRESCHOLA_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Schola.TXT
+	wget $(TEXGYRESCHOLA_README_URL) -O $@/README-TeX-Gyre-Schola.TXT
+	 # Get the TeX Gyre Schola Math from GUST
+	cd TeXGyreSchola; wget $(TEXGYRESCHOLAMATH_URL); \
+	@UNZIP@ -j texgyreschola-math-*.zip -d texgyreschola;
+
+TeXGyreSchola: TeXGyreSchola/texgyreschola
+	 # Copy the fonts and doc and convert into WOFF
+	cp $@/texgyreschola/*.txt $@/texgyreschola/*.TXT $@/texgyreschola/*.otf $@
+	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+
+# TeXGyreTermes
+TEXGYRETERMES_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/qtm2.004otf.zip"
+TEXGYRETERMES_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/qtm-hist.txt/at_download/file"
+TEXGYRETERMES_MANIFEST_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/manifest-tex-gyre-termes.txt/at_download/file"
+TEXGYRETERMES_README_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/readme-tex-gyre-termes.txt/at_download/file"
+TEXGYRETERMESMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyretermes-math-1502.zip"
+
+TeXGyreTermes/texgyretermes:
+	 # Get the TeX Gyre Termes from GUST
+	cd TeXGyreTermes; wget $(TEXGYRETERMES_URL); \
+	mkdir texgyretermes; @UNZIP@ qtm*otf.zip -d texgyretermes;
+	wget $(TEXGYRETERMES_HISTORY_URL) -O $@/qtm-hist.txt
+	wget $(TEXGYRETERMES_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Termes.TXT
+	wget $(TEXGYRETERMES_README_URL) -O $@/README-TeX-Gyre-Termes.TXT
+	 # Get the TeX Gyre Termes Math from GUST
+	cd TeXGyreTermes; wget $(TEXGYRETERMESMATH_URL); \
+	@UNZIP@ -j texgyretermes-math-*.zip -d texgyretermes;
+
+TeXGyreTermes: TeXGyreTermes/texgyretermes
+	 # Copy the fonts and doc and convert into WOFF
+	cp $@/texgyretermes/*.txt $@/texgyretermes/*.TXT $@/texgyretermes/*.otf $@
+	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+
+# STIX
+
+STIX_URL="http://downloads.sourceforge.net/project/stixfonts/Current%20Release/STIXv1.1.1-word.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fstixfonts%2Ffiles%2FCurrent%2520Release%2F&ts=1400494576&use_mirror=softlayer-ams"
+
+STIX/stix:
+	 # Get the package from fontforge
+	cd STIX; @WGET@ $(STIX_URL) -O STIX.zip;
+	mkdir $@; @UNZIP@ -j STIX/STIX.zip -d $@;
+
+STIX: STIX/stix
+	 # Copy the fonts and doc and convert into WOFF.
+	 # Rename the doc do avoid issues with space inside names.
+	cp $</*.otf $@
+	cp $</"STIX Font 1.1.1 Release Documentation.pdf" $@/documentation.pdf
+	cp $</"STIX Font License 2010.pdf" $@/license.pdf
+	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+
+# XITS
+
+XITS_URL="http://mirrors.ctan.org/fonts/xits.zip"
+
+XITS/xits:
+	 # Get the package from CTAN
+	cd XITS; @WGET@ $(XITS_URL); @UNZIP@ xits.zip;
+
+XITS: XITS/xits
+	 # Copy the fonts and doc and convert them into WOFF
+	cp $</FONTLOG.txt $</OFL*.txt $</README $</*.otf $@;
+	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+
+# Clean up
+clean:
+	rm -rf Asana/*.zip Asana/Asana-Math;
+	rm -rf LatinModern/*.zip LatinModern/latinmodern;
+	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;
+	rm -rf STIX/*.zip STIX/stix;
+	rm -rf TeXGyre*/*.zip TeXGyre*/texgyre*;
+	rm -rf XITS/*.zip XITS/xits;
+
+distclean: clean
+	rm -rf autom4te.cache config.log config.status Makefile;
+	TOREMOVE=`ls */* | grep -v mathfonts.css`; \
+	if [ -n "$$TOREMOVE" ]; then \
+	rm -rf $$TOREMOVE; \
+	fi;

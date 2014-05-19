@@ -1,0 +1,47 @@
+/*
+The commercial Lucida Bright fonts can be obtained from
+http://tug.org/store/lucida/opentype.html and some Web services might
+provide them as Web fonts. See also
+  http://www.microsoft.com/typography/fonts/family.aspx?FID=186
+  http://www.microsoft.com/typography/fonts/family.aspx?FID=217
+
+Warning: The CSS rules below have not been tested.
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+/* Uncomment and complete the URLs if you wish to use Web fonts */
+/*
+@font-face {
+    font-family: Lucida Bright;
+    src: local('Lucida Bright'), url('...');
+}
+@font-face {
+    font-family: Lucida Bright;
+    src: local('Lucida Bright Demibold'), url('...');
+    font-weight: bolder;
+}
+@font-face {
+    font-family: Lucida Bright;
+    src: local('Lucida Bright Italic'), url('...');
+    font-style: italic;
+}
+@font-face {
+    font-family: Lucida Bright;
+    src: local('Lucida Bright Demibold Italic'), url('...');
+    font-weight: bolder;
+    font-style: italic;
+}
+@font-face {
+    font-family: Lucida Bright Math;
+    src: local('Lucida Bright Math'), url('...');
+}
+*/
+
+.htmlmathparagraph, m|mtext {
+    font-family: Lucida Bright;
+}
+m|math {
+    font-family: Lucida Bright Math;
+}

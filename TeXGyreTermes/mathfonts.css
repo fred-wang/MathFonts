@@ -1,0 +1,46 @@
+/*
+The TeX Gyre Termes fonts are released under the GUST font license, which is
+legally equivalent to the LaTeX Project Public License. See the files in this
+directory for details. The fonts can be obtained from several TeX distributions
+or package managers.
+
+The WOFF fonts have been obtained from
+http://www.gust.org.pl/projects/e-foundry/
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: TeX Gyre Termes;
+    src: local('TeXGyreTermes-Regular'), local('TeXGyreTermes-Regular'),
+         url('texgyretermes-regular.woff');
+}
+@font-face {
+    font-family: TeX Gyre Termes;
+    src: local('TeXGyreTermes-Bold'), url('texgyretermes-bold.woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: TeX Gyre Termes;
+    src: local('TeXGyreTermes-Italic'), url('texgyretermes-italic.woff');
+    font-style: italic;
+}
+@font-face {
+    font-family: TeX Gyre Termes;
+    src: local('TeXGyreTermes-BoldItalic'), url('texgyretermes-bolditalic.woff');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: TeX Gyre Termes Math;
+    src: local('TeX Gyre Termes Math'), local('TeXGyreTermesMath-Regular'),
+         url('texgyretermes-math.woff');
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: TeX Gyre Termes;
+}
+m|math {
+    font-family: TeX Gyre Termes Math;
+}

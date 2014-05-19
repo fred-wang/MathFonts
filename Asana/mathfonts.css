@@ -1,0 +1,24 @@
+/*
+Asana Math is released under the SIL Open Font License. See the files in this
+directory for details. The font can be obtained from several TeX distributions
+or package managers. The font does not seem to have a corresponding "non-MATH"
+font, it is recommended to use a Palatino-like font for the surrounding text.
+
+The WOFF fonts have been obtained from
+http://mirrors.ctan.org/fonts/
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: Asana Math;
+    src: local('Asana Math'), local('Asana-Math'), url('Asana-Math.woff');
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: Asana Math;
+}
+m|math {
+    font-family: Asana Math;
+}

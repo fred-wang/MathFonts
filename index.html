@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mathematical OpenType Fonts</title>
+    <meta charset="utf-8"/>
+    <link id="MathLink" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+      function updateMathFont()
+      {
+        var link = document.getElementById("MathLink");
+        var mathfont = document.getElementById("MathFont").value;
+
+        if (mathfont == "Default")
+          link.removeAttribute("href");
+        else
+          link.setAttribute("href", mathfont + "/mathfonts.css");
+      }
+
+      function updateCheckBox()
+      {
+        var checkbox = document.getElementById("CheckBox").checked;
+        if (checkbox)
+          document.body.removeAttribute("class");
+        else
+          document.body.setAttribute("class", "htmlmathparagraph");
+      }
+    </script>
+   </head>
+  <body class="htmlmathparagraph" onload="updateMathFont()">
+
+    <h1>Mathematical OpenType Fonts</h1>
+
+    <p>Render this page with
+      <select id="MathFont" onchange="updateMathFont()">
+        <option value="Default">Default fonts (local only)</option>
+        <option value="Asana">Asana</option>
+        <option value="Cambria">Cambria (local only)</option>
+        <option value="LatinModern">Latin Modern</option>
+        <option value="LucidaBright">Lucida Bright (local only)</option>
+        <option value="Minion">Minion (local only)</option>
+        <option value="NeoEuler">Neo Euler</option>
+        <option value="STIX">STIX</option>
+        <option value="TeXGyreBonum">TeX Gyre Bonum</option>
+        <option value="TeXGyrePagella">TeX Gyre Pagella</option>
+        <option value="TeXGyreSchola">TeX Gyre Schola</option>
+        <option value="TeXGyreTermes">TeX Gyre Termes</option>
+        <option value="XITS">XITS</option>
+    </select> |
+      Only apply to MathML
+      <input id="CheckBox" type="checkbox" onchange="updateCheckBox()"/> |
+      <a href="https://github.com/fred-wang/MathFonts">Back to GitHub</a>
+    </p>
+
+    <p>This is a simple paragraph of text with some simple inline expressions
+      such as
+      <math><semantics><mrow><msqrt><mn>2</mn></msqrt><mo>+</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><annotation encoding="TeX">\sqrt{2} + x_1</annotation></semantics></math>,
+      <math><semantics><mrow><mfrac><msup><mi>π</mi><mn>8</mn></msup><mn>2</mn></mfrac><mo>∉</mo><mi>ℚ</mi></mrow><annotation encoding="TeX">\frac{\pi^8}{2} \notin \mathbb{Q}</annotation></semantics></math>, <math><semantics><mroot><msup><mstyle mathvariant="script"><mi>L</mi></mstyle><mo>′</mo></msup><mi>n</mi></mroot><annotation encoding="TeX">\sqrt[n]{\mathscr L'}</annotation></semantics></math> or
+ <math><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mover><mi>f</mi><mo stretchy="false">^</mo></mover><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><annotation encoding="TeX">\sum_{i=1}^n \hat{f}(i)</annotation></semantics></math>.
+Here is a couple of display expressions:
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover><mi>𝐄</mi><mo stretchy="false">⇀</mo></mover><mo>=</mo><mrow><mo>{</mo><mtable rowspacing="0.5ex" columnalign="left left" displaystyle="true"><mtr><mtd><mn>0</mn><mover><mi>𝐤</mi><mo stretchy="false">^</mo></mover><mo>,</mo></mtd><mtd><mi>z</mi><mo>&gt;</mo><mi>d</mi><mo>/</mo><mn>2</mn></mtd></mtr><mtr><mtd><mo>-</mo><mfrac><mi>σ</mi><mrow><mn>2</mn><msub><mi>ε</mi><mn>0</mn></msub></mrow></mfrac><mover><mi>𝐤</mi><mo stretchy="false">^</mo></mover><mo>,</mo></mtd><mtd><mi>d</mi><mo>/</mo><mn>2</mn><mo>&gt;</mo><mi>z</mi><mo>&gt;</mo><mo>-</mo><mi>d</mi><mo>/</mo><mn>2</mn></mtd></mtr><mtr><mtd><mn>0</mn><mover><mi>𝐤</mi><mo stretchy="false">^</mo></mover><mo>,</mo></mtd><mtd><mi>z</mi><mo>&lt;</mo><mo>-</mo><mi>d</mi><mo>/</mo><mn>2</mn></mtd></mtr><mtr><mtd/></mtr></mtable></mrow></mrow><annotation encoding="TeX">\vec{\mathbf{E}} =
+          \left\{
+          \begin{array}{l l}
+          0 \hat{\mathbf{k}}, &amp; z &gt; d/2 \\
+          -\frac{σ}{2ε_0} \hat{\mathbf{k}},  &amp; d/2 &gt; z &gt; -d / 2 \\
+          0 \hat{\mathbf{k}}, &amp; z &lt; -d/2 \\
+          \end{array} 
+          \right.</annotation></semantics></math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="Ch0.Ex93.m1" class="ltx_Math" alttext="\int_{-\infty}^{+\infty}\frac{16\sin(2x+\pi)}{5(x^{2}+2x+5)^{2}}dx=\frac{\pi%
+\sin(2)}{e^{4}}" display="block"><mrow><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></msubsup><mrow><mfrac><mrow><mn>16</mn><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>π</mi></mrow><mo>)</mo></mrow></mrow></mrow><mrow><mn>5</mn><mo>⁢</mo><msup><mrow><mo>(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mn>5</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup></mrow></mfrac><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>=</mo><mfrac><mrow><mi>π</mi><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></mrow><msup><mi>e</mi><mn>4</mn></msup></mfrac></mrow></math>
+
+followed by inline expressions like <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mroot><mfrac><mrow><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi></mrow><mrow><msubsup><mi>α</mi><mn>2</mn><mn>1</mn></msubsup><mo>-</mo><msub><mi>β</mi><mn>0</mn></msub><mo>-</mo><mfrac><msqrt><mi>ζ</mi></msqrt><mn>3</mn></mfrac></mrow></mfrac><mi>p</mi></mroot><annotation encoding="TeX">\sqrt[p]{\frac{x+y+z}{\alpha^1_2 - \beta_0 - \frac{\sqrt{\zeta}}3}}</annotation></semantics></math> or <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="fraktur"><mrow><mi>g</mi><mi>l</mi></mrow></mstyle><mo stretchy="false">(</mo><mi>ℝ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="TeX">\mathfrak{gl}(\mathbb{R})</annotation></semantics></math>. More display expressions:
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable columnalign="right left right left right left right left right left" columnspacing="0em" displaystyle="true"><mtr><mtd><mi>V</mi><mo stretchy="false">(</mo><mi>R</mi><mo stretchy="false">)</mo></mtd><mtd><mo>=</mo><msubsup><mo>∫</mo><mrow><mi>φ</mi><mo>=</mo><mn>0</mn></mrow><mrow><mn>2</mn><mi>π</mi></mrow></msubsup><msubsup><mo>∫</mo><mrow><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><mi>π</mi></msubsup><msubsup><mo>∫</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mi>R</mi></msubsup><msup><mi>r</mi><mn>2</mn></msup><mo lspace="0em" rspace="0em">sin</mo><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mi>d</mi><mi>r</mi><mi>d</mi><mi>θ</mi><mi>d</mi><mi>φ</mi></mtd></mtr><mtr><mtd/><mtd><mo>=</mo><mrow><mo>(</mo><mrow><msubsup><mo>∫</mo><mrow><mi>φ</mi><mo>=</mo><mn>0</mn></mrow><mrow><mn>2</mn><mi>π</mi></mrow></msubsup><mi>d</mi><mi>φ</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msubsup><mo>∫</mo><mrow><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><mi>π</mi></msubsup><mo lspace="0em" rspace="0em">sin</mo><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mi>d</mi><mi>θ</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msubsup><mo>∫</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mi>R</mi></msubsup><msup><mi>r</mi><mn>2</mn></msup><mi>d</mi><mi>r</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd/><mtd><mo>=</mo><msubsup><mrow><mo>[</mo><mi>φ</mi><mo>]</mo></mrow><mrow><mi>φ</mi><mo>=</mo><mn>0</mn></mrow><mrow><mn>2</mn><mi>π</mi></mrow></msubsup><msubsup><mrow><mo>[</mo><mrow><mo>-</mo><mo lspace="0em" rspace="0em">cos</mo><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><mo>]</mo></mrow><mrow><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><mi>π</mi></msubsup><msubsup><mrow><mo>[</mo><mfrac><msup><mi>r</mi><mn>3</mn></msup><mn>3</mn></mfrac><mo>]</mo></mrow><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mi>R</mi></msubsup></mtd></mtr><mtr><mtd/><mtd><mo>=</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>π</mi><msup><mi>R</mi><mn>3</mn></msup></mtd></mtr></mtable><annotation encoding="TeX">
+      \begin{aligned}
+      V(R) &amp;=
+      \int_{\varphi=0}^{2 \pi} 
+      \int_{\theta=0}^{\pi}
+      \int_{r=0}^{R}
+      r^2 \sin(\theta) dr d\theta d\varphi \\ &amp;=
+      \left( \int_{\varphi=0}^{2 \pi}  d\varphi \right)
+      \left( \int_{\theta=0}^{\pi} \sin(\theta)  d\theta \right)
+      \left( \int_{r=0}^{R} r^2 dr \right) \\ &amp;=
+      \left[   \varphi \right]_{\varphi=0}^{2 \pi}
+      \left[  -\cos(\theta) \right]_{\theta=0}^{\pi}
+      \left[ \frac{r^3}{3} \right]_{r=0}^{R} \\ &amp;=
+      \frac{4}{3} \pi R^3
+      \end{aligned}
+    </annotation></semantics></math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>det</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo>=</mo><munder><mo lspace="thinmathspace" rspace="thinmathspace">∑</mo> <mrow><mi>σ</mi><mo>∈</mo><msub><mi>S</mi> <mi>n</mi></msub></mrow></munder><mi>ϵ</mi><mo stretchy="false">(</mo><mi>σ</mi><mo stretchy="false">)</mo><munderover><mo lspace="thinmathspace" rspace="thinmathspace">∏</mo> <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow> <mi>n</mi></munderover><msub><mi>a</mi> <mrow><mi>i</mi><mo>,</mo><mi>σ</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msub></mrow><annotation encoding="application/x-tex">\det(A) = \sum_{\sigma \in S_n} \epsilon(\sigma) \prod_{i=1}^n a_{i,\sigma(i)}</annotation></semantics></math>
+    </p>
+
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>I</mi> <mi>n</mi></msub><mo>=</mo><msub><mi>𝟙</mi> <mi>n</mi></msub><mo>=</mo><mrow><mo>(</mo><mrow><mtable rowspacing="0.5ex"><mtr><mtd><mn>1</mn></mtd> <mtd><mn>0</mn></mtd> <mtd><mn>0</mn></mtd> <mtd><mi>…</mi></mtd> <mtd><mn>0</mn></mtd></mtr> <mtr><mtd><mn>0</mn></mtd> <mtd><mn>1</mn></mtd> <mtd><mn>0</mn></mtd> <mtd><mi>…</mi></mtd> <mtd><mn>0</mn></mtd></mtr> <mtr><mtd><mn>0</mn></mtd> <mtd><mn>0</mn></mtd> <mtd><mi>⋱</mi></mtd> <mtd/> <mtd><mn>0</mn></mtd></mtr> <mtr><mtd><mi>⋮</mi></mtd> <mtd/> <mtd/> <mtd/> <mtd><mi>⋮</mi></mtd></mtr> <mtr><mtd><mn>0</mn></mtd> <mtd><mn>0</mn></mtd> <mtd><mi>…</mi></mtd> <mtd><mn>0</mn></mtd> <mtd><mn>1</mn></mtd></mtr></mtable></mrow><mo>)</mo></mrow></mrow><annotation encoding="application/x-tex">I_n = \mathbb{1}_n =
+    \begin{pmatrix}
+    1 &amp; 0 &amp; 0     &amp; \dots &amp; 0 \\
+    0 &amp; 1 &amp; 0     &amp; \dots &amp; 0 \\
+    0 &amp; 0 &amp; \ddots &amp;      &amp; 0 \\
+    \vdots &amp;   &amp;   &amp;     &amp; \vdots \\
+    0 &amp;  0      &amp; \dots  &amp;  0   &amp; 1 
+    \end{pmatrix}
+    </annotation></semantics></math>
+
+  </body>
+</html>

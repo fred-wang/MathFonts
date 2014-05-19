@@ -1,0 +1,26 @@
+/*
+The commercial Minion Math fonts and can be obtained from
+http://www.typoma.com/en/fonts.html and some Web services might provide them as
+Web fonts.
+
+Warning: The CSS rules below have not been tested. More rules should probably
+be added to make this work correctly.
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+/* Uncomment and complete the URLs if you wish to use Web fonts */
+/*
+@font-face {
+    font-family: Minion Math;
+    src: local('Minion Math'), url('...');
+}
+*/
+
+.htmlmathparagraph, m|mtext {
+    font-family: Minion Math;
+}
+m|math {
+    font-family: Minion Math;
+}

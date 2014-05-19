@@ -1,0 +1,45 @@
+/*
+The proprietary Cambria fonts are installed by default on Microsoft Windows 7
+and higher and are provided with some other Microsoft products such as Office.
+Some Web services may also provide them as Web fonts. For details, see
+  http://www.microsoft.com/typography/fonts/family.aspx?FID=291
+  http://www.microsoft.com/typography/fonts/family.aspx?FID=360
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+/* Uncomment and complete the URLs if you wish to use Web fonts */
+/*
+@font-face {
+    font-family: Cambria;
+    src: local('Cambria'), url('...');
+}
+@font-face {
+    font-family: Cambria;
+    src: local('Cambria Bold'), url('...');
+    font-weight: bold;
+}
+@font-face {
+    font-family: Cambria;
+    src: local('Cambria Italic'), url('...');
+    font-style: italic;
+}
+@font-face {
+    font-family: Cambria;
+    src: local('Cambria Bold Italic'), url('...');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: Cambria Math;
+    src: local('Cambria Math'), url('...');
+}
+*/
+
+.htmlmathparagraph, m|mtext {
+    font-family: Cambria;
+}
+m|math {
+    font-family: Cambria Math;
+}
