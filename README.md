@@ -23,6 +23,21 @@ rendering of the various fonts in your browser. Currently, the fonts are only
 partially supported in Gecko 31 or higher. Work is still in progress for WebKit
 browsers.
 
+Using Math fonts on your Web site
+---------------------------------
+
+Clone this repository with `git` or download the
+[zip archive](https://github.com/fred-wang/MathFonts/archive/master.zip). Choose
+one family for your web site and place the corresponding subdirectory somewhere.
+Make your pages link to the `mathfonts.css` stylesheet. The MathML formulas
+will then render with the specified font. It's good to make them consistent
+with the surrounding text, especially for inline expressions. To do that,
+use the `htmlmathparagraph` class, e.g. `<body class="htmlmathparagraph">`.
+
+By default, the local fonts installed on the system will be used and otherwise
+WOFF Web fonts will be used as a fallback (for open source fonts only). Note
+that at the moment there are known bugs in browsers and fonts.
+
 Build Instructions
 ------------------
 
