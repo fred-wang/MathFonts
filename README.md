@@ -26,8 +26,8 @@ browsers.
 Using Math fonts on your Web site
 ---------------------------------
 
-Clone this repository with `git` or download the
-[zip archive](https://github.com/fred-wang/MathFonts/archive/master.zip). Choose
+Clone the gh-pages branch with `git` or download the
+[zip archive](https://github.com/fred-wang/MathFonts/archive/gh-pages.zip). Choose
 one family for your web site and place the corresponding subdirectory somewhere.
 Make your pages link to the `mathfonts.css` stylesheet. The MathML formulas
 will then render with the specified font. It's good to make them consistent
