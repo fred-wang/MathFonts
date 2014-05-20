@@ -6,22 +6,46 @@ License
 
 This Source Code Form is subject to the terms of the Mozilla Public
 License, v. 2.0. If a copy of the MPL was not distributed with this
-file, You can obtain one at
+file, you can obtain one at
 [http://mozilla.org/MPL/2.0/](http://mozilla.org/MPL/2.0/).
 
 Description
 -----------
 
-This repository contains some open source OpenType fonts with a MATH table and
-their associated text fonts (if any). They are available in WOFF format
-together with the documentation and licensed. A sample `mathfont.css` stylesheet
-is provided so that you can use these fonts on your Web site. For completeness,
-some proprietary math fonts are also listed here.
+This repository contains a script to fetch various open source OpenType fonts
+with a MATH table as well as the corresponding fonts to use for the surrounding
+text (if any). The fonts are converted into WOFF format
+using [sfnt2woff](https://people.mozilla.org/~jkew/woff/woff-code-latest.zip)
+and are
+[packaged](https://github.com/fred-wang/MathFonts/archive/gh-pages.zip) with
+some documentation, a license and a `mathfont.css` stylesheet, so that you can
+easily use them on your Web site. For completeness, some proprietary math fonts
+are also listed but for obvious legal reasons they can not be provided
+here. This [test page](http://fred-wang.github.io/MathFonts/) allows checking
+the rendering of the various fonts in your browser.
 
-This [test page](http://fred-wang.github.io/MathFonts/) allows to check the
-rendering of the various fonts in your browser. Currently, the fonts are only
-partially supported in Gecko 31 or higher. Work is still in progress for WebKit
-browsers.
+Warning
+-------
+
+**It is important to note that the development and implementation of OpenType
+MATH is still a work in progress**. The specification is available in the
+[Open Font Format draft](http://mpeg.chiariglione.org/standards/mpeg-4/open-font-format/text-isoiec-cd-14496-22-3rd-edition) and 
+there are known bugs in browsers and fonts. In particular note that:
+
+- This is only partially implemented in Gecko 31 or higher and there are still
+  missing features.
+- The parsing of the MATH table landed into WebKit Nightly, but the MathML code
+  does not make use of it yet and thus only supports Unicode-based construction.
+- The commercial Minion and LucidaBright fonts have not been tested at all in
+  browsers.
+- The Neo Euler font is incomplete and it has been pending an overhaul for a
+  while.
+- Latin Modern and TeX Gyre fonts have issues with ascent/descent in some
+  browsers/operating systems, although some workarounds have been added in
+  Gecko 31.
+- The STIX font is known to have many bugs. These bugs have been reported to the
+  STIX consortium but in the meantime you might want to use the XITS fork
+  instead.
 
 Using Math fonts on your Web site
 ---------------------------------
@@ -33,10 +57,8 @@ Make your pages link to the `mathfonts.css` stylesheet. The MathML formulas
 will then render with the specified font. It's good to make them consistent
 with the surrounding text, especially for inline expressions. To do that,
 use the `htmlmathparagraph` class, e.g. `<body class="htmlmathparagraph">`.
-
 By default, the local fonts installed on the system will be used and otherwise
-WOFF Web fonts will be used as a fallback (for open source fonts only). Note
-that at the moment there are known bugs in browsers and fonts.
+WOFF Web fonts will be used as a fallback (for open source fonts only).
 
 Build Instructions
 ------------------
