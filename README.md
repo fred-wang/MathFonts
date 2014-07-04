@@ -32,20 +32,18 @@ MATH is still a work in progress**. The specification is available in the
 [Open Font Format draft](http://mpeg.chiariglione.org/standards/mpeg-4/open-font-format/text-isoiec-cd-14496-22-3rd-edition) and 
 there are known bugs in browsers and fonts. In particular note that:
 
-- This is only partially implemented in Gecko 31 or higher and there are still
-  missing features.
-- The parsing of the MATH table landed into WebKit Nightly, but the MathML code
-  does not make use of it yet and thus only supports Unicode-based construction.
+- Gecko 31 has [support for the OpenType MATH table](https://wiki.mozilla.org/MathML:Open_Type_MATH_Table) but it is not complete yet.
+- The OpenType MATH table is only used in WebKit Nightly to draw stretchy and
+  large operators as well as radicals.
 - The commercial Minion and LucidaBright fonts have not been tested at all in
   browsers.
 - The Neo Euler font is incomplete and it has been pending an overhaul for a
   while.
 - Latin Modern and TeX Gyre fonts have issues with ascent/descent in some
   browsers/operating systems, although some workarounds have been added in
-  Gecko 31.
-- The STIX font is known to have many bugs. These bugs have been reported to the
-  STIX consortium but in the meantime you might want to use the XITS fork
-  instead.
+  Gecko 31. The GUST group is currently working on fixing these issues.
+- The STIX font is known to have many bugs that have been reported to the
+  STIX consortium. [STIX 2.0.0 has been announced for early 2015](http://www.stixfonts.org/) but in the meantime you might want to use the XITS fork instead.
 
 Using Math fonts on your Web site
 ---------------------------------
