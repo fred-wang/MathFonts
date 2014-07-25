@@ -22,3 +22,14 @@ https://github.com/khaledhosny/euler-otf/
 m|math {
     font-family: Neo Euler;
 }
+
+m|mn.oldstylenumbers {
+    font-variant-numeric: oldstyle-nums;   /* Recommended syntax */
+    font-feature-settings: 'onum';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'onum';    /* Gecko syntax */
+    -webkit-font-feature-settings: 'onum'; /* Blink syntax */
+}
+
+/* Calligraphic letters do not seem to be available */
+m|mi.calligraphic {
+}

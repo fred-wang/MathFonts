@@ -17,13 +17,13 @@ http://mirrors.ctan.org/fonts/
 @font-face {
     font-family: XITS;
     src: local('XITS Bold'), local('XITS-Bold'),
-         url('xits-bold.woff'),
+         url('xits-bold.woff');
     font-weight: bold;
 }
 @font-face {
     font-family: XITS;
     src: local('XITS Italic'), local('XITS-Italic'),
-         url('xits-italic.woff')
+         url('xits-italic.woff');
     font-style: italic;
 }
 @font-face {
@@ -50,4 +50,20 @@ http://mirrors.ctan.org/fonts/
 }
 m|math {
     font-family: XITS Math;
+}
+
+/* Old style numbers do not seem to be available */
+m|mn.oldstylenumbers {
+    font-variant-numeric: oldstyle-nums;   /* Recommended syntax */
+    font-feature-settings: 'onum';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'onum';    /* Gecko syntax */
+    -webkit-font-feature-settings: 'onum'; /* Blink syntax */
+}
+
+@font-feature-values XITS Math { @styleset { calligraphic: 1; } }
+m|mi.calligraphic {
+    font-variant-alternates: styleset(calligraphic); /* Recommended syntax */
+    font-feature-settings: 'ss01';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'ss01';    /* Gecko syntax */
+    -webkit-font-feature-settings: 'ss01'; /* Blink syntax */
 }

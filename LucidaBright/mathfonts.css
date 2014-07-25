@@ -45,3 +45,15 @@ Warning: The CSS rules below have not been tested.
 m|math {
     font-family: Lucida Bright Math;
 }
+
+/* TODO: verify whether old style numbers are available in this font */
+m|mn.oldstylenumbers {
+    font-variant-numeric: oldstyle-nums; /* Recommended syntax */
+    font-feature-settings: 'onum';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'onum';    /* Gecko syntax */
+    -webkit-font-feature-settings: 'onum'; /* Blink syntax */
+}
+
+/* TODO: verify whether calligraphic letters are available in this font */
+m|mi.calligraphic {
+}

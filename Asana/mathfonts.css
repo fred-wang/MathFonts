@@ -22,3 +22,18 @@ http://mirrors.ctan.org/fonts/
 m|math {
     font-family: Asana Math;
 }
+
+m|mn.oldstylenumbers {
+    font-variant-numeric: oldstyle-nums;   /* Recommended syntax */
+    font-feature-settings: 'onum';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'onum';    /* Gecko syntax */
+    -webkit-font-feature-settings: 'onum'; /* Blink syntax */
+}
+
+@font-feature-values Asana Math { @stylistic { calligraphic: 1; } }
+m|mi.calligraphic {
+    font-variant-alternates: stylistic(calligraphic); /* Recommended syntax */
+    font-feature-settings: 'salt';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'salt';    /* Gecko syntax */
+    -webkit-font-feature-settings: 'salt'; /* Blink syntax */
+}

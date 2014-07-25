@@ -44,6 +44,8 @@ there are known bugs in browsers and fonts. In particular note that:
   Gecko 31. The GUST group is currently working on fixing these issues.
 - The STIX font is known to have many bugs that have been reported to the
   STIX consortium. [STIX 2.0.0 has been announced for early 2015](http://www.stixfonts.org/) but in the meantime you might want to use the XITS fork instead.
+- The only font providing both old style numbers and calligraphic letters via
+  OpenType features is Asana Math.
 
 Using Math fonts on your Web site
 ---------------------------------

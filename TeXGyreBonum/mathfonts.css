@@ -44,3 +44,15 @@ http://www.gust.org.pl/projects/e-foundry/
 m|math {
     font-family: TeX Gyre Bonum Math;
 }
+
+/* Old style numbers do not seem to be available */
+m|mn.oldstylenumbers {
+    font-variant-numeric: oldstyle-nums; /* Recommended syntax */
+    font-feature-settings: 'onum';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'onum';    /* Gecko syntax */
+    -webkit-font-feature-settings: 'onum'; /* Blink syntax */
+}
+
+/* Calligraphic letters do not seem to be available */
+m|mi.calligraphic {
+}
