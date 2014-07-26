@@ -44,8 +44,7 @@ m|math {
     font-family: STIX Math;
 }
 
-/* Old style numbers do not seem to be available */
-m|mn.oldstylenumbers {
+.oldstylenumbers {
     font-variant-numeric: oldstyle-nums; /* Recommended syntax */
     font-feature-settings: 'onum';         /* OpenType feature syntax */
     -moz-font-feature-settings: 'onum';    /* Gecko syntax */
@@ -53,5 +52,5 @@ m|mn.oldstylenumbers {
 }
 
 /* Calligraphic letters do not seem to be available */
-m|mi.calligraphic {
+m|*.calligraphic {
 }

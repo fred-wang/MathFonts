@@ -44,8 +44,11 @@ there are known bugs in browsers and fonts. In particular note that:
   Gecko 31. The GUST group is currently working on fixing these issues.
 - The STIX font is known to have many bugs that have been reported to the
   STIX consortium. [STIX 2.0.0 has been announced for early 2015](http://www.stixfonts.org/) but in the meantime you might want to use the XITS fork instead.
-- The only font providing both old style numbers and calligraphic letters via
-  OpenType features is Asana Math.
+- Some (but not all) of the fonts provide old style numbers and calligraphic
+  letters accessible via OpenType font features. Some CSS rules from the
+  [CSS Fonts Module Level](http://dev.w3.org/csswg/css-fonts/)
+  are provided to help selecting the corresponding glyphs, but these are not
+  implemented/enabled in all browsers yet.
 
 Using Math fonts on your Web site
 ---------------------------------
@@ -59,6 +62,14 @@ with the surrounding text, especially for inline expressions. To do that,
 use the `htmlmathparagraph` class, e.g. `<body class="htmlmathparagraph">`.
 By default, the local fonts installed on the system will be used and otherwise
 WOFF Web fonts will be used as a fallback (for open source fonts only).
+
+Most families provide old style numbers in the text font. You can use them via
+the `oldstylenumbers` class, e.g.
+`<span class="oldstylenumbers">0123456789</span>`. Some of the math fonts also
+provide calligraphic style for the script characters, that you can select
+with the `calligraphic` class e.g.
+`<math><mi mathvariant="script" class="calligraphic">A</mi></math>` or
+equivalently `<math><mi class="calligraphic">𝒜</mi></math>`.
 
 Build Instructions
 ------------------

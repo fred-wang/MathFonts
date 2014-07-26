@@ -52,8 +52,7 @@ m|math {
     font-family: XITS Math;
 }
 
-/* Old style numbers do not seem to be available */
-m|mn.oldstylenumbers {
+.oldstylenumbers {
     font-variant-numeric: oldstyle-nums;   /* Recommended syntax */
     font-feature-settings: 'onum';         /* OpenType feature syntax */
     -moz-font-feature-settings: 'onum';    /* Gecko syntax */
@@ -61,7 +60,7 @@ m|mn.oldstylenumbers {
 }
 
 @font-feature-values XITS Math { @styleset { calligraphic: 1; } }
-m|mi.calligraphic {
+m|*.calligraphic {
     font-variant-alternates: styleset(calligraphic); /* Recommended syntax */
     font-feature-settings: 'ss01';         /* OpenType feature syntax */
     -moz-font-feature-settings: 'ss01';    /* Gecko syntax */

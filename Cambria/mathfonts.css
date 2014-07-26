@@ -44,8 +44,7 @@ m|math {
     font-family: Cambria Math;
 }
 
-/* TODO: verify whether old style numbers are available in this font */
-m|mn.oldstylenumbers {
+.oldstylenumbers {
     font-variant-numeric: oldstyle-nums; /* Recommended syntax */
     font-feature-settings: 'onum';         /* OpenType feature syntax */
     -moz-font-feature-settings: 'onum';    /* Gecko syntax */
@@ -53,5 +52,5 @@ m|mn.oldstylenumbers {
 }
 
 /* TODO: verify whether calligraphic letters are available in this font */
-m|mi.calligraphic {
+m|*.calligraphic {
 }
