@@ -3,11 +3,11 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 # Build all the open source fonts
-all: Asana LatinModern NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana LatinModern LinuxLibertine NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
-.PHONY: clean distclean Asana LatinModern NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana LatinModern LinuxLibertine NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -49,13 +49,13 @@ LATINMODERNMATH_URL="http://www.gust.org.pl/projects/e-foundry/lm-math/download/
 
 LatinModern/latinmodern:
 	 # Get the Latin Modern from GUST
-	cd LatinModern; wget $(LATINMODERN_URL); \
+	cd LatinModern; @WGET@ $(LATINMODERN_URL); \
 	mkdir latinmodern; @UNZIP@ lm*otf.zip -d latinmodern;
-	wget $(LATINMODERN_HISTORY_URL) -O $@/lm-hist.txt
-	wget $(LATINMODERN_MANIFEST_URL) -O $@/MANIFEST-Latin-Modern.TXT
-	wget $(LATINMODERN_README_URL) -O $@/README-Latin-Modern.TXT
+	@WGET@ $(LATINMODERN_HISTORY_URL) -O $@/lm-hist.txt
+	@WGET@ $(LATINMODERN_MANIFEST_URL) -O $@/MANIFEST-Latin-Modern.TXT
+	@WGET@ $(LATINMODERN_README_URL) -O $@/README-Latin-Modern.TXT
 	 # Get the Latin Modern Math from GUST
-	cd LatinModern; wget $(LATINMODERNMATH_URL); \
+	cd LatinModern; @WGET@ $(LATINMODERNMATH_URL); \
 	@UNZIP@ -j latinmodern-math-1958.zip -d latinmodern;
 
 LatinModern: LatinModern/latinmodern
@@ -64,6 +64,26 @@ LatinModern: LatinModern/latinmodern
 	cp $@/latinmodern/lmroman12*.otf $@
 	cp $@/latinmodern/latinmodern-math.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+
+# LinuxLibertine
+LINUX_LIBERTINE_WOFF_URL=http://linuxlibertine.sourceforge.net/fonts/
+LINUX_LIBERTINE_MATH_URL=https://github.com/fred-wang/libertine-math/archive/master.zip
+
+LinuxLibertine/libertine-math-master:
+	 # Get the Linux Libertine Math font from GitHub.
+	cd LinuxLibertine; \
+	@WGET@ $(LINUX_LIBERTINE_MATH_URL); @UNZIP@ master.zip;
+	 # Get the text fonts from the linuxlibertine site.
+	cd $@; \
+	for style in R RB RI RBI; do \
+	@WGET@ $(LINUX_LIBERTINE_WOFF_URL)/LinLibertine_$$style.woff; \
+	done;
+
+LinuxLibertine: LinuxLibertine/libertine-math-master
+	cp $</*.txt $</*.otf $</*.woff $@
+	cp $</README.libertine $@/README.libertine.txt
+	cp $</README.md $@/README.libertinemath.txt
+	cd $@; @SFNT2WOFF@ LinLibertine_MR.otf; rm *.otf
 
 # Neo Euler
 
@@ -87,13 +107,13 @@ TEXGYREBONUMMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download
 
 TeXGyreBonum/texgyrebonum:
 	 # Get the TeX Gyre Bonum from GUST
-	cd TeXGyreBonum; wget $(TEXGYREBONUM_URL); \
+	cd TeXGyreBonum; @WGET@ $(TEXGYREBONUM_URL); \
 	mkdir texgyrebonum; @UNZIP@ qbk*otf.zip -d texgyrebonum;
-	wget $(TEXGYREBONUM_HISTORY_URL) -O $@/qbk-hist.txt
-	wget $(TEXGYREBONUM_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Bonum.TXT
-	wget $(TEXGYREBONUM_README_URL) -O $@/README-TeX-Gyre-Bonum.TXT
+	@WGET@ $(TEXGYREBONUM_HISTORY_URL) -O $@/qbk-hist.txt
+	@WGET@ $(TEXGYREBONUM_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Bonum.TXT
+	@WGET@ $(TEXGYREBONUM_README_URL) -O $@/README-TeX-Gyre-Bonum.TXT
 	 # Get the TeX Gyre Bonum Math from GUST
-	cd TeXGyreBonum; wget $(TEXGYREBONUMMATH_URL); \
+	cd TeXGyreBonum; @WGET@ $(TEXGYREBONUMMATH_URL); \
 	@UNZIP@ -j texgyrebonum-math-*.zip -d texgyrebonum;
 
 TeXGyreBonum: TeXGyreBonum/texgyrebonum
@@ -110,13 +130,13 @@ TEXGYREPAGELLAMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/downlo
 
 TeXGyrePagella/texgyrepagella:
 	 # Get the TeX Gyre Pagella from GUST
-	cd TeXGyrePagella; wget $(TEXGYREPAGELLA_URL); \
+	cd TeXGyrePagella; @WGET@ $(TEXGYREPAGELLA_URL); \
 	mkdir texgyrepagella; @UNZIP@ qpl*otf.zip -d texgyrepagella;
-	wget $(TEXGYREPAGELLA_HISTORY_URL) -O $@/qpl-hist.txt
-	wget $(TEXGYREPAGELLA_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Pagella.TXT
-	wget $(TEXGYREPAGELLA_README_URL) -O $@/README-TeX-Gyre-Pagella.TXT
+	@WGET@ $(TEXGYREPAGELLA_HISTORY_URL) -O $@/qpl-hist.txt
+	@WGET@ $(TEXGYREPAGELLA_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Pagella.TXT
+	@WGET@ $(TEXGYREPAGELLA_README_URL) -O $@/README-TeX-Gyre-Pagella.TXT
 	 # Get the TeX Gyre Pagella Math from GUST
-	cd TeXGyrePagella; wget $(TEXGYREPAGELLAMATH_URL); \
+	cd TeXGyrePagella; @WGET@ $(TEXGYREPAGELLAMATH_URL); \
 	@UNZIP@ -j texgyrepagella-math-*.zip -d texgyrepagella;
 
 TeXGyrePagella: TeXGyrePagella/texgyrepagella
@@ -133,13 +153,13 @@ TEXGYRESCHOLAMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/downloa
 
 TeXGyreSchola/texgyreschola:
 	 # Get the TeX Gyre Schola from GUST
-	cd TeXGyreSchola; wget $(TEXGYRESCHOLA_URL); \
+	cd TeXGyreSchola; @WGET@ $(TEXGYRESCHOLA_URL); \
 	mkdir texgyreschola; @UNZIP@ qcs*otf.zip -d texgyreschola;
-	wget $(TEXGYRESCHOLA_HISTORY_URL) -O $@/qcs-hist.txt
-	wget $(TEXGYRESCHOLA_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Schola.TXT
-	wget $(TEXGYRESCHOLA_README_URL) -O $@/README-TeX-Gyre-Schola.TXT
+	@WGET@ $(TEXGYRESCHOLA_HISTORY_URL) -O $@/qcs-hist.txt
+	@WGET@ $(TEXGYRESCHOLA_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Schola.TXT
+	@WGET@ $(TEXGYRESCHOLA_README_URL) -O $@/README-TeX-Gyre-Schola.TXT
 	 # Get the TeX Gyre Schola Math from GUST
-	cd TeXGyreSchola; wget $(TEXGYRESCHOLAMATH_URL); \
+	cd TeXGyreSchola; @WGET@ $(TEXGYRESCHOLAMATH_URL); \
 	@UNZIP@ -j texgyreschola-math-*.zip -d texgyreschola;
 
 TeXGyreSchola: TeXGyreSchola/texgyreschola
@@ -156,13 +176,13 @@ TEXGYRETERMESMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/downloa
 
 TeXGyreTermes/texgyretermes:
 	 # Get the TeX Gyre Termes from GUST
-	cd TeXGyreTermes; wget $(TEXGYRETERMES_URL); \
+	cd TeXGyreTermes; @WGET@ $(TEXGYRETERMES_URL); \
 	mkdir texgyretermes; @UNZIP@ qtm*otf.zip -d texgyretermes;
-	wget $(TEXGYRETERMES_HISTORY_URL) -O $@/qtm-hist.txt
-	wget $(TEXGYRETERMES_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Termes.TXT
-	wget $(TEXGYRETERMES_README_URL) -O $@/README-TeX-Gyre-Termes.TXT
+	@WGET@ $(TEXGYRETERMES_HISTORY_URL) -O $@/qtm-hist.txt
+	@WGET@ $(TEXGYRETERMES_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Termes.TXT
+	@WGET@ $(TEXGYRETERMES_README_URL) -O $@/README-TeX-Gyre-Termes.TXT
 	 # Get the TeX Gyre Termes Math from GUST
-	cd TeXGyreTermes; wget $(TEXGYRETERMESMATH_URL); \
+	cd TeXGyreTermes; @WGET@ $(TEXGYRETERMESMATH_URL); \
 	@UNZIP@ -j texgyretermes-math-*.zip -d texgyretermes;
 
 TeXGyreTermes: TeXGyreTermes/texgyretermes
@@ -204,6 +224,7 @@ XITS: XITS/xits
 clean:
 	rm -rf Asana/*.zip Asana/Asana-Math;
 	rm -rf LatinModern/*.zip LatinModern/latinmodern;
+	rm -rf LinuxLibertine/*.zip LinuxLibertine/libertine-math-master;
 	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;
 	rm -rf STIX/*.zip STIX/stix;
 	rm -rf TeXGyre*/*.zip TeXGyre*/texgyre*;

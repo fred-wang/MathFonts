@@ -37,8 +37,8 @@ there are known bugs in browsers and fonts. In particular note that:
   large operators as well as radicals.
 - The commercial Minion and LucidaBright fonts have not been tested at all in
   browsers.
-- The Neo Euler font is incomplete and it has been pending an overhaul for a
-  while.
+- The Neo Euler font and Libertine Math are still in development and have not
+  been released yet.
 - Latin Modern and TeX Gyre fonts have issues with ascent/descent in some
   browsers/operating systems, although some workarounds have been added in
   Gecko 31. The GUST group is currently working on fixing these issues.

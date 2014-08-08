@@ -1,0 +1,60 @@
+/*
+The Libertine fonts are released under the SIL Open Font and GPL Licenses. See
+the files in this directory for details. The text fonts are installed by default
+in most Linux distributions. The math font is still in development.
+
+The WOFF fonts have been obtained from
+http://linuxlibertine.sourceforge.net/fonts
+https://github.com/fred-wang/libertine-math
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: Linux Libertine O;
+    src: local('Linux Libertine O'), local('LinLibertineO'),
+         url('LinLibertine_R.woff');
+}
+@font-face {
+    font-family: Linux Libertine O;
+    src: local('Linux Libertine O Bold'), local('LinLibertineOB'),
+         url('LinLibertine_RB.woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: Linux Libertine O;
+    src: local('Linux Libertine O Italic'), local('LinLibertineOI'),
+         url('LinLibertine_RI.woff');
+    font-style: italic;
+}
+@font-face {
+    font-family: Linux Libertine O;
+    src: local('Linux Libertine O Bold Italic'), local('LinLibertineOBI'),
+         url('LinLibertine_RBI.woff');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: Linux Libertine Math O;
+    src: local('Linux Libertine Math O'), local('LinLibertineMathO'),
+         url('LinLibertine_MR.woff');
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: Linux Libertine O;
+}
+m|math {
+    font-family: Linux Libertine Math O;
+}
+
+.oldstylenumbers {
+    font-variant-numeric: oldstyle-nums;   /* Recommended syntax */
+    font-feature-settings: 'onum';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'onum';    /* Gecko syntax */
+    -webkit-font-feature-settings: 'onum'; /* Blink syntax */
+}
+
+/* No math script */
+m|*.calligraphic {
+}
