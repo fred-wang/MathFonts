@@ -26,7 +26,7 @@ m|math {
 .oldstylenumbers {
     font-variant-numeric: oldstyle-nums;   /* Recommended syntax */
     font-feature-settings: 'onum';         /* OpenType feature syntax */
-    -moz-font-feature-settings: 'onum';    /* Gecko syntax */
+    -moz-font-feature-settings: 'onum';    /* Gecko <= 33 syntax */
     -webkit-font-feature-settings: 'onum'; /* Blink syntax */
 }
 
@@ -34,6 +34,6 @@ m|math {
 m|*.calligraphic {
     font-variant-alternates: stylistic(calligraphic); /* Recommended syntax */
     font-feature-settings: 'salt';         /* OpenType feature syntax */
-    -moz-font-feature-settings: 'salt';    /* Gecko syntax */
+    -moz-font-feature-settings: 'salt';    /* Gecko <= 33 syntax */
     -webkit-font-feature-settings: 'salt'; /* Blink syntax */
 }
