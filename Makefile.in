@@ -45,7 +45,7 @@ LATINMODERN_URL="http://www.gust.org.pl/projects/e-foundry/latin-modern/download
 LATINMODERN_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/latin-modern/download/lm-hist.txt/at_download/file"
 LATINMODERN_MANIFEST_URL="http://www.gust.org.pl/projects/e-foundry/latin-modern/download/manifest-latin-modern.txt/at_download/file"
 LATINMODERN_README_URL="http://www.gust.org.pl/projects/e-foundry/latin-modern/download/readme-latin-modern.txt/at_download/file"
-LATINMODERNMATH_URL="http://www.gust.org.pl/projects/e-foundry/lm-math/download/latinmodern-math-1958.zip"
+LATINMODERNMATH_URL="http://www.gust.org.pl/projects/e-foundry/lm-math/download/latinmodern-math-1959.zip"
 
 LatinModern/latinmodern:
 	 # Get the Latin Modern from GUST
@@ -56,7 +56,7 @@ LatinModern/latinmodern:
 	@WGET@ $(LATINMODERN_README_URL) -O $@/README-Latin-Modern.TXT
 	 # Get the Latin Modern Math from GUST
 	cd LatinModern; @WGET@ $(LATINMODERNMATH_URL); \
-	@UNZIP@ -j latinmodern-math-1958.zip -d latinmodern;
+	@UNZIP@ -j latinmodern-math-*.zip -d latinmodern;
 
 LatinModern: LatinModern/latinmodern
 	 # Copy the fonts and doc and convert into WOFF
@@ -103,7 +103,7 @@ TEXGYREBONUM_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/qbk2.
 TEXGYREBONUM_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/qbk-hist.txt/at_download/file"
 TEXGYREBONUM_MANIFEST_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/manifest-tex-gyre-bonum.txt/at_download/file"
 TEXGYREBONUM_README_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/readme-tex-gyre-bonum.txt/at_download/file"
-TEXGYREBONUMMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyrebonum-math-1002.zip"
+TEXGYREBONUMMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyrebonum-math-1005.zip"
 
 TeXGyreBonum/texgyrebonum:
 	 # Get the TeX Gyre Bonum from GUST
@@ -126,7 +126,7 @@ TEXGYREPAGELLA_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/q
 TEXGYREPAGELLA_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/qpl-hist.txt/at_download/file"
 TEXGYREPAGELLA_MANIFEST_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/manifest-tex-gyre-pagella.txt/at_download/file"
 TEXGYREPAGELLA_README_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/readme-tex-gyre-pagella.txt/at_download/file"
-TEXGYREPAGELLAMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyrepagella-math-1605.zip"
+TEXGYREPAGELLAMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyrepagella-math-1632.zip"
 
 TeXGyrePagella/texgyrepagella:
 	 # Get the TeX Gyre Pagella from GUST
@@ -149,7 +149,7 @@ TEXGYRESCHOLA_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/schola/qcs
 TEXGYRESCHOLA_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/schola/qcs-hist.txt/at_download/file"
 TEXGYRESCHOLA_MANIFEST_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/schola/manifest-tex-gyre-schola.txt/at_download/file"
 TEXGYRESCHOLA_README_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/schola/readme-tex-gyre-schola.txt/at_download/file"
-TEXGYRESCHOLAMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyreschola-math-1526.zip"
+TEXGYRESCHOLAMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyreschola-math-1533.zip"
 
 TeXGyreSchola/texgyreschola:
 	 # Get the TeX Gyre Schola from GUST
@@ -172,7 +172,7 @@ TEXGYRETERMES_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/qtm
 TEXGYRETERMES_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/qtm-hist.txt/at_download/file"
 TEXGYRETERMES_MANIFEST_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/manifest-tex-gyre-termes.txt/at_download/file"
 TEXGYRETERMES_README_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/readme-tex-gyre-termes.txt/at_download/file"
-TEXGYRETERMESMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyretermes-math-1502.zip"
+TEXGYRETERMESMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyretermes-math-1543.zip"
 
 TeXGyreTermes/texgyretermes:
 	 # Get the TeX Gyre Termes from GUST
