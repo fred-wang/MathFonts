@@ -1,6 +1,11 @@
 Mathematical Open Type fonts
 ============================
 
+Testcase
+--------
+
+Try [http://fred-wang.github.io/MathFonts/](http://fred-wang.github.io/MathFonts/) to test the rendering of the various fonts in your browser.
+
 License
 -------
 
@@ -21,8 +26,7 @@ and are
 some documentation, a license and a `mathfont.css` stylesheet, so that you can
 easily use them on your Web site. For completeness, some proprietary math fonts
 are also listed but for obvious legal reasons they can not be provided
-here. This [test page](http://fred-wang.github.io/MathFonts/) allows checking
-the rendering of the various fonts in your browser.
+here.
 
 Warning
 -------
@@ -39,9 +43,7 @@ there are known bugs in browsers and fonts. In particular note that:
   browsers.
 - The Neo Euler font and Libertine Math are still in development and have not
   been released yet.
-- Latin Modern and TeX Gyre fonts have issues with ascent/descent in some
-  browsers/operating systems, although some workarounds have been added in
-  Gecko 31. The GUST group is currently working on fixing these issues.
+- Some fonts have excessive ascent/descent on some browsers/operating systems.
 - The STIX font is known to have many bugs that have been reported to the
   STIX consortium. [STIX 2.0.0 has been announced for early 2015](http://www.stixfonts.org/) but in the meantime you might want to use the XITS fork instead.
 - Some (but not all) of the fonts provide old style numbers and calligraphic
