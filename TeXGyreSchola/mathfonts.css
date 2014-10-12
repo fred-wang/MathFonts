@@ -13,8 +13,7 @@ http://www.gust.org.pl/projects/e-foundry/
 
 @font-face {
     font-family: TeX Gyre Schola;
-    src: local('TeXGyreSchola-Regular'), local('TeXGyreSchola-Regular'),
-         url('texgyreschola-regular.woff');
+    src: local('TeXGyreSchola-Regular'), url('texgyreschola-regular.woff');
 }
 @font-face {
     font-family: TeX Gyre Schola;

@@ -12,17 +12,16 @@ http://www.gust.org.pl/projects/e-foundry/
 @namespace m url('http://www.w3.org/1998/Math/MathML');
 
 @font-face {
-    font-family: Latin Modern;
-    src: local('LMRoman12-Regular'), local('LMRoman12-Regular'),
-         url('lmroman12-regular.woff');
+    font-family: Latin Modern Roman;
+    src: local('LMRoman12-Regular'), url('lmroman12-regular.woff');
 }
 @font-face {
-    font-family: Latin Modern;
+    font-family: Latin Modern Roman;
     src: local('LMRoman12-Bold'), url('lmroman12-bold.woff');
     font-weight: bold;
 }
 @font-face {
-    font-family: Latin Modern;
+    font-family: Latin Modern Roman;
     src: local('LMRoman12-Italic'), url('lmroman12-italic.woff');
     font-style: italic;
 }
@@ -33,7 +32,7 @@ http://www.gust.org.pl/projects/e-foundry/
 }
 
 .htmlmathparagraph, m|mtext {
-    font-family: Latin Modern;
+    font-family: Latin Modern Roman;
 }
 m|math {
     font-family: Latin Modern Math;

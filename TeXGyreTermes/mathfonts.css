@@ -13,8 +13,7 @@ http://www.gust.org.pl/projects/e-foundry/
 
 @font-face {
     font-family: TeX Gyre Termes;
-    src: local('TeXGyreTermes-Regular'), local('TeXGyreTermes-Regular'),
-         url('texgyretermes-regular.woff');
+    src: local('TeXGyreTermes-Regular'), url('texgyretermes-regular.woff');
 }
 @font-face {
     font-family: TeX Gyre Termes;

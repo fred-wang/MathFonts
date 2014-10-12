@@ -13,8 +13,7 @@ http://www.gust.org.pl/projects/e-foundry/
 
 @font-face {
     font-family: TeX Gyre Bonum;
-    src: local('TeXGyreBonum-Regular'), local('TeXGyreBonum-Regular'),
-         url('texgyrebonum-regular.woff');
+    src: local('TeXGyreBonum-Regular'), url('texgyrebonum-regular.woff');
 }
 @font-face {
     font-family: TeX Gyre Bonum;

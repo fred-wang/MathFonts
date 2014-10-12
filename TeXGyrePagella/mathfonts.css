@@ -13,8 +13,7 @@ http://www.gust.org.pl/projects/e-foundry/
 
 @font-face {
     font-family: TeX Gyre Pagella;
-    src: local('TeXGyrePagella-Regular'), local('TeXGyrePagella-Regular'),
-         url('texgyrepagella-regular.woff');
+    src: local('TeXGyrePagella-Regular'), url('texgyrepagella-regular.woff');
 }
 @font-face {
     font-family: TeX Gyre Pagella;
