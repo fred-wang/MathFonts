@@ -3,11 +3,11 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 # Build all the open source fonts
-all: Asana LatinModern LinuxLibertine NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana LatinModern Libertine NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
-.PHONY: clean distclean Asana LatinModern LinuxLibertine NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana LatinModern Libertine NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -65,25 +65,19 @@ LatinModern: LatinModern/latinmodern
 	cp $@/latinmodern/latinmodern-math.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
 
-# LinuxLibertine
-LINUX_LIBERTINE_WOFF_URL=http://linuxlibertine.sourceforge.net/fonts/
-LINUX_LIBERTINE_MATH_URL=https://github.com/fred-wang/libertine-math/archive/master.zip
+# Libertine
+LIBERTINE_URL=https://github.com/khaledhosny/libertine/archive/master.zip
 
-LinuxLibertine/libertine-math-master:
-	 # Get the Linux Libertine Math font from GitHub.
-	cd LinuxLibertine; \
-	@WGET@ $(LINUX_LIBERTINE_MATH_URL); @UNZIP@ master.zip;
-	 # Get the text fonts from the linuxlibertine site.
-	cd $@; \
-	for style in R RB RI RBI; do \
-	@WGET@ $(LINUX_LIBERTINE_WOFF_URL)/LinLibertine_$$style.woff; \
-	done;
+Libertine/libertine-master:
+	 # Get the Libertine fonts from GitHub.
+	cd Libertine; \
+	@WGET@ $(LIBERTINE_URL); @UNZIP@ master.zip;
 
-LinuxLibertine: LinuxLibertine/libertine-math-master
-	cp $</*.txt $</*.otf $</*.woff $@
+Libertine: Libertine/libertine-master
+	cp $</*.txt $</*.otf $@
 	cp $</README.libertine $@/README.libertine.txt
-	cp $</README.md $@/README.libertinemath.txt
-	cd $@; @SFNT2WOFF@ LinLibertine_MR.otf; rm *.otf
+	cp $</README.md $@/README.txt
+	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
 
 # Neo Euler
 
@@ -224,7 +218,7 @@ XITS: XITS/xits
 clean:
 	rm -rf Asana/*.zip Asana/Asana-Math;
 	rm -rf LatinModern/*.zip LatinModern/latinmodern;
-	rm -rf LinuxLibertine/*.zip LinuxLibertine/libertine-math-master;
+	rm -rf Libertine/*.zip Libertine/libertine-master;
 	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;
 	rm -rf STIX/*.zip STIX/stix;
 	rm -rf TeXGyre*/*.zip TeXGyre*/texgyre*;
