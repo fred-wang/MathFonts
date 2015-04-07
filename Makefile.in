@@ -67,6 +67,9 @@ LatinModern: LatinModern/latinmodern
 
 # Libertine
 LIBERTINE_URL=https://github.com/khaledhosny/libertine/archive/master.zip
+LIBERTINE_FONTS=libertinemath-regular.otf libertineserif-regular.otf \
+                libertineserif-bold.otf regular libertineserif-italic.otf \
+                libertineserif-bolditalic.otf
 
 Libertine/libertine-master:
 	 # Get the Libertine fonts from GitHub.
@@ -77,7 +80,7 @@ Libertine: Libertine/libertine-master
 	cp $</*.txt $</*.otf $@
 	cp $</README.libertine $@/README.libertine.txt
 	cp $</README.md $@/README.txt
-	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	cd $@; for f in $(LIBERTINE_FONTS) ; do @SFNT2WOFF@ $$f; done; rm *.otf
 
 # Neo Euler
 
