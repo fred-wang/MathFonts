@@ -32,9 +32,9 @@ Warning
 -------
 
 **It is important to note that the development and implementation of OpenType
-MATH is still a work in progress**. The specification is available in the
-[Open Font Format draft](http://mpeg.chiariglione.org/standards/mpeg-4/open-font-format/text-isoiec-cd-14496-22-3rd-edition) and 
-there are known bugs in browsers and fonts. In particular note that:
+MATH is still a work in progress**, the specification is still [being
+standardized at ISO](http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=66391) and there are known bugs in browsers and fonts.
+In particular note that:
 
 - Gecko 31 has [support for the OpenType MATH table](https://wiki.mozilla.org/MathML:Open_Type_MATH_Table) but it is not complete yet.
 - The OpenType MATH table is only used in WebKit Nightly to draw stretchy and
@@ -43,6 +43,8 @@ there are known bugs in browsers and fonts. In particular note that:
   browsers.
 - The Neo Euler font and Libertine Math are still in development and have not
   been released yet.
+- The development version of GNU FreeSerif font contains an OpenType MATH table
+  but this is not available in the release yet.
 - Some fonts have excessive ascent/descent on some browsers/operating systems.
 - The STIX font is known to have many bugs that have been reported to the
   STIX consortium. [STIX 2.0.0 has been announced for early 2015](http://www.stixfonts.org/) but in the meantime you might want to use the XITS fork instead.
