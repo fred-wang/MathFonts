@@ -38,6 +38,8 @@ Asana: Asana/Asana-Math
 	@SED@ -i "s/<Copyright Holder>/Apostolos Syropoulos/" OFL.txt; \
 	@SED@ -i "s/ (<URL|email>)//" OFL.txt; \
 	@SED@ -i "s/<Reserved Font Name>/Asana Math/" OFL.txt;
+	 # Generate the testcase
+	@PYTHON@ MakeTest.py $@ Asana-Math.woff
 
 # Latin Modern
 
@@ -64,6 +66,8 @@ LatinModern: LatinModern/latinmodern
 	cp $@/latinmodern/lmroman12*.otf $@
 	cp $@/latinmodern/latinmodern-math.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate the testcase
+	@PYTHON@ MakeTest.py $@ latinmodern-math.woff
 
 # Libertine
 LIBERTINE_URL=https://github.com/khaledhosny/libertine/archive/master.zip
@@ -81,6 +85,8 @@ Libertine: Libertine/libertine-master
 	cp $</README.libertine $@/README.libertine.txt
 	cp $</README.md $@/README.txt
 	cd $@; for f in $(LIBERTINE_FONTS) ; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate the testcase
+	@PYTHON@ MakeTest.py $@ libertinemath-regular.woff
 
 # Neo Euler
 
@@ -94,6 +100,8 @@ NeoEuler: NeoEuler/euler-otf-master
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</README $</OFL*.txt $</*.otf $@
 	cd $@; @SFNT2WOFF@ euler.otf; rm *.otf
+	 # Generate the testcase
+	@PYTHON@ MakeTest.py $@ euler.woff
 
 # TeXGyreBonum
 TEXGYREBONUM_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/qbk2.004otf.zip"
@@ -117,6 +125,8 @@ TeXGyreBonum: TeXGyreBonum/texgyrebonum
 	 # Copy the fonts and doc and convert into WOFF
 	cp $@/texgyrebonum/*.txt $@/texgyrebonum/*.TXT $@/texgyrebonum/*.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate the testcase
+	@PYTHON@ MakeTest.py $@ texgyrebonum-math.woff
 
 # TeXGyrePagella
 TEXGYREPAGELLA_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/qpl2.004otf.zip"
@@ -140,6 +150,8 @@ TeXGyrePagella: TeXGyrePagella/texgyrepagella
 	 # Copy the fonts and doc and convert into WOFF
 	cp $@/texgyrepagella/*.txt $@/texgyrepagella/*.TXT $@/texgyrepagella/*.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate the testcase
+	@PYTHON@ MakeTest.py $@ texgyrepagella-math.woff
 
 # TeXGyreSchola
 TEXGYRESCHOLA_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/schola/qcs2.005otf.zip"
@@ -163,6 +175,8 @@ TeXGyreSchola: TeXGyreSchola/texgyreschola
 	 # Copy the fonts and doc and convert into WOFF
 	cp $@/texgyreschola/*.txt $@/texgyreschola/*.TXT $@/texgyreschola/*.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate the testcase
+	@PYTHON@ MakeTest.py $@ texgyreschola-math.woff
 
 # TeXGyreTermes
 TEXGYRETERMES_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/qtm2.004otf.zip"
@@ -186,6 +200,8 @@ TeXGyreTermes: TeXGyreTermes/texgyretermes
 	 # Copy the fonts and doc and convert into WOFF
 	cp $@/texgyretermes/*.txt $@/texgyretermes/*.TXT $@/texgyretermes/*.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate the testcase
+	@PYTHON@ MakeTest.py $@ texgyretermes-math.woff
 
 # STIX
 
@@ -203,6 +219,8 @@ STIX: STIX/stix
 	cp $</"STIX Font 1.1.1 Release Documentation.pdf" $@/documentation.pdf
 	cp $</"STIX Font License 2010.pdf" $@/license.pdf
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate the testcase
+	@PYTHON@ MakeTest.py $@ STIXMath-Regular.woff
 
 # XITS
 
@@ -216,6 +234,8 @@ XITS: XITS/xits
 	 # Copy the fonts and doc and convert them into WOFF
 	cp $</FONTLOG.txt $</OFL*.txt $</README $</*.otf $@;
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate the testcase
+	@PYTHON@ MakeTest.py $@ xits-math.woff
 
 # Clean up
 clean:

@@ -4,7 +4,19 @@ Mathematical Open Type fonts
 Testcase
 --------
 
-Try [http://fred-wang.github.io/MathFonts/](http://fred-wang.github.io/MathFonts/) to test the rendering of the various fonts in your browser.
+Try [http://fred-wang.github.io/MathFonts/](http://fred-wang.github.io/MathFonts/) to test the rendering of the various fonts in your browser. You can also
+try individual testcases for each font:
+
+* [http://fred-wang.github.io/MathFonts/Asana/](Asana)
+* [http://fred-wang.github.io/MathFonts/LatinModern/](LatinModern)
+* [http://fred-wang.github.io/MathFonts/Libertine/](Libertine)
+* [http://fred-wang.github.io/MathFonts/NeoEuler/](NeoEuler)
+* [http://fred-wang.github.io/MathFonts/TeXGyreBonum/](TeXGyreBonum)
+* [http://fred-wang.github.io/MathFonts/TeXGyrePagella/](TeXGyrePagella)
+* [http://fred-wang.github.io/MathFonts/TeXGyreSchola/](TeXGyreSchola)
+* [http://fred-wang.github.io/MathFonts/TeXGyreTermes/](TeXGyreTermes)
+* [http://fred-wang.github.io/MathFonts/STIX/](STIX)
+* [http://fred-wang.github.io/MathFonts/XITS/](XITS)
 
 License
 -------
