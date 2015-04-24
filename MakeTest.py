@@ -27,6 +27,9 @@ kLargeOperators = [0x220F, 0x2210, 0x2211, 0x222B, 0x222C, 0x222D, 0x222E,
 # See http://www.w3.org/TR/MathML3/appendixc.html
 kPreScriptedOperators = [0x2032, 0x2033, 0x2034, 0x2035, 0x2036, 0x2037, 0x2057]
 
+# MathML box with resizable height/depth/width
+kBox = "<mtable class=\"resizable\" rowspacing=\"0px\"><mtr><mtd><mtext><span></span></mtext></mtd></mtr><mtr><mtd><mtext><span></span></mtext></mtd></mtr></mtable>"
+
 def isLargeOp(aCodePoint):
     # Binary search in the largeop list.
     i = bisect_left(kLargeOperators, aCodePoint)
@@ -158,12 +161,18 @@ U+%06X" % glyph.unicode, file=sys.stderr)
         print("</td>", file=aTestFile)
 
         # Print size variants
-        variants = "N/A"
         if glyph.verticalVariants:
             variants = glyph.verticalVariants
         elif glyph.horizontalVariants:
             variants = glyph.horizontalVariants
-        print("<td>%s</td>" % variants, file=aTestFile);
+        else:
+            print("<td>N/A</td>", file=aTestFile);
+            variants = None
+        if variants:
+            print("<td>", file=aTestFile);
+            for v in variants.split():
+                print("%s<br/>" % v, file=aTestFile);
+            print("</td>", file=aTestFile);
 
         # Print glyph
         print("<td>", file=aTestFile)
@@ -408,6 +417,62 @@ def printScriptedOperators(aTestFile, aFont):
 
     print("</table>\n", file=aTestFile)
 
+def printMathConstants(aTestFile, aFont):
+    print("\
+    <h2 id=\"mathconstants_table\">MathConstants tables</h2>\
+    <table><tr><th>Constant</th><th>Value</th><th>Samples</th></tr>",
+          file=aTestFile)
+
+    # DisplayOperatorMinHeight
+    print("<tr><td>DisplayOperatorMinHeight</td><td>%d</td><td><math><mstyle displaystyle=\"false\"><mo mathcolor=\"#00f\">&#x2211;</mo></mstyle><mstyle displaystyle=\"true\"><mo mathcolor=\"#f00\">&#x2211;</mo></mstyle></math></td></tr>" %
+          aFont.math.DisplayOperatorMinHeight, file=aTestFile)
+
+    print("<tr><td>FractionNumeratorShiftUp</td><td>%s</td><td rowspan=\"9\"><math class=\"big\"><mfrac>%s%s</mfrac><mo>+</mo><mstyle displaystyle=\"true\"><mfrac>%s%s</mfrac></mstyle></math></td></tr>" % (aFont.math.FractionNumeratorShiftUp, kBox, kBox, kBox, kBox), file=aTestFile)
+
+    print("<tr><td>FractionNumeratorDisplayStyleShiftUp</td><td>%d</td></tr>" % aFont.math.FractionNumeratorDisplayStyleShiftUp, file=aTestFile)
+
+    print("<tr><td>FractionDenominatorShiftDown</td><td>%d</td></tr>" % aFont.math.FractionDenominatorShiftDown, file=aTestFile)
+
+    print("<tr><td>FractionDenominatorDisplayStyleShiftDown</td><td>%d</td></tr>" % aFont.math.FractionDenominatorDisplayStyleShiftDown, file=aTestFile)
+
+    print("<tr><td>FractionNumeratorGapMin</td><td>%d</td></tr>" % aFont.math.FractionNumeratorGapMin, file=aTestFile)
+
+    print("<tr><td>FractionNumeratorDisplayStyleGapMin</td><td>%d</td></tr>" % aFont.math.FractionNumeratorDisplayStyleGapMin, file=aTestFile)
+
+    print("<tr><td>FractionRuleThickness</td><td>%d</td></tr>" % aFont.math.FractionRuleThickness, file=aTestFile)
+
+    print("<tr><td>FractionDenominatorGapMin</td><td>%d</td></tr>" % aFont.math.FractionDenominatorGapMin, file=aTestFile)
+
+    print("<tr><td>FractionDenominatorDisplayStyleGapMin</td><td>%d</td></tr>" % aFont.math.FractionDenominatorDisplayStyleGapMin, file=aTestFile)
+
+    print("<tr><td>StackTopShiftUp</td><td>%s</td><td rowspan=\"6\"><math class=\"big\"><mfrac linethickness=\"0px\">%s%s</mfrac><mo>+</mo><mstyle displaystyle=\"true\"><mfrac linethickness=\"0px\">%s%s</mfrac></mstyle></math></td></tr>" % (aFont.math.StackTopShiftUp, kBox, kBox, kBox, kBox), file=aTestFile)
+
+    print("<tr><td>StackTopDisplayStyleShiftUp</td><td>%d</td></tr>" % aFont.math.StackTopDisplayStyleShiftUp, file=aTestFile)
+
+    print("<tr><td>StackBottomShiftDown</td><td>%d</td></tr>" % aFont.math.StackBottomShiftDown, file=aTestFile)
+
+    print("<tr><td>StackBottomDisplayStyleShiftDown</td><td>%d</td></tr>" % aFont.math.StackBottomDisplayStyleShiftDown, file=aTestFile)
+
+    print("<tr><td>StackGapMin</td><td>%d</td></tr>" % aFont.math.StackGapMin, file=aTestFile)
+
+    print("<tr><td>StackDisplayStyleGapMin</td><td>%d</td></tr>" % aFont.math.StackDisplayStyleGapMin, file=aTestFile)
+
+    print("<tr><td>RadicalVerticalGap</td><td>%d</td><td rowspan=\"7\"><math class=\"big\"><mroot>%s%s</mroot><mo>+</mo><mstyle displaystyle=\"true\"><mroot>%s%s</mroot></mstyle></math></td></tr>" % (aFont.math.RadicalVerticalGap, kBox, kBox, kBox, kBox), file=aTestFile)
+
+    print("<tr><td>RadicalDisplayStyleVerticalGap</td><td>%d</td></tr>" % aFont.math.RadicalDisplayStyleVerticalGap, file=aTestFile)
+
+    print("<tr><td>RadicalRuleThickness</td><td>%d</td></tr>" % aFont.math.RadicalRuleThickness, file=aTestFile)
+
+    print("<tr><td>RadicalExtraAscender</td><td>%d</td></tr>" % aFont.math.RadicalExtraAscender, file=aTestFile)
+
+    print("<tr><td>RadicalKernBeforeDegree</td><td>%d</td></tr>" % aFont.math.RadicalKernBeforeDegree, file=aTestFile)
+
+    print("<tr><td>RadicalKernAfterDegree</td><td>%d</td></tr>" % aFont.math.RadicalKernAfterDegree, file=aTestFile)
+
+    print("<tr><td>RadicalDegreeBottomRaisePercent</td><td>%d</td></tr>" % aFont.math.RadicalDegreeBottomRaisePercent, file=aTestFile)
+
+    print("</table>\n", file=aTestFile)
+
 
 def main(aDirectory, aFont):
     testfile = open("./%s/index.html" % aDirectory, "w+")
@@ -426,6 +491,18 @@ def main(aDirectory, aFont):
         text-align:center;\n\
         border: 1px solid black;\n\
       }\n\
+      math.big {\n\
+        font-size: 20pt;\n\
+      }\n\
+      mtable.resizable {\n\
+        border: 1px solid black;\n\
+        background: linear-gradient(70deg, red, orange);\n\
+      }\n\
+      mtable.resizable > mtr > mtd > mtext > span {\n\
+        display: inline-block; width: 40px; height: 10px;\n\
+        border: 1px dotted black;\n\
+        overflow: hidden; resize: both;\n\
+      }\n\
     </style>\n\
   </head>\n\
   <body class=\"htmlmathparagraph\">\n\
@@ -437,6 +514,7 @@ def main(aDirectory, aFont):
     printLargeOp(testfile, font)
     printMathematicalAlphanumericCharacters(testfile, font)
     printScriptedOperators(testfile, font)
+    printMathConstants(testfile, font)
     font.close()
 
     print("<p style=\"text-align: right\">%s UTC</p>" %
