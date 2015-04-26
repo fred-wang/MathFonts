@@ -8,7 +8,8 @@ Try [http://fred-wang.github.io/MathFonts/](http://fred-wang.github.io/MathFonts
 try individual testcases for each font:
 
 * [Asana](http://fred-wang.github.io/MathFonts/Asana/)
-* [GNUFreeFont](http://fred-wang.github.io/MathFonts/GNUFreeFont/)
+* [GNUFreeSans](http://fred-wang.github.io/MathFonts/GNUFreeSans/)
+* [GNUFreeSerif](http://fred-wang.github.io/MathFonts/GNUFreeSerif/)
 * [LatinModern](http://fred-wang.github.io/MathFonts/LatinModern/)
 * [Libertine](http://fred-wang.github.io/MathFonts/Libertine/)
 * [NeoEuler](http://fred-wang.github.io/MathFonts/NeoEuler/)
@@ -56,7 +57,7 @@ In particular note that:
   browsers.
 - The Neo Euler font and Libertine Math are still in development and have not
   been released yet.
-- The development version of GNU FreeSerif font contains an OpenType MATH table
+- The development version of GNU Free fonts contains an OpenType MATH table
   but this is not available in the release yet.
 - Some fonts have excessive ascent/descent on some browsers/operating systems.
 - The STIX font is known to have many bugs that have been reported to the

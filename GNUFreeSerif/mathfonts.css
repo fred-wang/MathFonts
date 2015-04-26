@@ -1,0 +1,47 @@
+/*
+GNU FreeSerif is released under the GNU General Public License. See the files in
+this directory for details. OpenType MATH support is only available in the
+development version.
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: FreeSerif;
+    src: url('FreeSerif.woff');
+}
+@font-face {
+    font-family: FreeSerif;
+    src: url('FreeSerifBold.woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: FreeSerif;
+    src: url('FreeSerifItalic.woff');
+    font-style: italic;
+}
+@font-face {
+    font-family: FreeSerif;
+    src: url('FreeSerifBoldItalic.woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: FreeSerif;
+}
+m|math {
+    font-family: FreeSerif;
+}
+
+.oldstylenumbers {
+    font-variant-numeric: oldstyle-nums;   /* Recommended syntax */
+    font-feature-settings: 'onum';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'onum';    /* Gecko <= 33 syntax */
+    -webkit-font-feature-settings: 'onum'; /* Blink syntax */
+}
+
+/* Calligraphic letters do not seem to be available */
+m|*.calligraphic {
+}

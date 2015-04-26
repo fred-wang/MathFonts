@@ -1,5 +1,5 @@
 /*
-GNUFreeFont is released under the GNU General Public License. See the files in
+GNU FreeSans is released under the GNU General Public License. See the files in
 this directory for details. OpenType MATH support is only available in the
 development version.
 */
@@ -8,31 +8,31 @@ development version.
 @namespace m url('http://www.w3.org/1998/Math/MathML');
 
 @font-face {
-    font-family: FreeSerif;
-    src: url('FreeSerif.woff');
+    font-family: FreeSans;
+    src: url('FreeSans.woff');
 }
 @font-face {
-    font-family: FreeSerif;
-    src: url('FreeSerifBold.woff');
+    font-family: FreeSans;
+    src: url('FreeSansBold.woff');
     font-weight: bold;
 }
 @font-face {
-    font-family: FreeSerif;
-    src: url('FreeSerifItalic.woff');
+    font-family: FreeSans;
+    src: url('FreeSansOblique.woff');
     font-style: italic;
 }
 @font-face {
-    font-family: FreeSerif;
-    src: url('FreeSerifBoldItalic.woff');
+    font-family: FreeSans;
+    src: url('FreeSansBoldOblique.woff');
     font-weight: bold;
     font-style: italic;
 }
 
 .htmlmathparagraph, m|mtext {
-    font-family: FreeSerif;
+    font-family: FreeSans;
 }
 m|math {
-    font-family: FreeSerif;
+    font-family: FreeSans;
 }
 
 .oldstylenumbers {
