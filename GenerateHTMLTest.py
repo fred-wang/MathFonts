@@ -62,10 +62,6 @@ def isLargeOp(aCodePoint):
     i = bisect_left(kLargeOperators, aCodePoint)
     return i != len(kLargeOperators) and kLargeOperators[i] == aCodePoint
 
-def usage():
-    print("usage: python %s [directory] [opentype-math-font]" % sys.argv[0],
-          file=sys.stderr)
-
 def printCodePoint(aTestFile, aCodePoint):
     print("<a href=\"https://duckduckgo.com/?q=U%%2B%06X\">U+%06X</a>" %
           (aCodePoint, aCodePoint), file=aTestFile)
@@ -592,6 +588,7 @@ def main(aDirectory, aFont):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        usage()
+        print("usage: python %s [directory] [opentype-math-font]" % sys.argv[0],
+              file=sys.stderr)
         exit(1)
     main(sys.argv[1], sys.argv[2])

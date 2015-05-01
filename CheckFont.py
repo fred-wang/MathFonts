@@ -7,6 +7,7 @@ from bisect import bisect_left
 from datetime import datetime
 from math import sqrt
 import fontforge
+import psMat
 import sys
 
 # List op "largeop" operators. See http://www.w3.org/TR/MathML3/appendixc.html
@@ -17,6 +18,8 @@ kLargeOperators = [0x220F, 0x2210, 0x2211, 0x222B, 0x222C, 0x222D, 0x222E,
                    0x2A0C, 0x2A0D, 0x2A0E, 0x2A0F, 0x2A10, 0x2A11, 0x2A12,
                    0x2A13, 0x2A14, 0x2A15, 0x2A16, 0x2A17, 0x2A18, 0x2A19,
                    0x2A1A, 0x2A1B, 0x2A1C, 0x2AFC, 0x2AFF]
+kLargeOpMinDisplayOperatorFactor = 1.3
+kLargeOpDisplayOperatorFactor = sqrt(2)
 
 # List of Unicode Constructions
 # Based on https://mxr.mozilla.org/mozilla-central/source/layout/mathml/mathfontUnicode.properties
@@ -87,8 +90,9 @@ def warnMissingGlyph(aCodePoint):
         print("Missing glyph for Unicode character U+%06X!" %
               aCodePoint, file=sys.stderr)
 
-def main(aFontFile):
+def main(aFontFile, aOutputFile):
 
+    ############################################################################
     # Open the font
     print("Opening file %s... " % aFontFile, end="")
     try:
@@ -96,10 +100,12 @@ def main(aFontFile):
     except EnvironmentError:
         print("Failed!")
         exit(1)
-    print("OK")
+    print("Done")
+    print("")
 
     tolerance = font.em / 50
 
+    ############################################################################
     # Ensure that the font has glyphs for all the ASCII characters.
     print("Testing Basic Latin Unicode Block... ", end="")
     for u in range(0x20, 0x7F):
@@ -107,17 +113,20 @@ def main(aFontFile):
             print("Failed")
             warnMissingGlyph(u)
             exit(1)
-    print("OK")
+    print("Done")
+    print("")
 
+    ############################################################################
     # Ensure that the MathConstants table exists.
     print("Testing MathConstants table... ", end="")
     if not font.math.exists():
         print("Not found!")
-        print("Creating a new MathConstants table... OK")
+        print("Creating a new MathConstants table... Done")
         # Dummy read operation to force the creation of the table.
         font.math.ScriptPercentScaleDown
     else:
-        print("OK")
+        print("Done")
+    print("")
 
     # ScriptPercentScaleDown
     # Suggested value: 80%
@@ -129,6 +138,30 @@ def main(aFontFile):
     # Suggested value: normal line height x 1.5
 
     # DisplayOperatorMinHeight
+    print("Testing DisplayOperatorMinHeight... ")
+    if font.math.DisplayOperatorMinHeight == 0:
+        print("Error: DisplayOperatorMinHeight is set to 0!", file=sys.stderr)
+        # use the height of the letter 'O'
+        box = font[0x4F].boundingBox()
+        suggestedValue = (box[3] - box[1]) * kLargeOpMinDisplayOperatorFactor
+        print("Setting DisplayOperatorMinHeight to %d." % suggestedValue)
+        font.math.DisplayOperatorMinHeight = suggestedValue
+    for c in kLargeOperators:
+        # Verify that the DisplayOperatorMinHeight ensure that the size of
+        # operator will really be increased in display mode.
+        if c not in font:
+            continue
+        print("Testing large operator U+%04X... " % c, end="")
+        glyph = font[c]
+        box = glyph.boundingBox()
+        baseHeight = box[3] - box[1]
+        print("Done")
+        if (font.math.DisplayOperatorMinHeight <
+            kLargeOpMinDisplayOperatorFactor * baseHeight):
+            print("Warning: DisplayOperatorMinHeight is less than %f times the base height of U+%04X." % (kLargeOpMinDisplayOperatorFactor, c),
+                  file=sys.stderr)
+    print("")
+
     # MathLeading
 
     # AxisHeight
@@ -143,11 +176,12 @@ def main(aFontFile):
         print("Setting AxisHeight to %d." % suggestedValue)
         font.math.AxisHeight = suggestedValue
     else:
-        print("OK")
+        print("Done")
         if (abs(font.math.AxisHeight - suggestedValue) > tolerance):
             print("Warning: AxisHeight is set to %d while the center of the\
 plus sign is %d." % (font.math.AxisHeight, suggestedValue),
                   file=sys.stderr)
+    print("")
 
     # AccentBaseHeight
     # FlattenedAccentBaseHeight
@@ -191,7 +225,8 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
         print("Setting FractionRuleThickness to %d." % font.uwidth)
         font.math.FractionRuleThickness = font.uwidth
     else:
-        print("OK")
+        print("Done")
+    print("")
 
     # FractionDenominatorGapMin
     # FractionDenomDisplayStyleGapMin
@@ -208,7 +243,8 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
         print("Setting OverBarRuleThickness to %d." % font.uwidth)
         font.math.OverbarRuleThickness = font.uwidth
     else:
-        print("OK")
+        print("Done")
+    print("")
 
     # OverbarExtraAscender
     # UnderbarVerticalGap
@@ -221,7 +257,8 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
         print("Setting OverBarRuleThickness to %d." % font.uwidth)
         font.math.UnderbarRuleThickness = font.uwidth
     else:
-        print("OK")
+        print("Done")
+    print("")
 
     # UnderbarExtraDescender
     # RadicalVerticalGap
@@ -238,7 +275,8 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
         print("Setting RadicalDisplayStyleVerticalGap to %d." % suggestedValue)
         font.math.RadicalDisplayStyleVerticalGap = suggestedValue
     else:
-        print("OK")
+        print("Done")
+    print("")
 
     # RadicalRuleThickness
     # Suggested value: default rule thickness
@@ -251,16 +289,18 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
         print("Setting RadicalRuleThickness to %d." % font.uwidth)
         font.math.RadicalRuleThickness = font.uwidth
     else:
-        print("OK")
+        print("Done")
+    print("")
 
     # RadicalExtraAscender
     # RadicalKernBeforeDegree
     # RadicalKernAfterDegree
     # RadicalDegreeBottomRaisePercent
 
-    # Verify that we have MathVariant table for the possible Unicode
-    # Constructions.
-    print("Testing MathVariant table for Unicode Constructions...")
+    ############################################################################
+    # Verify whether the MathVariant table has appropriate data for some basic
+    # unicode constructions.
+    print("Testing Unicode Constructions in the MathVariant table...")
     for c in kUnicodeConstructions:
 
         codePoint = c[0]
@@ -277,7 +317,7 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
             print("Failed")
             warnMissingGlyph(codePoint)
             continue
-        print("OK")
+        print("Done")
         glyph = font[codePoint]
 
         # Verify whether the variants are available.
@@ -289,7 +329,7 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
             else:
                 v = glyph.horizontalVariants
             if v is not None:
-                print("OK")
+                print("Done")
             else:
                 print("Failed")
                 print("Warning: missing variants for operator U+%04X!"
@@ -314,7 +354,7 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
                         glyph.verticalVariants = v
                     else:
                         glyph.horizontalVariants = v
-                    print("OK")
+                    print("Done")
 
         # Verify whether the components are available.
         if parts is not None:
@@ -325,7 +365,7 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
             else:
                 components = glyph.horizontalComponents
             if components:
-                print("OK")
+                print("Done")
             else:
                 print("Failed")
                 print("Warning: missing components for operator U+%04X!"
@@ -372,12 +412,79 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
                         glyph.verticalComponents = components
                     else:
                         glyph.horizontalComponents = components
-                    print("OK")
+                    print("Done")
+    print("")
 
-    font.save("%s.out.sfd" % aFontFile)
+    ############################################################################
+    # Verify whether the MathVariant table has appropriate data for large
+    # operators.
+    print("Testing large operators in the MathVariant table...")
+    for c in kLargeOperators:
+
+        # Verify whether the character is present.
+        print("Testing base glyph for large operator U+%04X... " % codePoint, end="")
+        if c not in font:
+            print("Failed")
+            warnMissingGlyph(c)
+            continue
+        print("Done")
+        glyph = font[c]
+
+        # Verify variants
+        print("Testing variants for large operator U+%04X... " % c, end="")
+        if glyph.verticalVariants is not None:
+            # Verify whether DisplayOperatorMinHeight can be satisfied.
+            variants = glyph.verticalVariants.split(" ")
+            hasDisplaySize = False
+            for v in variants:
+                if v in font:
+                    box = font[v].boundingBox()
+                    height = box[3] - box[1]
+                    if font.math.DisplayOperatorMinHeight <= height:
+                        hasDisplaySize = True
+                        break
+            if hasDisplaySize:
+                print("Done")
+            else:
+                print("Failed")
+                print("Warning: U+%04X does not have any size variant of height at least DisplayOperatorMinHeight" % c, file=sys.stderr)
+        else:
+            print("Failed")
+            print("Setting variants for operator U+%04X... " % c,
+                  end="")
+            # Add a glyph for the operator in display mode
+            baseGlyphName = font[c].glyphname
+            displayGlyphName = "%s.display" % baseGlyphName
+            g = font.createChar(-1, displayGlyphName)
+            g.addReference(baseGlyphName,
+                           psMat.scale(kLargeOpDisplayOperatorFactor))
+            # FIXME: Is it really necessary to specify the base glyph?
+            # This is done in Latin Modern but not XITS.
+            glyph.verticalVariants = "%s %s" % (baseGlyphName, displayGlyphName)
+            print("Done")
+    print("")
+
+    ############################################################################
+    # Testing Prescripted Operators / ssty tables
+
+    ############################################################################
+    # Testing Mathematical Alphanumeric Characters
+
+    ############################################################################
+    if aOutputFile is not None:
+        # Output the modified font.
+        print("Saving file %s... " % aOutputFile, end="")
+        font.save(aOutputFile)
+        print("Done")
     font.close()
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    nargs = len(sys.argv)
+    if nargs == 2:
+        main(sys.argv[1], None)
+    elif nargs == 3:
+        main(sys.argv[1], sys.argv[2])
+    else:
+        print("usage: python %s input-font [output-font]" % sys.argv[0],
+              file=sys.stderr)
         exit(1)
-    main(sys.argv[1])
