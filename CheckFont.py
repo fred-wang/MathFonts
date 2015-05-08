@@ -9,6 +9,7 @@ from math import sqrt
 import fontforge
 import psMat
 import sys
+import argparse
 
 # List op "largeop" operators. See http://www.w3.org/TR/MathML3/appendixc.html
 kLargeOperators = [0x220F, 0x2210, 0x2211, 0x222B, 0x222C, 0x222D, 0x222E,
@@ -90,13 +91,13 @@ def warnMissingGlyph(aCodePoint):
         print("Missing glyph for Unicode character U+%06X!" %
               aCodePoint, file=sys.stderr)
 
-def main(aFontFile, aOutputFile):
+def main(aArgs):
 
     ############################################################################
     # Open the font
-    print("Opening file %s... " % aFontFile, end="")
+    print("Opening file %s... " % aArgs.input, end="")
     try:
-        font = fontforge.open(aFontFile)
+        font = fontforge.open(aArgs.input)
     except EnvironmentError:
         print("Failed!")
         exit(1)
@@ -456,8 +457,12 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
             baseGlyphName = font[c].glyphname
             displayGlyphName = "%s.display" % baseGlyphName
             g = font.createChar(-1, displayGlyphName)
-            g.addReference(baseGlyphName,
-                           psMat.scale(kLargeOpDisplayOperatorFactor))
+            font.selection.select(baseGlyphName)
+            font.copy()
+            font.selection.select(displayGlyphName)
+            font.paste()
+            g.transform(psMat.scale(kLargeOpDisplayOperatorFactor),
+                        ("round",))
             # FIXME: Is it really necessary to specify the base glyph?
             # This is done in Latin Modern but not XITS.
             glyph.verticalVariants = "%s %s" % (baseGlyphName, displayGlyphName)
@@ -471,20 +476,20 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
     # Testing Mathematical Alphanumeric Characters
 
     ############################################################################
-    if aOutputFile is not None:
+    if aArgs.output:
         # Output the modified font.
-        print("Saving file %s... " % aOutputFile, end="")
-        font.save(aOutputFile)
+        output = "%s.fixed.sfd" % aArgs.input
+        print("Saving file %s... " % output, end="")
+        font.save(output)
         print("Done")
     font.close()
 
 if __name__ == "__main__":
-    nargs = len(sys.argv)
-    if nargs == 2:
-        main(sys.argv[1], None)
-    elif nargs == 3:
-        main(sys.argv[1], sys.argv[2])
-    else:
-        print("usage: python %s input-font [output-font]" % sys.argv[0],
-              file=sys.stderr)
-        exit(1)
+    parser = argparse.ArgumentParser(description="Check math features of a font and optionally fixes issues.")
+    parser.add_argument("input", type=str, help="Font to verify.")
+    parser.add_argument("--italic", type=str, help="Font form which to take italic glyphs.")
+    parser.add_argument("--bold", type=str, help="Font form which to take bold glyphs.")
+    parser.add_argument("--bold-italic", type=str, help="Font form which to take bold-italic glyphs.")
+    parser.add_argument("--output", action="store_true", help="Whether to output a version with some issues fixed.")
+    args = parser.parse_args()
+    main(args)

@@ -579,9 +579,6 @@ def main(aDirectory, aFont):
     printScriptedOperators(testfile, font)
     font.close()
 
-    print("<p style=\"text-align: right\">%s UTC</p>" %
-          datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"), file=testfile)
-
     print("\
   </body>\n\
 </html>", file=testfile)
