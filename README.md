@@ -8,6 +8,7 @@ Try [http://fred-wang.github.io/MathFonts/](http://fred-wang.github.io/MathFonts
 try individual testcases for each font:
 
 * [Asana](http://fred-wang.github.io/MathFonts/Asana/)
+* [DejaVuSerif](http://fred-wang.github.io/MathFonts/DejaVuSerif/)
 * [GNUFreeSans](http://fred-wang.github.io/MathFonts/GNUFreeSans/)
 * [GNUFreeSerif](http://fred-wang.github.io/MathFonts/GNUFreeSerif/)
 * [LatinModern](http://fred-wang.github.io/MathFonts/LatinModern/)
