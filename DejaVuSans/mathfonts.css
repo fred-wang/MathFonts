@@ -1,0 +1,49 @@
+/*
+Deja Vu Sans is released under a Free License, see 
+
+  http://dejavu-fonts.org/wiki/License
+
+OpenType MATH support is only available starting with version 2.35
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: DejaVu Sans;
+    src: url('DejaVuSans.woff');
+}
+@font-face {
+    font-family: DejaVu Sans;
+    src: url('DejaVuSans-Bold.woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: DejaVu Sans;
+    src: url('DejaVuSans-Italic.woff');
+    font-style: italic;
+}
+@font-face {
+    font-family: DejaVu Sans;
+    src: url('DejaVuSans-BoldItalic.woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: DejaVu Sans;
+}
+m|math {
+    font-family: DejaVu Sans;
+}
+
+.oldstylenumbers {
+    font-variant-numeric: oldstyle-nums;   /* Recommended syntax */
+    font-feature-settings: 'onum';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'onum';    /* Gecko <= 33 syntax */
+    -webkit-font-feature-settings: 'onum'; /* Blink syntax */
+}
+
+/* Calligraphic letters do not seem to be available */
+m|*.calligraphic {
+}
