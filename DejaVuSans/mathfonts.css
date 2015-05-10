@@ -20,14 +20,14 @@ OpenType MATH support is only available starting with version 2.35
 }
 @font-face {
     font-family: DejaVu Sans;
-    src: url('DejaVuSans-Italic.woff');
-    font-style: italic;
+    src: url('DejaVuSans-Oblique.woff');
+    font-style: oblique;
 }
 @font-face {
     font-family: DejaVu Sans;
-    src: url('DejaVuSans-BoldItalic.woff');
+    src: url('DejaVuSans-BoldOblique.woff');
     font-weight: bold;
-    font-style: italic;
+    font-style: oblique;
 }
 
 .htmlmathparagraph, m|mtext {
