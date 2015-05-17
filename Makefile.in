@@ -38,6 +38,9 @@ Asana: Asana/Asana-Math
 	@SED@ -i "s/<Copyright Holder>/Apostolos Syropoulos/" OFL.txt; \
 	@SED@ -i "s/ (<URL|email>)//" OFL.txt; \
 	@SED@ -i "s/<Reserved Font Name>/Asana Math/" OFL.txt;
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/Asana-Math.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ Asana-Math.woff
 
@@ -60,9 +63,11 @@ DejaVuSans: DejaVuSans/dejavu-fonts-ttf
 	   $</ttf/DejaVuSans-Oblique.ttf \
 	   $</ttf/DejaVuSans-BoldOblique.ttf $@
 	cd $@; for f in `ls *.ttf`; do @SFNT2WOFF@ $$f; done; rm *.ttf
-	 # Generate the testcase and CheckFont log
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/DejaVuSans.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ DejaVuSans.woff
-	@PYTHON@ CheckFont.py $@/DejaVuSans.woff > $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 
 # DejaVu Serif
 
@@ -83,6 +88,9 @@ DejaVuSerif: DejaVuSerif/dejavu-fonts-ttf
 	   $</ttf/DejaVuSerif-Italic.ttf \
 	   $</ttf/DejaVuSerif-BoldItalic.ttf $@
 	cd $@; for f in `ls *.ttf`; do @SFNT2WOFF@ $$f; done; rm *.ttf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/DejaVuSerif.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ DejaVuSerif.woff
 
@@ -111,6 +119,9 @@ LatinModern: LatinModern/latinmodern
 	cp $</lmroman12*.otf $@
 	cp $</latinmodern-math.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/latinmodern-math.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ latinmodern-math.woff
 
@@ -130,6 +141,9 @@ Libertine: Libertine/libertine-master
 	cp $</README.libertine $@/README.libertine.txt
 	cp $</README.md $@/README.txt
 	cd $@; for f in $(LIBERTINE_FONTS) ; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/libertinemath-regular.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ libertinemath-regular.woff
 
@@ -145,6 +159,9 @@ NeoEuler: NeoEuler/euler-otf-master
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</README $</OFL*.txt $</*.otf $@
 	cd $@; @SFNT2WOFF@ euler.otf; rm *.otf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/euler.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ euler.woff
 
@@ -170,6 +187,9 @@ TeXGyreBonum: TeXGyreBonum/texgyrebonum
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</*.txt $</*.TXT $</*.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/texgyrebonum-math.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ texgyrebonum-math.woff
 
@@ -195,6 +215,9 @@ TeXGyrePagella: TeXGyrePagella/texgyrepagella
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</*.txt $</*.TXT $</*.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/texgyrepagella-math.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ texgyrepagella-math.woff
 
@@ -220,6 +243,9 @@ TeXGyreSchola: TeXGyreSchola/texgyreschola
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</*.txt $</*.TXT $</*.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/texgyreschola-math.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ texgyreschola-math.woff
 
@@ -245,6 +271,9 @@ TeXGyreTermes: TeXGyreTermes/texgyretermes
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</*.txt $</*.TXT $</*.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/texgyretermes-math.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ texgyretermes-math.woff
 
@@ -264,6 +293,9 @@ STIX: STIX/stix
 	cp $</"STIX Font 1.1.1 Release Documentation.pdf" $@/documentation.pdf
 	cp $</"STIX Font License 2010.pdf" $@/license.pdf
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/STIXMath-Regular.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ STIXMath-Regular.woff
 
@@ -279,6 +311,9 @@ XITS: XITS/xits
 	 # Copy the fonts and doc and convert them into WOFF
 	cp $</FONTLOG.txt $</OFL*.txt $</README $</*.otf $@;
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/xits-math.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ xits-math.woff
 
