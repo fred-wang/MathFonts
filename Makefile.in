@@ -3,11 +3,11 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 # Build all the open source fonts
-all: Asana LatinModern Libertine NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana DejaVuSans DejaVuSerif LatinModern Libertine NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
-.PHONY: clean distclean Asana LatinModern Libertine NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana DejaVuSans DejaVuSerif LatinModern Libertine NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -41,6 +41,51 @@ Asana: Asana/Asana-Math
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ Asana-Math.woff
 
+# DejaVu Sans
+
+DEJAVU_SANS_VERSION=2.35
+DEJAVU_SANS_URL=http://sourceforge.net/projects/dejavu/files/dejavu/$(DEJAVU_SANS_VERSION)/dejavu-fonts-ttf-$(DEJAVU_SANS_VERSION).zip
+
+DejaVuSans/dejavu-fonts-ttf:
+	 # Get the package
+	cd DejaVuSans; @WGET@ $(DEJAVU_SANS_URL); \
+	@UNZIP@ dejavu-fonts-ttf-$(DEJAVU_SANS_VERSION).zip; \
+	mv dejavu-fonts-ttf-$(DEJAVU_SANS_VERSION) dejavu-fonts-ttf
+
+DejaVuSans: DejaVuSans/dejavu-fonts-ttf
+	 # Copy the fonts and doc and convert into WOFF
+	cp $</AUTHORS $</LICENSE $</NEWS $</README $@
+	cp $</ttf/DejaVuSans.ttf \
+	   $</ttf/DejaVuSans-Bold.ttf \
+	   $</ttf/DejaVuSans-Oblique.ttf \
+	   $</ttf/DejaVuSans-BoldOblique.ttf $@
+	cd $@; for f in `ls *.ttf`; do @SFNT2WOFF@ $$f; done; rm *.ttf
+	 # Generate the testcase and CheckFont log
+	@PYTHON@ GenerateHTMLTest.py $@ DejaVuSans.woff
+	@PYTHON@ CheckFont.py $@/DejaVuSans.woff > $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+
+# DejaVu Serif
+
+DEJAVU_SERIF_VERSION=2.35
+DEJAVU_SERIF_URL=http://sourceforge.net/projects/dejavu/files/dejavu/$(DEJAVU_SERIF_VERSION)/dejavu-fonts-ttf-$(DEJAVU_SERIF_VERSION).zip
+
+DejaVuSerif/dejavu-fonts-ttf:
+	 # Get the package
+	cd DejaVuSerif; @WGET@ $(DEJAVU_SERIF_URL); \
+	@UNZIP@ dejavu-fonts-ttf-$(DEJAVU_SERIF_VERSION).zip; \
+	mv dejavu-fonts-ttf-$(DEJAVU_SERIF_VERSION) dejavu-fonts-ttf
+
+DejaVuSerif: DejaVuSerif/dejavu-fonts-ttf
+	 # Copy the fonts and doc and convert into WOFF
+	cp $</AUTHORS $</LICENSE $</NEWS $</README $@
+	cp $</ttf/DejaVuSerif.ttf \
+	   $</ttf/DejaVuSerif-Bold.ttf \
+	   $</ttf/DejaVuSerif-Italic.ttf \
+	   $</ttf/DejaVuSerif-BoldItalic.ttf $@
+	cd $@; for f in `ls *.ttf`; do @SFNT2WOFF@ $$f; done; rm *.ttf
+	 # Generate the testcase
+	@PYTHON@ GenerateHTMLTest.py $@ DejaVuSerif.woff
+
 # Latin Modern
 
 LATINMODERN_URL="http://www.gust.org.pl/projects/e-foundry/latin-modern/download/lm2.004otf.zip"
@@ -62,9 +107,9 @@ LatinModern/latinmodern:
 
 LatinModern: LatinModern/latinmodern
 	 # Copy the fonts and doc and convert into WOFF
-	cp $@/latinmodern/*.txt $@/latinmodern/*.TXT $@
-	cp $@/latinmodern/lmroman12*.otf $@
-	cp $@/latinmodern/latinmodern-math.otf $@
+	cp $</*.txt $</*.TXT $@
+	cp $</lmroman12*.otf $@
+	cp $</latinmodern-math.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ latinmodern-math.woff
@@ -123,7 +168,7 @@ TeXGyreBonum/texgyrebonum:
 
 TeXGyreBonum: TeXGyreBonum/texgyrebonum
 	 # Copy the fonts and doc and convert into WOFF
-	cp $@/texgyrebonum/*.txt $@/texgyrebonum/*.TXT $@/texgyrebonum/*.otf $@
+	cp $</*.txt $</*.TXT $</*.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ texgyrebonum-math.woff
@@ -148,7 +193,7 @@ TeXGyrePagella/texgyrepagella:
 
 TeXGyrePagella: TeXGyrePagella/texgyrepagella
 	 # Copy the fonts and doc and convert into WOFF
-	cp $@/texgyrepagella/*.txt $@/texgyrepagella/*.TXT $@/texgyrepagella/*.otf $@
+	cp $</*.txt $</*.TXT $</*.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ texgyrepagella-math.woff
@@ -173,7 +218,7 @@ TeXGyreSchola/texgyreschola:
 
 TeXGyreSchola: TeXGyreSchola/texgyreschola
 	 # Copy the fonts and doc and convert into WOFF
-	cp $@/texgyreschola/*.txt $@/texgyreschola/*.TXT $@/texgyreschola/*.otf $@
+	cp $</*.txt $</*.TXT $</*.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ texgyreschola-math.woff
@@ -198,7 +243,7 @@ TeXGyreTermes/texgyretermes:
 
 TeXGyreTermes: TeXGyreTermes/texgyretermes
 	 # Copy the fonts and doc and convert into WOFF
-	cp $@/texgyretermes/*.txt $@/texgyretermes/*.TXT $@/texgyretermes/*.otf $@
+	cp $</*.txt $</*.TXT $</*.otf $@
 	cd $@; for f in `ls *.otf`; do @SFNT2WOFF@ $$f; done; rm *.otf
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ texgyretermes-math.woff
@@ -240,6 +285,8 @@ XITS: XITS/xits
 # Clean up
 clean:
 	rm -rf Asana/*.zip Asana/Asana-Math;
+	rm -rf DejaVuSans/*.zip DejaVuSans/dejavu-fonts-ttf;
+	rm -rf DejaVuSerif/*.zip DejaVuSerif/dejavu-fonts-ttf;
 	rm -rf LatinModern/*.zip LatinModern/latinmodern;
 	rm -rf Libertine/*.zip Libertine/libertine-master;
 	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;

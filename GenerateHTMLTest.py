@@ -568,7 +568,10 @@ def main(aDirectory, aFont):
   <link rel=\"stylesheet\" type=\"text/css\" href=\"./mathfonts.css\"/>\n\
   %s\n\
   <body class=\"htmlmathparagraph\">\n\
-    <h1>%s</h1>\n" % (aFont, kStyle, aFont), file=testfile)
+    <h1>%s</h1>\n\
+    <a href=\"./CheckFontLog.txt\">CheckFontLog.txt</a> - \
+    <a href=\"./CheckFontError.txt\">CheckFontError.txt</a>" %
+          (aFont, kStyle, aFont), file=testfile)
 
     font = fontforge.open("%s/%s" % (aDirectory, aFont))
     printBasicFontInfo(testfile, font)

@@ -3,9 +3,14 @@
 */*.txt
 */*.woff
 */*.zip
+*/AUTHORS
+*/LICENSE
+*/NEWS
 */README
 */index.html
 Asana/Asana-Math
+DejaVuSans/dejavu-fonts-ttf
+DejaVuSerif/dejavu-fonts-ttf
 LatinModern/latinmodern/
 Libertine/libertine-master/
 Makefile

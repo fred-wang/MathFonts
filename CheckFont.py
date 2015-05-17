@@ -838,10 +838,10 @@ kUnicodeConstructions = [
 
 def warnMissingGlyph(aCodePoint):
     if aCodePoint < 0x7F:
-        print("Missing glyph for ASCII character '%s' (U+%02X)!" %
+        print("Warning: Missing glyph for ASCII character '%s' (U+%02X)!" %
               (chr(aCodePoint), aCodePoint), file=sys.stderr)
     else:
-        print("Missing glyph for Unicode character U+%06X!" %
+        print("Warning: Missing glyph for Unicode character U+%06X!" %
               aCodePoint, file=sys.stderr)
 
 def testMathVariants(aFont, aVariantName, aRanges, aFallbackFont=None):
@@ -887,6 +887,7 @@ def testMathVariants(aFont, aVariantName, aRanges, aFallbackFont=None):
                         print("Done")
             else:
                 print("Done")
+    print("")
 
     # close fallback font
     if fallbackFont is not None:
@@ -916,6 +917,25 @@ def main(aArgs):
             warnMissingGlyph(u)
             exit(1)
     print("Done")
+    print("")
+
+    ############################################################################
+    # Test the "use typo metrics" bit
+    print("Testing OS/2 version... ", end="")
+    if font.os2_version and font.os2_version < 4:
+        print("Failed")
+        print("Warning: OS/2 version does not support USE_TYPO_METRICS!",
+              file=sys.stderr)
+    else:
+        print("Done")
+
+    print("Testing USE_TYPO_METRICS... ", end="")
+    if not font.os2_use_typo_metrics:
+        print("Failed")
+        print("Warning: USE_TYPO_METRICS set to false in the OS/2 table!",
+              file=sys.stderr)
+    else:
+        print("Done")
     print("")
 
     ############################################################################
