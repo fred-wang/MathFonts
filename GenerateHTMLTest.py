@@ -333,11 +333,11 @@ def printMathematicalAlphanumericCharacters(aTestFile, aFont):
     print("</td></tr>", file=aTestFile)
 
     print("<tr><td>bold-sans-serif</td><td>", file=aTestFile)
-    printCharacterRange(aTestFile, aFont, 0x1D5D4, 0x1D57A)
+    printCharacterRange(aTestFile, aFont, 0x1D5D4, 0x1D607)
     print("<br/>", file=aTestFile)
     printCharacterRange(aTestFile, aFont, 0x1D756, 0x1D78F)
     print("<br/>", file=aTestFile)
-    printCharacterRange(aTestFile, aFont, 0x1D7ED, 0x1D7F5)
+    printCharacterRange(aTestFile, aFont, 0x1D7EC, 0x1D7F5)
     print("</td></tr>", file=aTestFile)
 
     print("<tr><td>sans-serif-italic</td><td>", file=aTestFile)

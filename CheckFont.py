@@ -1356,9 +1356,9 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
                       (0x1D7E2, 0x1D7EB)), aArgs.sans_serif)
 
     testMathVariants(font, "sans-serif-bold",
-                     ((0x1D5D4, 0x1D57A),
+                     ((0x1D5D4, 0x1D607),
                       (0x1D756, 0x1D78F),
-                      (0x1D7ED, 0x1D7F5)), aArgs.sans_serif_bold)
+                      (0x1D7EC, 0x1D7F5)), aArgs.sans_serif_bold)
 
     testMathVariants(font, "sans-serif-italic",
                      ((0x1D608, 0x1D63B),), aArgs.sans_serif_italic)
