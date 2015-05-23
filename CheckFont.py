@@ -910,13 +910,14 @@ def main(aArgs):
 
     ############################################################################
     # Ensure that the font has glyphs for all the ASCII characters.
-    print("Testing Basic Latin Unicode Block... ", end="")
+    print("Testing Basic Latin Unicode Block... ")
     for u in range(0x20, 0x7F):
+        print("Testing U+%2X... " % u, end="")
         if u not in font:
             print("Failed")
             warnMissingGlyph(u)
-            exit(1)
-    print("Done")
+        else:
+            print("Done")
     print("")
 
     ############################################################################
@@ -963,11 +964,13 @@ def main(aArgs):
     print("Testing DisplayOperatorMinHeight... ")
     if font.math.DisplayOperatorMinHeight == 0:
         print("Error: DisplayOperatorMinHeight is set to 0!", file=sys.stderr)
-        # use the height of the letter 'O'
-        box = font[0x4F].boundingBox()
-        suggestedValue = (box[3] - box[1]) * kLargeOpMinDisplayOperatorFactor
-        print("Setting DisplayOperatorMinHeight to %d." % suggestedValue)
-        font.math.DisplayOperatorMinHeight = suggestedValue
+        if 0x4F in font:
+            # use the height of the letter 'O'
+            box = font[0x4F].boundingBox()
+            suggestedValue = (box[3] - box[1]) * \
+                             kLargeOpMinDisplayOperatorFactor
+            print("Setting DisplayOperatorMinHeight to %d." % suggestedValue)
+            font.math.DisplayOperatorMinHeight = suggestedValue
     for c in kLargeOperators:
         # Verify that the DisplayOperatorMinHeight ensure that the size of
         # operator will really be increased in display mode.
@@ -989,17 +992,22 @@ def main(aArgs):
     # AxisHeight
     # Note: FontForge defaults to zero.
     # See https://github.com/fontforge/fontforge/pull/2242
-    plusBoundingBox = font[0x2B].boundingBox()
-    suggestedValue = (plusBoundingBox[1] + plusBoundingBox[3]) / 2
+    if 0x2B in font:
+        plusBoundingBox = font[0x2B].boundingBox()
+        suggestedValue = (plusBoundingBox[1] + plusBoundingBox[3]) / 2
+    else:
+        suggestedValue = 0
     print("Testing AxisHeight... ", end="")
     if font.math.AxisHeight == 0:
         print("Failed")
         print("Error: AxisHeight is set to 0!", file=sys.stderr)
-        print("Setting AxisHeight to %d." % suggestedValue)
-        font.math.AxisHeight = suggestedValue
+        if suggestedValue > 0:
+            print("Setting AxisHeight to %d." % suggestedValue)
+            font.math.AxisHeight = suggestedValue
     else:
         print("Done")
-        if (abs(font.math.AxisHeight - suggestedValue) > tolerance):
+        if (suggestedValue > 0 and
+            (abs(font.math.AxisHeight - suggestedValue) > tolerance)):
             print("Warning: AxisHeight is set to %d while the center of the\
 plus sign is %d." % (font.math.AxisHeight, suggestedValue),
                   file=sys.stderr)
