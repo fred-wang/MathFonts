@@ -11,18 +11,21 @@ http://www.gust.org.pl/projects/e-foundry/
 @namespace url('http://www.w3.org/1999/xhtml');
 @namespace m url('http://www.w3.org/1998/Math/MathML');
 
+/* Latin Modern Roman has various sizes. We use the generic name
+   "Latin Modern Roman" for the local versions and "LMRoman12" for the Web font.
+*/
 @font-face {
-    font-family: Latin Modern Roman;
-    src: local('LMRoman12-Regular'), url('lmroman12-regular.woff');
+    font-family: LMRoman12;
+    src: url('lmroman12-regular.woff');
 }
 @font-face {
-    font-family: Latin Modern Roman;
-    src: local('LMRoman12-Bold'), url('lmroman12-bold.woff');
+    font-family: LMRoman12;
+    src: url('lmroman12-bold.woff');
     font-weight: bold;
 }
 @font-face {
-    font-family: Latin Modern Roman;
-    src: local('LMRoman12-Italic'), url('lmroman12-italic.woff');
+    font-family: LMRoman12;
+    src: url('lmroman12-italic.woff');
     font-style: italic;
 }
 @font-face {
@@ -32,7 +35,7 @@ http://www.gust.org.pl/projects/e-foundry/
 }
 
 .htmlmathparagraph, m|mtext {
-    font-family: Latin Modern Roman;
+    font-family: Latin Modern Roman, LMRoman12;
 }
 m|math {
     font-family: Latin Modern Math;
