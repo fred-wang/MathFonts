@@ -24,7 +24,7 @@ Asana/Asana-Math:
 
 Asana: Asana/Asana-Math
 	 # Keep only the otf files and doc and convert into WOFF.
-	cp $</* $@; cd $@; rm *.ttf; \
+	cp $</* $@; cd $@; rm *.TTC; \
 	@SFNT2WOFF@ Asana-Math.otf; rm *.otf;
 	 # The Asana package on CTAN does not contain any OFL license, so we
 	 # complete the copyright information here.
@@ -34,7 +34,7 @@ Asana: Asana/Asana-Math
 	cat OFL.txt | @GREP@ -v "additional Copyright Holder>" | \
 		@GREP@ -v "<additional Reserved Font Name>" \
 		> OFL-tmp.txt; mv OFL-tmp.txt OFL.txt; \
-	@SED@ -i "s/<dates>/2007\-2011/" OFL.txt; \
+	@SED@ -i "s/<dates>/2007\-2015/" OFL.txt; \
 	@SED@ -i "s/<Copyright Holder>/Apostolos Syropoulos/" OFL.txt; \
 	@SED@ -i "s/ (<URL|email>)//" OFL.txt; \
 	@SED@ -i "s/<Reserved Font Name>/Asana Math/" OFL.txt;
