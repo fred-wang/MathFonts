@@ -861,7 +861,7 @@ def testMathVariants(aFont, aVariantName, aRanges, aFallbackFont=None):
         else:
             upper = lower
         for u in range(lower,upper+1):
-            print("Testing large operator U+%04X... " % u, end="")
+            print("Testing mathvariant U+%04X... " % u, end="")
             if u not in aFont:
                 print("Failed")
                 warnMissingGlyph(u)
