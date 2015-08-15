@@ -21,6 +21,10 @@ kLargeOperators = [0x220F, 0x2210, 0x2211, 0x222B, 0x222C, 0x222D, 0x222E,
 kLargeOpMinDisplayOperatorFactor = 1.3
 kLargeOpDisplayOperatorFactor = sqrt(2)
 
+# List of "prescripted" operators.
+# See http://www.w3.org/TR/MathML3/appendixc.html
+kPreScriptedOperators = [0x2032, 0x2033, 0x2034, 0x2035, 0x2036, 0x2037, 0x2057]
+
 # mapping from math alpha num to BMP
 mathvariantToBMP = [
     (0x0210E, 0x0068),
@@ -844,6 +848,16 @@ def warnMissingGlyph(aCodePoint):
         print("Warning: Missing glyph for Unicode character U+%06X!" %
               aCodePoint, file=sys.stderr)
 
+def testSSTY(aFont, aCodePoint):
+    print("Testing ssty for U+%04X... " % aCodePoint, end="")
+    for table in aFont[aCodePoint].getPosSub("*"):
+        if table[0].find("ssty") > 0:
+            print("Done")
+            return
+    print("Warning: Missing ssty table for prescripted operator U+%02X!" %
+          aCodePoint, file=sys.stderr)
+    print("Failed")
+
 def testMathVariants(aFont, aVariantName, aRanges, aFallbackFont=None):
     # Open fallback font file, if specified.
     fallbackFont = None
@@ -1300,6 +1314,10 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
 
     ############################################################################
     # Testing Prescripted Operators / ssty tables
+    print("Testing Prescripted Operators / ssty tables...")
+    for c in kPreScriptedOperators:
+        testSSTY(font, c)
+    print("")
 
     ############################################################################
     # Testing Mathematical Alphanumeric Characters
