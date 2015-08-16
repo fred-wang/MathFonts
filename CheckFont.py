@@ -10,6 +10,8 @@ import psMat
 import sys
 import argparse
 
+TEX_UNDEF = 0x7fff # See fontforge/splinefont.h
+
 # List op "largeop" operators. See http://www.w3.org/TR/MathML3/appendixc.html
 kLargeOperators = [0x220F, 0x2210, 0x2211, 0x222B, 0x222C, 0x222D, 0x222E,
                    0x222F, 0x2230, 0x2231, 0x2232, 0x2233, 0x22C0, 0x22C1,
@@ -20,6 +22,10 @@ kLargeOperators = [0x220F, 0x2210, 0x2211, 0x222B, 0x222C, 0x222D, 0x222E,
                    0x2A1A, 0x2A1B, 0x2A1C, 0x2AFC, 0x2AFF]
 kLargeOpMinDisplayOperatorFactor = 1.3
 kLargeOpDisplayOperatorFactor = sqrt(2)
+kLargeOpIntegrals = [0x222B, 0x222C, 0x222D, 0x222E, 0x222F, 0x2230, 0x2231,
+                     0x2232, 0x2233, 0x2A0B, 0x2A0C, 0x2A0D, 0x2A0E, 0x2A0F,
+                     0x2A10, 0x2A11, 0x2A12, 0x2A13, 0x2A14, 0x2A15, 0x2A16,
+                     0x2A17, 0x2A18, 0x2A19, 0x2A1A, 0x2A1B, 0x2A1C]
 
 # List of "prescripted" operators.
 # See http://www.w3.org/TR/MathML3/appendixc.html
@@ -858,6 +864,21 @@ def testSSTY(aFont, aCodePoint):
           aCodePoint, file=sys.stderr)
     print("Failed")
 
+def testItalicCorrection(aGlyph):
+    print("Testing italic correction for glyph '%s'... " % aGlyph.glyphname,
+          end="")
+    if aGlyph.italicCorrection == TEX_UNDEF:
+        print("Failed")
+        print("Warning: Missing italic correction for glyph '%s'!" %
+              aGlyph.glyphname, file=sys.stderr)
+        return
+    if not (aGlyph.italicCorrection > 0):
+        print("Failed")
+        print("Warning: Italic correction for glyph '%s' is not positive!" %
+              aGlyph.glyphname, file=sys.stderr)
+        return
+    print("Done")
+
 def testMathVariants(aFont, aVariantName, aRanges, aFallbackFont=None):
     # Open fallback font file, if specified.
     fallbackFont = None
@@ -1310,6 +1331,26 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
             # This is done in Latin Modern but not XITS.
             glyph.verticalVariants = "%s %s" % (baseGlyphName, displayGlyphName)
             print("Done")
+    print("")
+
+    ############################################################################
+    # Verify whether integrals have italic correction
+    print("Testing italic correction for integrals...")
+    for c in kLargeOpIntegrals:
+        if c not in font:
+            continue
+        print("Testing italic correction for operator U+%04X..." % c)
+
+        # Get the list of variants, including the base size
+        variants = glyph.verticalVariants.split(" ")
+        baseGlyphName = font[c].glyphname
+        if variants[0] != baseGlyphName:
+            variants.insert(0, baseGlyphName)
+
+        # Test italic correction for each variant
+        for v in variants:
+            if v in font:
+                testItalicCorrection(font[v])
     print("")
 
     ############################################################################

@@ -14,6 +14,8 @@ kStartSize = .25 # size of the first operator (in em)
 kConsecutiveSizeRatio = sqrt(2) # ratio between size i+1 and size i
 kNumberOfSizes = 12 # number of sizes
 
+TEX_UNDEF = 0x7fff # See fontforge/splinefont.h
+
 # List op "largeop" operators. See http://www.w3.org/TR/MathML3/appendixc.html
 kLargeOperators = [0x220F, 0x2210, 0x2211, 0x222B, 0x222C, 0x222D, 0x222E,
                    0x222F, 0x2230, 0x2231, 0x2232, 0x2233, 0x22C0, 0x22C1,
@@ -226,7 +228,7 @@ def printLargeOp(aTestFile, aFont):
     print("\
     <h2 id=\"largeop\">Large Operators</h2>\
 <p>Source: <a href=\"http://www.w3.org/TR/MathML3/appendixc.html#oper-dict.entries-table\">MathML Operator Dictionary</a></p>\
-    <table><tr><th>Code Point</th><th>Base Size</th><th>Display Style</th>\n",
+    <table><tr><th>Code Point</th><th>Base Size</th><th>Display Style</th><th>Italic Correction</th>\n",
           file=aTestFile)
 
     for u in kLargeOperators:
@@ -241,10 +243,15 @@ def printLargeOp(aTestFile, aFont):
                 print("\
         <td><math display=\"block\"><msubsup><mo mathcolor=\"#f00\">&#x%X;</mo><mspace width=\"8px\" height=\"4px\" depth=\"4px\" mathbackground=\"#0f0\"/><mspace width=\"8px\" height=\"4px\" depth=\"4px\" mathbackground=\"#00f\"/></msubsup></math></td>" % u,
                       file=aTestFile)
+                value = glyph.italicCorrection
+                if value != TEX_UNDEF:
+                    print("<td>%d</td>" % value, file=aTestFile)
+                else:
+                    print("<td>N/A</td>", file=aTestFile)
             else:
-                print("<td>N/A</td>", file=aTestFile)
+                print("<td>N/A</td><td>N/A</td>", file=aTestFile)
         else:
-            print("<td>N/A</td><td>N/A</td>", file=aTestFile)
+            print("<td>N/A</td><td>N/A</td><td>N/A</td>", file=aTestFile)
 
         print("</tr>", file=aTestFile)
 
