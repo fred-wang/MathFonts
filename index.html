@@ -30,6 +30,12 @@
 
     <h1>Mathematical OpenType Fonts</h1>
 
+    <h2>Download</h2>
+
+    <p><a href="https://github.com/fred-wang/MathFonts/archive/gh-pages.zip">Zip Archive of this GitHub repository</a></p>
+
+    <h2 id="testcase_general">General Testcase</h2>
+
     <p>Render this page with
       <select id="MathFont" onchange="updateMathFont()">
         <option value="Default">Default fonts (local only)</option>
@@ -72,7 +78,7 @@ letters <math><semantics><mi class="calligraphic">𝒜</mi><annotation encoding=
           0 \hat{\mathbf{k}}, &amp; z &gt; d/2 \\
           -\frac{σ}{2ε_0} \hat{\mathbf{k}},  &amp; d/2 &gt; z &gt; -d / 2 \\
           0 \hat{\mathbf{k}}, &amp; z &lt; -d/2 \\
-          \end{array} 
+          \end{array}
           \right.</annotation></semantics></math>
 
 <math xmlns="http://www.w3.org/1998/Math/MathML" id="Ch0.Ex93.m1" class="ltx_Math" alttext="\int_{-\infty}^{+\infty}\frac{16\sin(2x+\pi)}{5(x^{2}+2x+5)^{2}}dx=\frac{\pi%
@@ -83,7 +89,7 @@ followed by inline expressions like <math xmlns="http://www.w3.org/1998/Math/Mat
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable columnalign="right left right left right left right left right left" columnspacing="0em" displaystyle="true"><mtr><mtd><mi>V</mi><mo stretchy="false">(</mo><mi>R</mi><mo stretchy="false">)</mo></mtd><mtd><mo>=</mo><msubsup><mo>∫</mo><mrow><mi>φ</mi><mo>=</mo><mn>0</mn></mrow><mrow><mn>2</mn><mi>π</mi></mrow></msubsup><msubsup><mo>∫</mo><mrow><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><mi>π</mi></msubsup><msubsup><mo>∫</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mi>R</mi></msubsup><msup><mi>r</mi><mn>2</mn></msup><mo lspace="0em" rspace="0em">sin</mo><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mi>d</mi><mi>r</mi><mi>d</mi><mi>θ</mi><mi>d</mi><mi>φ</mi></mtd></mtr><mtr><mtd/><mtd><mo>=</mo><mrow><mo>(</mo><mrow><msubsup><mo>∫</mo><mrow><mi>φ</mi><mo>=</mo><mn>0</mn></mrow><mrow><mn>2</mn><mi>π</mi></mrow></msubsup><mi>d</mi><mi>φ</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msubsup><mo>∫</mo><mrow><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><mi>π</mi></msubsup><mo lspace="0em" rspace="0em">sin</mo><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mi>d</mi><mi>θ</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msubsup><mo>∫</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mi>R</mi></msubsup><msup><mi>r</mi><mn>2</mn></msup><mi>d</mi><mi>r</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd/><mtd><mo>=</mo><msubsup><mrow><mo>[</mo><mi>φ</mi><mo>]</mo></mrow><mrow><mi>φ</mi><mo>=</mo><mn>0</mn></mrow><mrow><mn>2</mn><mi>π</mi></mrow></msubsup><msubsup><mrow><mo>[</mo><mrow><mo>-</mo><mo lspace="0em" rspace="0em">cos</mo><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><mo>]</mo></mrow><mrow><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><mi>π</mi></msubsup><msubsup><mrow><mo>[</mo><mfrac><msup><mi>r</mi><mn>3</mn></msup><mn>3</mn></mfrac><mo>]</mo></mrow><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mi>R</mi></msubsup></mtd></mtr><mtr><mtd/><mtd><mo>=</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>π</mi><msup><mi>R</mi><mn>3</mn></msup></mtd></mtr></mtable><annotation encoding="TeX">
       \begin{aligned}
       V(R) &amp;=
-      \int_{\varphi=0}^{2 \pi} 
+      \int_{\varphi=0}^{2 \pi}
       \int_{\theta=0}^{\pi}
       \int_{r=0}^{R}
       r^2 \sin(\theta) dr d\theta d\varphi \\ &amp;=
@@ -106,9 +112,28 @@ followed by inline expressions like <math xmlns="http://www.w3.org/1998/Math/Mat
     0 &amp; 1 &amp; 0     &amp; \dots &amp; 0 \\
     0 &amp; 0 &amp; \ddots &amp;      &amp; 0 \\
     \vdots &amp;   &amp;   &amp;     &amp; \vdots \\
-    0 &amp;  0      &amp; \dots  &amp;  0   &amp; 1 
+    0 &amp;  0      &amp; \dots  &amp;  0   &amp; 1
     \end{pmatrix}
     </annotation></semantics></math>
+
+    <h2 id="testcase_individual">Tests and Data for Free Software Fonts</h2>
+
+    <ul>
+      <li><a href="Asana/index.html">Asana</a></li>
+      <li><a href="DejaVuSans/index.html">DejaVuSans</a></li>
+      <li><a href="DejaVuSerif/index.html">DejaVuSerif</a></li>
+      <li><a href="GNUFreeSans/index.html">GNUFreeSans</a></li>
+      <li><a href="GNUFreeSerif/index.html">GNUFreeSerif</a></li>
+      <li><a href="LatinModern/index.html">LatinModern</a></li>
+      <li><a href="Libertine/index.html">Libertine</a></li>
+      <li><a href="NeoEuler/index.html">NeoEuler</a></li>
+      <li><a href="STIX/index.html">STIX</a></li>
+      <li><a href="TeXGyreBonum/index.html">TeXGyreBonum</a></li>
+      <li><a href="TeXGyrePagella/index.html">TeXGyrePagella</a></li>
+      <li><a href="TeXGyreSchola/index.html">TeXGyreSchola</a></li>
+      <li><a href="TeXGyreTermes/index.html">TeXGyreTermes</a></li>
+      <li><a href="XITS/index.html">XITS</a></li>
+    </ul>
 
   </body>
 </html>

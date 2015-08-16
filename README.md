@@ -1,27 +1,6 @@
 Mathematical Open Type fonts
 ============================
 
-Testcase
---------
-
-Try [http://fred-wang.github.io/MathFonts/](http://fred-wang.github.io/MathFonts/) to test the rendering of the various fonts in your browser. You can also
-try individual testcases for each font:
-
-* [Asana](http://fred-wang.github.io/MathFonts/Asana/)
-* [DejaVuSans](http://fred-wang.github.io/MathFonts/DejaVuSans/)
-* [DejaVuSerif](http://fred-wang.github.io/MathFonts/DejaVuSerif/)
-* [GNUFreeSans](http://fred-wang.github.io/MathFonts/GNUFreeSans/)
-* [GNUFreeSerif](http://fred-wang.github.io/MathFonts/GNUFreeSerif/)
-* [LatinModern](http://fred-wang.github.io/MathFonts/LatinModern/)
-* [Libertine](http://fred-wang.github.io/MathFonts/Libertine/)
-* [NeoEuler](http://fred-wang.github.io/MathFonts/NeoEuler/)
-* [STIX](http://fred-wang.github.io/MathFonts/STIX/)
-* [TeXGyreBonum](http://fred-wang.github.io/MathFonts/TeXGyreBonum/)
-* [TeXGyrePagella](http://fred-wang.github.io/MathFonts/TeXGyrePagella/)
-* [TeXGyreSchola](http://fred-wang.github.io/MathFonts/TeXGyreSchola/)
-* [TeXGyreTermes](http://fred-wang.github.io/MathFonts/TeXGyreTermes/)
-* [XITS](http://fred-wang.github.io/MathFonts/XITS/)
-
 License
 -------
 
@@ -48,8 +27,7 @@ Warning
 -------
 
 **It is important to note that the development and implementation of OpenType
-MATH is still a work in progress**, the specification is still [being
-standardized at ISO](http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=66391) and there are known bugs in browsers and fonts.
+MATH is still a work in progress**, the specification is [under publication as an ISO standard](http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=66391) and there are known bugs in browsers and fonts.
 In particular note that:
 
 - Gecko 31 has [support for the OpenType MATH table](https://wiki.mozilla.org/MathML:Open_Type_MATH_Table) but it is not complete yet.
