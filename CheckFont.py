@@ -1287,7 +1287,7 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
     for c in kLargeOperators:
 
         # Verify whether the character is present.
-        print("Testing base glyph for large operator U+%04X... " % codePoint, end="")
+        print("Testing base glyph for large operator U+%04X... " % c, end="")
         if c not in font:
             print("Failed")
             warnMissingGlyph(c)
