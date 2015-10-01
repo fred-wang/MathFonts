@@ -1342,7 +1342,7 @@ plus sign is %d." % (font.math.AxisHeight, suggestedValue),
         print("Testing italic correction for operator U+%04X..." % c)
 
         # Get the list of variants, including the base size
-        variants = glyph.verticalVariants.split(" ")
+        variants = font[c].verticalVariants.split(" ")
         baseGlyphName = font[c].glyphname
         if variants[0] != baseGlyphName:
             variants.insert(0, baseGlyphName)
