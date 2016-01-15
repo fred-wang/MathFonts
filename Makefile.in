@@ -138,7 +138,7 @@ Libertine/libertine-master:
 
 Libertine: Libertine/libertine-master
 	cp $</*.txt $</*.otf $@
-	cp $</README.libertine $@/README.libertine.txt
+	cp $</README.linuxlibertine $@/README.linuxlibertine.txt
 	cp $</README.md $@/README.txt
 	cd $@; for f in $(LIBERTINE_FONTS) ; do @SFNT2WOFF@ $$f; done; rm *.otf
 	 # Generate CheckFont logs
