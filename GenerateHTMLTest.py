@@ -8,6 +8,7 @@ from datetime import datetime
 from math import sqrt
 import fontforge
 import sys
+import unicodedata
 
 # Parameters describing the size of stretchy operators as a geometric sequence.
 kStartSize = .25 # size of the first operator (in em)
@@ -34,6 +35,12 @@ kBox = "<mrow class=\"resizable\"><mpadded depth=\"0px\" height=\"1height\"><mte
 
 # CSS style
 kStyle = "<style type=\"text/css\">\n\
+.missingBox {\n\
+  display: inline-block;\n\
+  width: .75em;\n\
+  height: .75em;\n\
+  background: red;\n\
+}\n\
 table {\n\
   border-collapse: collapse;\n\
 }\n\
@@ -64,17 +71,37 @@ def isLargeOp(aCodePoint):
     i = bisect_left(kLargeOperators, aCodePoint)
     return i != len(kLargeOperators) and kLargeOperators[i] == aCodePoint
 
+def unicodeName(aCodePoint):
+    return unicodedata.name(unichr(aCodePoint), "UNKNOWN CHARACTER NAME")
+
 def printCodePoint(aTestFile, aCodePoint):
     print("<a href=\"https://duckduckgo.com/?q=U%%2B%06X\">U+%06X</a>" %
           (aCodePoint, aCodePoint), file=aTestFile)
 
 def printCharacter(aTestFile, aFont, aCodePoint):
     if aCodePoint in aFont:
-        print("<span title=\"U+%06X\"><math><mn>&#x%X;</mn></math></span>"
-              % (aCodePoint, aCodePoint), file=aTestFile)
+        print("<span title=\"U+%06X %s\"><math><mn>&#x%X;</mn></math></span>"
+              % (aCodePoint, unicodeName(aCodePoint), aCodePoint),
+              file=aTestFile)
     else:
-        print("<math><menclose notation=\"box updiagonalstrike downdiagonalstrike\"><mspace href=\"https://duckduckgo.com/?q=U%%2B%06X\" width=\".75em\" height=\".75em\"/></menclose></math>"
-              % aCodePoint, file=aTestFile)
+        print("<span title=\"U+%06X %s\" class=\"missingBox\"></span>"
+              % (aCodePoint, unicodeName(aCodePoint)),
+              file=aTestFile)
+
+def printUnicodeCoverage(aTestFile, aFont):
+    print("<h2 id=\"unicode_coverage\">Unicode Coverage</h2><p>", file=aTestFile)
+    coverage = []
+    for glyph in aFont.glyphs():
+        if glyph.unicode != -1:
+            coverage.append(glyph.unicode)
+    coverage.sort()
+
+    for codePoint in coverage:
+        print("U+%06X <math><mn>&#x%X;</mn></math> %s<br/>" %
+              (codePoint, codePoint, unicodeName(codePoint)),
+              file=aTestFile)
+
+    print("</p>", file=aTestFile)
 
 def printCharacterRange(aTestFile, aFont, aCodePointStart, aCodePointEnd):
     for codePoint in range(aCodePointStart, aCodePointEnd+1):
@@ -587,6 +614,7 @@ def main(aDirectory, aFont):
     printLargeOp(testfile, font)
     printMathematicalAlphanumericCharacters(testfile, font)
     printScriptedOperators(testfile, font)
+    printUnicodeCoverage(testfile, font)
     font.close()
 
     print("\
