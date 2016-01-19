@@ -35,8 +35,7 @@ In particular note that:
   large operators as well as radicals.
 - The commercial Minion and LucidaBright fonts have not been tested at all in
   browsers.
-- The Neo Euler font and Libertine Math are still in development and have not
-  been released yet.
+- The Neo Euler font is still in development and has not been released yet.
 - The development version of GNU Free fonts contains an OpenType MATH table
   but this is not available in the release yet.
 - Some fonts have excessive ascent/descent on some browsers/operating systems.

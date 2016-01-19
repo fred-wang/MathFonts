@@ -126,20 +126,18 @@ LatinModern: LatinModern/latinmodern
 	@PYTHON@ GenerateHTMLTest.py $@ latinmodern-math.woff
 
 # Libertine
-LIBERTINE_URL=https://github.com/khaledhosny/libertine/archive/master.zip
+LIBERTINE_URL=https://github.com/khaledhosny/libertine/releases/download/v6.0/libertine-6.0.zip
 LIBERTINE_FONTS=libertinemath-regular.otf libertineserif-regular.otf \
                 libertineserif-bold.otf regular libertineserif-italic.otf \
                 libertineserif-bolditalic.otf
 
-Libertine/libertine-master:
+Libertine/libertine-6.0:
 	 # Get the Libertine fonts from GitHub.
 	cd Libertine; \
-	@WGET@ $(LIBERTINE_URL); @UNZIP@ master.zip;
+	@WGET@ $(LIBERTINE_URL); @UNZIP@ libertine-6.0.zip;
 
-Libertine: Libertine/libertine-master
+Libertine: Libertine/libertine-6.0
 	cp $</*.txt $</*.otf $@
-	cp $</README.linuxlibertine $@/README.linuxlibertine.txt
-	cp $</README.md $@/README.txt
 	cd $@; for f in $(LIBERTINE_FONTS) ; do @SFNT2WOFF@ $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/libertinemath-regular.woff \
