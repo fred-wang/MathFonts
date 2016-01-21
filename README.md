@@ -26,26 +26,22 @@ here.
 Warning
 -------
 
-**It is important to note that the development and implementation of OpenType
-MATH is still a work in progress**, the specification is [under publication as an ISO standard](http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=66391) and there are known bugs in browsers and fonts.
-In particular note that:
+Note that only Gecko and WebKit have (more or less complete) support for the
+OpenType MATH table. It is recommended to try the most recent versions.
 
-- Gecko 31 has [support for the OpenType MATH table](https://wiki.mozilla.org/MathML:Open_Type_MATH_Table) but it is not complete yet.
-- The OpenType MATH table is only used in WebKit Nightly to draw stretchy and
-  large operators as well as radicals.
-- The commercial Minion and LucidaBright fonts have not been tested at all in
-  browsers.
+The following open source fonts are not included yet:
+- The DejaVu fonts have a MATH table, but the support is very limited.
 - The Neo Euler font is still in development and has not been released yet.
 - The development version of GNU Free fonts contains an OpenType MATH table
   but this is not available in the release yet.
-- Some fonts have excessive ascent/descent on some browsers/operating systems.
 - The STIX font is known to have many bugs that have been reported to the
   STIX consortium. [STIX 2.0.0 has been announced for early 2015](http://www.stixfonts.org/) but in the meantime you might want to use the XITS fork instead.
-- Some (but not all) of the fonts provide old style numbers and calligraphic
-  letters accessible via OpenType font features. Some CSS rules from the
-  [CSS Fonts Module Level](http://dev.w3.org/csswg/css-fonts/)
-  are provided to help selecting the corresponding glyphs, but these are not
-  implemented/enabled in all browsers yet.
+
+Also some (but not all) of the fonts provide old style numbers and calligraphic
+letters accessible via OpenType font features. Some CSS rules from the
+[CSS Fonts Module Level](http://dev.w3.org/csswg/css-fonts/)
+are provided to help selecting the corresponding glyphs, but these are not
+implemented/enabled in all browsers yet.
 
 Using Math fonts on your Web site
 ---------------------------------
