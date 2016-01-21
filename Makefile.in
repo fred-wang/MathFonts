@@ -3,11 +3,11 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 # Build all the open source fonts
-all: Asana DejaVuSans DejaVuSerif LatinModern Libertine NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana DejaVuSans DejaVuSerif LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
-.PHONY: clean distclean Asana DejaVuSans DejaVuSerif LatinModern Libertine NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana DejaVuSans DejaVuSerif LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -125,25 +125,25 @@ LatinModern: LatinModern/latinmodern
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ latinmodern-math.woff
 
-# Libertine
-LIBERTINE_URL=https://github.com/khaledhosny/libertine/releases/download/v6.0/libertine-6.0.zip
-LIBERTINE_FONTS=libertinemath-regular.otf libertineserif-regular.otf \
-                libertineserif-bold.otf regular libertineserif-italic.otf \
-                libertineserif-bolditalic.otf
+# Libertinus
+LIBERTINUS_URL=https://github.com/khaledhosny/libertinus/releases/download/v6.1/libertinus-6.1.zip
+LIBERTINUS_FONTS=libertinusmath-regular.otf libertinusserif-regular.otf \
+                libertinusserif-bold.otf regular libertinusserif-italic.otf \
+                libertinusserif-bolditalic.otf
 
-Libertine/libertine-6.0:
-	 # Get the Libertine fonts from GitHub.
-	cd Libertine; \
-	@WGET@ $(LIBERTINE_URL); @UNZIP@ libertine-6.0.zip;
+Libertinus/libertinus-6.1:
+	 # Get the Libertinus fonts from GitHub.
+	cd Libertinus; \
+	@WGET@ $(LIBERTINUS_URL); @UNZIP@ libertinus-6.1.zip;
 
-Libertine: Libertine/libertine-6.0
+Libertinus: Libertinus/libertinus-6.1
 	cp $</*.txt $</*.otf $@
-	cd $@; for f in $(LIBERTINE_FONTS) ; do @SFNT2WOFF@ $$f; done; rm *.otf
+	cd $@; for f in $(LIBERTINUS_FONTS) ; do @SFNT2WOFF@ $$f; done; rm *.otf
 	 # Generate CheckFont logs
-	@PYTHON@ CheckFont.py $@/libertinemath-regular.woff \
+	@PYTHON@ CheckFont.py $@/libertinusmath-regular.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
-	@PYTHON@ GenerateHTMLTest.py $@ libertinemath-regular.woff
+	@PYTHON@ GenerateHTMLTest.py $@ libertinusmath-regular.woff
 
 # Neo Euler
 
@@ -321,7 +321,7 @@ clean:
 	rm -rf DejaVuSans/*.zip DejaVuSans/dejavu-fonts-ttf;
 	rm -rf DejaVuSerif/*.zip DejaVuSerif/dejavu-fonts-ttf;
 	rm -rf LatinModern/*.zip LatinModern/latinmodern;
-	rm -rf Libertine/*.zip Libertine/libertine-master;
+	rm -rf Libertinus/*.zip Libertinus/libertinus-6.1;
 	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;
 	rm -rf STIX/*.zip STIX/stix;
 	rm -rf TeXGyre*/*.zip TeXGyre*/texgyre*;

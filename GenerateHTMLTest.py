@@ -123,6 +123,7 @@ def printBasicFontInfo(aTestFile, aFont):
     <tr><th>familyname</th><td>%s</td></tr>\
     <tr><th>fontname</th><td>%s</td></tr>\
     <tr><th>fullname</th><td>%s</td></tr>\
+    <tr><th>version</th><td>%s</td></tr>\
     <tr><th>em</th><td>%s</td></tr>\
     <tr><th>hhea_ascent</th><td>%s</td></tr>\
     <tr><th>hhea_ascent_add</th><td>%s</td></tr>\
@@ -142,6 +143,7 @@ def printBasicFontInfo(aTestFile, aFont):
     </table>" % (aFont.familyname,
                  aFont.fontname,
                  aFont.fullname,
+                 aFont.version,
                  aFont.em,
                  aFont.hhea_ascent,
                  aFont.hhea_ascent,

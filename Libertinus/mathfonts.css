@@ -1,0 +1,56 @@
+/*
+The Libertinus fonts are released under the SIL Open Font and GPL Licenses. See
+the files in this directory for details.
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: Libertinus Serif;
+    src: local('Libertinus Serif'), local('LibertinusSerif'),
+         url('libertinusserif-regular.woff');
+}
+@font-face {
+    font-family: Libertinus Serif;
+    src: local('Libertinus Serif Bold'), local('LibertinusSerif-Bold'),
+         url('libertinusserif-bold.woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: Libertinus Serif;
+    src: local('Libertinus Serif Italic'), local('LibertinusSerif-Italic'),
+         url('libertinusserif-italic.woff');
+    font-style: italic;
+}
+@font-face {
+    font-family: Libertinus Serif;
+    src: local('Libertinus Serif Bold Italic'),
+         local('LibertinusSerif-BoldItalic'),
+         url('libertinusserif-bolditalic.woff');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: Libertinus Math;
+    src: local('Libertinus Math'), local('LibertinusMath'),
+         url('libertinusmath-regular.woff');
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: Libertinus Serif;
+}
+m|math {
+    font-family: Libertinus Math;
+}
+
+.oldstylenumbers {
+    font-variant-numeric: oldstyle-nums;   /* Recommended syntax */
+    font-feature-settings: 'onum';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'onum';    /* Gecko <= 33 syntax */
+    -webkit-font-feature-settings: 'onum'; /* Blink syntax */
+}
+
+/* No math script */
+m|*.calligraphic {
+}
