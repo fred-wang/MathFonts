@@ -2,6 +2,7 @@
 */*.pdf
 */*.txt
 */*.woff
+*/*.woff2
 */*.zip
 */AUTHORS
 */LICENSE

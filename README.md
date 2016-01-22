@@ -68,9 +68,10 @@ Build Instructions
 ------------------
 
 You need [GNU Core Utilities](https://en.wikipedia.org/wiki/GNU_Core_Utilities)
-(or equivalent on UNIX systems) as well as `sed`, `grep`, `unzip`, `wget` and
-[sfnt2woff](https://people.mozilla.org/~jkew/woff/woff-code-latest.zip). Type
-the following command to build the font directories:
+(or equivalent on UNIX systems) as well as `sed`, `grep`, `unzip`, `wget`,
+[sfnt2woff](https://people.mozilla.org/~jkew/woff/woff-code-latest.zip) and
+[woff2_compress](https://github.com/google/woff2). Type the following command
+to build the font directories:
 
     ./configure
     make
