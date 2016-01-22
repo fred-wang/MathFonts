@@ -14,28 +14,31 @@ Description
 
 This repository contains a script to fetch various open source OpenType fonts
 with a MATH table as well as the corresponding fonts to use for the surrounding
-text (if any). The fonts are converted into WOFF format
+text (if any). The fonts are converted into WOFF and WOFF2 formats
 using [sfnt2woff](https://people.mozilla.org/~jkew/woff/woff-code-latest.zip)
-and are
+and [woff2_compress](https://github.com/google/woff2). They are
 [packaged](https://github.com/fred-wang/MathFonts/archive/gh-pages.zip) with
 some documentation, a license and a `mathfont.css` stylesheet, so that you can
-easily use them on your Web site. For completeness, some proprietary math fonts
-are also listed but for obvious legal reasons they can not be provided
-here.
+easily use them on your Web site. Some proprietary fonts as well as incomplete
+open source fonts are also listed but they are not provided.
 
 Warning
 -------
 
-Note that only Gecko and WebKit have (more or less complete) support for the
-OpenType MATH table. It is recommended to try the most recent versions.
+Note that only Gecko and WebKit have (more or less complete) support for MathML
+and the OpenType MATH table. The WOFF2 format is not supported by all web
+rendering engines. It is recommended to try the most recent versions.
 
-The following open source fonts are not included yet:
+The following open source math fonts have issues and are not provided yet:
 - The DejaVu fonts have a MATH table, but the support is very limited.
-- The Neo Euler font is still in development and has not been released yet.
+- The Neo Euler font has design issues and has never been released.
 - The development version of GNU Free fonts contains an OpenType MATH table
   but this is not available in the release yet.
 - The STIX font is known to have many bugs that have been reported to the
-  STIX consortium. [STIX 2.0.0 has been announced for early 2015](http://www.stixfonts.org/) but in the meantime you might want to use the XITS fork instead.
+  STIX consortium.
+  [STIX 2.0.0 was announced for early 2015](http://www.stixfonts.org/)
+  but it is not released (as of January 2016). In the meantime you might
+  want to use the XITS fork instead.
 
 Also some (but not all) of the fonts provide old style numbers and calligraphic
 letters accessible via OpenType font features. Some CSS rules from the
@@ -46,15 +49,16 @@ implemented/enabled in all browsers yet.
 Using Math fonts on your Web site
 ---------------------------------
 
-Clone the gh-pages branch with `git` or download the
-[zip archive](https://github.com/fred-wang/MathFonts/archive/gh-pages.zip). Choose
-one family for your web site and place the corresponding subdirectory somewhere.
+Download the
+[zip archive](https://github.com/fred-wang/MathFonts/archive/gh-pages.zip).
+Choose one family for your web site and place the corresponding subdirectory
+somewhere.
 Make your pages link to the `mathfonts.css` stylesheet. The MathML formulas
 will then render with the specified font. It's good to make them consistent
 with the surrounding text, especially for inline expressions. To do that,
 use the `htmlmathparagraph` class, e.g. `<body class="htmlmathparagraph">`.
-By default, the local fonts installed on the system will be used and otherwise
-WOFF Web fonts will be used as a fallback (for open source fonts only).
+By default, the local fonts installed on the system will be used. For open
+source fonts, Web fonts in WOFF2 or WOFF format will be used as a fallback.
 
 Most families provide old style numbers in the text font. You can use them via
 the `oldstylenumbers` class, e.g.

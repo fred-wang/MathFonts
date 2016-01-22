@@ -13,27 +13,33 @@ http://www.gust.org.pl/projects/e-foundry/
 
 @font-face {
     font-family: TeX Gyre Bonum;
-    src: local('TeXGyreBonum-Regular'), url('texgyrebonum-regular.woff');
+    src: local('TeXGyreBonum-Regular'),
+         url('texgyrebonum-regular.woff2'), url('texgyrebonum-regular.woff');
 }
 @font-face {
     font-family: TeX Gyre Bonum;
-    src: local('TeXGyreBonum-Bold'), url('texgyrebonum-bold.woff');
+    src: local('TeXGyreBonum-Bold'),
+         url('texgyrebonum-bold.woff2'), url('texgyrebonum-bold.woff');
     font-weight: bold;
 }
 @font-face {
     font-family: TeX Gyre Bonum;
-    src: local('TeXGyreBonum-Italic'), url('texgyrebonum-italic.woff');
+    src: local('TeXGyreBonum-Italic'),
+         url('texgyrebonum-italic.woff2'), url('texgyrebonum-italic.woff');
     font-style: italic;
 }
 @font-face {
     font-family: TeX Gyre Bonum;
-    src: local('TeXGyreBonum-BoldItalic'), url('texgyrebonum-bolditalic.woff');
+    src: local('TeXGyreBonum-BoldItalic'),
+         url('texgyrebonum-bolditalic.woff2'),
+         url('texgyrebonum-bolditalic.woff');
     font-weight: bold;
     font-style: italic;
 }
 @font-face {
     font-family: TeX Gyre Bonum Math;
     src: local('TeX Gyre Bonum Math'), local('TeXGyreBonumMath-Regular'),
+         url('texgyrebonum-math.woff2'),
          url('texgyrebonum-math.woff');
 }
 

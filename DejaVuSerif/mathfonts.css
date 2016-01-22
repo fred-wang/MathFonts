@@ -8,21 +8,22 @@ for details. This fonts is available on most Linux distributions.
 
 @font-face {
     font-family: DejaVu Serif;
-    src: url('DejaVuSerif.woff');
+    src: url('DejaVuSerif.woff2'), url('DejaVuSerif.woff');
 }
 @font-face {
     font-family: DejaVu Serif;
-    src: url('DejaVuSerif-Bold.woff');
+    src: url('DejaVuSerif-Bold.woff2'), url('DejaVuSerif-Bold.woff');
     font-weight: bold;
 }
 @font-face {
     font-family: DejaVu Serif;
-    src: url('DejaVuSerif-Italic.woff');
+    src: url('DejaVuSerif-Italic.woff2'), url('DejaVuSerif-Italic.woff');
     font-style: italic;
 }
 @font-face {
     font-family: DejaVu Serif;
-    src: url('DejaVuSerif-BoldItalic.woff');
+    src: url('DejaVuSerif-BoldItalic.woff2'),
+         url('DejaVuSerif-BoldItalic.woff');
     font-weight: bold;
     font-style: italic;
 }

@@ -13,27 +13,34 @@ http://www.gust.org.pl/projects/e-foundry/
 
 @font-face {
     font-family: TeX Gyre Pagella;
-    src: local('TeXGyrePagella-Regular'), url('texgyrepagella-regular.woff');
+    src: local('TeXGyrePagella-Regular'),
+         url('texgyrepagella-regular.woff2'),
+         url('texgyrepagella-regular.woff');
 }
 @font-face {
     font-family: TeX Gyre Pagella;
-    src: local('TeXGyrePagella-Bold'), url('texgyrepagella-bold.woff');
+    src: local('TeXGyrePagella-Bold'),
+         url('texgyrepagella-bold.woff2'), url('texgyrepagella-bold.woff');
     font-weight: bold;
 }
 @font-face {
     font-family: TeX Gyre Pagella;
-    src: local('TeXGyrePagella-Italic'), url('texgyrepagella-italic.woff');
+    src: local('TeXGyrePagella-Italic'),
+         url('texgyrepagella-italic.woff2'), url('texgyrepagella-italic.woff');
     font-style: italic;
 }
 @font-face {
     font-family: TeX Gyre Pagella;
-    src: local('TeXGyrePagella-BoldItalic'), url('texgyrepagella-bolditalic.woff');
+    src: local('TeXGyrePagella-BoldItalic'),
+         url('texgyrepagella-bolditalic.woff2'),
+         url('texgyrepagella-bolditalic.woff');
     font-weight: bold;
     font-style: italic;
 }
 @font-face {
     font-family: TeX Gyre Pagella Math;
     src: local('TeX Gyre Pagella Math'), local('TeXGyrePagellaMath-Regular'),
+         url('texgyrepagella-math.woff2'),
          url('texgyrepagella-math.woff');
 }
 

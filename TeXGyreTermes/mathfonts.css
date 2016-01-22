@@ -13,28 +13,32 @@ http://www.gust.org.pl/projects/e-foundry/
 
 @font-face {
     font-family: TeX Gyre Termes;
-    src: local('TeXGyreTermes-Regular'), url('texgyretermes-regular.woff');
+    src: local('TeXGyreTermes-Regular'),
+         url('texgyretermes-regular.woff2'), url('texgyretermes-regular.woff');
 }
 @font-face {
     font-family: TeX Gyre Termes;
-    src: local('TeXGyreTermes-Bold'), url('texgyretermes-bold.woff');
+    src: local('TeXGyreTermes-Bold'),
+    url('texgyretermes-bold.woff2'), url('texgyretermes-bold.woff');
     font-weight: bold;
 }
 @font-face {
     font-family: TeX Gyre Termes;
-    src: local('TeXGyreTermes-Italic'), url('texgyretermes-italic.woff');
+    src: local('TeXGyreTermes-Italic'),
+    url('texgyretermes-italic.woff2'), url('texgyretermes-italic.woff');
     font-style: italic;
 }
 @font-face {
     font-family: TeX Gyre Termes;
-    src: local('TeXGyreTermes-BoldItalic'), url('texgyretermes-bolditalic.woff');
+    src: local('TeXGyreTermes-BoldItalic'),
+    url('texgyretermes-bolditalic.woff2'), url('texgyretermes-bolditalic.woff');
     font-weight: bold;
     font-style: italic;
 }
 @font-face {
     font-family: TeX Gyre Termes Math;
     src: local('TeX Gyre Termes Math'), local('TeXGyreTermesMath-Regular'),
-         url('texgyretermes-math.woff');
+         url('texgyretermes-math.woff2'), url('texgyretermes-math.woff');
 }
 
 .htmlmathparagraph, m|mtext {

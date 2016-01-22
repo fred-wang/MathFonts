@@ -9,17 +9,20 @@ the files in this directory for details.
 @font-face {
     font-family: Libertinus Serif;
     src: local('Libertinus Serif'), local('LibertinusSerif'),
+         url('libertinusserif-regular.woff2'),
          url('libertinusserif-regular.woff');
 }
 @font-face {
     font-family: Libertinus Serif;
     src: local('Libertinus Serif Bold'), local('LibertinusSerif-Bold'),
+         url('libertinusserif-bold.woff2'),
          url('libertinusserif-bold.woff');
     font-weight: bold;
 }
 @font-face {
     font-family: Libertinus Serif;
     src: local('Libertinus Serif Italic'), local('LibertinusSerif-Italic'),
+         url('libertinusserif-italic.woff2'),
          url('libertinusserif-italic.woff');
     font-style: italic;
 }
@@ -27,6 +30,7 @@ the files in this directory for details.
     font-family: Libertinus Serif;
     src: local('Libertinus Serif Bold Italic'),
          local('LibertinusSerif-BoldItalic'),
+         url('libertinusserif-bolditalic.woff2'),
          url('libertinusserif-bolditalic.woff');
     font-weight: bold;
     font-style: italic;
@@ -34,6 +38,7 @@ the files in this directory for details.
 @font-face {
     font-family: Libertinus Math;
     src: local('Libertinus Math'), local('LibertinusMath'),
+         url('libertinusmath-regular.woff2'),
          url('libertinusmath-regular.woff');
 }
 

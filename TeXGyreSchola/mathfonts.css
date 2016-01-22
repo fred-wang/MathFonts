@@ -13,28 +13,33 @@ http://www.gust.org.pl/projects/e-foundry/
 
 @font-face {
     font-family: TeX Gyre Schola;
-    src: local('TeXGyreSchola-Regular'), url('texgyreschola-regular.woff');
+    src: local('TeXGyreSchola-Regular'),
+         url('texgyreschola-regular.woff2'), url('texgyreschola-regular.woff');
 }
 @font-face {
     font-family: TeX Gyre Schola;
-    src: local('TeXGyreSchola-Bold'), url('texgyreschola-bold.woff');
+    src: local('TeXGyreSchola-Bold'),
+         url('texgyreschola-bold.woff2'), url('texgyreschola-bold.woff');
     font-weight: bold;
 }
 @font-face {
     font-family: TeX Gyre Schola;
-    src: local('TeXGyreSchola-Italic'), url('texgyreschola-italic.woff');
+    src: local('TeXGyreSchola-Italic'),
+         url('texgyreschola-italic.woff2'), url('texgyreschola-italic.woff');
     font-style: italic;
 }
 @font-face {
     font-family: TeX Gyre Schola;
-    src: local('TeXGyreSchola-BoldItalic'), url('texgyreschola-bolditalic.woff');
+    src: local('TeXGyreSchola-BoldItalic'),
+         url('texgyreschola-bolditalic.woff2'),
+         url('texgyreschola-bolditalic.woff');
     font-weight: bold;
     font-style: italic;
 }
 @font-face {
     font-family: TeX Gyre Schola Math;
     src: local('TeX Gyre Schola Math'), local('TeXGyreScholaMath-Regular'),
-         url('texgyreschola-math.woff');
+         url('texgyreschola-math.woff2'), url('texgyreschola-math.woff');
 }
 
 .htmlmathparagraph, m|mtext {

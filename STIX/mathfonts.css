@@ -13,28 +13,32 @@ http://downloads.sourceforge.net/project/stixfonts/
 
 @font-face {
     font-family: STIX;
-    src: local('STIX-Regular'), url('STIX-regular.woff');
+    src: local('STIX-Regular'),
+         url('STIX-regular.woff2'), url('STIX-regular.woff');
 }
 @font-face {
     font-family: STIX;
-    src: local('STIX-Bold'), url('STIX-Bold.woff');
+    src: local('STIX-Bold'),
+         url('STIX-Bold.woff2'), url('STIX-Bold.woff');
     font-weight: bold;
 }
 @font-face {
     font-family: STIX;
-    src: local('STIX-Italic'), url('STIX-Italic.woff');
+    src: local('STIX-Italic'),
+         url('STIX-Italic.woff2'), url('STIX-Italic.woff');
     font-style: italic;
 }
 @font-face {
     font-family: STIX;
-    src: local('STIX-BoldItalic'), url('STIX-BoldItalic.woff');
+    src: local('STIX-BoldItalic'),
+         url('STIX-BoldItalic.woff2'), url('STIX-BoldItalic.woff');
     font-weight: bold;
     font-style: italic;
 }
 @font-face {
     font-family: STIX Math;
     src: local('STIX Math'), local('STIXMath-Regular'),
-         url('STIXMath-Regular.woff');
+         url('STIXMath-Regular.woff2'), url('STIXMath-Regular.woff');
 }
 
 .htmlmathparagraph, m|mtext {

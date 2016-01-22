@@ -12,7 +12,7 @@ https://github.com/khaledhosny/euler-otf/
 
 @font-face {
     font-family: Neo Euler;
-    src: local('Neo Euler'), url('euler.woff');
+    src: local('Neo Euler'), url('euler.woff2'), url('euler.woff');
 }
 
 .htmlmathparagraph, m|mtext {

@@ -9,21 +9,21 @@ development version.
 
 @font-face {
     font-family: FreeSerif;
-    src: url('FreeSerif.woff');
+    src: url('FreeSerif.woff2'), url('FreeSerif.woff');
 }
 @font-face {
     font-family: FreeSerif;
-    src: url('FreeSerifBold.woff');
+    src: url('FreeSerifBold.woff2'), url('FreeSerifBold.woff');
     font-weight: bold;
 }
 @font-face {
     font-family: FreeSerif;
-    src: url('FreeSerifItalic.woff');
+    src: url('FreeSerifItalic.woff2'), url('FreeSerifItalic.woff');
     font-style: italic;
 }
 @font-face {
     font-family: FreeSerif;
-    src: url('FreeSerifBoldItalic.woff');
+    src: url('FreeSerifBoldItalic.woff2'), url('FreeSerifBoldItalic.woff');
     font-weight: bold;
     font-style: italic;
 }

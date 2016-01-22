@@ -16,22 +16,22 @@ http://www.gust.org.pl/projects/e-foundry/
 */
 @font-face {
     font-family: LMRoman12;
-    src: url('lmroman12-regular.woff');
+    src: url('lmroman12-regular.woff2'), url('lmroman12-regular.woff');
 }
 @font-face {
     font-family: LMRoman12;
-    src: url('lmroman12-bold.woff');
+    src: url('lmroman12-bold.woff2'), url('lmroman12-bold.woff');
     font-weight: bold;
 }
 @font-face {
     font-family: LMRoman12;
-    src: url('lmroman12-italic.woff');
+    src: url('lmroman12-italic.woff2'), url('lmroman12-italic.woff');
     font-style: italic;
 }
 @font-face {
     font-family: Latin Modern Math;
     src: local('Latin Modern Math'), local('LatinModernMath-Regular'),
-         url('latinmodern-math.woff');
+         url('latinmodern-math.woff2'), url('latinmodern-math.woff');
 }
 
 .htmlmathparagraph, m|mtext {
