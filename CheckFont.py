@@ -10,8 +10,6 @@ import psMat
 import sys
 import argparse
 
-TEX_UNDEF = 0x7fff # See fontforge/splinefont.h
-
 # List op "largeop" operators. See http://www.w3.org/TR/MathML3/appendixc.html
 kLargeOperators = [0x220F, 0x2210, 0x2211, 0x222B, 0x222C, 0x222D, 0x222E,
                    0x222F, 0x2230, 0x2231, 0x2232, 0x2233, 0x22C0, 0x22C1,
@@ -867,7 +865,7 @@ def testSSTY(aFont, aCodePoint):
 def testItalicCorrection(aGlyph):
     print("Testing italic correction for glyph '%s'... " % aGlyph.glyphname,
           end="")
-    if aGlyph.italicCorrection == TEX_UNDEF:
+    if aGlyph.italicCorrection == fontforge.unspecifiedMathValue:
         print("Failed")
         print("Warning: Missing italic correction for glyph '%s'!" %
               aGlyph.glyphname, file=sys.stderr)
