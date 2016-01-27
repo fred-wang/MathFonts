@@ -2,11 +2,15 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+COMPRESS=@BASH@ ../compress-font.sh
+
 # Build all the open source fonts
 all: Asana DejaVuSans DejaVuSerif LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
+# FIXME: This is no longer true with woff2 compression.
+# See https://github.com/fred-wang/MathFonts/issues/5
 .PHONY: clean distclean Asana DejaVuSans DejaVuSerif LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
@@ -25,7 +29,7 @@ Asana/Asana-Math:
 Asana: Asana/Asana-Math
 	 # Keep only the otf files and doc and convert into WOFF.
 	cp $</* $@; cd $@; rm *.TTC; \
-	@SFNT2WOFF@ Asana-Math.otf; @WOFF2_COMPRESS@ Asana-Math.otf; rm *.otf;
+	$(COMPRESS) Asana-Math.otf; rm *.otf;
 	 # The Asana package on CTAN does not contain any OFL license, so we
 	 # complete the copyright information here.
 	cp $</OFL-FAQ.txt $@;
@@ -63,8 +67,7 @@ DejaVuSans: DejaVuSans/dejavu-fonts-ttf
 	   $</ttf/DejaVuSans-Oblique.ttf \
 	   $</ttf/DejaVuSans-BoldOblique.ttf $@
 	cd $@; \
-	for f in `ls *.ttf`; do \
-	@SFNT2WOFF@ $$f; @WOFF2_COMPRESS@ $$f; done; rm *.ttf
+	for f in `ls *.ttf`; do $(COMPRESS) $$f; done; rm *.ttf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/DejaVuSans.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -90,8 +93,7 @@ DejaVuSerif: DejaVuSerif/dejavu-fonts-ttf
 	   $</ttf/DejaVuSerif-Italic.ttf \
 	   $</ttf/DejaVuSerif-BoldItalic.ttf $@
 	cd $@; \
-	for f in `ls *.ttf`; do \
-	@SFNT2WOFF@ $$f; @WOFF2_COMPRESS@ $$f; done; rm *.ttf
+	for f in `ls *.ttf`; do $(COMPRESS) $$f; done; rm *.ttf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/DejaVuSerif.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -123,8 +125,7 @@ LatinModern: LatinModern/latinmodern
 	cp $</lmroman12*.otf $@
 	cp $</latinmodern-math.otf $@
 	cd $@; \
-	for f in `ls *.otf`; do \
-	@SFNT2WOFF@ $$f; @WOFF2_COMPRESS@ $$f; done; rm *.otf
+	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/latinmodern-math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -134,7 +135,7 @@ LatinModern: LatinModern/latinmodern
 # Libertinus
 LIBERTINUS_URL=https://github.com/khaledhosny/libertinus/releases/download/v6.1/libertinus-6.1.zip
 LIBERTINUS_FONTS=libertinusmath-regular.otf libertinusserif-regular.otf \
-                libertinusserif-bold.otf regular libertinusserif-italic.otf \
+                libertinusserif-bold.otf libertinusserif-italic.otf \
                 libertinusserif-bolditalic.otf
 
 Libertinus/libertinus-6.1:
@@ -145,8 +146,7 @@ Libertinus/libertinus-6.1:
 Libertinus: Libertinus/libertinus-6.1
 	cp $</*.txt $</*.otf $@
 	cd $@; \
-	for f in $(LIBERTINUS_FONTS) ; do \
-	@SFNT2WOFF@ $$f; @WOFF2_COMPRESS@ $$f; done; rm *.otf
+	for f in $(LIBERTINUS_FONTS) ; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/libertinusmath-regular.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -164,7 +164,7 @@ NeoEuler/euler-otf-master:
 NeoEuler: NeoEuler/euler-otf-master
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</README $</OFL*.txt $</*.otf $@
-	cd $@; @SFNT2WOFF@ euler.otf; @WOFF2_COMPRESS@ euler.otf; rm *.otf
+	cd $@; $(COMPRESS) euler.otf; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/euler.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -193,8 +193,7 @@ TeXGyreBonum: TeXGyreBonum/texgyrebonum
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</*.txt $</*.TXT $</*.otf $@
 	cd $@; \
-	for f in `ls *.otf`; do \
-	@SFNT2WOFF@ $$f; @WOFF2_COMPRESS@ $$f; done; rm *.otf
+	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/texgyrebonum-math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -223,8 +222,7 @@ TeXGyrePagella: TeXGyrePagella/texgyrepagella
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</*.txt $</*.TXT $</*.otf $@
 	cd $@; \
-	for f in `ls *.otf`; do \
-	@SFNT2WOFF@ $$f; @WOFF2_COMPRESS@ $$f; done; rm *.otf
+	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/texgyrepagella-math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -253,8 +251,7 @@ TeXGyreSchola: TeXGyreSchola/texgyreschola
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</*.txt $</*.TXT $</*.otf $@
 	cd $@; \
-	for f in `ls *.otf`; do \
-	@SFNT2WOFF@ $$f; @WOFF2_COMPRESS@ $$f; done; rm *.otf
+	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/texgyreschola-math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -283,8 +280,7 @@ TeXGyreTermes: TeXGyreTermes/texgyretermes
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</*.txt $</*.TXT $</*.otf $@
 	cd $@; \
-	for f in `ls *.otf`; do \
-	@SFNT2WOFF@ $$f; @WOFF2_COMPRESS@ $$f; done; rm *.otf
+	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/texgyretermes-math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -307,8 +303,7 @@ STIX: STIX/stix
 	cp $</"STIX Font 1.1.1 Release Documentation.pdf" $@/documentation.pdf
 	cp $</"STIX Font License 2010.pdf" $@/license.pdf
 	cd $@; \
-	for f in `ls *.otf`; do \
-	@SFNT2WOFF@ $$f; @WOFF2_COMPRESS@ $$f; done; rm *.otf
+	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/STIXMath-Regular.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -327,8 +322,7 @@ XITS: XITS/xits
 	 # Copy the fonts and doc and convert them into WOFF
 	cp $</FONTLOG.txt $</OFL*.txt $</README $</*.otf $@;
 	cd $@; \
-	for f in `ls *.otf`; do \
-	@SFNT2WOFF@ $$f; @WOFF2_COMPRESS@ $$f; done; rm *.otf
+	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/xits-math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt

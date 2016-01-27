@@ -20,5 +20,6 @@ STIX/stix/
 TeXGyre*/texgyre*/
 XITS/xits/
 autom4te.cache/
+compress-font.sh
 config.log
 config.status
