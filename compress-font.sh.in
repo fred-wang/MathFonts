@@ -9,6 +9,12 @@ then
 fi
 
 FONTFILE=$1
+FONTNAME=`echo $FONTFILE | @SED@ 's/\.[a-z]\+//'`
 
-@SFNT2WOFF@ $FONTFILE
-@WOFF2_COMPRESS@ $FONTFILE
+for flavor in woff woff2; do
+    @PYFTSUBSET@ $FONTFILE \
+                 --output-file=$FONTNAME.$flavor \
+                 --flavor=$flavor \
+                 --glyphs=* \
+                 --layout-features=*
+done
