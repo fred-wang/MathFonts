@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-COMPRESS=@BASH@ ../compress-font.sh
+COMPRESS=@PYTHON@ ../compress-font.py
 
 # Build all the open source fonts
 all: Asana DejaVuSans DejaVuSerif LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS

@@ -14,9 +14,11 @@ Description
 
 This repository contains a script to fetch various open source OpenType fonts
 with a MATH table as well as the corresponding fonts to use for the surrounding
-text (if any). The fonts are converted into WOFF and WOFF2 formats
-using [sfnt2woff](https://people.mozilla.org/~jkew/woff/woff-code-latest.zip)
-and [woff2_compress](https://github.com/google/woff2). They are
+text (if any). The fonts are converted into WOFF and WOFF2 formats using
+[fonttools](https://github.com/behdad/fonttools), which may perform additional
+optimizations. It is expected that all the transformations preserve
+[Functional Equivalence](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web_fonts_and_RFNs#33301a9c)
+and so Reserved Font Names remain unchanged. The fonts are finally
 [packaged](https://github.com/fred-wang/MathFonts/archive/gh-pages.zip) with
 some documentation, a license and a `mathfont.css` stylesheet, so that you can
 easily use them on your Web site. Some proprietary fonts as well as incomplete
@@ -73,8 +75,8 @@ Build Instructions
 
 You need [GNU Core Utilities](https://en.wikipedia.org/wiki/GNU_Core_Utilities)
 (or equivalent on UNIX systems) as well as `sed`, `grep`, `unzip`, `wget`,
-[sfnt2woff](https://people.mozilla.org/~jkew/woff/woff-code-latest.zip) and
-[woff2_compress](https://github.com/google/woff2). Type the following command
+[fonttool](https://github.com/behdad/fonttools) and
+[brotlipy](https://pypi.python.org/pypi/brotlipy). Type the following command
 to build the font directories:
 
     ./configure
