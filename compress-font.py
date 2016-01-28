@@ -18,5 +18,8 @@ if __name__ == '__main__':
         outfilename = "%s.%s" % (basename, flavor)
         print("Processing %s => %s" % (filename, outfilename))
         font = TTFont(filename, recalcBBoxes=False, recalcTimestamp=False)
+        for t in font.keys():
+            if hasattr(font[t], "compile"):
+                font[t].compile(font)
         font.flavor = flavor
         font.save(outfilename, reorderTables=False)
