@@ -133,18 +133,18 @@ LatinModern: LatinModern/latinmodern
 	@PYTHON@ GenerateHTMLTest.py $@ latinmodern-math.woff
 
 # Libertinus
-LIBERTINUS_URL=https://github.com/khaledhosny/libertinus/releases/download/v6.1/libertinus-6.1.zip
+LIBERTINUS_URL=https://github.com/khaledhosny/libertinus/releases/download/v6.2/libertinus-6.2.zip
 LIBERTINUS_FONTS=libertinusmath-regular.otf libertinusserif-regular.otf \
                 libertinusserif-bold.otf libertinusserif-italic.otf \
                 libertinusserif-bolditalic.otf
 
-Libertinus/libertinus-6.1:
+Libertinus/libertinus:
 	 # Get the Libertinus fonts from GitHub.
 	cd Libertinus; \
-	@WGET@ $(LIBERTINUS_URL); @UNZIP@ libertinus-6.1.zip;
+	@WGET@ $(LIBERTINUS_URL); @UNZIP@ libertinus*.zip -d libertinus;
 
-Libertinus: Libertinus/libertinus-6.1
-	cp $</*.txt $</*.otf $@
+Libertinus: Libertinus/libertinus
+	cp $</*/*.txt $</*/*.otf $@
 	cd $@; \
 	for f in $(LIBERTINUS_FONTS) ; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
@@ -335,7 +335,7 @@ clean:
 	rm -rf DejaVuSans/*.zip DejaVuSans/dejavu-fonts-ttf;
 	rm -rf DejaVuSerif/*.zip DejaVuSerif/dejavu-fonts-ttf;
 	rm -rf LatinModern/*.zip LatinModern/latinmodern;
-	rm -rf Libertinus/*.zip Libertinus/libertinus-6.1;
+	rm -rf Libertinus/*.zip Libertinus/libertinus;
 	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;
 	rm -rf STIX/*.zip STIX/stix;
 	rm -rf TeXGyre*/*.zip TeXGyre*/texgyre*;
