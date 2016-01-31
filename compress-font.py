@@ -19,10 +19,6 @@ if __name__ == '__main__':
         print("Processing %s => %s" % (filename, outfilename))
         font = TTFont(filename, recalcBBoxes=False, recalcTimestamp=False)
         for t in font.keys():
-            # Skip cmap as this is causing issues with XITS Math
-            # See https://github.com/fred-wang/MathFonts/pull/6
-            if t == "cmap":
-                continue
             if hasattr(font[t], "compile"):
                 font[t].compile(font)
         font.flavor = flavor
