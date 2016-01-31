@@ -29,7 +29,13 @@ Warning
 
 Note that only Gecko and WebKit have (more or less complete) support for MathML
 and the OpenType MATH table. The WOFF2 format is not supported by all web
-rendering engines. It is recommended to try the most recent versions.
+rendering engines.
+Also some (but not all) of the fonts provide old style numbers and calligraphic
+letters accessible via OpenType font features. Some CSS rules from the
+[CSS Fonts Module Level](http://dev.w3.org/csswg/css-fonts/)
+are provided to help selecting the corresponding glyphs, but these are not
+implemented/enabled in all browsers yet.
+In general, it is recommended to try the most recent versions of browsers.
 
 The following open source math fonts have issues and are not provided yet:
 - The DejaVu fonts have a MATH table, but the support is very limited.
@@ -41,12 +47,6 @@ The following open source math fonts have issues and are not provided yet:
   [STIX 2.0.0 was announced for early 2015](http://www.stixfonts.org/)
   but it is not released (as of January 2016). In the meantime you might
   want to use the XITS fork instead.
-
-Also some (but not all) of the fonts provide old style numbers and calligraphic
-letters accessible via OpenType font features. Some CSS rules from the
-[CSS Fonts Module Level](http://dev.w3.org/csswg/css-fonts/)
-are provided to help selecting the corresponding glyphs, but these are not
-implemented/enabled in all browsers yet.
 
 Using Math fonts on your Web site
 ---------------------------------
@@ -76,7 +76,7 @@ Build Instructions
 You need [GNU Core Utilities](https://en.wikipedia.org/wiki/GNU_Core_Utilities)
 (or equivalent on UNIX systems) as well as `sed`, `grep`, `unzip`, `wget`,
 [fonttool](https://github.com/behdad/fonttools) and
-[brotlipy](https://pypi.python.org/pypi/brotlipy). Type the following command
+[brotli](https://github.com/google/brotli/). Type the following command
 to build the font directories:
 
     ./configure
