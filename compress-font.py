@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 from __future__ import print_function
-from fontTools.ttLib import TTFont
+from fontTools.ttLib import TTFont, sfnt
 from os.path import splitext
 import sys
 
@@ -14,6 +14,7 @@ if __name__ == '__main__':
     filename = sys.argv[1]
     basename = splitext(filename)[0]
 
+    sfnt.USE_ZOPFLI = True
     for flavor in ["woff", "woff2"]:
         outfilename = "%s.%s" % (basename, flavor)
         print("Processing %s => %s" % (filename, outfilename))

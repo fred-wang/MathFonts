@@ -14,7 +14,8 @@ Description
 
 This repository contains a script to fetch various open source OpenType fonts
 with a MATH table as well as the corresponding fonts to use for the surrounding
-text (if any). The fonts are converted into WOFF and WOFF2 formats using
+text (if any). The fonts are converted into WOFF (with zopfli compression) and
+WOFF2 formats using
 [fonttools](https://github.com/behdad/fonttools), which may perform additional
 optimizations. It is expected that all the transformations preserve
 [Functional Equivalence](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web_fonts_and_RFNs#33301a9c)
@@ -75,7 +76,8 @@ Build Instructions
 
 You need [GNU Core Utilities](https://en.wikipedia.org/wiki/GNU_Core_Utilities)
 (or equivalent on UNIX systems) as well as `sed`, `grep`, `unzip`, `wget`,
-[fonttools](https://github.com/behdad/fonttools) and
+[fonttools](https://github.com/behdad/fonttools),
+[zopfli](https://github.com/anthrotype/py-zopfli) and
 [brotli](https://github.com/google/brotli/). Type the following command
 to build the font directories:
 
