@@ -39,14 +39,13 @@ implemented/enabled in all browsers yet.
 In general, it is recommended to try the most recent versions of browsers.
 
 The following open source math fonts have issues and are not provided yet:
-- The DejaVu fonts have a MATH table, but the support is very limited.
 - The Neo Euler font has design issues and has never been released.
 - The development version of GNU Free fonts contains an OpenType MATH table
   but this is not available in the release yet.
 - The STIX font is known to have many bugs that have been reported to the
   STIX consortium.
   [STIX 2.0.0 was announced for early 2015](http://www.stixfonts.org/)
-  but it is not released (as of January 2016). In the meantime you might
+  but it is not released (as of July 2016). In the meantime you might
   want to use the XITS fork instead.
 
 Using Math fonts on your Web site
