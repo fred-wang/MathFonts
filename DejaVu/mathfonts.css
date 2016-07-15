@@ -1,11 +1,15 @@
 /*
-Deja Vu Serif is released under a Free License. See the files in this directory
+Deja Vu is released under a Free License. See the files in this directory
 for details. This fonts is available on most Linux distributions.
 */
 
 @namespace url('http://www.w3.org/1999/xhtml');
 @namespace m url('http://www.w3.org/1998/Math/MathML');
 
+@font-face {
+    font-family: DejaVu Math TeX Gyre;
+    src: url('DejaVuMathTeXGyre.woff2'), url('DejaVuMathTeXGyre.woff');
+}
 @font-face {
     font-family: DejaVu Serif;
     src: url('DejaVuSerif.woff2'), url('DejaVuSerif.woff');
@@ -32,7 +36,7 @@ for details. This fonts is available on most Linux distributions.
     font-family: DejaVu Serif;
 }
 m|math {
-    font-family: DejaVu Serif;
+    font-family: DejaVu Math TeX Gyre;
 }
 
 .oldstylenumbers {

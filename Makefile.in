@@ -11,7 +11,7 @@ all: Asana LatinModern Libertinus TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXG
 # The download operations are slower and will only be performed once.
 # FIXME: This is no longer true with woff2 compression.
 # See https://github.com/fred-wang/MathFonts/issues/5
-.PHONY: clean distclean Asana DejaVuSans DejaVuSerif LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana DejaVu LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -48,57 +48,32 @@ Asana: Asana/Asana-Math
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ Asana-Math.woff
 
-# DejaVu Sans
+# DejaVu
 
-DEJAVU_SANS_VERSION=2.35
-DEJAVU_SANS_URL=http://sourceforge.net/projects/dejavu/files/dejavu/$(DEJAVU_SANS_VERSION)/dejavu-fonts-ttf-$(DEJAVU_SANS_VERSION).zip
+DEJAVU_VERSION=2.36
+DEJAVU_URL=http://sourceforge.net/projects/dejavu/files/dejavu/$(DEJAVU_VERSION)/dejavu-fonts-ttf-$(DEJAVU_VERSION).zip
 
-DejaVuSans/dejavu-fonts-ttf:
+DejaVu/dejavu-fonts-ttf:
 	 # Get the package
-	cd DejaVuSans; @WGET@ $(DEJAVU_SANS_URL); \
-	@UNZIP@ dejavu-fonts-ttf-$(DEJAVU_SANS_VERSION).zip; \
-	mv dejavu-fonts-ttf-$(DEJAVU_SANS_VERSION) dejavu-fonts-ttf
+	cd DejaVu; @WGET@ $(DEJAVU_URL); \
+	@UNZIP@ dejavu-fonts-ttf-$(DEJAVU_VERSION).zip; \
+	mv dejavu-fonts-ttf-$(DEJAVU_VERSION) dejavu-fonts-ttf
 
-DejaVuSans: DejaVuSans/dejavu-fonts-ttf
+DejaVu: DejaVu/dejavu-fonts-ttf
 	 # Copy the fonts and doc and convert into WOFF
-	cp $</AUTHORS $</LICENSE $</NEWS $</README $@
-	cp $</ttf/DejaVuSans.ttf \
-	   $</ttf/DejaVuSans-Bold.ttf \
-	   $</ttf/DejaVuSans-Oblique.ttf \
-	   $</ttf/DejaVuSans-BoldOblique.ttf $@
-	cd $@; \
-	for f in `ls *.ttf`; do $(COMPRESS) $$f; done; rm *.ttf
-	 # Generate CheckFont logs
-	@PYTHON@ CheckFont.py $@/DejaVuSans.woff \
-	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
-	 # Generate the testcase
-	@PYTHON@ GenerateHTMLTest.py $@ DejaVuSans.woff
-
-# DejaVu Serif
-
-DEJAVU_SERIF_VERSION=2.35
-DEJAVU_SERIF_URL=http://sourceforge.net/projects/dejavu/files/dejavu/$(DEJAVU_SERIF_VERSION)/dejavu-fonts-ttf-$(DEJAVU_SERIF_VERSION).zip
-
-DejaVuSerif/dejavu-fonts-ttf:
-	 # Get the package
-	cd DejaVuSerif; @WGET@ $(DEJAVU_SERIF_URL); \
-	@UNZIP@ dejavu-fonts-ttf-$(DEJAVU_SERIF_VERSION).zip; \
-	mv dejavu-fonts-ttf-$(DEJAVU_SERIF_VERSION) dejavu-fonts-ttf
-
-DejaVuSerif: DejaVuSerif/dejavu-fonts-ttf
-	 # Copy the fonts and doc and convert into WOFF
-	cp $</AUTHORS $</LICENSE $</NEWS $</README $@
+	cp $</AUTHORS $</LICENSE $</README.md $</NEWS $@
 	cp $</ttf/DejaVuSerif.ttf \
 	   $</ttf/DejaVuSerif-Bold.ttf \
 	   $</ttf/DejaVuSerif-Italic.ttf \
-	   $</ttf/DejaVuSerif-BoldItalic.ttf $@
+	   $</ttf/DejaVuSerif-BoldItalic.ttf \
+	   $</ttf/DejaVuMathTeXGyre.ttf $@
 	cd $@; \
 	for f in `ls *.ttf`; do $(COMPRESS) $$f; done; rm *.ttf
 	 # Generate CheckFont logs
-	@PYTHON@ CheckFont.py $@/DejaVuSerif.woff \
+	@PYTHON@ CheckFont.py $@/DejaVuMathTeXGyre.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
-	@PYTHON@ GenerateHTMLTest.py $@ DejaVuSerif.woff
+	@PYTHON@ GenerateHTMLTest.py $@ DejaVuMathTeXGyre.woff
 
 # Latin Modern
 
@@ -332,8 +307,7 @@ XITS: XITS/xits
 # Clean up
 clean:
 	rm -rf Asana/*.zip Asana/Asana-Math;
-	rm -rf DejaVuSans/*.zip DejaVuSans/dejavu-fonts-ttf;
-	rm -rf DejaVuSerif/*.zip DejaVuSerif/dejavu-fonts-ttf;
+	rm -rf DejaVu/*.zip DejaVu/dejavu-fonts-ttf;
 	rm -rf LatinModern/*.zip LatinModern/latinmodern;
 	rm -rf Libertinus/*.zip Libertinus/libertinus;
 	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;
