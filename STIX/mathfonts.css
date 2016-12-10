@@ -1,7 +1,7 @@
 /*
 The STIX fonts are released under the SIL Open Font License. See the files in
 this directory for details. The font can be obtained from several TeX
-distributions or package managers. 
+distributions or package managers.
 
 The WOFF fonts have been obtained from
 http://downloads.sourceforge.net/project/stixfonts/
@@ -12,40 +12,46 @@ http://downloads.sourceforge.net/project/stixfonts/
 
 
 @font-face {
-    font-family: STIX;
-    src: local('STIX-Regular'),
-         url('STIX-regular.woff2'), url('STIX-regular.woff');
+    font-family: STIX Two Text;
+    src: local('STIXTwoText'),
+         url('STIX2Text-Regular.woff2'),
+         url('STIX2Text-Regular.woff');
 }
 @font-face {
-    font-family: STIX;
-    src: local('STIX-Bold'),
-         url('STIX-Bold.woff2'), url('STIX-Bold.woff');
+    font-family: STIX Two Text;
+    src: local('STIXTwoText-Bold'),
+         url('STIX2Text-Bold.woff2'),
+         url('STIX2Text-Bold.woff');
     font-weight: bold;
 }
 @font-face {
-    font-family: STIX;
-    src: local('STIX-Italic'),
-         url('STIX-Italic.woff2'), url('STIX-Italic.woff');
+    font-family: STIX Two Text;
+    src: local('STIXTwoText-Italic'),
+         url('STIX2Text-Italic.woff2'),
+         url('STIX2Text-Italic.woff');
     font-style: italic;
 }
 @font-face {
-    font-family: STIX;
-    src: local('STIX-BoldItalic'),
-         url('STIX-BoldItalic.woff2'), url('STIX-BoldItalic.woff');
+    font-family: STIX Two Text;
+    src: local('STIXTwoText-BoldItalic'),
+         url('STIXTwoText-BoldItalic.woff2'),
+         url('STIXTwoText-BoldItalic.woff');
     font-weight: bold;
     font-style: italic;
 }
 @font-face {
-    font-family: STIX Math;
-    src: local('STIX Math'), local('STIXMath-Regular'),
-         url('STIXMath-Regular.woff2'), url('STIXMath-Regular.woff');
+    font-family: STIX Two Math;
+    src: local('STIX Two Math'),
+         local('STIXTwoMath'),
+         url('STIX2Math.woff2'),
+         url('STIX2Math.woff');
 }
 
 .htmlmathparagraph, m|mtext {
-    font-family: STIX;
+    font-family: STIX Two Text;
 }
 m|math {
-    font-family: STIX Math;
+    font-family: STIX Two Math;
 }
 
 .oldstylenumbers {
@@ -55,6 +61,10 @@ m|math {
     -webkit-font-feature-settings: 'onum'; /* Blink syntax */
 }
 
-/* Calligraphic letters do not seem to be available */
+@font-feature-values STIX Two Math { @styleset { calligraphic: 1; } }
 m|*.calligraphic {
+    font-variant-alternates: styleset(calligraphic); /* Recommended syntax */
+    font-feature-settings: 'ss01';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'ss01';    /* Gecko <= 33 syntax */
+    -webkit-font-feature-settings: 'ss01'; /* Blink syntax */
 }

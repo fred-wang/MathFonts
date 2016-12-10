@@ -5,7 +5,7 @@
 COMPRESS=@PYTHON@ ../compress-font.py
 
 # Build all the open source fonts
-all: Asana DejaVu LatinModern Libertinus TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana DejaVu LatinModern Libertinus STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
@@ -264,7 +264,7 @@ TeXGyreTermes: TeXGyreTermes/texgyretermes
 
 # STIX
 
-STIX_URL="http://downloads.sourceforge.net/project/stixfonts/Current%20Release/STIXv1.1.1-word.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fstixfonts%2Ffiles%2FCurrent%2520Release%2F&ts=1400494576&use_mirror=softlayer-ams"
+STIX_URL="http://downloads.sourceforge.net/project/stixfonts/Current%20Release/STIXv2.0.0.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fstixfonts%2Ffiles%2FCurrent%2520Release%2F&ts=1400494576&use_mirror=softlayer-ams"
 
 STIX/stix:
 	 # Get the package from fontforge
@@ -272,18 +272,13 @@ STIX/stix:
 	mkdir $@; @UNZIP@ -j STIX/STIX.zip -d $@;
 
 STIX: STIX/stix
-	 # Copy the fonts and doc and convert into WOFF.
-	 # Rename the doc do avoid issues with space inside names.
-	cp $</*.otf $@
-	cp $</"STIX Font 1.1.1 Release Documentation.pdf" $@/documentation.pdf
-	cp $</"STIX Font License 2010.pdf" $@/license.pdf
-	cd $@; \
-	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
+	 # Copy the fonts and license.
+	cp $</*.woff $</*.woff2 $</STIX_2.0.0_license.pdf $@
 	 # Generate CheckFont logs
-	@PYTHON@ CheckFont.py $@/STIXMath-Regular.woff \
+	@PYTHON@ CheckFont.py $@/STIX2Math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
-	@PYTHON@ GenerateHTMLTest.py $@ STIXMath-Regular.woff
+	@PYTHON@ GenerateHTMLTest.py $@ STIX2Math.woff
 
 # XITS
 
