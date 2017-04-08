@@ -1,0 +1,17 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* Latin Modern Math. */
+@font-face {
+    font-family: Latin Modern Math;
+    src: local('Latin Modern Math'), local('LatinModernMath-Regular'),
+    src: url('fonts/LatinModern/latinmodern-math.woff2');
+}
+
+/* STIX Two. */
+@font-face {
+    font-family: STIX Two Math;
+    src: local('STIX Two Math'), local('STIXTwoMath'),
+    src: url('fonts/STIX/STIX2Math.woff2');
+}

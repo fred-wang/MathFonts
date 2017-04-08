@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "MathML Fonts",
+  "version": "3.0",
+  "description": "Fonts for Mozilla's MathML engine.",
+  "author": "Frédéric Wang",
+  "homepage_url": "https://github.com/fred-wang/MathFonts",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "css": ["mathfonts.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    "fonts/LatinModern/latinmodern-math.woff2",
+    "fonts/STIX/STIX2Math.woff2"
+  ]
+}
