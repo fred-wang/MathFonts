@@ -299,6 +299,17 @@ XITS: XITS/xits
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ xits-math.woff
 
+webextension-mathml-fonts.zip: LatinModern/latinmodern-math.woff2 \
+	LatinModern/GUST-FONT-LICENSE.txt \
+	LatinModern/MANIFEST-Latin-Modern-Math.txt \
+	STIX/STIX_2.0.0_license.pdf STIX/STIX2Math.woff2
+# Package the Web Extension.
+	mkdir -p webextension/fonts/LatinModern webextension/fonts/STIX
+	for f in $^; do cp $$f webextension/fonts/$$f; done
+	cd webextension; @ZIP@ -r ../$@ *
+
+extension: webextension-mathml-fonts.zip
+
 # Clean up
 clean:
 	rm -rf Asana/*.zip Asana/Asana-Math;
@@ -309,10 +320,11 @@ clean:
 	rm -rf STIX/*.zip STIX/stix;
 	rm -rf TeXGyre*/*.zip TeXGyre*/texgyre*;
 	rm -rf XITS/*.zip XITS/xits;
+	rm -rf webextension/fonts webextension-mathml-fonts.zip
 
 distclean: clean
 	rm -rf autom4te.cache config.log config.status Makefile;
-	TOREMOVE=`ls */* | grep -v mathfonts.css`; \
+	TOREMOVE=`ls */* | grep -v mathfonts.css | grep -v webextension`; \
 	if [ -n "$$TOREMOVE" ]; then \
 	rm -rf $$TOREMOVE; \
 	fi;
