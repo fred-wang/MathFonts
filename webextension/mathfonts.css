@@ -6,12 +6,12 @@
 @font-face {
     font-family: Latin Modern Math;
     src: local('Latin Modern Math'), local('LatinModernMath-Regular'),
-    src: url('fonts/LatinModern/latinmodern-math.woff2');
+         url('fonts/LatinModern/latinmodern-math.woff2');
 }
 
 /* STIX Two. */
 @font-face {
     font-family: STIX Two Math;
     src: local('STIX Two Math'), local('STIXTwoMath'),
-    src: url('fonts/STIX/STIX2Math.woff2');
+         url('fonts/STIX/STIX2Math.woff2');
 }
