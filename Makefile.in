@@ -290,14 +290,14 @@ XITS/xits:
 
 XITS: XITS/xits
 	 # Copy the fonts and doc and convert them into WOFF
-	cp $</FONTLOG.txt $</OFL*.txt $</README $</*.otf $@;
+	cp $</FONTLOG.txt $</OFL*.txt $</README.txt $</*.otf $@;
 	cd $@; \
 	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
-	@PYTHON@ CheckFont.py $@/xits-math.woff \
+	@PYTHON@ CheckFont.py $@/XITSMath-Regular.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
-	@PYTHON@ GenerateHTMLTest.py $@ xits-math.woff
+	@PYTHON@ GenerateHTMLTest.py $@ XITSMath-Regular.woff
 
 webextension-mathml-fonts.zip: LatinModern/latinmodern-math.woff2 \
 	LatinModern/GUST-FONT-LICENSE.txt \
