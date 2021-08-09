@@ -3,30 +3,9 @@
   <head>
     <title>Mathematical OpenType Fonts</title>
     <meta charset="utf-8"/>
-    <link id="MathLink" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript">
-      function updateMathFont()
-      {
-        var link = document.getElementById("MathLink");
-        var mathfont = document.getElementById("MathFont").value;
-
-        if (mathfont == "Default")
-          link.removeAttribute("href");
-        else
-          link.setAttribute("href", mathfont + "/mathfonts.css");
-      }
-
-      function updateCheckBox()
-      {
-        var checkbox = document.getElementById("CheckBox").checked;
-        if (checkbox)
-          document.body.removeAttribute("class");
-        else
-          document.body.setAttribute("class", "htmlmathparagraph");
-      }
-    </script>
+    <script type="text/javascript" src="font-selection.js"></script>
    </head>
-  <body class="htmlmathparagraph" onload="updateMathFont()">
+  <body>
 
     <h1>Mathematical OpenType Fonts</h1>
 
@@ -37,24 +16,9 @@
     <h2 id="testcase_general">General Testcase</h2>
 
     <p>Render this page with
-      <select id="MathFont" onchange="updateMathFont()">
-        <option value="Default">Default fonts (local only)</option>
-        <option value="Asana">Asana</option>
-        <option value="Cambria">Cambria (local only)</option>
-        <option value="DejaVu">DejaVu</option>
-        <option value="LatinModern">Latin Modern</option>
-        <option value="Libertinus">Libertinus</option>
-        <option value="LucidaBright">Lucida Bright (local only)</option>
-        <option value="Minion">Minion (local only)</option>
-        <option value="STIX">STIX</option>
-        <option value="TeXGyreBonum">TeX Gyre Bonum</option>
-        <option value="TeXGyrePagella">TeX Gyre Pagella</option>
-        <option value="TeXGyreSchola">TeX Gyre Schola</option>
-        <option value="TeXGyreTermes">TeX Gyre Termes</option>
-        <option value="XITS">XITS</option>
-    </select> |
+      <select class="mathfont"></select> |
       Only apply to MathML
-      <input id="CheckBox" type="checkbox" onchange="updateCheckBox()"/> |
+      <input id="CheckBox" type="checkbox" class="mathmlonly"/> |
       <a href="https://github.com/fred-wang/MathFonts">Back to GitHub</a>
     </p>
 
