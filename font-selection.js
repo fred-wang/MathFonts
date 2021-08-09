@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 mathfont_link.removeAttribute("href");
             else
                 mathfont_link.setAttribute("href",
-                                           `/${mathfont}/mathfonts.css`);
+                                           `/MathFonts/${mathfont}/mathfonts.css`);
         }
         for (let value in mathfont_list) {
             let option = document.createElement("option");
