@@ -264,7 +264,7 @@ TeXGyreTermes: TeXGyreTermes/texgyretermes
 
 # STIX
 
-STIX_URL="http://downloads.sourceforge.net/project/stixfonts/Current%20Release/STIXv2.0.0.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fstixfonts%2Ffiles%2FCurrent%2520Release%2F&ts=1400494576&use_mirror=softlayer-ams"
+STIX_URL="https://github.com/stipub/stixfonts/blob/master/zipfiles/STIX2_13-all.zip?raw=true"
 
 STIX/stix:
 	 # Get the package from fontforge
@@ -272,13 +272,18 @@ STIX/stix:
 	mkdir $@; @UNZIP@ -j STIX/STIX.zip -d $@;
 
 STIX: STIX/stix
-	 # Copy the fonts and license.
-	cp $</*.woff $</*.woff2 $</STIX_2.0.0_license.pdf $@
+	 # Copy the fonts
+	 # TODO: copy license.
+	cp $</STIXTwoText-Regular.otf $</STIXTwoText-Bold.otf $</STIXTwoText-Italic.otf $</STIXTwoText-BoldItalic.otf $</STIXTwoMath-Regular.otf $@
+	 # TODO: don't bother compressing woff2, just keep upstream version.
+	cd $@; \
+	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf *.woff2
+	cp $</STIXTwoText-Regular.woff2 $</STIXTwoText-Bold.woff2 $</STIXTwoText-Italic.woff2 $</STIXTwoText-BoldItalic.woff2 $</STIXTwoMath-Regular.woff2 $@
 	 # Generate CheckFont logs
-	@PYTHON@ CheckFont.py $@/STIX2Math.woff \
+	@PYTHON@ CheckFont.py $@/STIXTwoMath-Regular.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
-	@PYTHON@ GenerateHTMLTest.py $@ STIX2Math.woff
+	@PYTHON@ GenerateHTMLTest.py $@ STIXTwoMath-Regular.woff
 
 # XITS
 

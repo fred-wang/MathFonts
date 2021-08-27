@@ -70,7 +70,7 @@ def isLargeOp(aCodePoint):
     return i != len(kLargeOperators) and kLargeOperators[i] == aCodePoint
 
 def unicodeName(aCodePoint):
-    return unicodedata.name(unichr(aCodePoint), "UNKNOWN CHARACTER NAME")
+    return unicodedata.name(chr(aCodePoint), "UNKNOWN CHARACTER NAME")
 
 def printCodePoint(aTestFile, aCodePoint):
     print("<a href=\"https://duckduckgo.com/?q=U%%2B%06X\">U+%06X</a>" %
@@ -213,8 +213,8 @@ U+%06X" % glyph.unicode, file=sys.stderr)
 
         size = kStartSize
         for i in range(1, kNumberOfSizes):
-            blue = (kNumberOfSizes - i) * 256 / kNumberOfSizes
-            red = i * 256 / kNumberOfSizes
+            blue = (kNumberOfSizes - i) * 256 // kNumberOfSizes
+            red = i * 256 // kNumberOfSizes
             if isVertical:
                 print("<math><mrow><mspace height=\"%fem\" depth=\"%fem\" width=\"1px\" mathbackground=\"#%02X00%02X\"/><mo symmetric=\"false\" mathcolor=\"#%02X00%02X\" stretchy=\"true\">&#x%X;</mo></mrow></math>" % (size/2, size/2, red, blue, red, blue, glyph.unicode), file=aTestFile)
             else:

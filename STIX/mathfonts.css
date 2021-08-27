@@ -14,21 +14,21 @@ http://downloads.sourceforge.net/project/stixfonts/
 @font-face {
     font-family: STIX Two Text;
     src: local('STIXTwoText'),
-         url('STIX2Text-Regular.woff2'),
-         url('STIX2Text-Regular.woff');
+         url('STIXTwoText-Regular.woff2'),
+         url('STIXTwoText-Regular.woff');
 }
 @font-face {
     font-family: STIX Two Text;
     src: local('STIXTwoText-Bold'),
-         url('STIX2Text-Bold.woff2'),
-         url('STIX2Text-Bold.woff');
+         url('STIXTwoText-Bold.woff2'),
+         url('STIXTwoText-Bold.woff');
     font-weight: bold;
 }
 @font-face {
     font-family: STIX Two Text;
     src: local('STIXTwoText-Italic'),
-         url('STIX2Text-Italic.woff2'),
-         url('STIX2Text-Italic.woff');
+         url('STIXTwoText-Italic.woff2'),
+         url('STIXTwoText-Italic.woff');
     font-style: italic;
 }
 @font-face {
@@ -41,10 +41,9 @@ http://downloads.sourceforge.net/project/stixfonts/
 }
 @font-face {
     font-family: STIX Two Math;
-    src: local('STIX Two Math'),
-         local('STIXTwoMath'),
-         url('STIX2Math.woff2'),
-         url('STIX2Math.woff');
+    src: local('STIXTwoMath-Regular'),
+         url('STIXTwoMath-Regular.woff2'),
+         url('STIXTwoMath-Regular.woff');
 }
 
 .htmlmathparagraph, m|mtext {
