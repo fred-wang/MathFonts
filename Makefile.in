@@ -5,13 +5,13 @@
 COMPRESS=@PYTHON@ ../compress-font.py
 
 # Build all the open source fonts
-all: Asana DejaVu LatinModern Libertinus STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana DejaVu FiraMath LatinModern Libertinus STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
 # FIXME: This is no longer true with woff2 compression.
 # See https://github.com/fred-wang/MathFonts/issues/5
-.PHONY: clean distclean Asana DejaVu LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana DejaVu FiraMath LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -74,6 +74,29 @@ DejaVu: DejaVu/dejavu-fonts-ttf
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ DejaVuMathTeXGyre.woff
+
+# Fira Math
+
+FIRAMATH_VERSION=0.3.4
+FIRAMATH_URL=https://github.com/firamath/firamath/releases/download/v$(FIRAMATH_VERSION)/FiraMath-Regular.otf
+FIRAMATH_GITHUB=https://raw.githubusercontent.com/firamath/firamath/main/
+
+FiraMath/firamath:
+	 # Get the package
+	mkdir -p $@; cd $@; \
+	@WGET@ $(FIRAMATH_GITHUB)/LICENSE; \
+	@WGET@ $(FIRAMATH_GITHUB)/README.md; \
+	@WGET@ $(FIRAMATH_URL)
+
+FiraMath: FiraMath/firamath
+	 # Copy the fonts and doc and convert into WOFF
+	cp $</LICENSE $/README.md $</*.otf $@
+	cd $@; $(COMPRESS) *.otf; rm -f *.otf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/FiraMath-Regular.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+	 # Generate the testcase
+	@PYTHON@ GenerateHTMLTest.py $@ FiraMath-Regular.woff
 
 # Latin Modern
 
@@ -319,6 +342,7 @@ extension: webextension-mathml-fonts.zip
 clean:
 	rm -rf Asana/*.zip Asana/Asana-Math;
 	rm -rf DejaVu/*.zip DejaVu/dejavu-fonts-ttf;
+	rm -rf FiraMath/firamath;
 	rm -rf LatinModern/*.zip LatinModern/latinmodern;
 	rm -rf Libertinus/*.zip Libertinus/libertinus;
 	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;

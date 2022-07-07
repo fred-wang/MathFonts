@@ -3,6 +3,7 @@ let mathfont_list = {
     "Asana": "Asana",
     "Cambria": "Cambria (local only)",
     "DejaVu": "DejaVu",
+    "FiraMath": "FiraMath",
     "LatinModern": "Latin Modern",
     "Libertinus": "Libertinus",
     "LucidaBright": "Lucida Bright (local only)",
