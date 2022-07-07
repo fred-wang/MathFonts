@@ -5,13 +5,13 @@
 COMPRESS=@PYTHON@ ../compress-font.py
 
 # Build all the open source fonts
-all: Asana DejaVu FiraMath LatinModern Libertinus STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana DejaVu FiraMath GFS_NeoHellenic LatinModern Libertinus STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
 # FIXME: This is no longer true with woff2 compression.
 # See https://github.com/fred-wang/MathFonts/issues/5
-.PHONY: clean distclean Asana DejaVu FiraMath LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana DejaVu FiraMath GFS_NeoHellenic LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -97,6 +97,35 @@ FiraMath: FiraMath/firamath
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ FiraMath-Regular.woff
+
+# GFS Neohellenic Math
+
+GFS_NEOHELLENIC_URL=https://greekfontsociety-gfs.gr/_assets/fonts/GFS_NeoHellenic.zip
+GFS_NEOHELLENICMATH_URL=https://greekfontsociety-gfs.gr/_assets/fonts/GFS_NeoHellenic_Math.zip
+
+GFS_NeoHellenic/gfs_neohellenic:
+	 # Get the GFS NeoHellenic font
+	cd GFS_NeoHellenic; @WGET@ $(GFS_NEOHELLENIC_URL); \
+	mkdir gfs_neohellenic; @UNZIP@ GFS_NeoHellenic.zip -d gfs_neohellenic;
+	 # Get the GFS NeoHellenic Math font
+	cd GFS_NeoHellenic; @WGET@ $(GFS_NEOHELLENICMATH_URL); \
+	@UNZIP@ -j GFS_NeoHellenic_Math.zip -d gfs_neohellenic;
+
+GFS_NeoHellenic: GFS_NeoHellenic/gfs_neohellenic
+	cp $</GFS_NeoHellenic/OFL-FAQ.txt $</GFS_NeoHellenic/OFL.txt $@
+	cp $</README $@
+	cp $</GFS_NeoHellenic/GFSNeohellenicBoldIt.otf \
+	   $</GFS_NeoHellenic/GFSNeohellenicBold.otf \
+	   $</GFS_NeoHellenic/GFSNeohellenicIt.otf \
+	   $</GFS_NeoHellenic/GFSNeohellenic.otf \
+	   $</GFSNeohellenicMath.otf $@
+	cd $@; \
+	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/GFSNeohellenicMath.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+	 # Generate the testcase
+	@PYTHON@ GenerateHTMLTest.py $@ GFSNeohellenicMath.woff
 
 # Latin Modern
 
@@ -343,6 +372,7 @@ clean:
 	rm -rf Asana/*.zip Asana/Asana-Math;
 	rm -rf DejaVu/*.zip DejaVu/dejavu-fonts-ttf;
 	rm -rf FiraMath/firamath;
+	rm -rf GFS_NeoHellenic/gfs_neohellenic;
 	rm -rf LatinModern/*.zip LatinModern/latinmodern;
 	rm -rf Libertinus/*.zip Libertinus/libertinus;
 	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;

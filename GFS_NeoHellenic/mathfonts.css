@@ -1,0 +1,50 @@
+/*
+The GFS Neohellenic fonts are released under the SIL Open Font License. See the
+files in this directory for details.
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+
+@font-face {
+    font-family: GFS Neohellenic;
+    src: local('GFSNeohellenic-Regular'),
+         url('GFSNeohellenic.woff2'),
+         url('GFSNeohellenic.woff');
+}
+@font-face {
+    font-family: GFS Neohellenic;
+    src: local('GFSNeohellenic-Bold'),
+         url('GFSNeohellenic-Bold.woff2'),
+         url('GFSNeohellenic-Bold.woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: GFS Neohellenic;
+    src: local('GFSNeohellenic-Italic'),
+         url('GFSNeohellenic-It.woff2'),
+         url('GFSNeohellenic-It.woff');
+    font-style: italic;
+}
+@font-face {
+    font-family: GFS Neohellenic;
+    src: local('GFSNeohellenic-BoldItalic'),
+         url('GFSNeohellenic-BoldIt.woff2'),
+         url('GFSNeohellenic-BoldIt.woff');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: GFS Neohellenic Math;
+    src: local('GFSNeohellenicMath'),
+         url('GFSNeohellenicMath.woff2'),
+         url('GFSNeohellenicMath.woff');
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: GFS Neohellenic;
+}
+m|math {
+    font-family: GFS Neohellenic Math;
+}
