@@ -5,13 +5,13 @@
 COMPRESS=@PYTHON@ ../compress-font.py
 
 # Build all the open source fonts
-all: Asana DejaVu FiraMath GFS_NeoHellenic LatinModern Libertinus STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern Libertinus STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
 # FIXME: This is no longer true with woff2 compression.
 # See https://github.com/fred-wang/MathFonts/issues/5
-.PHONY: clean distclean Asana DejaVu FiraMath GFS_NeoHellenic LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -91,12 +91,41 @@ FiraMath/firamath:
 FiraMath: FiraMath/firamath
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</LICENSE $/README.md $</*.otf $@
-	cd $@; $(COMPRESS) *.otf; rm -f *.otf
+	cd $@; \
+	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/FiraMath-Regular.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ FiraMath-Regular.woff
+
+# Garamond
+
+GARAMOND_URL=https://bitbucket.org/georgd/eb-garamond/downloads/EBGaramond-0.016.zip
+GARAMONDMATH_URL=https://raw.githubusercontent.com/YuanshengZhao/Garamond-Math/master/
+
+Garamond/garamond:
+	 # Get the Garamond font
+	mkdir -p $@; \
+	cd Garamond; @WGET@ $(GARAMOND_URL) -O garamond.zip; \
+	@UNZIP@ -j garamond.zip -d garamond;
+	 # Get the Garamond Math font
+	cd $@; @WGET@ $(GARAMONDMATH_URL)/Garamond-Math.otf; \
+	@WGET@ $(GARAMONDMATH_URL)/LICENSE $(GARAMONDMATH_URL)/README.md;
+
+Garamond: Garamond/garamond
+	 # Copy the fonts and doc and convert into WOFF
+	cp $</LICENSE $</README.md $@
+	cp $</EBGaramond12-Regular.otf \
+	   $</EBGaramond12-Italic.otf \
+	   $</Garamond-Math.otf $@
+	cd $@; \
+	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/Garamond-Math.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+	 # Generate the testcase
+	@PYTHON@ GenerateHTMLTest.py $@ Garamond-Math.woff
 
 # GFS Neohellenic Math
 
@@ -106,18 +135,19 @@ GFS_NEOHELLENICMATH_URL=https://greekfontsociety-gfs.gr/_assets/fonts/GFS_NeoHel
 GFS_NeoHellenic/gfs_neohellenic:
 	 # Get the GFS NeoHellenic font
 	cd GFS_NeoHellenic; @WGET@ $(GFS_NEOHELLENIC_URL); \
-	mkdir gfs_neohellenic; @UNZIP@ GFS_NeoHellenic.zip -d gfs_neohellenic;
+	mkdir gfs_neohellenic; \
+	@UNZIP@ -j GFS_NeoHellenic.zip -d gfs_neohellenic;
 	 # Get the GFS NeoHellenic Math font
 	cd GFS_NeoHellenic; @WGET@ $(GFS_NEOHELLENICMATH_URL); \
 	@UNZIP@ -j GFS_NeoHellenic_Math.zip -d gfs_neohellenic;
 
 GFS_NeoHellenic: GFS_NeoHellenic/gfs_neohellenic
-	cp $</GFS_NeoHellenic/OFL-FAQ.txt $</GFS_NeoHellenic/OFL.txt $@
+	cp $</OFL-FAQ.txt $</OFL.txt $@
 	cp $</README $@
-	cp $</GFS_NeoHellenic/GFSNeohellenicBoldIt.otf \
-	   $</GFS_NeoHellenic/GFSNeohellenicBold.otf \
-	   $</GFS_NeoHellenic/GFSNeohellenicIt.otf \
-	   $</GFS_NeoHellenic/GFSNeohellenic.otf \
+	cp $</GFSNeohellenicBoldIt.otf \
+	   $</GFSNeohellenicBold.otf \
+	   $</GFSNeohellenicIt.otf \
+	   $</GFSNeohellenic.otf \
 	   $</GFSNeohellenicMath.otf $@
 	cd $@; \
 	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
@@ -372,6 +402,7 @@ clean:
 	rm -rf Asana/*.zip Asana/Asana-Math;
 	rm -rf DejaVu/*.zip DejaVu/dejavu-fonts-ttf;
 	rm -rf FiraMath/firamath;
+	rm -rf Garamond/garamond;
 	rm -rf GFS_NeoHellenic/gfs_neohellenic;
 	rm -rf LatinModern/*.zip LatinModern/latinmodern;
 	rm -rf Libertinus/*.zip Libertinus/libertinus;
@@ -383,7 +414,7 @@ clean:
 
 distclean: clean
 	rm -rf autom4te.cache config.log config.status Makefile;
-	TOREMOVE=`ls */* | grep -v mathfonts.css | grep -v webextension`; \
+	TOREMOVE=`ls */* | grep -v mathfonts.css | grep -v webextension | grep -v mozilla_mathml_test`; \
 	if [ -n "$$TOREMOVE" ]; then \
 	rm -rf $$TOREMOVE; \
 	fi;
