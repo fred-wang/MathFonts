@@ -1,15 +1,4 @@
-*/*.TXT
-*/*.pdf
-*/*.txt
-*/*.woff
-*/*.woff2
 */*.zip
-*/AUTHORS
-*/LICENSE
-*/NEWS
-*/README
-*/README.md
-*/index.html
 Asana/Asana-Math
 DejaVu/dejavu-fonts-ttf
 FiraMath/firamath/
