@@ -38,11 +38,6 @@ are provided to help selecting the corresponding glyphs, but these are not
 implemented/enabled in all browsers yet.
 In general, it is recommended to try the most recent versions of browsers.
 
-The following open source math fonts have issues and are not provided yet:
-- The Neo Euler font has design issues and has never been released.
-- The development version of GNU Free fonts contains an OpenType MATH table
-  but this is not available in the release yet.
-
 Using Math fonts on your Web site
 ---------------------------------
 
