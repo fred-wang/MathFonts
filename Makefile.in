@@ -199,11 +199,11 @@ TeXGyreBonum: TeXGyreBonum/texgyrebonum
 	@PYTHON@ GenerateHTMLTest.py $@ texgyrebonum-math.woff
 
 # TeXGyrePagella
-TEXGYREPAGELLA_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/qpl2.004otf.zip"
+TEXGYREPAGELLA_URL="https://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/qpl2_501otf.zip"
 TEXGYREPAGELLA_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/qpl-hist.txt/at_download/file"
-TEXGYREPAGELLA_MANIFEST_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/manifest-tex-gyre-pagella.txt/at_download/file"
-TEXGYREPAGELLA_README_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/readme-tex-gyre-pagella.txt/at_download/file"
-TEXGYREPAGELLAMATH_URL="http://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyrepagella-math-1632.zip"
+TEXGYREPAGELLA_MANIFEST_URL="https://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/MANIFEST-TeX-Gyre-Pagella.txt/at_download/file"
+TEXGYREPAGELLA_README_URL="https://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/README-TeX-Gyre-Pagella.txt/at_download/file"
+TEXGYREPAGELLAMATH_URL="https://www.gust.org.pl/projects/e-foundry/tg-math/download/texgyrepagella-math-1632.zip"
 
 TeXGyrePagella/texgyrepagella:
 	 # Get the TeX Gyre Pagella from GUST
