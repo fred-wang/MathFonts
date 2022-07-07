@@ -1,0 +1,200 @@
+###########################################################################
+############          The TeX Gyre Collection of Fonts         ############
+############                 The font Schola                   ############
+###########################################################################
+
+Font: TeX Gyre Schola
+Authors: Bogus\l{}aw Jackowski and Janusz M. Nowacki
+Version: 2.005
+Date: 30 X 2009
+Downloads: http://www.gust.org.pl/projects/e-foundry/tex-gyre/schola
+
+Copyright 2007--2009 for TeX Gyre extensions by B. Jackowski
+and J.M. Nowacki (on behalf of TeX Users Groups). Vietnamese
+characters were added by Han The Thanh.
+
+This work can be freely used and distributed under
+the GUST Font License (GFL -- see GUST-FONT-LICENSE.txt)
+which is actually an instance of the LaTeX Project Public License
+(LPPL -- see http://www.latex-project.org/lppl.txt ).
+
+This work has the maintenance status "maintained". The Current Maintainer
+of this work is Bogus\l{}aw Jackowski and Janusz M. Nowacki.
+
+This work consists of the files listed in this file.
+
+Below, in three sections required by the GUST Font License, 
+font names and file names specific for the TeX Gyre Schola
+Family of Fonts are listed.  
+
+NOTE: the names of the directories are not subject to the renaming 
+restrictions.
+
+1. Fonts whose names should be changed in derived works as requested
+   by clause 1 of GUST-FONT-LICENSE.txt
+
+   1.1 PostScript names
+       1.1.1 PostScript family names
+             TeXGyreSchola
+
+       1.1.2 PostScript font and full names
+             TeXGyreSchola-Regular
+             TeXGyreSchola-Italic
+             TeXGyreSchola-Bold
+             TeXGyreSchola-BoldItalic
+
+   1.2 PFM names
+       TeXGyreSchola
+
+   1.3 OTF full menu names
+       TeX Gyre Schola Regular
+       TeX Gyre Schola Italic
+       TeX Gyre Schola Bold
+       TeX Gyre Schola Bold Italic
+
+   1.4 OTF ATM menu names
+       TeXGyreSchola Regular
+       TeXGyreSchola Italic
+       TeXGyreSchola Bold
+       TeXGyreSchola BoldItalic
+
+2. Files whose names should be changed in derived works as requested
+   by clause 1 of GUST-FONT-LICENSE.txt
+
+   2.1 fonts/afm/public/tex-gyre/qcsb.afm
+       fonts/afm/public/tex-gyre/qcsbi.afm
+       fonts/afm/public/tex-gyre/qcsr.afm
+       fonts/afm/public/tex-gyre/qcsri.afm
+       fonts/map/dvips/tex-gyre/qcs.map
+       fonts/map/dvips/tex-gyre/qcs-cs.map
+       fonts/map/dvips/tex-gyre/qcs-ec.map
+       fonts/map/dvips/tex-gyre/qcs-l7x.map
+       fonts/map/dvips/tex-gyre/qcs-qx.map
+       fonts/map/dvips/tex-gyre/qcs-rm.map
+       fonts/map/dvips/tex-gyre/qcs-t5.map
+       fonts/map/dvips/tex-gyre/qcs-texnansi.map
+       fonts/map/dvips/tex-gyre/qcs-ts1.map
+       fonts/enc/dvips/tex-gyre/q-cs.enc
+       fonts/enc/dvips/tex-gyre/q-cs-sc.enc
+       fonts/enc/dvips/tex-gyre/q-ec.enc
+       fonts/enc/dvips/tex-gyre/q-ec-sc.enc
+       fonts/enc/dvips/tex-gyre/q-l7x.enc
+       fonts/enc/dvips/tex-gyre/q-l7x-sc.enc
+       fonts/enc/dvips/tex-gyre/q-qx.enc
+       fonts/enc/dvips/tex-gyre/q-qx-sc.enc
+       fonts/enc/dvips/tex-gyre/q-rm.enc
+       fonts/enc/dvips/tex-gyre/q-rm-sc.enc
+       fonts/enc/dvips/tex-gyre/q-t5.enc
+       fonts/enc/dvips/tex-gyre/q-t5-sc.enc
+       fonts/enc/dvips/tex-gyre/q-texnansi.enc
+       fonts/enc/dvips/tex-gyre/q-texnansi-sc.enc
+       fonts/enc/dvips/tex-gyre/q-ts1.enc
+       fonts/opentype/public/tex-gyre/texgyreSchola-bold.otf
+       fonts/opentype/public/tex-gyre/texgyreSchola-bolditalic.otf
+       fonts/opentype/public/tex-gyre/texgyreSchola-regular.otf
+       fonts/opentype/public/tex-gyre/texgyreSchola-italic.otf
+       fonts/tfm/public/tex-gyre/cs-qcsb.tfm
+       fonts/tfm/public/tex-gyre/cs-qcsbi.tfm
+       fonts/tfm/public/tex-gyre/cs-qcsr.tfm
+       fonts/tfm/public/tex-gyre/cs-qcsri.tfm
+       fonts/tfm/public/tex-gyre/cs-qcsb-sc.tfm
+       fonts/tfm/public/tex-gyre/cs-qcsbi-sc.tfm
+       fonts/tfm/public/tex-gyre/cs-qcsr-sc.tfm
+       fonts/tfm/public/tex-gyre/cs-qcsri-sc.tfm
+       fonts/tfm/public/tex-gyre/ec-qcsb.tfm
+       fonts/tfm/public/tex-gyre/ec-qcsbi.tfm
+       fonts/tfm/public/tex-gyre/ec-qcsr.tfm
+       fonts/tfm/public/tex-gyre/ec-qcsri.tfm
+       fonts/tfm/public/tex-gyre/ec-qcsb-sc.tfm
+       fonts/tfm/public/tex-gyre/ec-qcsbi-sc.tfm
+       fonts/tfm/public/tex-gyre/ec-qcsr-sc.tfm
+       fonts/tfm/public/tex-gyre/ec-qcsri-sc.tfm
+       fonts/tfm/public/tex-gyre/el-qcsb.tfm
+       fonts/tfm/public/tex-gyre/el-qcsbi.tfm
+       fonts/tfm/public/tex-gyre/el-qcsr.tfm
+       fonts/tfm/public/tex-gyre/el-qcsri.tfm
+       fonts/tfm/public/tex-gyre/el-qcsb-sc.tfm
+       fonts/tfm/public/tex-gyre/el-qcsbi-sc.tfm
+       fonts/tfm/public/tex-gyre/el-qcsr-sc.tfm
+       fonts/tfm/public/tex-gyre/el-qcsri-sc.tfm
+       fonts/tfm/public/tex-gyre/l7x-qcsb.tfm
+       fonts/tfm/public/tex-gyre/l7x-qcsbi.tfm
+       fonts/tfm/public/tex-gyre/l7x-qcsr.tfm
+       fonts/tfm/public/tex-gyre/l7x-qcsri.tfm
+       fonts/tfm/public/tex-gyre/l7x-qcsb-sc.tfm
+       fonts/tfm/public/tex-gyre/l7x-qcsbi-sc.tfm
+       fonts/tfm/public/tex-gyre/l7x-qcsr-sc.tfm
+       fonts/tfm/public/tex-gyre/l7x-qcsri-sc.tfm
+       fonts/tfm/public/tex-gyre/qx-qcsb.tfm
+       fonts/tfm/public/tex-gyre/qx-qcsbi.tfm
+       fonts/tfm/public/tex-gyre/qx-qcsr.tfm
+       fonts/tfm/public/tex-gyre/qx-qcsri.tfm
+       fonts/tfm/public/tex-gyre/qx-qcsb-sc.tfm
+       fonts/tfm/public/tex-gyre/qx-qcsbi-sc.tfm
+       fonts/tfm/public/tex-gyre/qx-qcsr-sc.tfm
+       fonts/tfm/public/tex-gyre/qx-qcsri-sc.tfm
+       fonts/tfm/public/tex-gyre/rm-qcsb.tfm
+       fonts/tfm/public/tex-gyre/rm-qcsbi.tfm
+       fonts/tfm/public/tex-gyre/rm-qcsr.tfm
+       fonts/tfm/public/tex-gyre/rm-qcsri.tfm
+       fonts/tfm/public/tex-gyre/rm-qcsb-sc.tfm
+       fonts/tfm/public/tex-gyre/rm-qcsbi-sc.tfm
+       fonts/tfm/public/tex-gyre/rm-qcsr-sc.tfm
+       fonts/tfm/public/tex-gyre/rm-qcsri-sc.tfm
+       fonts/tfm/public/tex-gyre/t5-qcsb.tfm
+       fonts/tfm/public/tex-gyre/t5-qcsbi.tfm
+       fonts/tfm/public/tex-gyre/t5-qcsr.tfm
+       fonts/tfm/public/tex-gyre/t5-qcsri.tfm
+       fonts/tfm/public/tex-gyre/t5-qcsb-sc.tfm
+       fonts/tfm/public/tex-gyre/t5-qcsbi-sc.tfm
+       fonts/tfm/public/tex-gyre/t5-qcsr-sc.tfm
+       fonts/tfm/public/tex-gyre/t5-qcsri-sc.tfm
+       fonts/tfm/public/tex-gyre/texnansi-qcsb.tfm
+       fonts/tfm/public/tex-gyre/texnansi-qcsbi.tfm
+       fonts/tfm/public/tex-gyre/texnansi-qcsr.tfm
+       fonts/tfm/public/tex-gyre/texnansi-qcsri.tfm
+       fonts/tfm/public/tex-gyre/texnansi-qcsb-sc.tfm
+       fonts/tfm/public/tex-gyre/texnansi-qcsbi-sc.tfm
+       fonts/tfm/public/tex-gyre/texnansi-qcsr-sc.tfm
+       fonts/tfm/public/tex-gyre/texnansi-qcsri-sc.tfm
+       fonts/tfm/public/tex-gyre/ts1-qcsb.tfm
+       fonts/tfm/public/tex-gyre/ts1-qcsbi.tfm
+       fonts/tfm/public/tex-gyre/ts1-qcsr.tfm
+       fonts/tfm/public/tex-gyre/ts1-qcsri.tfm
+       fonts/type1/public/tex-gyre/qcsb.pfb
+       fonts/type1/public/tex-gyre/qcsb.pfm
+       fonts/type1/public/tex-gyre/qcsbi.pfb
+       fonts/type1/public/tex-gyre/qcsbi.pfm
+       fonts/type1/public/tex-gyre/qcsr.pfb
+       fonts/type1/public/tex-gyre/qcsr.pfm
+       fonts/type1/public/tex-gyre/qcsri.pfb
+       fonts/type1/public/tex-gyre/qcsri.pfm
+
+   2.2 tex/latex/tex-gyre/il2qcs.fd
+       tex/latex/tex-gyre/l7xqcs.fd
+       tex/latex/tex-gyre/ly1qcs.fd
+       tex/latex/tex-gyre/ot1qcs.fd
+       tex/latex/tex-gyre/ot4qcs.fd
+       tex/latex/tex-gyre/qxqcs.fd
+       tex/latex/tex-gyre/t1qcs.fd
+       tex/latex/tex-gyre/t5qcs.fd
+       tex/latex/tex-gyre/tgschola.sty
+       tex/latex/tex-gyre/ts1qcs.fd
+   
+   2.3 doc/fonts/tex-gyre/MANIFEST-TeX-Gyre-Schola.txt
+       doc/fonts/tex-gyre/README-TeX-Gyre-Schola.txt
+       doc/fonts/tex-gyre/goadb999.nam
+       doc/fonts/tex-gyre/qcs-hist.txt
+       doc/fonts/tex-gyre/qcs-info.pdf
+       doc/fonts/tex-gyre/qcs-test.tex
+       doc/fonts/tex-gyre/qcs-test.pdf
+       doc/fonts/tex-gyre/qcsb.fea
+       doc/fonts/tex-gyre/qcsbi.fea
+       doc/fonts/tex-gyre/qcsr.fea
+       doc/fonts/tex-gyre/qcsri.fea
+
+3. Files whose names need not be changed in derived works as requested
+   by clause 1 of GUST-FONT-LICENSE.txt
+
+   doc/fonts/tex-gyre/GUST-FONT-LICENSE.txt
+

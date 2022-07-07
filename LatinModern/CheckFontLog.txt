@@ -1,0 +1,1459 @@
+Opening file LatinModern/latinmodern-math.woff... Done
+
+Testing Basic Latin Unicode Block... 
+Testing U+20... Done
+Testing U+21... Done
+Testing U+22... Done
+Testing U+23... Done
+Testing U+24... Done
+Testing U+25... Done
+Testing U+26... Done
+Testing U+27... Done
+Testing U+28... Done
+Testing U+29... Done
+Testing U+2A... Done
+Testing U+2B... Done
+Testing U+2C... Done
+Testing U+2D... Done
+Testing U+2E... Done
+Testing U+2F... Done
+Testing U+30... Done
+Testing U+31... Done
+Testing U+32... Done
+Testing U+33... Done
+Testing U+34... Done
+Testing U+35... Done
+Testing U+36... Done
+Testing U+37... Done
+Testing U+38... Done
+Testing U+39... Done
+Testing U+3A... Done
+Testing U+3B... Done
+Testing U+3C... Done
+Testing U+3D... Done
+Testing U+3E... Done
+Testing U+3F... Done
+Testing U+40... Done
+Testing U+41... Done
+Testing U+42... Done
+Testing U+43... Done
+Testing U+44... Done
+Testing U+45... Done
+Testing U+46... Done
+Testing U+47... Done
+Testing U+48... Done
+Testing U+49... Done
+Testing U+4A... Done
+Testing U+4B... Done
+Testing U+4C... Done
+Testing U+4D... Done
+Testing U+4E... Done
+Testing U+4F... Done
+Testing U+50... Done
+Testing U+51... Done
+Testing U+52... Done
+Testing U+53... Done
+Testing U+54... Done
+Testing U+55... Done
+Testing U+56... Done
+Testing U+57... Done
+Testing U+58... Done
+Testing U+59... Done
+Testing U+5A... Done
+Testing U+5B... Done
+Testing U+5C... Done
+Testing U+5D... Done
+Testing U+5E... Done
+Testing U+5F... Done
+Testing U+60... Done
+Testing U+61... Done
+Testing U+62... Done
+Testing U+63... Done
+Testing U+64... Done
+Testing U+65... Done
+Testing U+66... Done
+Testing U+67... Done
+Testing U+68... Done
+Testing U+69... Done
+Testing U+6A... Done
+Testing U+6B... Done
+Testing U+6C... Done
+Testing U+6D... Done
+Testing U+6E... Done
+Testing U+6F... Done
+Testing U+70... Done
+Testing U+71... Done
+Testing U+72... Done
+Testing U+73... Done
+Testing U+74... Done
+Testing U+75... Done
+Testing U+76... Done
+Testing U+77... Done
+Testing U+78... Done
+Testing U+79... Done
+Testing U+7A... Done
+Testing U+7B... Done
+Testing U+7C... Done
+Testing U+7D... Done
+Testing U+7E... Done
+
+Testing OS/2 version... Done
+Testing USE_TYPO_METRICS... Done
+
+Testing MathConstants table... Done
+
+Testing DisplayOperatorMinHeight... 
+Testing large operator U+220F... Done
+Testing large operator U+2210... Done
+Testing large operator U+2211... Done
+Testing large operator U+222B... Done
+Testing large operator U+222C... Done
+Testing large operator U+222D... Done
+Testing large operator U+222E... Done
+Testing large operator U+222F... Done
+Testing large operator U+2230... Done
+Testing large operator U+2231... Done
+Testing large operator U+2232... Done
+Testing large operator U+2233... Done
+Testing large operator U+22C0... Done
+Testing large operator U+22C1... Done
+Testing large operator U+22C2... Done
+Testing large operator U+22C3... Done
+Testing large operator U+2A00... Done
+Testing large operator U+2A01... Done
+Testing large operator U+2A02... Done
+Testing large operator U+2A03... Done
+Testing large operator U+2A04... Done
+Testing large operator U+2A05... Done
+Testing large operator U+2A06... Done
+Testing large operator U+2A09... Done
+Testing large operator U+2A0C... Done
+Testing large operator U+2A11... Done
+
+Testing AxisHeight... Done
+
+Testing FractionRuleThickness... Done
+
+Testing OverbarRuleThickness... Done
+
+Testing UnderbarRuleThickness... Done
+
+Testing RadicalDisplayStyleVerticalGap... Done
+
+Testing RadicalRuleThickness... Done
+
+Testing Unicode Constructions in the MathVariant table...
+Testing base glyph for U+0028... Done
+Testing components for U+0028... Done
+Testing base glyph for U+0029... Done
+Testing components for U+0029... Done
+Testing base glyph for U+005B... Done
+Testing components for U+005B... Done
+Testing base glyph for U+005D... Done
+Testing components for U+005D... Done
+Testing base glyph for U+007B... Done
+Testing components for U+007B... Done
+Testing base glyph for U+007C... Done
+Testing components for U+007C... Done
+Testing base glyph for U+007D... Done
+Testing components for U+007D... Done
+Testing base glyph for U+00AF... Done
+Testing components for U+00AF... Failed
+Setting components for operator U+00AF... Done
+Testing base glyph for U+203E... Failed
+Testing base glyph for U+005F... Done
+Testing components for U+005F... Failed
+Setting components for operator U+005F... Done
+Testing base glyph for U+003D... Done
+Testing components for U+003D... Done
+Testing base glyph for U+2016... Done
+Testing components for U+2016... Done
+Testing base glyph for U+2190... Done
+Testing variants for U+2190... Done
+Testing components for U+2190... Done
+Testing base glyph for U+2191... Done
+Testing components for U+2191... Done
+Testing base glyph for U+2192... Done
+Testing variants for U+2192... Done
+Testing components for U+2192... Done
+Testing base glyph for U+2193... Done
+Testing components for U+2193... Done
+Testing base glyph for U+2194... Done
+Testing variants for U+2194... Done
+Testing components for U+2194... Done
+Testing base glyph for U+2195... Done
+Testing components for U+2195... Done
+Testing base glyph for U+21A4... Done
+Testing variants for U+21A4... Done
+Testing components for U+21A4... Done
+Testing base glyph for U+21A6... Done
+Testing variants for U+21A6... Done
+Testing components for U+21A6... Done
+Testing base glyph for U+295A... Failed
+Testing base glyph for U+295B... Failed
+Testing base glyph for U+295E... Failed
+Testing base glyph for U+295F... Failed
+Testing base glyph for U+21C0... Done
+Testing components for U+21C0... Done
+Testing base glyph for U+21C1... Done
+Testing components for U+21C1... Done
+Testing base glyph for U+21BC... Done
+Testing components for U+21BC... Done
+Testing base glyph for U+21BD... Done
+Testing components for U+21BD... Done
+Testing base glyph for U+21D0... Done
+Testing variants for U+21D0... Done
+Testing base glyph for U+21D2... Done
+Testing variants for U+21D2... Done
+Testing base glyph for U+21D4... Done
+Testing variants for U+21D4... Done
+Testing base glyph for U+222B... Done
+Testing components for U+222B... Failed
+Setting components for operator U+222B... Failed
+Testing base glyph for U+2308... Done
+Testing components for U+2308... Done
+Testing base glyph for U+2309... Done
+Testing components for U+2309... Done
+Testing base glyph for U+230A... Done
+Testing components for U+230A... Done
+Testing base glyph for U+230B... Done
+Testing components for U+230B... Done
+Testing base glyph for U+23B0... Failed
+Testing base glyph for U+23B1... Failed
+Testing base glyph for U+27F5... Done
+Testing components for U+27F5... Failed
+Setting components for operator U+27F5... Failed
+Testing base glyph for U+27F6... Done
+Testing components for U+27F6... Failed
+Setting components for operator U+27F6... Failed
+Testing base glyph for U+27F7... Done
+Testing components for U+27F7... Failed
+Setting components for operator U+27F7... Failed
+Testing base glyph for U+294E... Failed
+Testing base glyph for U+2950... Failed
+
+Testing large operators in the MathVariant table...
+Testing base glyph for large operator U+220F... Done
+Testing variants for large operator U+220F... Done
+Testing base glyph for large operator U+2210... Done
+Testing variants for large operator U+2210... Done
+Testing base glyph for large operator U+2211... Done
+Testing variants for large operator U+2211... Done
+Testing base glyph for large operator U+222B... Done
+Testing variants for large operator U+222B... Done
+Testing base glyph for large operator U+222C... Done
+Testing variants for large operator U+222C... Done
+Testing base glyph for large operator U+222D... Done
+Testing variants for large operator U+222D... Done
+Testing base glyph for large operator U+222E... Done
+Testing variants for large operator U+222E... Done
+Testing base glyph for large operator U+222F... Done
+Testing variants for large operator U+222F... Done
+Testing base glyph for large operator U+2230... Done
+Testing variants for large operator U+2230... Done
+Testing base glyph for large operator U+2231... Done
+Testing variants for large operator U+2231... Done
+Testing base glyph for large operator U+2232... Done
+Testing variants for large operator U+2232... Done
+Testing base glyph for large operator U+2233... Done
+Testing variants for large operator U+2233... Done
+Testing base glyph for large operator U+22C0... Done
+Testing variants for large operator U+22C0... Done
+Testing base glyph for large operator U+22C1... Done
+Testing variants for large operator U+22C1... Done
+Testing base glyph for large operator U+22C2... Done
+Testing variants for large operator U+22C2... Done
+Testing base glyph for large operator U+22C3... Done
+Testing variants for large operator U+22C3... Done
+Testing base glyph for large operator U+2A00... Done
+Testing variants for large operator U+2A00... Done
+Testing base glyph for large operator U+2A01... Done
+Testing variants for large operator U+2A01... Done
+Testing base glyph for large operator U+2A02... Done
+Testing variants for large operator U+2A02... Done
+Testing base glyph for large operator U+2A03... Done
+Testing variants for large operator U+2A03... Done
+Testing base glyph for large operator U+2A04... Done
+Testing variants for large operator U+2A04... Done
+Testing base glyph for large operator U+2A05... Done
+Testing variants for large operator U+2A05... Done
+Testing base glyph for large operator U+2A06... Done
+Testing variants for large operator U+2A06... Done
+Testing base glyph for large operator U+2A07... Failed
+Testing base glyph for large operator U+2A08... Failed
+Testing base glyph for large operator U+2A09... Done
+Testing variants for large operator U+2A09... Failed
+Testing base glyph for large operator U+2A0A... Failed
+Testing base glyph for large operator U+2A0B... Failed
+Testing base glyph for large operator U+2A0C... Done
+Testing variants for large operator U+2A0C... Done
+Testing base glyph for large operator U+2A0D... Failed
+Testing base glyph for large operator U+2A0E... Failed
+Testing base glyph for large operator U+2A0F... Failed
+Testing base glyph for large operator U+2A10... Failed
+Testing base glyph for large operator U+2A11... Done
+Testing variants for large operator U+2A11... Done
+Testing base glyph for large operator U+2A12... Failed
+Testing base glyph for large operator U+2A13... Failed
+Testing base glyph for large operator U+2A14... Failed
+Testing base glyph for large operator U+2A15... Failed
+Testing base glyph for large operator U+2A16... Failed
+Testing base glyph for large operator U+2A17... Failed
+Testing base glyph for large operator U+2A18... Failed
+Testing base glyph for large operator U+2A19... Failed
+Testing base glyph for large operator U+2A1A... Failed
+Testing base glyph for large operator U+2A1B... Failed
+Testing base glyph for large operator U+2A1C... Failed
+Testing base glyph for large operator U+2AFC... Failed
+Testing base glyph for large operator U+2AFF... Failed
+
+Testing italic correction for integrals...
+Testing italic correction for operator U+222B...
+Testing italic correction for glyph 'integral'... Done
+Testing italic correction for glyph 'integral.v1'... Done
+Testing italic correction for operator U+222C...
+Testing italic correction for glyph 'uni222C'... Done
+Testing italic correction for glyph 'uni222C.v1'... Done
+Testing italic correction for operator U+222D...
+Testing italic correction for glyph 'uni222D'... Done
+Testing italic correction for glyph 'uni222D.v1'... Done
+Testing italic correction for operator U+222E...
+Testing italic correction for glyph 'contourintegral'... Done
+Testing italic correction for glyph 'contourintegral.v1'... Done
+Testing italic correction for operator U+222F...
+Testing italic correction for glyph 'uni222F'... Done
+Testing italic correction for glyph 'uni222F.v1'... Done
+Testing italic correction for operator U+2230...
+Testing italic correction for glyph 'uni2230'... Done
+Testing italic correction for glyph 'uni2230.v1'... Done
+Testing italic correction for operator U+2231...
+Testing italic correction for glyph 'uni2231'... Done
+Testing italic correction for glyph 'uni2231.v1'... Done
+Testing italic correction for operator U+2232...
+Testing italic correction for glyph 'uni2232'... Done
+Testing italic correction for glyph 'uni2232.v1'... Done
+Testing italic correction for operator U+2233...
+Testing italic correction for glyph 'uni2233'... Done
+Testing italic correction for glyph 'uni2233.v1'... Done
+Testing italic correction for operator U+2A0C...
+Testing italic correction for glyph 'uni2A0C'... Done
+Testing italic correction for glyph 'uni2A0C.v1'... Done
+Testing italic correction for operator U+2A11...
+Testing italic correction for glyph 'uni2A11'... Done
+Testing italic correction for glyph 'uni2A11.v1'... Done
+
+Testing Prescripted Operators / ssty tables...
+Testing ssty for U+2032... Done
+Testing ssty for U+2033... Done
+Testing ssty for U+2034... Done
+Testing ssty for U+2035... Done
+Testing ssty for U+2036... Done
+Testing ssty for U+2037... Done
+Testing ssty for U+2057... Done
+
+Testing bold mathvariants...
+Testing mathvariant U+1D400... Done
+Testing mathvariant U+1D401... Done
+Testing mathvariant U+1D402... Done
+Testing mathvariant U+1D403... Done
+Testing mathvariant U+1D404... Done
+Testing mathvariant U+1D405... Done
+Testing mathvariant U+1D406... Done
+Testing mathvariant U+1D407... Done
+Testing mathvariant U+1D408... Done
+Testing mathvariant U+1D409... Done
+Testing mathvariant U+1D40A... Done
+Testing mathvariant U+1D40B... Done
+Testing mathvariant U+1D40C... Done
+Testing mathvariant U+1D40D... Done
+Testing mathvariant U+1D40E... Done
+Testing mathvariant U+1D40F... Done
+Testing mathvariant U+1D410... Done
+Testing mathvariant U+1D411... Done
+Testing mathvariant U+1D412... Done
+Testing mathvariant U+1D413... Done
+Testing mathvariant U+1D414... Done
+Testing mathvariant U+1D415... Done
+Testing mathvariant U+1D416... Done
+Testing mathvariant U+1D417... Done
+Testing mathvariant U+1D418... Done
+Testing mathvariant U+1D419... Done
+Testing mathvariant U+1D41A... Done
+Testing mathvariant U+1D41B... Done
+Testing mathvariant U+1D41C... Done
+Testing mathvariant U+1D41D... Done
+Testing mathvariant U+1D41E... Done
+Testing mathvariant U+1D41F... Done
+Testing mathvariant U+1D420... Done
+Testing mathvariant U+1D421... Done
+Testing mathvariant U+1D422... Done
+Testing mathvariant U+1D423... Done
+Testing mathvariant U+1D424... Done
+Testing mathvariant U+1D425... Done
+Testing mathvariant U+1D426... Done
+Testing mathvariant U+1D427... Done
+Testing mathvariant U+1D428... Done
+Testing mathvariant U+1D429... Done
+Testing mathvariant U+1D42A... Done
+Testing mathvariant U+1D42B... Done
+Testing mathvariant U+1D42C... Done
+Testing mathvariant U+1D42D... Done
+Testing mathvariant U+1D42E... Done
+Testing mathvariant U+1D42F... Done
+Testing mathvariant U+1D430... Done
+Testing mathvariant U+1D431... Done
+Testing mathvariant U+1D432... Done
+Testing mathvariant U+1D433... Done
+Testing mathvariant U+1D6A8... Done
+Testing mathvariant U+1D6A9... Done
+Testing mathvariant U+1D6AA... Done
+Testing mathvariant U+1D6AB... Done
+Testing mathvariant U+1D6AC... Done
+Testing mathvariant U+1D6AD... Done
+Testing mathvariant U+1D6AE... Done
+Testing mathvariant U+1D6AF... Done
+Testing mathvariant U+1D6B0... Done
+Testing mathvariant U+1D6B1... Done
+Testing mathvariant U+1D6B2... Done
+Testing mathvariant U+1D6B3... Done
+Testing mathvariant U+1D6B4... Done
+Testing mathvariant U+1D6B5... Done
+Testing mathvariant U+1D6B6... Done
+Testing mathvariant U+1D6B7... Done
+Testing mathvariant U+1D6B8... Done
+Testing mathvariant U+1D6B9... Done
+Testing mathvariant U+1D6BA... Done
+Testing mathvariant U+1D6BB... Done
+Testing mathvariant U+1D6BC... Done
+Testing mathvariant U+1D6BD... Done
+Testing mathvariant U+1D6BE... Done
+Testing mathvariant U+1D6BF... Done
+Testing mathvariant U+1D6C0... Done
+Testing mathvariant U+1D6C1... Done
+Testing mathvariant U+1D6C2... Done
+Testing mathvariant U+1D6C3... Done
+Testing mathvariant U+1D6C4... Done
+Testing mathvariant U+1D6C5... Done
+Testing mathvariant U+1D6C6... Done
+Testing mathvariant U+1D6C7... Done
+Testing mathvariant U+1D6C8... Done
+Testing mathvariant U+1D6C9... Done
+Testing mathvariant U+1D6CA... Done
+Testing mathvariant U+1D6CB... Done
+Testing mathvariant U+1D6CC... Done
+Testing mathvariant U+1D6CD... Done
+Testing mathvariant U+1D6CE... Done
+Testing mathvariant U+1D6CF... Done
+Testing mathvariant U+1D6D0... Done
+Testing mathvariant U+1D6D1... Done
+Testing mathvariant U+1D6D2... Done
+Testing mathvariant U+1D6D3... Done
+Testing mathvariant U+1D6D4... Done
+Testing mathvariant U+1D6D5... Done
+Testing mathvariant U+1D6D6... Done
+Testing mathvariant U+1D6D7... Done
+Testing mathvariant U+1D6D8... Done
+Testing mathvariant U+1D6D9... Done
+Testing mathvariant U+1D6DA... Done
+Testing mathvariant U+1D6DB... Done
+Testing mathvariant U+1D6DC... Done
+Testing mathvariant U+1D6DD... Done
+Testing mathvariant U+1D6DE... Done
+Testing mathvariant U+1D6DF... Done
+Testing mathvariant U+1D6E0... Done
+Testing mathvariant U+1D6E1... Done
+Testing mathvariant U+1D7CA... Failed
+Testing mathvariant U+1D7CB... Failed
+Testing mathvariant U+1D7CE... Done
+Testing mathvariant U+1D7CF... Done
+Testing mathvariant U+1D7D0... Done
+Testing mathvariant U+1D7D1... Done
+Testing mathvariant U+1D7D2... Done
+Testing mathvariant U+1D7D3... Done
+Testing mathvariant U+1D7D4... Done
+Testing mathvariant U+1D7D5... Done
+Testing mathvariant U+1D7D6... Done
+Testing mathvariant U+1D7D7... Done
+
+Testing italic mathvariants...
+Testing mathvariant U+1D434... Done
+Testing mathvariant U+1D435... Done
+Testing mathvariant U+1D436... Done
+Testing mathvariant U+1D437... Done
+Testing mathvariant U+1D438... Done
+Testing mathvariant U+1D439... Done
+Testing mathvariant U+1D43A... Done
+Testing mathvariant U+1D43B... Done
+Testing mathvariant U+1D43C... Done
+Testing mathvariant U+1D43D... Done
+Testing mathvariant U+1D43E... Done
+Testing mathvariant U+1D43F... Done
+Testing mathvariant U+1D440... Done
+Testing mathvariant U+1D441... Done
+Testing mathvariant U+1D442... Done
+Testing mathvariant U+1D443... Done
+Testing mathvariant U+1D444... Done
+Testing mathvariant U+1D445... Done
+Testing mathvariant U+1D446... Done
+Testing mathvariant U+1D447... Done
+Testing mathvariant U+1D448... Done
+Testing mathvariant U+1D449... Done
+Testing mathvariant U+1D44A... Done
+Testing mathvariant U+1D44B... Done
+Testing mathvariant U+1D44C... Done
+Testing mathvariant U+1D44D... Done
+Testing mathvariant U+1D44E... Done
+Testing mathvariant U+1D44F... Done
+Testing mathvariant U+1D450... Done
+Testing mathvariant U+1D451... Done
+Testing mathvariant U+1D452... Done
+Testing mathvariant U+1D453... Done
+Testing mathvariant U+1D454... Done
+Testing mathvariant U+210E... Done
+Testing mathvariant U+1D456... Done
+Testing mathvariant U+1D457... Done
+Testing mathvariant U+1D458... Done
+Testing mathvariant U+1D459... Done
+Testing mathvariant U+1D45A... Done
+Testing mathvariant U+1D45B... Done
+Testing mathvariant U+1D45C... Done
+Testing mathvariant U+1D45D... Done
+Testing mathvariant U+1D45E... Done
+Testing mathvariant U+1D45F... Done
+Testing mathvariant U+1D460... Done
+Testing mathvariant U+1D461... Done
+Testing mathvariant U+1D462... Done
+Testing mathvariant U+1D463... Done
+Testing mathvariant U+1D464... Done
+Testing mathvariant U+1D465... Done
+Testing mathvariant U+1D466... Done
+Testing mathvariant U+1D467... Done
+Testing mathvariant U+1D6A4... Done
+Testing mathvariant U+1D6A5... Done
+
+Testing bold-italic mathvariants...
+Testing mathvariant U+1D468... Done
+Testing mathvariant U+1D469... Done
+Testing mathvariant U+1D46A... Done
+Testing mathvariant U+1D46B... Done
+Testing mathvariant U+1D46C... Done
+Testing mathvariant U+1D46D... Done
+Testing mathvariant U+1D46E... Done
+Testing mathvariant U+1D46F... Done
+Testing mathvariant U+1D470... Done
+Testing mathvariant U+1D471... Done
+Testing mathvariant U+1D472... Done
+Testing mathvariant U+1D473... Done
+Testing mathvariant U+1D474... Done
+Testing mathvariant U+1D475... Done
+Testing mathvariant U+1D476... Done
+Testing mathvariant U+1D477... Done
+Testing mathvariant U+1D478... Done
+Testing mathvariant U+1D479... Done
+Testing mathvariant U+1D47A... Done
+Testing mathvariant U+1D47B... Done
+Testing mathvariant U+1D47C... Done
+Testing mathvariant U+1D47D... Done
+Testing mathvariant U+1D47E... Done
+Testing mathvariant U+1D47F... Done
+Testing mathvariant U+1D480... Done
+Testing mathvariant U+1D481... Done
+Testing mathvariant U+1D482... Done
+Testing mathvariant U+1D483... Done
+Testing mathvariant U+1D484... Done
+Testing mathvariant U+1D485... Done
+Testing mathvariant U+1D486... Done
+Testing mathvariant U+1D487... Done
+Testing mathvariant U+1D488... Done
+Testing mathvariant U+1D489... Done
+Testing mathvariant U+1D48A... Done
+Testing mathvariant U+1D48B... Done
+Testing mathvariant U+1D48C... Done
+Testing mathvariant U+1D48D... Done
+Testing mathvariant U+1D48E... Done
+Testing mathvariant U+1D48F... Done
+Testing mathvariant U+1D490... Done
+Testing mathvariant U+1D491... Done
+Testing mathvariant U+1D492... Done
+Testing mathvariant U+1D493... Done
+Testing mathvariant U+1D494... Done
+Testing mathvariant U+1D495... Done
+Testing mathvariant U+1D496... Done
+Testing mathvariant U+1D497... Done
+Testing mathvariant U+1D498... Done
+Testing mathvariant U+1D499... Done
+Testing mathvariant U+1D49A... Done
+Testing mathvariant U+1D49B... Done
+Testing mathvariant U+1D71C... Done
+Testing mathvariant U+1D71D... Done
+Testing mathvariant U+1D71E... Done
+Testing mathvariant U+1D71F... Done
+Testing mathvariant U+1D720... Done
+Testing mathvariant U+1D721... Done
+Testing mathvariant U+1D722... Done
+Testing mathvariant U+1D723... Done
+Testing mathvariant U+1D724... Done
+Testing mathvariant U+1D725... Done
+Testing mathvariant U+1D726... Done
+Testing mathvariant U+1D727... Done
+Testing mathvariant U+1D728... Done
+Testing mathvariant U+1D729... Done
+Testing mathvariant U+1D72A... Done
+Testing mathvariant U+1D72B... Done
+Testing mathvariant U+1D72C... Done
+Testing mathvariant U+1D72D... Done
+Testing mathvariant U+1D72E... Done
+Testing mathvariant U+1D72F... Done
+Testing mathvariant U+1D730... Done
+Testing mathvariant U+1D731... Done
+Testing mathvariant U+1D732... Done
+Testing mathvariant U+1D733... Done
+Testing mathvariant U+1D734... Done
+Testing mathvariant U+1D735... Done
+Testing mathvariant U+1D736... Done
+Testing mathvariant U+1D737... Done
+Testing mathvariant U+1D738... Done
+Testing mathvariant U+1D739... Done
+Testing mathvariant U+1D73A... Done
+Testing mathvariant U+1D73B... Done
+Testing mathvariant U+1D73C... Done
+Testing mathvariant U+1D73D... Done
+Testing mathvariant U+1D73E... Done
+Testing mathvariant U+1D73F... Done
+Testing mathvariant U+1D740... Done
+Testing mathvariant U+1D741... Done
+Testing mathvariant U+1D742... Done
+Testing mathvariant U+1D743... Done
+Testing mathvariant U+1D744... Done
+Testing mathvariant U+1D745... Done
+Testing mathvariant U+1D746... Done
+Testing mathvariant U+1D747... Done
+Testing mathvariant U+1D748... Done
+Testing mathvariant U+1D749... Done
+Testing mathvariant U+1D74A... Done
+Testing mathvariant U+1D74B... Done
+Testing mathvariant U+1D74C... Done
+Testing mathvariant U+1D74D... Done
+Testing mathvariant U+1D74E... Done
+Testing mathvariant U+1D74F... Done
+Testing mathvariant U+1D750... Done
+Testing mathvariant U+1D751... Done
+Testing mathvariant U+1D752... Done
+Testing mathvariant U+1D753... Done
+Testing mathvariant U+1D754... Done
+Testing mathvariant U+1D755... Done
+
+Testing script mathvariants...
+Testing mathvariant U+1D49C... Done
+Testing mathvariant U+212C... Done
+Testing mathvariant U+1D49E... Done
+Testing mathvariant U+1D49F... Done
+Testing mathvariant U+2130... Done
+Testing mathvariant U+2131... Done
+Testing mathvariant U+1D4A2... Done
+Testing mathvariant U+210B... Done
+Testing mathvariant U+2110... Done
+Testing mathvariant U+1D4A5... Done
+Testing mathvariant U+1D4A6... Done
+Testing mathvariant U+2112... Done
+Testing mathvariant U+2133... Done
+Testing mathvariant U+1D4A9... Done
+Testing mathvariant U+1D4AA... Done
+Testing mathvariant U+1D4AB... Done
+Testing mathvariant U+1D4AC... Done
+Testing mathvariant U+211B... Done
+Testing mathvariant U+1D4AE... Done
+Testing mathvariant U+1D4AF... Done
+Testing mathvariant U+1D4B0... Done
+Testing mathvariant U+1D4B1... Done
+Testing mathvariant U+1D4B2... Done
+Testing mathvariant U+1D4B3... Done
+Testing mathvariant U+1D4B4... Done
+Testing mathvariant U+1D4B5... Done
+Testing mathvariant U+1D4B6... Failed
+Testing mathvariant U+1D4B7... Failed
+Testing mathvariant U+1D4B8... Failed
+Testing mathvariant U+1D4B9... Failed
+Testing mathvariant U+212F... Failed
+Testing mathvariant U+1D4BB... Failed
+Testing mathvariant U+210A... Failed
+Testing mathvariant U+1D4BD... Failed
+Testing mathvariant U+1D4BE... Failed
+Testing mathvariant U+1D4BF... Failed
+Testing mathvariant U+1D4C0... Failed
+Testing mathvariant U+1D4C1... Failed
+Testing mathvariant U+1D4C2... Failed
+Testing mathvariant U+1D4C3... Failed
+Testing mathvariant U+2134... Failed
+Testing mathvariant U+1D4C5... Failed
+Testing mathvariant U+1D4C6... Failed
+Testing mathvariant U+1D4C7... Failed
+Testing mathvariant U+1D4C8... Failed
+Testing mathvariant U+1D4C9... Failed
+Testing mathvariant U+1D4CA... Failed
+Testing mathvariant U+1D4CB... Failed
+Testing mathvariant U+1D4CC... Failed
+Testing mathvariant U+1D4CD... Failed
+Testing mathvariant U+1D4CE... Failed
+Testing mathvariant U+1D4CF... Failed
+
+Testing bold-script mathvariants...
+Testing mathvariant U+1D4D0... Done
+Testing mathvariant U+1D4D1... Done
+Testing mathvariant U+1D4D2... Done
+Testing mathvariant U+1D4D3... Done
+Testing mathvariant U+1D4D4... Done
+Testing mathvariant U+1D4D5... Done
+Testing mathvariant U+1D4D6... Done
+Testing mathvariant U+1D4D7... Done
+Testing mathvariant U+1D4D8... Done
+Testing mathvariant U+1D4D9... Done
+Testing mathvariant U+1D4DA... Done
+Testing mathvariant U+1D4DB... Done
+Testing mathvariant U+1D4DC... Done
+Testing mathvariant U+1D4DD... Done
+Testing mathvariant U+1D4DE... Done
+Testing mathvariant U+1D4DF... Done
+Testing mathvariant U+1D4E0... Done
+Testing mathvariant U+1D4E1... Done
+Testing mathvariant U+1D4E2... Done
+Testing mathvariant U+1D4E3... Done
+Testing mathvariant U+1D4E4... Done
+Testing mathvariant U+1D4E5... Done
+Testing mathvariant U+1D4E6... Done
+Testing mathvariant U+1D4E7... Done
+Testing mathvariant U+1D4E8... Done
+Testing mathvariant U+1D4E9... Done
+Testing mathvariant U+1D4EA... Failed
+Testing mathvariant U+1D4EB... Failed
+Testing mathvariant U+1D4EC... Failed
+Testing mathvariant U+1D4ED... Failed
+Testing mathvariant U+1D4EE... Failed
+Testing mathvariant U+1D4EF... Failed
+Testing mathvariant U+1D4F0... Failed
+Testing mathvariant U+1D4F1... Failed
+Testing mathvariant U+1D4F2... Failed
+Testing mathvariant U+1D4F3... Failed
+Testing mathvariant U+1D4F4... Failed
+Testing mathvariant U+1D4F5... Failed
+Testing mathvariant U+1D4F6... Failed
+Testing mathvariant U+1D4F7... Failed
+Testing mathvariant U+1D4F8... Failed
+Testing mathvariant U+1D4F9... Failed
+Testing mathvariant U+1D4FA... Failed
+Testing mathvariant U+1D4FB... Failed
+Testing mathvariant U+1D4FC... Failed
+Testing mathvariant U+1D4FD... Failed
+Testing mathvariant U+1D4FE... Failed
+Testing mathvariant U+1D4FF... Failed
+Testing mathvariant U+1D500... Failed
+Testing mathvariant U+1D501... Failed
+Testing mathvariant U+1D502... Failed
+Testing mathvariant U+1D503... Failed
+
+Testing fraktur mathvariants...
+Testing mathvariant U+1D504... Done
+Testing mathvariant U+1D505... Done
+Testing mathvariant U+212D... Done
+Testing mathvariant U+1D507... Done
+Testing mathvariant U+1D508... Done
+Testing mathvariant U+1D509... Done
+Testing mathvariant U+1D50A... Done
+Testing mathvariant U+210C... Done
+Testing mathvariant U+2111... Done
+Testing mathvariant U+1D50D... Done
+Testing mathvariant U+1D50E... Done
+Testing mathvariant U+1D50F... Done
+Testing mathvariant U+1D510... Done
+Testing mathvariant U+1D511... Done
+Testing mathvariant U+1D512... Done
+Testing mathvariant U+1D513... Done
+Testing mathvariant U+1D514... Done
+Testing mathvariant U+211C... Done
+Testing mathvariant U+1D516... Done
+Testing mathvariant U+1D517... Done
+Testing mathvariant U+1D518... Done
+Testing mathvariant U+1D519... Done
+Testing mathvariant U+1D51A... Done
+Testing mathvariant U+1D51B... Done
+Testing mathvariant U+1D51C... Done
+Testing mathvariant U+2128... Done
+Testing mathvariant U+1D51E... Done
+Testing mathvariant U+1D51F... Done
+Testing mathvariant U+1D520... Done
+Testing mathvariant U+1D521... Done
+Testing mathvariant U+1D522... Done
+Testing mathvariant U+1D523... Done
+Testing mathvariant U+1D524... Done
+Testing mathvariant U+1D525... Done
+Testing mathvariant U+1D526... Done
+Testing mathvariant U+1D527... Done
+Testing mathvariant U+1D528... Done
+Testing mathvariant U+1D529... Done
+Testing mathvariant U+1D52A... Done
+Testing mathvariant U+1D52B... Done
+Testing mathvariant U+1D52C... Done
+Testing mathvariant U+1D52D... Done
+Testing mathvariant U+1D52E... Done
+Testing mathvariant U+1D52F... Done
+Testing mathvariant U+1D530... Done
+Testing mathvariant U+1D531... Done
+Testing mathvariant U+1D532... Done
+Testing mathvariant U+1D533... Done
+Testing mathvariant U+1D534... Done
+Testing mathvariant U+1D535... Done
+Testing mathvariant U+1D536... Done
+Testing mathvariant U+1D537... Done
+
+Testing bold-fraktur mathvariants...
+Testing mathvariant U+1D56C... Done
+Testing mathvariant U+1D56D... Done
+Testing mathvariant U+1D56E... Done
+Testing mathvariant U+1D56F... Done
+Testing mathvariant U+1D570... Done
+Testing mathvariant U+1D571... Done
+Testing mathvariant U+1D572... Done
+Testing mathvariant U+1D573... Done
+Testing mathvariant U+1D574... Done
+Testing mathvariant U+1D575... Done
+Testing mathvariant U+1D576... Done
+Testing mathvariant U+1D577... Done
+Testing mathvariant U+1D578... Done
+Testing mathvariant U+1D579... Done
+Testing mathvariant U+1D57A... Done
+Testing mathvariant U+1D57B... Done
+Testing mathvariant U+1D57C... Done
+Testing mathvariant U+1D57D... Done
+Testing mathvariant U+1D57E... Done
+Testing mathvariant U+1D57F... Done
+Testing mathvariant U+1D580... Done
+Testing mathvariant U+1D581... Done
+Testing mathvariant U+1D582... Done
+Testing mathvariant U+1D583... Done
+Testing mathvariant U+1D584... Done
+Testing mathvariant U+1D585... Done
+Testing mathvariant U+1D586... Done
+Testing mathvariant U+1D587... Done
+Testing mathvariant U+1D588... Done
+Testing mathvariant U+1D589... Done
+Testing mathvariant U+1D58A... Done
+Testing mathvariant U+1D58B... Done
+Testing mathvariant U+1D58C... Done
+Testing mathvariant U+1D58D... Done
+Testing mathvariant U+1D58E... Done
+Testing mathvariant U+1D58F... Done
+Testing mathvariant U+1D590... Done
+Testing mathvariant U+1D591... Done
+Testing mathvariant U+1D592... Done
+Testing mathvariant U+1D593... Done
+Testing mathvariant U+1D594... Done
+Testing mathvariant U+1D595... Done
+Testing mathvariant U+1D596... Done
+Testing mathvariant U+1D597... Done
+Testing mathvariant U+1D598... Done
+Testing mathvariant U+1D599... Done
+Testing mathvariant U+1D59A... Done
+Testing mathvariant U+1D59B... Done
+Testing mathvariant U+1D59C... Done
+Testing mathvariant U+1D59D... Done
+Testing mathvariant U+1D59E... Done
+Testing mathvariant U+1D59F... Done
+
+Testing sans-serif mathvariants...
+Testing mathvariant U+1D5A0... Done
+Testing mathvariant U+1D5A1... Done
+Testing mathvariant U+1D5A2... Done
+Testing mathvariant U+1D5A3... Done
+Testing mathvariant U+1D5A4... Done
+Testing mathvariant U+1D5A5... Done
+Testing mathvariant U+1D5A6... Done
+Testing mathvariant U+1D5A7... Done
+Testing mathvariant U+1D5A8... Done
+Testing mathvariant U+1D5A9... Done
+Testing mathvariant U+1D5AA... Done
+Testing mathvariant U+1D5AB... Done
+Testing mathvariant U+1D5AC... Done
+Testing mathvariant U+1D5AD... Done
+Testing mathvariant U+1D5AE... Done
+Testing mathvariant U+1D5AF... Done
+Testing mathvariant U+1D5B0... Done
+Testing mathvariant U+1D5B1... Done
+Testing mathvariant U+1D5B2... Done
+Testing mathvariant U+1D5B3... Done
+Testing mathvariant U+1D5B4... Done
+Testing mathvariant U+1D5B5... Done
+Testing mathvariant U+1D5B6... Done
+Testing mathvariant U+1D5B7... Done
+Testing mathvariant U+1D5B8... Done
+Testing mathvariant U+1D5B9... Done
+Testing mathvariant U+1D5BA... Done
+Testing mathvariant U+1D5BB... Done
+Testing mathvariant U+1D5BC... Done
+Testing mathvariant U+1D5BD... Done
+Testing mathvariant U+1D5BE... Done
+Testing mathvariant U+1D5BF... Done
+Testing mathvariant U+1D5C0... Done
+Testing mathvariant U+1D5C1... Done
+Testing mathvariant U+1D5C2... Done
+Testing mathvariant U+1D5C3... Done
+Testing mathvariant U+1D5C4... Done
+Testing mathvariant U+1D5C5... Done
+Testing mathvariant U+1D5C6... Done
+Testing mathvariant U+1D5C7... Done
+Testing mathvariant U+1D5C8... Done
+Testing mathvariant U+1D5C9... Done
+Testing mathvariant U+1D5CA... Done
+Testing mathvariant U+1D5CB... Done
+Testing mathvariant U+1D5CC... Done
+Testing mathvariant U+1D5CD... Done
+Testing mathvariant U+1D5CE... Done
+Testing mathvariant U+1D5CF... Done
+Testing mathvariant U+1D5D0... Done
+Testing mathvariant U+1D5D1... Done
+Testing mathvariant U+1D5D2... Done
+Testing mathvariant U+1D5D3... Done
+Testing mathvariant U+1D7E2... Done
+Testing mathvariant U+1D7E3... Done
+Testing mathvariant U+1D7E4... Done
+Testing mathvariant U+1D7E5... Done
+Testing mathvariant U+1D7E6... Done
+Testing mathvariant U+1D7E7... Done
+Testing mathvariant U+1D7E8... Done
+Testing mathvariant U+1D7E9... Done
+Testing mathvariant U+1D7EA... Done
+Testing mathvariant U+1D7EB... Done
+
+Testing sans-serif-bold mathvariants...
+Testing mathvariant U+1D5D4... Done
+Testing mathvariant U+1D5D5... Done
+Testing mathvariant U+1D5D6... Done
+Testing mathvariant U+1D5D7... Done
+Testing mathvariant U+1D5D8... Done
+Testing mathvariant U+1D5D9... Done
+Testing mathvariant U+1D5DA... Done
+Testing mathvariant U+1D5DB... Done
+Testing mathvariant U+1D5DC... Done
+Testing mathvariant U+1D5DD... Done
+Testing mathvariant U+1D5DE... Done
+Testing mathvariant U+1D5DF... Done
+Testing mathvariant U+1D5E0... Done
+Testing mathvariant U+1D5E1... Done
+Testing mathvariant U+1D5E2... Done
+Testing mathvariant U+1D5E3... Done
+Testing mathvariant U+1D5E4... Done
+Testing mathvariant U+1D5E5... Done
+Testing mathvariant U+1D5E6... Done
+Testing mathvariant U+1D5E7... Done
+Testing mathvariant U+1D5E8... Done
+Testing mathvariant U+1D5E9... Done
+Testing mathvariant U+1D5EA... Done
+Testing mathvariant U+1D5EB... Done
+Testing mathvariant U+1D5EC... Done
+Testing mathvariant U+1D5ED... Done
+Testing mathvariant U+1D5EE... Done
+Testing mathvariant U+1D5EF... Done
+Testing mathvariant U+1D5F0... Done
+Testing mathvariant U+1D5F1... Done
+Testing mathvariant U+1D5F2... Done
+Testing mathvariant U+1D5F3... Done
+Testing mathvariant U+1D5F4... Done
+Testing mathvariant U+1D5F5... Done
+Testing mathvariant U+1D5F6... Done
+Testing mathvariant U+1D5F7... Done
+Testing mathvariant U+1D5F8... Done
+Testing mathvariant U+1D5F9... Done
+Testing mathvariant U+1D5FA... Done
+Testing mathvariant U+1D5FB... Done
+Testing mathvariant U+1D5FC... Done
+Testing mathvariant U+1D5FD... Done
+Testing mathvariant U+1D5FE... Done
+Testing mathvariant U+1D5FF... Done
+Testing mathvariant U+1D600... Done
+Testing mathvariant U+1D601... Done
+Testing mathvariant U+1D602... Done
+Testing mathvariant U+1D603... Done
+Testing mathvariant U+1D604... Done
+Testing mathvariant U+1D605... Done
+Testing mathvariant U+1D606... Done
+Testing mathvariant U+1D607... Done
+Testing mathvariant U+1D756... Done
+Testing mathvariant U+1D757... Done
+Testing mathvariant U+1D758... Done
+Testing mathvariant U+1D759... Done
+Testing mathvariant U+1D75A... Done
+Testing mathvariant U+1D75B... Done
+Testing mathvariant U+1D75C... Done
+Testing mathvariant U+1D75D... Done
+Testing mathvariant U+1D75E... Done
+Testing mathvariant U+1D75F... Done
+Testing mathvariant U+1D760... Done
+Testing mathvariant U+1D761... Done
+Testing mathvariant U+1D762... Done
+Testing mathvariant U+1D763... Done
+Testing mathvariant U+1D764... Done
+Testing mathvariant U+1D765... Done
+Testing mathvariant U+1D766... Done
+Testing mathvariant U+1D767... Done
+Testing mathvariant U+1D768... Done
+Testing mathvariant U+1D769... Done
+Testing mathvariant U+1D76A... Done
+Testing mathvariant U+1D76B... Done
+Testing mathvariant U+1D76C... Done
+Testing mathvariant U+1D76D... Done
+Testing mathvariant U+1D76E... Done
+Testing mathvariant U+1D76F... Done
+Testing mathvariant U+1D770... Done
+Testing mathvariant U+1D771... Done
+Testing mathvariant U+1D772... Done
+Testing mathvariant U+1D773... Done
+Testing mathvariant U+1D774... Done
+Testing mathvariant U+1D775... Done
+Testing mathvariant U+1D776... Done
+Testing mathvariant U+1D777... Done
+Testing mathvariant U+1D778... Done
+Testing mathvariant U+1D779... Done
+Testing mathvariant U+1D77A... Done
+Testing mathvariant U+1D77B... Done
+Testing mathvariant U+1D77C... Done
+Testing mathvariant U+1D77D... Done
+Testing mathvariant U+1D77E... Done
+Testing mathvariant U+1D77F... Done
+Testing mathvariant U+1D780... Done
+Testing mathvariant U+1D781... Done
+Testing mathvariant U+1D782... Done
+Testing mathvariant U+1D783... Done
+Testing mathvariant U+1D784... Done
+Testing mathvariant U+1D785... Done
+Testing mathvariant U+1D786... Done
+Testing mathvariant U+1D787... Done
+Testing mathvariant U+1D788... Done
+Testing mathvariant U+1D789... Done
+Testing mathvariant U+1D78A... Done
+Testing mathvariant U+1D78B... Done
+Testing mathvariant U+1D78C... Done
+Testing mathvariant U+1D78D... Done
+Testing mathvariant U+1D78E... Done
+Testing mathvariant U+1D78F... Done
+Testing mathvariant U+1D7EC... Done
+Testing mathvariant U+1D7ED... Done
+Testing mathvariant U+1D7EE... Done
+Testing mathvariant U+1D7EF... Done
+Testing mathvariant U+1D7F0... Done
+Testing mathvariant U+1D7F1... Done
+Testing mathvariant U+1D7F2... Done
+Testing mathvariant U+1D7F3... Done
+Testing mathvariant U+1D7F4... Done
+Testing mathvariant U+1D7F5... Done
+
+Testing sans-serif-italic mathvariants...
+Testing mathvariant U+1D608... Done
+Testing mathvariant U+1D609... Done
+Testing mathvariant U+1D60A... Done
+Testing mathvariant U+1D60B... Done
+Testing mathvariant U+1D60C... Done
+Testing mathvariant U+1D60D... Done
+Testing mathvariant U+1D60E... Done
+Testing mathvariant U+1D60F... Done
+Testing mathvariant U+1D610... Done
+Testing mathvariant U+1D611... Done
+Testing mathvariant U+1D612... Done
+Testing mathvariant U+1D613... Done
+Testing mathvariant U+1D614... Done
+Testing mathvariant U+1D615... Done
+Testing mathvariant U+1D616... Done
+Testing mathvariant U+1D617... Done
+Testing mathvariant U+1D618... Done
+Testing mathvariant U+1D619... Done
+Testing mathvariant U+1D61A... Done
+Testing mathvariant U+1D61B... Done
+Testing mathvariant U+1D61C... Done
+Testing mathvariant U+1D61D... Done
+Testing mathvariant U+1D61E... Done
+Testing mathvariant U+1D61F... Done
+Testing mathvariant U+1D620... Done
+Testing mathvariant U+1D621... Done
+Testing mathvariant U+1D622... Done
+Testing mathvariant U+1D623... Done
+Testing mathvariant U+1D624... Done
+Testing mathvariant U+1D625... Done
+Testing mathvariant U+1D626... Done
+Testing mathvariant U+1D627... Done
+Testing mathvariant U+1D628... Done
+Testing mathvariant U+1D629... Done
+Testing mathvariant U+1D62A... Done
+Testing mathvariant U+1D62B... Done
+Testing mathvariant U+1D62C... Done
+Testing mathvariant U+1D62D... Done
+Testing mathvariant U+1D62E... Done
+Testing mathvariant U+1D62F... Done
+Testing mathvariant U+1D630... Done
+Testing mathvariant U+1D631... Done
+Testing mathvariant U+1D632... Done
+Testing mathvariant U+1D633... Done
+Testing mathvariant U+1D634... Done
+Testing mathvariant U+1D635... Done
+Testing mathvariant U+1D636... Done
+Testing mathvariant U+1D637... Done
+Testing mathvariant U+1D638... Done
+Testing mathvariant U+1D639... Done
+Testing mathvariant U+1D63A... Done
+Testing mathvariant U+1D63B... Done
+
+Testing sans-serif-bold-italic mathvariants...
+Testing mathvariant U+1D63C... Done
+Testing mathvariant U+1D63D... Done
+Testing mathvariant U+1D63E... Done
+Testing mathvariant U+1D63F... Done
+Testing mathvariant U+1D640... Done
+Testing mathvariant U+1D641... Done
+Testing mathvariant U+1D642... Done
+Testing mathvariant U+1D643... Done
+Testing mathvariant U+1D644... Done
+Testing mathvariant U+1D645... Done
+Testing mathvariant U+1D646... Done
+Testing mathvariant U+1D647... Done
+Testing mathvariant U+1D648... Done
+Testing mathvariant U+1D649... Done
+Testing mathvariant U+1D64A... Done
+Testing mathvariant U+1D64B... Done
+Testing mathvariant U+1D64C... Done
+Testing mathvariant U+1D64D... Done
+Testing mathvariant U+1D64E... Done
+Testing mathvariant U+1D64F... Done
+Testing mathvariant U+1D650... Done
+Testing mathvariant U+1D651... Done
+Testing mathvariant U+1D652... Done
+Testing mathvariant U+1D653... Done
+Testing mathvariant U+1D654... Done
+Testing mathvariant U+1D655... Done
+Testing mathvariant U+1D656... Done
+Testing mathvariant U+1D657... Done
+Testing mathvariant U+1D658... Done
+Testing mathvariant U+1D659... Done
+Testing mathvariant U+1D65A... Done
+Testing mathvariant U+1D65B... Done
+Testing mathvariant U+1D65C... Done
+Testing mathvariant U+1D65D... Done
+Testing mathvariant U+1D65E... Done
+Testing mathvariant U+1D65F... Done
+Testing mathvariant U+1D660... Done
+Testing mathvariant U+1D661... Done
+Testing mathvariant U+1D662... Done
+Testing mathvariant U+1D663... Done
+Testing mathvariant U+1D664... Done
+Testing mathvariant U+1D665... Done
+Testing mathvariant U+1D666... Done
+Testing mathvariant U+1D667... Done
+Testing mathvariant U+1D668... Done
+Testing mathvariant U+1D669... Done
+Testing mathvariant U+1D66A... Done
+Testing mathvariant U+1D66B... Done
+Testing mathvariant U+1D66C... Done
+Testing mathvariant U+1D66D... Done
+Testing mathvariant U+1D66E... Done
+Testing mathvariant U+1D66F... Done
+Testing mathvariant U+1D790... Done
+Testing mathvariant U+1D791... Done
+Testing mathvariant U+1D792... Done
+Testing mathvariant U+1D793... Done
+Testing mathvariant U+1D794... Done
+Testing mathvariant U+1D795... Done
+Testing mathvariant U+1D796... Done
+Testing mathvariant U+1D797... Done
+Testing mathvariant U+1D798... Done
+Testing mathvariant U+1D799... Done
+Testing mathvariant U+1D79A... Done
+Testing mathvariant U+1D79B... Done
+Testing mathvariant U+1D79C... Done
+Testing mathvariant U+1D79D... Done
+Testing mathvariant U+1D79E... Done
+Testing mathvariant U+1D79F... Done
+Testing mathvariant U+1D7A0... Done
+Testing mathvariant U+1D7A1... Done
+Testing mathvariant U+1D7A2... Done
+Testing mathvariant U+1D7A3... Done
+Testing mathvariant U+1D7A4... Done
+Testing mathvariant U+1D7A5... Done
+Testing mathvariant U+1D7A6... Done
+Testing mathvariant U+1D7A7... Done
+Testing mathvariant U+1D7A8... Done
+Testing mathvariant U+1D7A9... Done
+Testing mathvariant U+1D7AA... Done
+Testing mathvariant U+1D7AB... Done
+Testing mathvariant U+1D7AC... Done
+Testing mathvariant U+1D7AD... Done
+Testing mathvariant U+1D7AE... Done
+Testing mathvariant U+1D7AF... Done
+Testing mathvariant U+1D7B0... Done
+Testing mathvariant U+1D7B1... Done
+Testing mathvariant U+1D7B2... Done
+Testing mathvariant U+1D7B3... Done
+Testing mathvariant U+1D7B4... Done
+Testing mathvariant U+1D7B5... Done
+Testing mathvariant U+1D7B6... Done
+Testing mathvariant U+1D7B7... Done
+Testing mathvariant U+1D7B8... Done
+Testing mathvariant U+1D7B9... Done
+Testing mathvariant U+1D7BA... Done
+Testing mathvariant U+1D7BB... Done
+Testing mathvariant U+1D7BC... Done
+Testing mathvariant U+1D7BD... Done
+Testing mathvariant U+1D7BE... Done
+Testing mathvariant U+1D7BF... Done
+Testing mathvariant U+1D7C0... Done
+Testing mathvariant U+1D7C1... Done
+Testing mathvariant U+1D7C2... Done
+Testing mathvariant U+1D7C3... Done
+Testing mathvariant U+1D7C4... Done
+Testing mathvariant U+1D7C5... Done
+Testing mathvariant U+1D7C6... Done
+Testing mathvariant U+1D7C7... Done
+Testing mathvariant U+1D7C8... Done
+Testing mathvariant U+1D7C9... Done
+
+Testing monospace mathvariants...
+Testing mathvariant U+1D670... Done
+Testing mathvariant U+1D671... Done
+Testing mathvariant U+1D672... Done
+Testing mathvariant U+1D673... Done
+Testing mathvariant U+1D674... Done
+Testing mathvariant U+1D675... Done
+Testing mathvariant U+1D676... Done
+Testing mathvariant U+1D677... Done
+Testing mathvariant U+1D678... Done
+Testing mathvariant U+1D679... Done
+Testing mathvariant U+1D67A... Done
+Testing mathvariant U+1D67B... Done
+Testing mathvariant U+1D67C... Done
+Testing mathvariant U+1D67D... Done
+Testing mathvariant U+1D67E... Done
+Testing mathvariant U+1D67F... Done
+Testing mathvariant U+1D680... Done
+Testing mathvariant U+1D681... Done
+Testing mathvariant U+1D682... Done
+Testing mathvariant U+1D683... Done
+Testing mathvariant U+1D684... Done
+Testing mathvariant U+1D685... Done
+Testing mathvariant U+1D686... Done
+Testing mathvariant U+1D687... Done
+Testing mathvariant U+1D688... Done
+Testing mathvariant U+1D689... Done
+Testing mathvariant U+1D68A... Done
+Testing mathvariant U+1D68B... Done
+Testing mathvariant U+1D68C... Done
+Testing mathvariant U+1D68D... Done
+Testing mathvariant U+1D68E... Done
+Testing mathvariant U+1D68F... Done
+Testing mathvariant U+1D690... Done
+Testing mathvariant U+1D691... Done
+Testing mathvariant U+1D692... Done
+Testing mathvariant U+1D693... Done
+Testing mathvariant U+1D694... Done
+Testing mathvariant U+1D695... Done
+Testing mathvariant U+1D696... Done
+Testing mathvariant U+1D697... Done
+Testing mathvariant U+1D698... Done
+Testing mathvariant U+1D699... Done
+Testing mathvariant U+1D69A... Done
+Testing mathvariant U+1D69B... Done
+Testing mathvariant U+1D69C... Done
+Testing mathvariant U+1D69D... Done
+Testing mathvariant U+1D69E... Done
+Testing mathvariant U+1D69F... Done
+Testing mathvariant U+1D6A0... Done
+Testing mathvariant U+1D6A1... Done
+Testing mathvariant U+1D6A2... Done
+Testing mathvariant U+1D6A3... Done
+Testing mathvariant U+1D7F6... Done
+Testing mathvariant U+1D7F7... Done
+Testing mathvariant U+1D7F8... Done
+Testing mathvariant U+1D7F9... Done
+Testing mathvariant U+1D7FA... Done
+Testing mathvariant U+1D7FB... Done
+Testing mathvariant U+1D7FC... Done
+Testing mathvariant U+1D7FD... Done
+Testing mathvariant U+1D7FE... Done
+Testing mathvariant U+1D7FF... Done
+
+Testing double-struck mathvariants...
+Testing mathvariant U+1D538... Done
+Testing mathvariant U+1D539... Done
+Testing mathvariant U+2102... Done
+Testing mathvariant U+1D53B... Done
+Testing mathvariant U+1D53C... Done
+Testing mathvariant U+1D53D... Done
+Testing mathvariant U+1D53E... Done
+Testing mathvariant U+210D... Done
+Testing mathvariant U+1D540... Done
+Testing mathvariant U+1D541... Done
+Testing mathvariant U+1D542... Done
+Testing mathvariant U+1D543... Done
+Testing mathvariant U+1D544... Done
+Testing mathvariant U+2115... Done
+Testing mathvariant U+1D546... Done
+Testing mathvariant U+2119... Done
+Testing mathvariant U+211A... Done
+Testing mathvariant U+211D... Done
+Testing mathvariant U+1D54A... Done
+Testing mathvariant U+1D54B... Done
+Testing mathvariant U+1D54C... Done
+Testing mathvariant U+1D54D... Done
+Testing mathvariant U+1D54E... Done
+Testing mathvariant U+1D54F... Done
+Testing mathvariant U+1D550... Done
+Testing mathvariant U+2124... Done
+Testing mathvariant U+1D552... Done
+Testing mathvariant U+1D553... Done
+Testing mathvariant U+1D554... Done
+Testing mathvariant U+1D555... Done
+Testing mathvariant U+1D556... Done
+Testing mathvariant U+1D557... Done
+Testing mathvariant U+1D558... Done
+Testing mathvariant U+1D559... Done
+Testing mathvariant U+1D55A... Done
+Testing mathvariant U+1D55B... Done
+Testing mathvariant U+1D55C... Done
+Testing mathvariant U+1D55D... Done
+Testing mathvariant U+1D55E... Done
+Testing mathvariant U+1D55F... Done
+Testing mathvariant U+1D560... Done
+Testing mathvariant U+1D561... Done
+Testing mathvariant U+1D562... Done
+Testing mathvariant U+1D563... Done
+Testing mathvariant U+1D564... Done
+Testing mathvariant U+1D565... Done
+Testing mathvariant U+1D566... Done
+Testing mathvariant U+1D567... Done
+Testing mathvariant U+1D568... Done
+Testing mathvariant U+1D569... Done
+Testing mathvariant U+1D56A... Done
+Testing mathvariant U+1D56B... Done
+Testing mathvariant U+1D7D8... Done
+Testing mathvariant U+1D7D9... Done
+Testing mathvariant U+1D7DA... Done
+Testing mathvariant U+1D7DB... Done
+Testing mathvariant U+1D7DC... Done
+Testing mathvariant U+1D7DD... Done
+Testing mathvariant U+1D7DE... Done
+Testing mathvariant U+1D7DF... Done
+Testing mathvariant U+1D7E0... Done
+Testing mathvariant U+1D7E1... Done
+Testing mathvariant U+1EEA1... Failed
+Testing mathvariant U+1EEA2... Failed
+Testing mathvariant U+1EEA3... Failed
+Testing mathvariant U+1EEA5... Failed
+Testing mathvariant U+1EEA6... Failed
+Testing mathvariant U+1EEA7... Failed
+Testing mathvariant U+1EEA8... Failed
+Testing mathvariant U+1EEA9... Failed
+Testing mathvariant U+1EEAB... Failed
+Testing mathvariant U+1EEAC... Failed
+Testing mathvariant U+1EEAD... Failed
+Testing mathvariant U+1EEAE... Failed
+Testing mathvariant U+1EEAF... Failed
+Testing mathvariant U+1EEB0... Failed
+Testing mathvariant U+1EEB1... Failed
+Testing mathvariant U+1EEB2... Failed
+Testing mathvariant U+1EEB3... Failed
+Testing mathvariant U+1EEB4... Failed
+Testing mathvariant U+1EEB5... Failed
+Testing mathvariant U+1EEB6... Failed
+Testing mathvariant U+1EEB7... Failed
+Testing mathvariant U+1EEB8... Failed
+Testing mathvariant U+1EEB9... Failed
+Testing mathvariant U+1EEBA... Failed
+Testing mathvariant U+1EEBB... Failed
+
+Testing initial mathvariants...
+Testing mathvariant U+1EE21... Failed
+Testing mathvariant U+1EE22... Failed
+Testing mathvariant U+1EE24... Failed
+Testing mathvariant U+1EE27... Failed
+Testing mathvariant U+1EE29... Failed
+Testing mathvariant U+1EE2A... Failed
+Testing mathvariant U+1EE2B... Failed
+Testing mathvariant U+1EE2C... Failed
+Testing mathvariant U+1EE2D... Failed
+Testing mathvariant U+1EE2E... Failed
+Testing mathvariant U+1EE2F... Failed
+Testing mathvariant U+1EE30... Failed
+Testing mathvariant U+1EE31... Failed
+Testing mathvariant U+1EE32... Failed
+Testing mathvariant U+1EE34... Failed
+Testing mathvariant U+1EE35... Failed
+Testing mathvariant U+1EE36... Failed
+Testing mathvariant U+1EE37... Failed
+Testing mathvariant U+1EE39... Failed
+Testing mathvariant U+1EE3B... Failed
+
+Testing tailed mathvariants...
+Testing mathvariant U+1EE42... Failed
+Testing mathvariant U+1EE47... Failed
+Testing mathvariant U+1EE49... Failed
+Testing mathvariant U+1EE4B... Failed
+Testing mathvariant U+1EE4D... Failed
+Testing mathvariant U+1EE4E... Failed
+Testing mathvariant U+1EE4F... Failed
+Testing mathvariant U+1EE51... Failed
+Testing mathvariant U+1EE52... Failed
+Testing mathvariant U+1EE54... Failed
+Testing mathvariant U+1EE57... Failed
+Testing mathvariant U+1EE59... Failed
+Testing mathvariant U+1EE5B... Failed
+Testing mathvariant U+1EE5D... Failed
+Testing mathvariant U+1EE5F... Failed
+
+Testing looped mathvariants...
+Testing mathvariant U+1EE80... Failed
+Testing mathvariant U+1EE81... Failed
+Testing mathvariant U+1EE82... Failed
+Testing mathvariant U+1EE83... Failed
+Testing mathvariant U+1EE84... Failed
+Testing mathvariant U+1EE85... Failed
+Testing mathvariant U+1EE86... Failed
+Testing mathvariant U+1EE87... Failed
+Testing mathvariant U+1EE88... Failed
+Testing mathvariant U+1EE89... Failed
+Testing mathvariant U+1EE8B... Failed
+Testing mathvariant U+1EE8C... Failed
+Testing mathvariant U+1EE8D... Failed
+Testing mathvariant U+1EE8E... Failed
+Testing mathvariant U+1EE8F... Failed
+Testing mathvariant U+1EE90... Failed
+Testing mathvariant U+1EE91... Failed
+Testing mathvariant U+1EE92... Failed
+Testing mathvariant U+1EE93... Failed
+Testing mathvariant U+1EE94... Failed
+Testing mathvariant U+1EE95... Failed
+Testing mathvariant U+1EE96... Failed
+Testing mathvariant U+1EE97... Failed
+Testing mathvariant U+1EE98... Failed
+Testing mathvariant U+1EE99... Failed
+Testing mathvariant U+1EE9A... Failed
+Testing mathvariant U+1EE9B... Failed
+
+Testing stretched mathvariants...
+Testing mathvariant U+1EE61... Failed
+Testing mathvariant U+1EE62... Failed
+Testing mathvariant U+1EE64... Failed
+Testing mathvariant U+1EE67... Failed
+Testing mathvariant U+1EE68... Failed
+Testing mathvariant U+1EE69... Failed
+Testing mathvariant U+1EE6A... Failed
+Testing mathvariant U+1EE6C... Failed
+Testing mathvariant U+1EE6D... Failed
+Testing mathvariant U+1EE6E... Failed
+Testing mathvariant U+1EE6F... Failed
+Testing mathvariant U+1EE70... Failed
+Testing mathvariant U+1EE71... Failed
+Testing mathvariant U+1EE72... Failed
+Testing mathvariant U+1EE74... Failed
+Testing mathvariant U+1EE75... Failed
+Testing mathvariant U+1EE76... Failed
+Testing mathvariant U+1EE77... Failed
+Testing mathvariant U+1EE79... Failed
+Testing mathvariant U+1EE7A... Failed
+Testing mathvariant U+1EE7B... Failed
+Testing mathvariant U+1EE7C... Failed
+Testing mathvariant U+1EE7E... Failed
+
