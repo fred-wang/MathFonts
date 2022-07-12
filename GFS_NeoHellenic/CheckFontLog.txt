@@ -97,8 +97,8 @@ Testing U+7C... Done
 Testing U+7D... Done
 Testing U+7E... Done
 
-Testing OS/2 version... Failed
-Testing USE_TYPO_METRICS... Failed
+Testing OS/2 version... Done
+Testing USE_TYPO_METRICS... Done
 
 Testing MathConstants table... Done
 
@@ -214,16 +214,16 @@ Testing variants for U+21A6... Done
 Testing components for U+21A6... Done
 Testing base glyph for U+295A... Done
 Testing components for U+295A... Failed
-Setting components for operator U+295A... Failed
+Setting components for operator U+295A... Done
 Testing base glyph for U+295B... Done
 Testing components for U+295B... Failed
-Setting components for operator U+295B... Failed
+Setting components for operator U+295B... Done
 Testing base glyph for U+295E... Done
 Testing components for U+295E... Failed
-Setting components for operator U+295E... Failed
+Setting components for operator U+295E... Done
 Testing base glyph for U+295F... Done
 Testing components for U+295F... Failed
-Setting components for operator U+295F... Failed
+Setting components for operator U+295F... Done
 Testing base glyph for U+21C0... Done
 Testing components for U+21C0... Done
 Testing base glyph for U+21C1... Done
@@ -252,19 +252,19 @@ Testing base glyph for U+23B0... Failed
 Testing base glyph for U+23B1... Failed
 Testing base glyph for U+27F5... Done
 Testing components for U+27F5... Failed
-Setting components for operator U+27F5... Failed
+Setting components for operator U+27F5... Done
 Testing base glyph for U+27F6... Done
 Testing components for U+27F6... Failed
-Setting components for operator U+27F6... Failed
+Setting components for operator U+27F6... Done
 Testing base glyph for U+27F7... Done
 Testing components for U+27F7... Failed
-Setting components for operator U+27F7... Failed
+Setting components for operator U+27F7... Done
 Testing base glyph for U+294E... Done
 Testing components for U+294E... Failed
-Setting components for operator U+294E... Failed
+Setting components for operator U+294E... Done
 Testing base glyph for U+2950... Done
 Testing components for U+2950... Failed
-Setting components for operator U+2950... Failed
+Setting components for operator U+2950... Done
 
 Testing large operators in the MathVariant table...
 Testing base glyph for large operator U+220F... Done

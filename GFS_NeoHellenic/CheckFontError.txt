@@ -1,47 +1,3 @@
-This font contains both a 'kern' table and a 'GPOS' table.
-  The 'kern' table will only be read if there is no 'kern' feature in 'GPOS'.
-This font contains both a 'mor[tx]' table and a 'GSUB' table.
-  FF will only read feature/settings in 'morx' which do not match features
-  found in 'GSUB'.
-Hint mask (or counter mask) with too many hints in two
-Hint mask (or counter mask) with too many hints in two
-Hint mask (or counter mask) with too many hints in three
-Hint mask (or counter mask) with too many hints in three
-Hint mask (or counter mask) with too many hints in five
-Hint mask (or counter mask) with too many hints in five
-Hint mask (or counter mask) with too many hints in five
-Hint mask (or counter mask) with too many hints in five
-Hint mask (or counter mask) with too many hints in T
-Hint mask (or counter mask) with too many hints in m
-Hint mask (or counter mask) with too many hints in divide
-Hint mask (or counter mask) with too many hints in zdotaccent
-Hint mask (or counter mask) with too many hints in Tau
-Hint mask (or counter mask) with too many hints in Upsilon
-Hint mask (or counter mask) with too many hints in ellipsis
-Hint mask (or counter mask) with too many hints in uni2107
-Hint mask (or counter mask) with too many hints in uni2107
-Hint mask (or counter mask) with too many hints in uni2107
-Hint mask (or counter mask) with too many hints in uni2204
-Hint mask (or counter mask) with too many hints in uni225E
-Hint mask (or counter mask) with too many hints in uni22AA
-Hint mask (or counter mask) with too many hints in uni22F0
-Hint mask (or counter mask) with too many hints in uni22F1
-Hint mask (or counter mask) with too many hints in uni2720
-Hint mask (or counter mask) with too many hints in uni2A03
-Hint mask (or counter mask) with too many hints in uni2A04
-Hint mask (or counter mask) with too many hints in uni21F6.lft
-Hint mask (or counter mask) with too many hints in uni21F6.ex
-Hint mask (or counter mask) with too many hints in uni21F6.rt
-Hint mask (or counter mask) with too many hints in uni2B31.lft
-Hint mask (or counter mask) with too many hints in uni2B31.ex
-Hint mask (or counter mask) with too many hints in uni2B31.rt
-Hint mask (or counter mask) with too many hints in uni21E7.v1
-Hint mask (or counter mask) with too many hints in uni21E9.v1
-Hint mask (or counter mask) with too many hints in uni21E7.tp
-Hint mask (or counter mask) with too many hints in uni21E9.bt
-Hint mask (or counter mask) with too many hints in uni21F3.bt
-Warning: OS/2 version does not support USE_TYPO_METRICS!
-Warning: USE_TYPO_METRICS set to false in the OS/2 table!
 Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222B.
 Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222C.
 Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222D.
@@ -76,25 +32,16 @@ Warning: missing components for operator U+00AF!
 Warning: missing components for operator U+203E!
 Warning: missing components for operator U+005F!
 Warning: missing components for operator U+295A!
-Warning: Missing glyph for Unicode character U+0023AF!
 Warning: missing components for operator U+295B!
-Warning: Missing glyph for Unicode character U+0023AF!
 Warning: missing components for operator U+295E!
-Warning: Missing glyph for Unicode character U+0023AF!
 Warning: missing components for operator U+295F!
-Warning: Missing glyph for Unicode character U+0023AF!
 Warning: Missing glyph for Unicode character U+0023B0!
 Warning: Missing glyph for Unicode character U+0023B1!
 Warning: missing components for operator U+27F5!
-Warning: Missing glyph for Unicode character U+0023AF!
 Warning: missing components for operator U+27F6!
-Warning: Missing glyph for Unicode character U+0023AF!
 Warning: missing components for operator U+27F7!
-Warning: Missing glyph for Unicode character U+0023AF!
 Warning: missing components for operator U+294E!
-Warning: Missing glyph for Unicode character U+0023AF!
 Warning: missing components for operator U+2950!
-Warning: Missing glyph for Unicode character U+0023AF!
 Warning: U+220F does not have any size variant of height at least DisplayOperatorMinHeight
 Warning: U+2210 does not have any size variant of height at least DisplayOperatorMinHeight
 Warning: U+2211 does not have any size variant of height at least DisplayOperatorMinHeight
@@ -106,33 +53,33 @@ Warning: U+2A02 does not have any size variant of height at least DisplayOperato
 Warning: U+2A04 does not have any size variant of height at least DisplayOperatorMinHeight
 Warning: U+2A06 does not have any size variant of height at least DisplayOperatorMinHeight
 Warning: U+2A09 does not have any size variant of height at least DisplayOperatorMinHeight
-Warning: Italic correction for glyph 'uni2A0B' is not positive!
-Warning: Italic correction for glyph 'uni2A0B.v1' is not positive!
-Warning: Italic correction for glyph 'uni2A0D' is not positive!
+Warning: Missing italic correction for glyph 'uni2A0B'!
+Warning: Missing italic correction for glyph 'uni2A0B.v1'!
+Warning: Missing italic correction for glyph 'uni2A0D'!
 Warning: Missing italic correction for glyph 'uni2A0D.display'!
-Warning: Italic correction for glyph 'uni2A0E' is not positive!
+Warning: Missing italic correction for glyph 'uni2A0E'!
 Warning: Missing italic correction for glyph 'uni2A0E.display'!
-Warning: Italic correction for glyph 'uni2A0F' is not positive!
+Warning: Missing italic correction for glyph 'uni2A0F'!
 Warning: Missing italic correction for glyph 'uni2A0F.display'!
-Warning: Italic correction for glyph 'uni2A10' is not positive!
+Warning: Missing italic correction for glyph 'uni2A10'!
 Warning: Missing italic correction for glyph 'uni2A10.display'!
-Warning: Italic correction for glyph 'uni2A12' is not positive!
+Warning: Missing italic correction for glyph 'uni2A12'!
 Warning: Missing italic correction for glyph 'uni2A12.display'!
-Warning: Italic correction for glyph 'uni2A13' is not positive!
+Warning: Missing italic correction for glyph 'uni2A13'!
 Warning: Missing italic correction for glyph 'uni2A13.display'!
-Warning: Italic correction for glyph 'uni2A14' is not positive!
+Warning: Missing italic correction for glyph 'uni2A14'!
 Warning: Missing italic correction for glyph 'uni2A14.display'!
-Warning: Italic correction for glyph 'uni2A15' is not positive!
+Warning: Missing italic correction for glyph 'uni2A15'!
 Warning: Missing italic correction for glyph 'uni2A15.display'!
-Warning: Italic correction for glyph 'uni2A16' is not positive!
+Warning: Missing italic correction for glyph 'uni2A16'!
 Warning: Missing italic correction for glyph 'uni2A16.display'!
-Warning: Italic correction for glyph 'uni2A17' is not positive!
+Warning: Missing italic correction for glyph 'uni2A17'!
 Warning: Missing italic correction for glyph 'uni2A17.display'!
-Warning: Italic correction for glyph 'uni2A18' is not positive!
+Warning: Missing italic correction for glyph 'uni2A18'!
 Warning: Missing italic correction for glyph 'uni2A18.display'!
-Warning: Italic correction for glyph 'uni2A19' is not positive!
+Warning: Missing italic correction for glyph 'uni2A19'!
 Warning: Missing italic correction for glyph 'uni2A19.display'!
-Warning: Italic correction for glyph 'uni2A1A' is not positive!
+Warning: Missing italic correction for glyph 'uni2A1A'!
 Warning: Missing italic correction for glyph 'uni2A1A.display'!
 Warning: Missing glyph for Unicode character U+01D7CA!
 Warning: Missing glyph for Unicode character U+01D7CB!
