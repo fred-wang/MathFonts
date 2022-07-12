@@ -5,7 +5,7 @@ let mathfont_list = {
     "DejaVu": "DejaVu",
     "FiraMath": "FiraMath",
     "Garamond": "Garamond",
-    // "GFS_NeoHellenic": "GFS NeoHellenic",
+    "GFS_NeoHellenic": "GFS NeoHellenic",
     "LatinModern": "Latin Modern",
     "Libertinus": "Libertinus",
     "LucidaBright": "Lucida Bright (local only)",
