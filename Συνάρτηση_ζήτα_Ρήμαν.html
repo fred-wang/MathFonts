@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <title>Συνάρτηση ζήτα Ρήμαν</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="/MathFonts/GFS_NeoHellenic/mathfonts.css"/>
+    <style>
+      body {
+        font-size: 16pt;
+      }
+      footer, figcaption {
+        font-size: 80%;
+        text-align: center;
+      }
+      figure {
+        width: 256px;
+      }
+      .images {
+          float: right;
+      }
+    </style>
+  </head>
+  <body class="htmlmathparagraph">
+
+    <h1>Συνάρτηση ζήτα Ρήμαν</h1>
+
+    <p>Η συνάρτηση ζήτα ή συνάρτηση ζήτα του Riemann, από το όνομα του Γερμανού μαθηματικού Μπέρναρντ Ρίμαν είναι μια συνάρτηση με ιδιαίτερη σημασία στη θεωρία αριθμών, λόγω της σχέσης της με την κατανομή των πρώτων αριθμών. Έχει επίσης εφαρμογές σε άλλα πεδία, όπως η φυσική, η θεωρία πιθανοτήτων και η εφαρμοσμένη στατιστική.</p>
+
+    <section>
+      <h2>Ορισμός</h2>
+
+    <div class="images">
+      <figure>
+        <a title="Jan Homann, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Complex_zeta.jpg"><img width="256" alt="Complex zeta" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Complex_zeta.jpg/256px-Complex_zeta.jpg"></a>
+        <figcaption>Η συνάρτηση ζήτα στο επίπεδο των μιγαδικών αριθμών.</figcaption>
+      </figure>
+
+      <figure>
+        <a title="user Edsanville, CC BY-SA 3.0 &lt;http://creativecommons.org/licenses/by-sa/3.0/&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Zeta.png"><img width="256" alt="Zeta" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Zeta.png/256px-Zeta.png"></a>
+        <figcaption>Η ζήτα συνάρτηση για πραγματικούς μεγαλύτερους του 1.</figcaption>
+      </figure>
+    </div>
+
+      <p>Η συνάρτηση ζήτα <math><semantics><mrow><mi>ζ</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="TeX">\zeta(s)</annotation></semantics></math> είναι συνάρτηση μιας μιγαδικής μεταβλητής s και ορίζεται με τη βοήθεια της ακόλουθης άπειρης σειράς, όταν ο μιγαδικός αριθμός s έχει πραγματικό μέρος μεγαλύτερο της μονάδας:</p>
+
+      <math display="block"><semantics><mrow><mrow><mi>ζ</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mn>∞</mn></munderover><mfrac><mn>1</mn><msup><mi>k</mi><mi>s</mi></msup></mfrac></mrow></mrow><annotation encoding="TeX">{\zeta(s)} = {\sum_{k=1}^{\infty}{\frac{1}{k^{s}}}}</annotation></semantics></math>
+
+      <p>Στην περιοχή <math><semantics><mrow><mo stretchy="false">{</mo><mi>s</mi><mo>∊</mo><mi>ℂ</mi><mo>:</mo><mi>Re</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>&gt;</mo><mn>1</mn><mo stretchy="false">}</mo></mrow><annotation encoding="TeX">\{s\in \mathbb{C} : \mi{Re}(s)&gt;1\}</annotation></semantics></math>, αυτή η σειρά συγκλίνει και ορίζει μια συνάρτηση αναλυτική σε αυτή την περιοχή.</p>
+
+      <p>Η συνάρτηση ζήτα ορίζεται ως η αναλυτική επέκταση της πάνω συνάρτησης σε ολόκληρο το μιγαδικό επίπεδο, καθώς ο Riemann έδειξε ότι αυτή η αναλυτική επέκταση για Re(s) ≤ 1 και s≠1 υπάρχει και είναι μοναδική, ενώ στο σημείο s=1 του μιγαδικού επιπέδου προκύπτει η αρμονική σειρά η οποία αποκλίνει προς το +∞.</p>
+
+      <p>Η συνάρτηση ζήτα συνδέεται με τους πρώτους αριθμούς με την εξής σχέση, που ανακαλύφθηκε από τον Λέοναρντ Όιλερ:</p>
+
+      <math display="block"><semantics><mrow><mrow><mi>ζ</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><munder><mo>∏</mo><mrow><mi>p</mi><mo>∊</mo><mi>ℙ</mi></mrow></munder><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><msup><mi>p</mi><mrow><mo>−</mo><mi>s</mi></mrow></msup></mrow></mfrac><mo>,</mo><mspace width="2em"></mspace><mrow><mi>s</mi><mo>∊</mo><mi>ℂ</mi></mrow><mo>∧</mo><mrow><mi>Re</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>&gt;</mo><mn>1</mn></mrow><mo>,</mo></mrow><annotation encoding="TeX">{\zeta(s)}=\prod _{p\in \mathbb{P} }{\frac {1}{1-p^{-s}}},\qquad {s\in \mathbb {C}} \wedge {\mi{Re}(s)&gt;1},</annotation></semantics></math>
+
+      <p>όπου <math><semantics><mi>ℙ</mi><annotation encoding="TeX">\mathbb {P}</annotation></semantics></math> το σύνολο όλων των πρώτων αριθμών.</p>
+
+      <p>Αν ο s είναι ακέραιος, τότε ο παραπάνω τύπος του Όιλερ μπορεί να χρησιμοποιηθεί για τον υπολογισμό της πιθανότητας s το πλήθος τυχαία επιλεγμένοι αριθμοί να είναι μεταξύ τους σχετικά πρώτοι. Η πιθανότητα αυτή αποδεικνύεται ότι ισούται με 1/ζ(s).</p>
+    </section>
+
+    <section>
+      <h2>Επεκτάσεις</h2>
+
+      <p>Η συνάρτηση ζήτα μπορεί να επεκταθεί αναλυτικά στην περιοχή <math><semantics><mrow><mo stretchy="false">{</mo><mi>s</mi><mo>∊</mo><mi>ℂ</mi><mo>:</mo><mi>Re</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>&gt;</mo><mn>0</mn><mo stretchy="false">}</mo></mrow><annotation encoding="TeX">\{s\in \mathbb {C} : \mi{Re}(s)&gt;0\}</annotation></semantics></math> σε μία μερομορφική συνάρτηση στην περιοχή αυτή με έναν πόλο τάξης 1 στο <math><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="TeX">s=1</annotation></semantics></math>. Η επεκταμένη αυτή συνάρτηση είναι:</p>
+
+      <math display="block"><semantics><mrow><mi>ζ</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mrow><mi>s</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>−</mo><mi>s</mi><msubsup><mo>∫</mo><mn>1</mn><mn>∞</mn></msubsup><mfrac><mrow><mi>saw</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><msup><mi>x</mi><mrow><mi>s</mi><mo>+</mo><mn>1</mn></mrow></msup></mfrac><mi>d</mi><mi>x</mi><mo>,</mo></mrow><annotation encoding="TeX">\zeta (s)={\frac {1}{2}}+{\frac {1}{s-1}}-s\int _{1}^{\infty }{\frac {\mi{saw}(x)}{x^{s+1}}}dx,</annotation></semantics></math>
+
+      <p>όπου <math><semantics><mrow><mrow><mi>saw</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mi>x</mi><mo>−</mo><mo stretchy="false">⌊</mo><mi>x</mi><mo stretchy="false">⌋</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></mrow><annotation encoding="TeX">{\mi{saw}(x)}={x-\lfloor x\rfloor - \frac{1}{2}}</annotation></semantics></math> (με <math><semantics><mrow><mo stretchy="false">⌊</mo><mi>x</mi><mo stretchy="false">⌋</mo></mrow><annotation encoding="TeX">\lfloor x\rfloor</annotation></semantics></math> δηλώνεται το ακέραιο μέρος του <math><semantics><mi>x</mi><annotation encoding="TeX">x</annotation></semantics></math>.</p>
+
+      <p>Η ζήτα συνάρτηση μπορεί να επεκταθεί αναλυτικά σε όλο το <math><semantics><mi>ℂ</mi><annotation encoding="TeX">\mathbb C</annotation></semantics></math> σε μία μερομορφική συνάρτηση στην περιοχή αυτή με έναν πόλο τάξής 1 στο <math><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="TeX">s=1</annotation></semantics></math>. Για <math><semantics><mrow><mi>Re</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>&gt;</mo><mrow><mn>1</mn><mo>−</mo><mi>q</mi></mrow></mrow><annotation encoding="TeX">\mi{Re}(s) &gt; {1-q}</annotation></semantics></math> η επεκταμένη αυτή συνάρτηση είναι:
+      </p>
+
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>ζ</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mrow><mi>s</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>+</mo><munderover><mo>∑</mo><mrow><mi>r</mi><mo>=</mo><mn>2</mn></mrow><mi>q</mi></munderover><mfrac><msub><mi>B</mi><mi>r</mi></msub><mrow><mi>r</mi><mo>!</mo></mrow></mfrac><mi>s</mi><mo stretchy="false">(</mo><mi>s</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>…</mo><mo stretchy="false">(</mo><mi>s</mi><mo>+</mo><mi>r</mi><mo>−</mo><mn>2</mn><mo stretchy="false">)</mo><mo>−</mo><mfrac><mn>1</mn><mrow><mi>q</mi><mo>!</mo></mrow></mfrac><mi>s</mi><mo stretchy="false">(</mo><mi>s</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>…</mo><mo stretchy="false">(</mo><mi>s</mi><mo>+</mo><mi>q</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><msubsup><mo>∫</mo><mn>1</mn><mn>∞</mn></msubsup><mfrac><mrow><msub><mover><mi>B</mi><mo stretchy="false">˜</mo></mover><mi>q</mi></msub><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><msup><mi>x</mi><mrow><mi>s</mi><mo>+</mo><mi>q</mi></mrow></msup></mfrac><mi>d</mi><mi>x</mi></mrow><mo>,</mo></mrow><annotation encoding="TeX">{\zeta (s)}={{\frac {1}{2}}+{\frac {1}{s-1}}+\sum _{r=2}^{q}{\frac {B_{r}}{r!}}s(s+1)\ldots (s+r-2)-{\frac {1}{q!}}s(s+1)\ldots (s+q-1)\int _{1}^{\infty }{\frac {{\tilde {B}}_{q}(x)}{x^{s+q}}}dx},</annotation></semantics></math>
+
+      <p>όπου <math><semantics><msub><mi>B</mi><mi>r</mi></msub><annotation encoding="TeX">B_r</annotation></semantics></math> οι αριθμοί Bernoulli, <math><semantics><mrow><msub><mover><mi>B</mi><mo stretchy="false">˜</mo></mover><mi>q</mi></msub><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>:=</mo><mrow><msub><mi>B</mi><mi>q</mi></msub><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mo stretchy="false">⌊</mo><mi>x</mi><mo stretchy="false">⌋</mo><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="TeX">{\tilde {B}}_{q}(x):={B_{q}(x-\lfloor x\rfloor )}</annotation></semantics></math>, <math><semantics><mrow><msub><mi>B</mi><mi>q</mi></msub><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="TeX">B_{q}(x)</annotation></semantics></math> τα πολυώνυμα Bernoulli και όπου το q μπορεί να πάρει οσοδήποτε μεγάλη τιμή.</p>
+    </section>
+
+    <section>
+
+      <h2>Σχέσεις</h2>
+
+      <p>Συναρτησιακή εξίσωση της ζήτα συνάρτησης (functional equation):</p>
+
+      <math display="block"><semantics><mrow><mrow><mi>ζ</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><msup><mn>2</mn><mi>s</mi></msup><msup><mi>π</mi><mrow><mi>s</mi><mo>−</mo><mn>1</mn></mrow></msup><mo lspace="0em" rspace="0em">sin</mo><mrow><mo>(</mo><mfrac><mrow><mi>π</mi><mi>s</mi></mrow><mn>2</mn></mfrac><mo>)</mo></mrow><mi mathvariant="normal">Γ</mi><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>s</mi><mo stretchy="false">)</mo><mi>ζ</mi><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>s</mi><mo stretchy="false">)</mo><mo>,</mo><mspace width="2em"></mspace><mi>s</mi><mo>∊</mo><mi>ℂ</mi><mo>,</mo></mrow><annotation encoding="TeX">{\zeta (s)}=2^{s}\pi ^{s-1}\sin \left({\frac {\pi s}{2}}\right)\Gamma (1-s)\zeta (1-s),\qquad s\in \mathbb {C},</annotation></semantics></math>
+
+      <p>όπου <math><semantics><mi mathvariant="normal">Γ</mi><annotation encoding="TeX">\Gamma</annotation></semantics></math> η συνάρτηση γάμμα.</p>
+
+      <p>Η συνάρτηση γάμμα (ή ακριβέστερα η αναλυτική προέκτασή της στο <math><semantics><mi>ℂ</mi><annotation encoding="TeX">\mathbb{C}</annotation></semantics></math>) έχει πόλους τάξης 1 στο <math><semantics><mrow><mrow><mi>s</mi><mo>=</mo><mo>−</mo><mi>k</mi></mrow><mo>,</mo><mspace width="0.16666666666666666em"></mspace><mi>k</mi><mo>∊</mo><msub><mi>ℕ</mi><mn>0</mn></msub></mrow><annotation encoding="TeX">{s=-k},\,k\in \mathbb{N}_{0}</annotation></semantics></math>.
+        Η ζήτα συνάρτηση μηδενίζεται συνεπώς για <math><semantics><mrow><mrow><mi>s</mi><mo>=</mo><mo>−</mo><mn>2</mn><mi>k</mi></mrow><mo>,</mo><mrow><mi>k</mi><mo>∊</mo><msup><mi>ℕ</mi><mo>*</mo></msup></mrow></mrow><annotation encoding="TeX">{s=-2k}, {k\in \mathbb{N}^{*}}</annotation></semantics></math>.</p>
+    </section>
+
+    <section>
+      <h2>Υπόθεση του Riemann</h2>
+
+      <p>Η υπόθεση του Riemann είναι ένα από τα άλυτα προβλήματα της θεωρίας αριθμών. Δηλώνει ότι εκτός από τις τιμές <math><semantics><mrow><mrow><mi>s</mi><mo>=</mo><mo>−</mo><mn>2</mn><mi>k</mi></mrow><mo>,</mo><mrow><mi>k</mi><mo>∊</mo><msup><mi>ℕ</mi><mo>*</mo></msup></mrow></mrow><annotation encoding="TeX">{s=-2k},{k\in \mathbb{N}^{*}}</annotation></semantics></math> η συνάρτηση ζήτα μηδενίζεται μόνο για <math><semantics><mi>s</mi><annotation encoding="TeX">s</annotation></semantics></math> με <math><semantics><mrow><mrow><mi>Re</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><annotation encoding="TeX">{\mi{Re}(s)}=\frac{1}{2}</annotation></semantics></math>.</p>
+
+      <p>Από την συναρτησιακή εξίσωση της συνάρτησης ζήτα και τις ιδιότητες της συνάρτησης γάμα προκύπτει ότι η συνάρτηση ζήτα για <math><semantics><mrow><mi>s</mi><mo>∊</mo><mi>ℂ</mi></mrow><annotation encoding="TeX">s\in \mathbb {C}</annotation></semantics></math> με <math><semantics><mrow><mrow><mi>Re</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="TeX">{\mi{Re}(s)}&lt;0</annotation></semantics></math> μηδενίζεται μόνο για <math><semantics><mrow><mrow><mi>s</mi><mo>=</mo><mo>−</mo><mn>2</mn><mi>k</mi></mrow><mo>,</mo><mrow><mi>k</mi><mo>∊</mo><msup><mi>ℕ</mi><mo>*</mo></msup></mrow></mrow><annotation encoding="TeX">{s=-2k},{k\in \mathbb {N} ^{*}}</annotation></semantics></math>. Στην περιοχή <math><semantics><mrow><mo stretchy="false">{</mo><mrow><mi>s</mi><mo>∊</mo><mi>ℂ</mi></mrow><mo>:</mo><mrow><mrow><mi>Re</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>&gt;</mo><mn>1</mn></mrow><mo stretchy="false">}</mo></mrow><annotation encoding="TeX">\{{s\in \mathbb {C}} : {{\mi{Re}(s)}&gt;1} \}</annotation></semantics></math> προφανώς δε μηδενίζεται. Επίσης αποδυκνείεται ότι <math><semantics><mrow><mrow><mi>ζ</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>≠</mo><mn>0</mn></mrow><annotation encoding="TeX">{\zeta(s)} \neq 0</annotation></semantics></math> για <math><semantics><mrow><mrow><mi>Re</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>∊</mo><mrow><mo stretchy="false">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="TeX">{\mi{Re}(s)}\in{\{0,1\}}</annotation></semantics></math>. Συνεπώς οι υπόλοιπες τιμές που τη μηδενίζουν πρέπει να ικανοποιούν <math><semantics><mrow><mn>0</mn><mo>&lt;</mo><mrow><mi>Re</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="TeX">0&lt;{\mi{Re}(s)}&lt;1</annotation></semantics></math>.</p>
+    </section>
+    <section>
+      <h2>Βιβλιογραφία</h2>
+
+      <h3>Μαθηματικά</h3>
+      <ul>
+        <li>J. Neukirch, Algebraische Zahlentheorie, Springer, Berlin, 1992, ISBN 3-540-54273-6 <span style="font-family: sans-serif; cursor: help; color: #555; font-size: 1.2em;" title="Κείμενο γραμμένο στην γερμανική γλώσσα">(<span style="color: #555; font-size: 0.7em; position: relative; bottom: 0.1em">Γερμανικά</span>)</span></li>
+        <li>Reinhard Remmert, Funktionentheorie 1, Springer, Berlin, 1992, ISBN 3-540-55233-2 <span style="font-family: sans-serif; cursor: help; color: #555; font-size: 1.2em;" title="Κείμενο γραμμένο στην γερμανική γλώσσα">(<span style="color: #555; font-size: 0.7em; position: relative; bottom: 0.1em">Γερμανικά</span>)</span></li>
+        <li>Edward Charles Titchmarsh, The Zeta-Function of Riemann, 1930 <span style="font-family: sans-serif; cursor: help; color: #555; font-size: 1.2em;" title="Κείμενο γραμμένο στην αγγλική γλώσσα">(<span style="color: #555; font-size: 0.7em; position: relative; bottom: 0.1em">Αγγλικά</span>)</span></li>
+        <li>Edward Charles Titchmarsh, The Theory of the Riemann Zeta-Function, 1951 <span style="font-family: sans-serif; cursor: help; color: #555; font-size: 1.2em;" title="Κείμενο γραμμένο στην αγγλική γλώσσα">(<span style="color: #555; font-size: 0.7em; position: relative; bottom: 0.1em">Αγγλικά</span>)</span></li>
+        <li>Don Zagier, Zetafunktionen und quadratische Körper, Teil 1, § 4, Springer, Berlin, Heidelberg, New York, 1981, ISBN 3-540-10603-0 <span style="font-family: sans-serif; cursor: help; color: #555; font-size: 1.2em;" title="Κείμενο γραμμένο στην γερμανική γλώσσα">(<span style="color: #555; font-size: 0.7em; position: relative; bottom: 0.1em">Γερμανικά</span>)</span></li>
+      </ul>
+
+      <h3>Ιστορική εξέλιξη</h3>
+      <ul>
+        <li>Marcus du Sautoy, Η MOYΣIKH TΩN ΠPΩTΩN APIΘMΩN, Το μεγαλύτερο ανεπίλυτο μυστήριο των Μαθηματικών, Τραυλός, 2005, ISBN 960-6640-00-0 <span style="font-family: sans-serif; cursor: help; color: #555; font-size: 1.2em;" title="Κείμενο γραμμένο στην Ελληνική γλώσσα">(<span style="color: #555; font-size: 0.7em; position: relative; bottom: 0.1em">Ελληνικά</span>)</span></li>
+        <li>John Derbyshire, PRIME OBSESSION, Joshef Henry Press, ISBN 0-309-08549</li>
+      </ul>
+
+    </section>
+
+    <hr/>
+
+    <footer>
+      The content of this page is taken from Wikipedia article Βικιπαίδεια's article <a href="https://el.wikipedia.org/wiki/%CE%A3%CF%85%CE%BD%CE%AC%CF%81%CF%84%CE%B7%CF%83%CE%B7_%CE%B6%CE%AE%CF%84%CE%B1_%CE%A1%CE%AE%CE%BC%CE%B1%CE%BD">Συνάρτηση ζήτα Ρήμαν</a> and is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+    </footer>
+  </body>
+</html>
