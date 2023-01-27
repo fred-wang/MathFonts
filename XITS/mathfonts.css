@@ -13,36 +13,36 @@ http://mirrors.ctan.org/fonts/
 @font-face {
     font-family: XITS;
     src: local('XITS'),
-         url('xits-regular.woff2'), url('xits-regular.woff');
+         url('XITS-Regular.woff2'), url('XITS-Regular.woff');
 }
 @font-face {
     font-family: XITS;
     src: local('XITS Bold'), local('XITS-Bold'),
-         url('xits-bold.woff2'), url('xits-bold.woff');
+         url('XITS-Bold.woff2'), url('XITS-Bold.woff');
     font-weight: bold;
 }
 @font-face {
     font-family: XITS;
     src: local('XITS Italic'), local('XITS-Italic'),
-         url('xits-italic.woff2'), url('xits-italic.woff');
+         url('XITS-Italic.woff2'), url('XITS-Italic.woff');
     font-style: italic;
 }
 @font-face {
     font-family: XITS;
     src: local('XITS Bold Italic'), local('XITS-BoldItalic'),
-         url('xits-bolditalic.woff2'), url('xits-bolditalic.woff');
+         url('XITS-BoldItalic.woff2'), url('XITS-BoldItalic.woff');
     font-weight: bold;
     font-style: italic;
 }
 @font-face {
     font-family: XITS Math;
     src: local('XITS Math'), local('XITSMath-Regular'),
-         url('xits-math.woff2'), url('xits-math.woff');
+         url('XITSMath-Regular.woff2'), url('XITSMath-Regular.woff');
 }
 @font-face {
     font-family: XITS Math;
     src: local('XITS Math Bold'), local('XITSMath-Bold'),
-         url('xits-mathbold.woff2'), url('xits-mathbold.woff');
+         url('XITSMath-Bold.woff2'), url('XITSMathBold.woff');
     font-weight: bold;
 }
 
