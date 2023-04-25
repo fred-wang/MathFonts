@@ -28,15 +28,13 @@ open source fonts are also listed but they are not provided.
 Warning
 -------
 
-Note that only Gecko and WebKit have (more or less complete) support for MathML
-and the OpenType MATH table. The WOFF2 format is not supported by all web
-rendering engines.
-Also some (but not all) of the fonts provide old style numbers and calligraphic
-letters accessible via OpenType font features. Some CSS rules from the
-[CSS Fonts Module Level](http://dev.w3.org/csswg/css-fonts/)
-are provided to help selecting the corresponding glyphs, but these are not
-implemented/enabled in all browsers yet.
-In general, it is recommended to try the most recent versions of browsers.
+This page uses features that may not be supported by legacy web rendering engines:
+
+- MathML and the OpenType MATH table.
+- the WOFF2 format.
+- CSS rules from the [CSS Fonts Module Level](http://dev.w3.org/csswg/css-fonts/)
+  that are used by some fonts to provide old style numbers and
+  calligraphic letters.
 
 Using Math fonts on your Web site
 ---------------------------------
