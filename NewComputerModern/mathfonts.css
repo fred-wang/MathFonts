@@ -1,0 +1,32 @@
+/*
+Computer Modern Math is released under the GUST Font License. See the files in this
+directory for details. The font can be obtained from several TeX distributions
+or package managers. Corresponding text founts are NewCM10-Regular.otf or NewCM10-Book.otf.
+
+The OTF fonts have been obtained from http://mirrors.ctan.org/fonts/ and converted
+to woff.
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: NewComputerModernMath;
+    src: local('NewComputerModernMath'), local('NewComputerModernMath-Regular'),
+         url('NewCMMath-Regular.woff2'), url('NewCMMath-Regular.woff');
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: NewComputerModernMath;
+}
+m|math {
+    font-family: NewComputerModernMath;
+}
+
+@font-feature-values NewComputerModernMath { @stylistic { calligraphic: 1; } }
+m|*.calligraphic {
+    font-variant-alternates: stylistic(calligraphic); /* Recommended syntax */
+    font-feature-settings: 'ss01';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'ss01';    /* Gecko <= 33 syntax */
+    -webkit-font-feature-settings: 'ss01'; /* Blink syntax */
+}

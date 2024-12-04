@@ -5,13 +5,13 @@
 COMPRESS=@PYTHON@ ../compress-font.py
 
 # Build all the open source fonts
-all: Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NewComputerModern NewComputerModernSans STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
 # FIXME: This is no longer true with woff2 compression.
 # See https://github.com/fred-wang/MathFonts/issues/5
-.PHONY: clean distclean Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NeoEuler NewComputerModern NewComputerModernSans STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -262,6 +262,39 @@ NeoEuler: NeoEuler/euler-otf-master
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ euler.woff
 
+# NewComputerModern
+NEWCOMPUTERMODERN_URL="https://mirrors.ctan.org/fonts/newcomputermodern.zip"
+GFL_URL="http://tug.org/fonts/licenses/GUST-FONT-LICENSE.txt"
+
+NewComputerModern/newcomputermodern:
+	 # Get the TeX Gyre Bonum from GUST
+	cd NewComputerModern; @WGET@ $(NEWCOMPUTERMODERN_URL); \
+	@UNZIP@ newcomputermodern.zip ;
+	@WGET@ $(GFL_URL) -O $@/GUST-FONT-LICENSE.txt ;
+
+NewComputerModern: NewComputerModern/newcomputermodern
+	# Copy the fonts and doc and convert them into WOFF
+	cp $</otf/NewCMMath-Regular.otf $@
+	cp $</GUST-FONT-LICENSE.txt $@
+	cd $@; $(COMPRESS) NewCMMath-Regular.otf ; rm NewCMMath-Regular.otf
+	# Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/NewCMMath-Regular.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+	# Generate the testcase
+	@PYTHON@ GenerateHTMLTest.py $@ NewCMMath-Regular.woff
+
+NewComputerModernSans: NewComputerModern/newcomputermodern
+	# Copy the fonts and doc and convert them into WOFF
+	cp $</otf/NewCMSansMath-Regular.otf $@
+	cp $</GUST-FONT-LICENSE.txt $@
+	cd $@; $(COMPRESS) NewCMSansMath-Regular.otf ; rm NewCMSansMath-Regular.otf
+	# Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/NewCMSansMath-Regular.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+	# Generate the testcase
+	@PYTHON@ GenerateHTMLTest.py $@ NewCMSansMath-Regular.woff
+
+
 # TeXGyreBonum
 TEXGYREBONUM_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/qbk2.004otf.zip"
 TEXGYREBONUM_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/qbk-hist.txt/at_download/file"
@@ -442,6 +475,7 @@ clean:
 	rm -rf LeteSansMath/*.zip LeteSansMath/lete-sans-math;
 	rm -rf Libertinus/*.zip Libertinus/libertinus;
 	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;
+	rm -rf NewComputerModern/*.zip NewComputerModern/newcomputermodern;
 	rm -rf STIX/*.zip STIX/stix;
 	rm -rf TeXGyre*/*.zip TeXGyre*/texgyre*;
 	rm -rf XITS/*.zip XITS/xits;

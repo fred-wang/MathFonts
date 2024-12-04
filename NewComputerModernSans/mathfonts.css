@@ -1,0 +1,32 @@
+/*
+Computer Modern Sans Math is released under the GUST Font License. See the files in this
+directory for details. The font can be obtained from several TeX distributions
+or package managers. Corresponding text founts are Sans text fonts.
+
+The OTF fonts have been obtained from http://mirrors.ctan.org/fonts/ and converted
+to woff.
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: NewComputerModernSansMath;
+    src: local('NewComputerModernSansMath'), local('NewComputerModernSansMath'),
+         url('NewCMSansMath-Regular.woff2'), url('NewCMSansMath-Regular.woff');
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: NewComputerModernSansMath;
+}
+m|math {
+    font-family: NewComputerModernSansMath;
+}
+
+@font-feature-values NewComputerModernSansMath { @stylistic { calligraphic: 1; } }
+m|*.calligraphic {
+    font-variant-alternates: stylistic(calligraphic); /* Recommended syntax */
+    font-feature-settings: 'ss01';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'ss01';    /* Gecko <= 33 syntax */
+    -webkit-font-feature-settings: 'ss01'; /* Blink syntax */
+}

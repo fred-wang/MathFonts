@@ -10,6 +10,8 @@ let mathfont_list = {
     "LeteSansMath": "Lete Sans Math",
     "Libertinus": "Libertinus",
     "LucidaBright": "Lucida Bright (local only)",
+    "NewComputerModern": "New Computer Modern",
+    "NewComputerModernSans": "New Computer Modern Sans",
     "Minion": "Minion (local only)",
     "STIX": "STIX",
     "TeXGyreBonum": "TeX Gyre Bonum",
