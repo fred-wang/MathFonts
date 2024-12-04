@@ -31,11 +31,3 @@ m|math {
     -webkit-font-feature-settings: 'onum'; /* Blink syntax */
 }
 
-@font-feature-values Lete Sans Math { @stylistic { calligraphic: 1; } }
-m|*.calligraphic {
-    font-variant-alternates: stylistic(calligraphic); /* Recommended syntax */
-    font-feature-settings: 'salt';         /* OpenType feature syntax */
-    -moz-font-feature-settings: 'salt';    /* Gecko <= 33 syntax */
-    -webkit-font-feature-settings: 'salt'; /* Blink syntax */
-}
-
