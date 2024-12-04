@@ -1,0 +1,33 @@
+/*
+Lete Sans Math is released under the SIL Open Font License. See the files in this
+directory for details. The font can be obtained from several TeX distributions
+or package managers. It is recommended to use it with the Lato font or other
+sans-serif fonts for the surrounding text.
+
+The OTF fonts have been obtained from http://mirrors.ctan.org/fonts/ and
+converted to WOFF.
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: Lete Sans Math;
+    src: local('Lete Sans Math'), local('Lete-Sans-Math'),
+         url('LeteSansMath.woff2'), url('LeteSansMath.woff');
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: Lete Sans Math;
+}
+m|math {
+    font-family: Lete Sans Math;
+}
+
+.oldstylenumbers {
+    font-variant-numeric: oldstyle-nums;   /* Recommended syntax */
+    font-feature-settings: 'onum';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'onum';    /* Gecko <= 33 syntax */
+    -webkit-font-feature-settings: 'onum'; /* Blink syntax */
+}
+

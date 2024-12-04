@@ -7,6 +7,7 @@ let mathfont_list = {
     "Garamond": "Garamond",
     "GFS_NeoHellenic": "GFS NeoHellenic",
     "LatinModern": "Latin Modern",
+    "LeteSansMath": "Lete Sans Math",
     "Libertinus": "Libertinus",
     "LucidaBright": "Lucida Bright (local only)",
     "Minion": "Minion (local only)",

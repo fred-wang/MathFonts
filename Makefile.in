@@ -5,13 +5,13 @@
 COMPRESS=@PYTHON@ ../compress-font.py
 
 # Build all the open source fonts
-all: Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern Libertinus STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
 # FIXME: This is no longer true with woff2 compression.
 # See https://github.com/fred-wang/MathFonts/issues/5
-.PHONY: clean distclean Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NeoEuler STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -188,6 +188,40 @@ LatinModern: LatinModern/latinmodern
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ latinmodern-math.woff
+
+# Lete Sans Math
+#
+LETESANS_URL="http://mirrors.ctan.org/fonts/lete-sans-math.zip"
+OFL_LICENSE_URL="https://openfontlicense.org/documents/OFL.txt"
+OFL_FAQ_URL="https://openfontlicense.org/documents/OFL-FAQ.txt"
+
+LeteSansMath/lete-sans-math:
+	 # Get the package from CTAN and add the OFL text documents.
+	cd LeteSansMath; @WGET@ $(LETESANS_URL); @UNZIP@ lete-sans-math.zip; \
+	cd lete-sans-math; @WGET@ $(OFL_FAQ_URL) -O OFL-FAQ.txt; \
+	@WGET@ $(OFL_LICENSE_URL) -O OFL.txt;
+
+LeteSansMath: LeteSansMath/lete-sans-math
+	 # Keep only the otf files and doc and convert into WOFF.
+	cp $</*.otf $@; cd $@; \
+	$(COMPRESS) LeteSansMath.otf; $(COMPRESS) LeteSansMath-Bold.otf; rm *.otf;
+	 # The Lete Sans Math package on CTAN does not contain any OFL license, so we
+	 # complete the copyright information here.
+	cp $</OFL-FAQ.txt $@;
+	cp $</OFL.txt $@;
+	cd $@; \
+	cat OFL.txt | @GREP@ -v "additional Copyright Holder>" | \
+		@GREP@ -v "<additional Reserved Font Name>" \
+		> OFL-tmp.txt; mv OFL-tmp.txt OFL.txt; \
+	@SED@ -i "s/<dates>/2024/" OFL.txt; \
+	@SED@ -i "s/<Copyright Holder>/Chenjing Bu, Daniel Flipo/" OFL.txt; \
+	@SED@ -i "s/ (<URL|email>)//" OFL.txt; \
+	@SED@ -i "s/<Reserved Font Name>/Lete Sans Math/" OFL.txt;
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/LeteSansMath.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+	 # Generate the testcase
+	@PYTHON@ GenerateHTMLTest.py $@ LeteSansMath.woff
 
 # Libertinus
 LIBERTINUS_URL=https://github.com/khaledhosny/libertinus/releases/download/v6.2/libertinus-6.2.zip
@@ -405,6 +439,7 @@ clean:
 	rm -rf Garamond/garamond;
 	rm -rf GFS_NeoHellenic/gfs_neohellenic;
 	rm -rf LatinModern/*.zip LatinModern/latinmodern;
+	rm -rf LeteSansMath/*.zip LeteSansMath/lete-sans-math;
 	rm -rf Libertinus/*.zip Libertinus/libertinus;
 	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;
 	rm -rf STIX/*.zip STIX/stix;
