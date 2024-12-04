@@ -17,8 +17,8 @@ all: Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Lib
 # Asana
 
 ASANA_URL="http://mirrors.ctan.org/fonts/Asana-Math.zip"
-OFL_LICENSE_URL="http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=OFL_plaintext&filename=OFL.txt"
-OFL_FAQ_URL="http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=OFL-FAQ_plaintext&filename=OFL-FAQ.txt"
+OFL_LICENSE_URL="https://openfontlicense.org/documents/OFL.txt"
+OFL_FAQ_URL="https://openfontlicense.org/documents/OFL-FAQ.txt"
 
 Asana/Asana-Math:
 	 # Get the package from CTAN and add the OFL text documents.
