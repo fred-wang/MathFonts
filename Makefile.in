@@ -265,6 +265,7 @@ NeoEuler: NeoEuler/euler-otf-master
 # NewComputerModern
 NEWCOMPUTERMODERN_URL="https://mirrors.ctan.org/fonts/newcomputermodern.zip"
 GFL_URL="http://tug.org/fonts/licenses/GUST-FONT-LICENSE.txt"
+NEWCOMPUTERMODERN_FONTS=NewCMMath-Book NewCM10-Book NewCM10-BookItalic NewCM10-Bold NewCM10-BoldItalic
 
 NewComputerModern/newcomputermodern:
 	 # Get the TeX Gyre Bonum from GUST
@@ -274,9 +275,13 @@ NewComputerModern/newcomputermodern:
 
 NewComputerModern: NewComputerModern/newcomputermodern
 	# Copy the fonts and doc and convert them into WOFF
-	cp $</otf/NewCMMath-Book.otf $@
+	for f in $(NEWCOMPUTERMODERN_FONTS) ; do \
+	  cp $</otf/$$f.otf $@ ; \
+	done
 	cp $</GUST-FONT-LICENSE.txt $@
-	cd $@; $(COMPRESS) NewCMMath-Book.otf ; rm NewCMMath-Book.otf
+	cd $@; for f in $(NEWCOMPUTERMODERN_FONTS) ; do \
+	  $(COMPRESS) $$f.otf ; rm $$f.otf ; \
+	done
 	# Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/NewCMMath-Book.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
