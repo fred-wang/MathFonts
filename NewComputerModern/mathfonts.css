@@ -16,8 +16,37 @@ to woff.
          url('NewCMMath-Book.woff2'), url('NewCMMath-Book.woff');
 }
 
+@font-face {
+    font-family: "NewComputerModern10";
+    src: local('NewComputerModern10'),
+         url('NewCM10-Book.woff2'),
+         url('NewCM10-Book.woff');
+}
+@font-face {
+    font-family: "NewComputerModern10";
+    src: local('NewComputerModern10-Bold'),
+         url('NewCM10-Bold.woff2'),
+         url('NewCM10-Bold.woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: "NewComputerModern10";
+    src: local('NewComputerModern10-BookItalic'),
+         url('NewCM10-BookItalic.woff2'),
+         url('NewCM10-BookItalic.woff');
+    font-style: italic;
+}
+@font-face {
+    font-family: "NewComputerModern10";
+    src: local('NewComputerModern10-BoldItalic'),
+         url('NewCM10-BoldItalic.woff2'),
+         url('NewCM10-BoldItalic.woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
 .htmlmathparagraph, m|mtext {
-    font-family: NewComputerModernMath;
+    font-family: "NewComputerModern10";
 }
 m|math {
     font-family: NewComputerModernMath;
