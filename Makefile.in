@@ -274,14 +274,14 @@ NewComputerModern/newcomputermodern:
 
 NewComputerModern: NewComputerModern/newcomputermodern
 	# Copy the fonts and doc and convert them into WOFF
-	cp $</otf/NewCMMath-Regular.otf $@
+	cp $</otf/NewCMMath-Book.otf $@
 	cp $</GUST-FONT-LICENSE.txt $@
-	cd $@; $(COMPRESS) NewCMMath-Regular.otf ; rm NewCMMath-Regular.otf
+	cd $@; $(COMPRESS) NewCMMath-Book.otf ; rm NewCMMath-Book.otf
 	# Generate CheckFont logs
-	@PYTHON@ CheckFont.py $@/NewCMMath-Regular.woff \
+	@PYTHON@ CheckFont.py $@/NewCMMath-Book.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	# Generate the testcase
-	@PYTHON@ GenerateHTMLTest.py $@ NewCMMath-Regular.woff
+	@PYTHON@ GenerateHTMLTest.py $@ NewCMMath-Book.woff
 
 NewComputerModernSans: NewComputerModern/newcomputermodern
 	# Copy the fonts and doc and convert them into WOFF

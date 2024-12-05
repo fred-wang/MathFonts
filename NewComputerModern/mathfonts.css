@@ -12,8 +12,8 @@ to woff.
 
 @font-face {
     font-family: NewComputerModernMath;
-    src: local('NewComputerModernMath'), local('NewComputerModernMath-Regular'),
-         url('NewCMMath-Regular.woff2'), url('NewCMMath-Regular.woff');
+    src: local('NewComputerModernMath'),
+         url('NewCMMath-Book.woff2'), url('NewCMMath-Book.woff');
 }
 
 .htmlmathparagraph, m|mtext {
