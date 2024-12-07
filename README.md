@@ -63,9 +63,9 @@ Build Instructions
 
 You need [GNU Core Utilities](https://en.wikipedia.org/wiki/GNU_Core_Utilities)
 (or equivalent on UNIX systems) as well as `sed`, `grep`, `unzip`, `wget`,
-[fonttools](https://github.com/behdad/fonttools),
-[zopfli](https://github.com/anthrotype/py-zopfli) and
-[brotli](https://github.com/google/brotli/). Type the following command
+[fonttools](https://github.com/fonttools/fonttools),
+[zopfli](https://github.com/fonttools/py-zopfli) and
+[brotli](https://github.com/google/brotli). Type the following command
 to build the font directories:
 
     ./configure
