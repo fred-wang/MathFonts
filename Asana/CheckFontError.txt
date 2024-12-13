@@ -1,0 +1,179 @@
+Program root: /usr
+The glyph named Delta is mapped to U+0394.
+But its name indicates it should be mapped to U+2206.
+The glyph named Omega is mapped to U+03A9.
+But its name indicates it should be mapped to U+2126.
+The glyph named mu is mapped to U+03BC.
+But its name indicates it should be mapped to U+00B5.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222B.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222C.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222D.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222E.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222F.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2230.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2231.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2232.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2233.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A00.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A01.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A02.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A0A.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A0B.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A0C.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A0D.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A0E.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A0F.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A10.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A11.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A12.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A13.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A14.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A15.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A16.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A17.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A18.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A19.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A1A.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A1B.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A1C.
+Warning: Missing glyph for Unicode character U+0000AF!
+Warning: missing components for operator U+203E!
+Warning: Missing glyph for Unicode character U+0000AF!
+Warning: missing components for operator U+005F!
+Warning: missing components for operator U+003D!
+Warning: missing components for operator U+2195!
+Warning: Missing glyph for Unicode character U+0023D0!
+Warning: missing components for operator U+295A!
+Warning: missing components for operator U+295B!
+Warning: missing components for operator U+295E!
+Warning: missing components for operator U+295F!
+Warning: missing components for operator U+21C0!
+Warning: missing components for operator U+21C1!
+Warning: missing components for operator U+21BC!
+Warning: missing components for operator U+21BD!
+Warning: Missing glyph for Unicode character U+0023B0!
+Warning: Missing glyph for Unicode character U+0023B1!
+Warning: missing components for operator U+27F5!
+Warning: missing components for operator U+27F6!
+Warning: missing components for operator U+27F7!
+Warning: missing components for operator U+294E!
+Warning: missing components for operator U+2950!
+Warning: Missing italic correction for glyph 'uni2A0B'!
+Warning: Missing italic correction for glyph 'uni2A0B.display'!
+Warning: Missing ssty table for prescripted operator U+2032!
+Warning: Missing ssty table for prescripted operator U+2033!
+Warning: Missing ssty table for prescripted operator U+2034!
+Warning: Missing ssty table for prescripted operator U+2035!
+Warning: Missing ssty table for prescripted operator U+2036!
+Warning: Missing ssty table for prescripted operator U+2037!
+Warning: Missing ssty table for prescripted operator U+2057!
+Warning: Missing glyph for Unicode character U+01EEA1!
+Warning: Missing glyph for Unicode character U+01EEA2!
+Warning: Missing glyph for Unicode character U+01EEA3!
+Warning: Missing glyph for Unicode character U+01EEA5!
+Warning: Missing glyph for Unicode character U+01EEA6!
+Warning: Missing glyph for Unicode character U+01EEA7!
+Warning: Missing glyph for Unicode character U+01EEA8!
+Warning: Missing glyph for Unicode character U+01EEA9!
+Warning: Missing glyph for Unicode character U+01EEAB!
+Warning: Missing glyph for Unicode character U+01EEAC!
+Warning: Missing glyph for Unicode character U+01EEAD!
+Warning: Missing glyph for Unicode character U+01EEAE!
+Warning: Missing glyph for Unicode character U+01EEAF!
+Warning: Missing glyph for Unicode character U+01EEB0!
+Warning: Missing glyph for Unicode character U+01EEB1!
+Warning: Missing glyph for Unicode character U+01EEB2!
+Warning: Missing glyph for Unicode character U+01EEB3!
+Warning: Missing glyph for Unicode character U+01EEB4!
+Warning: Missing glyph for Unicode character U+01EEB5!
+Warning: Missing glyph for Unicode character U+01EEB6!
+Warning: Missing glyph for Unicode character U+01EEB7!
+Warning: Missing glyph for Unicode character U+01EEB8!
+Warning: Missing glyph for Unicode character U+01EEB9!
+Warning: Missing glyph for Unicode character U+01EEBA!
+Warning: Missing glyph for Unicode character U+01EEBB!
+Warning: Missing glyph for Unicode character U+01EE21!
+Warning: Missing glyph for Unicode character U+01EE22!
+Warning: Missing glyph for Unicode character U+01EE24!
+Warning: Missing glyph for Unicode character U+01EE27!
+Warning: Missing glyph for Unicode character U+01EE29!
+Warning: Missing glyph for Unicode character U+01EE2A!
+Warning: Missing glyph for Unicode character U+01EE2B!
+Warning: Missing glyph for Unicode character U+01EE2C!
+Warning: Missing glyph for Unicode character U+01EE2D!
+Warning: Missing glyph for Unicode character U+01EE2E!
+Warning: Missing glyph for Unicode character U+01EE2F!
+Warning: Missing glyph for Unicode character U+01EE30!
+Warning: Missing glyph for Unicode character U+01EE31!
+Warning: Missing glyph for Unicode character U+01EE32!
+Warning: Missing glyph for Unicode character U+01EE34!
+Warning: Missing glyph for Unicode character U+01EE35!
+Warning: Missing glyph for Unicode character U+01EE36!
+Warning: Missing glyph for Unicode character U+01EE37!
+Warning: Missing glyph for Unicode character U+01EE39!
+Warning: Missing glyph for Unicode character U+01EE3B!
+Warning: Missing glyph for Unicode character U+01EE42!
+Warning: Missing glyph for Unicode character U+01EE47!
+Warning: Missing glyph for Unicode character U+01EE49!
+Warning: Missing glyph for Unicode character U+01EE4B!
+Warning: Missing glyph for Unicode character U+01EE4D!
+Warning: Missing glyph for Unicode character U+01EE4E!
+Warning: Missing glyph for Unicode character U+01EE4F!
+Warning: Missing glyph for Unicode character U+01EE51!
+Warning: Missing glyph for Unicode character U+01EE52!
+Warning: Missing glyph for Unicode character U+01EE54!
+Warning: Missing glyph for Unicode character U+01EE57!
+Warning: Missing glyph for Unicode character U+01EE59!
+Warning: Missing glyph for Unicode character U+01EE5B!
+Warning: Missing glyph for Unicode character U+01EE5D!
+Warning: Missing glyph for Unicode character U+01EE5F!
+Warning: Missing glyph for Unicode character U+01EE80!
+Warning: Missing glyph for Unicode character U+01EE81!
+Warning: Missing glyph for Unicode character U+01EE82!
+Warning: Missing glyph for Unicode character U+01EE83!
+Warning: Missing glyph for Unicode character U+01EE84!
+Warning: Missing glyph for Unicode character U+01EE85!
+Warning: Missing glyph for Unicode character U+01EE86!
+Warning: Missing glyph for Unicode character U+01EE87!
+Warning: Missing glyph for Unicode character U+01EE88!
+Warning: Missing glyph for Unicode character U+01EE89!
+Warning: Missing glyph for Unicode character U+01EE8B!
+Warning: Missing glyph for Unicode character U+01EE8C!
+Warning: Missing glyph for Unicode character U+01EE8D!
+Warning: Missing glyph for Unicode character U+01EE8E!
+Warning: Missing glyph for Unicode character U+01EE8F!
+Warning: Missing glyph for Unicode character U+01EE90!
+Warning: Missing glyph for Unicode character U+01EE91!
+Warning: Missing glyph for Unicode character U+01EE92!
+Warning: Missing glyph for Unicode character U+01EE93!
+Warning: Missing glyph for Unicode character U+01EE94!
+Warning: Missing glyph for Unicode character U+01EE95!
+Warning: Missing glyph for Unicode character U+01EE96!
+Warning: Missing glyph for Unicode character U+01EE97!
+Warning: Missing glyph for Unicode character U+01EE98!
+Warning: Missing glyph for Unicode character U+01EE99!
+Warning: Missing glyph for Unicode character U+01EE9A!
+Warning: Missing glyph for Unicode character U+01EE9B!
+Warning: Missing glyph for Unicode character U+01EE61!
+Warning: Missing glyph for Unicode character U+01EE62!
+Warning: Missing glyph for Unicode character U+01EE64!
+Warning: Missing glyph for Unicode character U+01EE67!
+Warning: Missing glyph for Unicode character U+01EE68!
+Warning: Missing glyph for Unicode character U+01EE69!
+Warning: Missing glyph for Unicode character U+01EE6A!
+Warning: Missing glyph for Unicode character U+01EE6C!
+Warning: Missing glyph for Unicode character U+01EE6D!
+Warning: Missing glyph for Unicode character U+01EE6E!
+Warning: Missing glyph for Unicode character U+01EE6F!
+Warning: Missing glyph for Unicode character U+01EE70!
+Warning: Missing glyph for Unicode character U+01EE71!
+Warning: Missing glyph for Unicode character U+01EE72!
+Warning: Missing glyph for Unicode character U+01EE74!
+Warning: Missing glyph for Unicode character U+01EE75!
+Warning: Missing glyph for Unicode character U+01EE76!
+Warning: Missing glyph for Unicode character U+01EE77!
+Warning: Missing glyph for Unicode character U+01EE79!
+Warning: Missing glyph for Unicode character U+01EE7A!
+Warning: Missing glyph for Unicode character U+01EE7B!
+Warning: Missing glyph for Unicode character U+01EE7C!
+Warning: Missing glyph for Unicode character U+01EE7E!

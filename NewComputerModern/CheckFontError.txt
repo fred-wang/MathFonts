@@ -1,0 +1,61 @@
+Program root: /usr
+The glyph named Delta is mapped to U+0394.
+But its name indicates it should be mapped to U+2206.
+The glyph named Omega is mapped to U+03A9.
+But its name indicates it should be mapped to U+2126.
+The glyph named mu is mapped to U+03BC.
+But its name indicates it should be mapped to U+00B5.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222B.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222C.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222D.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222E.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+222F.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2230.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2231.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2232.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2233.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+22C0.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+22C1.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+22C2.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+22C3.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A03.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A04.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A05.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A06.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A07.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A08.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A0B.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A0C.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A0D.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A0E.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A0F.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A10.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A11.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A12.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A13.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A14.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A15.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A16.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A17.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A18.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A19.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A1A.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A1B.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2A1C.
+Warning: DisplayOperatorMinHeight is less than 1.300000 times the base height of U+2AFF.
+Warning: missing components for operator U+00AF!
+Warning: missing components for operator U+203E!
+Warning: missing components for operator U+005F!
+Warning: missing components for operator U+295A!
+Warning: missing components for operator U+295B!
+Warning: missing components for operator U+295E!
+Warning: missing components for operator U+295F!
+Warning: missing components for operator U+23B0!
+Warning: missing components for operator U+23B1!
+Warning: missing components for operator U+27F5!
+Warning: missing components for operator U+27F6!
+Warning: missing components for operator U+27F7!
+Warning: missing components for operator U+294E!
+Warning: missing components for operator U+2950!
+Warning: U+2A09 does not have any size variant of height at least DisplayOperatorMinHeight
+Warning: Missing italic correction for glyph 'uni2A0B'!

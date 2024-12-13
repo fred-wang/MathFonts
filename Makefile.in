@@ -27,21 +27,6 @@ Asana/Asana-Math:
 	@WGET@ $(OFL_LICENSE_URL) -O OFL.txt;
 
 Asana: Asana/Asana-Math
-	 # Keep only the otf files and doc and convert into WOFF.
-	cp $</* $@; cd $@; rm *.TTC; \
-	$(COMPRESS) Asana-Math.otf; rm *.otf;
-	 # The Asana package on CTAN does not contain any OFL license, so we
-	 # complete the copyright information here.
-	cp $</OFL-FAQ.txt $@;
-	cp $</OFL.txt $@;
-	cd $@; \
-	cat OFL.txt | @GREP@ -v "additional Copyright Holder>" | \
-		@GREP@ -v "<additional Reserved Font Name>" \
-		> OFL-tmp.txt; mv OFL-tmp.txt OFL.txt; \
-	@SED@ -i "s/<dates>/2007\-2015/" OFL.txt; \
-	@SED@ -i "s/<Copyright Holder>/Apostolos Syropoulos/" OFL.txt; \
-	@SED@ -i "s/ (<URL|email>)//" OFL.txt; \
-	@SED@ -i "s/<Reserved Font Name>/Asana Math/" OFL.txt;
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/Asana-Math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -60,15 +45,6 @@ DejaVu/dejavu-fonts-ttf:
 	mv dejavu-fonts-ttf-$(DEJAVU_VERSION) dejavu-fonts-ttf
 
 DejaVu: DejaVu/dejavu-fonts-ttf
-	 # Copy the fonts and doc and convert into WOFF
-	cp $</AUTHORS $</LICENSE $</README.md $</NEWS $@
-	cp $</ttf/DejaVuSerif.ttf \
-	   $</ttf/DejaVuSerif-Bold.ttf \
-	   $</ttf/DejaVuSerif-Italic.ttf \
-	   $</ttf/DejaVuSerif-BoldItalic.ttf \
-	   $</ttf/DejaVuMathTeXGyre.ttf $@
-	cd $@; \
-	for f in `ls *.ttf`; do $(COMPRESS) $$f; done; rm *.ttf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/DejaVuMathTeXGyre.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -89,10 +65,6 @@ FiraMath/firamath:
 	@WGET@ $(FIRAMATH_URL)
 
 FiraMath: FiraMath/firamath
-	 # Copy the fonts and doc and convert into WOFF
-	cp $</LICENSE $/README.md $</*.otf $@
-	cd $@; \
-	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/FiraMath-Regular.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -114,15 +86,6 @@ Garamond/garamond:
 	@UNZIP@ -j garamond-math.zip -d garamond;
 
 Garamond: Garamond/garamond
-	 # Copy the fonts and doc and convert into WOFF
-	cp $</COPYING $@/Garamond-COPYING
-	cp $</README.markdown $@/Garamond-README
-	cp $</README.md $@/GaramondMath-README
-	cp $</EBGaramond12-Regular.otf \
-	   $</EBGaramond12-Italic.otf \
-	   $</Garamond-Math.otf $@
-	cd $@; \
-	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/Garamond-Math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -144,15 +107,6 @@ GFS_NeoHellenic/gfs_neohellenic:
 	@UNZIP@ -j GFS_NeoHellenic_Math.zip -d gfs_neohellenic;
 
 GFS_NeoHellenic: GFS_NeoHellenic/gfs_neohellenic
-	cp $</OFL-FAQ.txt $</OFL.txt $@
-	cp $</README $@
-	cp $</GFSNeohellenicBoldIt.otf \
-	   $</GFSNeohellenicBold.otf \
-	   $</GFSNeohellenicIt.otf \
-	   $</GFSNeohellenic.otf \
-	   $</GFSNeohellenicMath.otf $@
-	cd $@; \
-	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/GFSNeohellenicMath.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -179,12 +133,6 @@ LatinModern/latinmodern:
 	@UNZIP@ -j latinmodern-math-*.zip -d latinmodern;
 
 LatinModern: LatinModern/latinmodern
-	 # Copy the fonts and doc and convert into WOFF
-	cp $</*.txt $</*.TXT $@
-	cp $</lmroman12*.otf $@
-	cp $</latinmodern-math.otf $@
-	cd $@; \
-	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/latinmodern-math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -204,21 +152,6 @@ LeteSansMath/lete-sans-math:
 	@WGET@ $(OFL_LICENSE_URL) -O OFL.txt;
 
 LeteSansMath: LeteSansMath/lete-sans-math
-	 # Keep only the otf files and doc and convert into WOFF.
-	cp $</*.otf $@; cd $@; \
-	$(COMPRESS) LeteSansMath.otf; $(COMPRESS) LeteSansMath-Bold.otf; rm *.otf;
-	 # The Lete Sans Math package on CTAN does not contain any OFL license, so we
-	 # complete the copyright information here.
-	cp $</OFL-FAQ.txt $@;
-	cp $</OFL.txt $@;
-	cd $@; \
-	cat OFL.txt | @GREP@ -v "additional Copyright Holder>" | \
-		@GREP@ -v "<additional Reserved Font Name>" \
-		> OFL-tmp.txt; mv OFL-tmp.txt OFL.txt; \
-	@SED@ -i "s/<dates>/2024/" OFL.txt; \
-	@SED@ -i "s/<Copyright Holder>/Chenjing Bu, Daniel Flipo/" OFL.txt; \
-	@SED@ -i "s/ (<URL|email>)//" OFL.txt; \
-	@SED@ -i "s/<Reserved Font Name>/Lete Sans Math/" OFL.txt;
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/LeteSansMath.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -237,9 +170,6 @@ Libertinus/libertinus:
 	@WGET@ $(LIBERTINUS_URL); @UNZIP@ libertinus*.zip -d libertinus;
 
 Libertinus: Libertinus/libertinus
-	cp $</*/*.txt $</*/*.otf $@
-	cd $@; \
-	for f in $(LIBERTINUS_FONTS) ; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/libertinusmath-regular.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -255,9 +185,6 @@ NeoEuler/euler-otf-master:
 	cd NeoEuler; @WGET@ $(NEO_EULER_URL); @UNZIP@ master.zip;
 
 NeoEuler: NeoEuler/euler-otf-master
-	 # Copy the fonts and doc and convert into WOFF
-	cp $</README $</OFL*.txt $</*.otf $@
-	cd $@; $(COMPRESS) euler.otf; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/euler.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -276,14 +203,6 @@ NewComputerModern/newcomputermodern:
 	@WGET@ $(GFL_URL) -O $@/GUST-FONT-LICENSE.txt ;
 
 NewComputerModern: NewComputerModern/newcomputermodern
-	# Copy the fonts and doc and convert them into WOFF
-	for f in $(NEWCOMPUTERMODERN_FONTS) ; do \
-	  cp $</otf/$$f.otf $@ ; \
-	done
-	cp $</GUST-FONT-LICENSE.txt $@
-	cd $@; for f in $(NEWCOMPUTERMODERN_FONTS) ; do \
-	  $(COMPRESS) $$f.otf ; rm $$f.otf ; \
-	done
 	# Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/NewCMMath-Book.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -291,10 +210,6 @@ NewComputerModern: NewComputerModern/newcomputermodern
 	@PYTHON@ GenerateHTMLTest.py $@ NewCMMath-Book.woff
 
 NewComputerModernSans: NewComputerModern/newcomputermodern
-	# Copy the fonts and doc and convert them into WOFF
-	cp $</otf/NewCMSansMath-Regular.otf $@
-	cp $</GUST-FONT-LICENSE.txt $@
-	cd $@; $(COMPRESS) NewCMSansMath-Regular.otf ; rm NewCMSansMath-Regular.otf
 	# Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/NewCMSansMath-Regular.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -321,10 +236,6 @@ TeXGyreBonum/texgyrebonum:
 	@UNZIP@ -j texgyrebonum-math-*.zip -d texgyrebonum;
 
 TeXGyreBonum: TeXGyreBonum/texgyrebonum
-	 # Copy the fonts and doc and convert into WOFF
-	cp $</*.txt $</*.TXT $</*.otf $@
-	cd $@; \
-	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/texgyrebonum-math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -350,10 +261,6 @@ TeXGyrePagella/texgyrepagella:
 	@UNZIP@ -j texgyrepagella-math-*.zip -d texgyrepagella;
 
 TeXGyrePagella: TeXGyrePagella/texgyrepagella
-	 # Copy the fonts and doc and convert into WOFF
-	cp $</*.txt $</*.TXT $</*.otf $@
-	cd $@; \
-	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/texgyrepagella-math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -379,10 +286,6 @@ TeXGyreSchola/texgyreschola:
 	@UNZIP@ -j texgyreschola-math-*.zip -d texgyreschola;
 
 TeXGyreSchola: TeXGyreSchola/texgyreschola
-	 # Copy the fonts and doc and convert into WOFF
-	cp $</*.txt $</*.TXT $</*.otf $@
-	cd $@; \
-	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/texgyreschola-math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -408,10 +311,6 @@ TeXGyreTermes/texgyretermes:
 	@UNZIP@ -j texgyretermes-math-*.zip -d texgyretermes;
 
 TeXGyreTermes: TeXGyreTermes/texgyretermes
-	 # Copy the fonts and doc and convert into WOFF
-	cp $</*.txt $</*.TXT $</*.otf $@
-	cd $@; \
-	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/texgyretermes-math.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -428,13 +327,6 @@ STIX/stix:
 	mkdir $@; @UNZIP@ -j STIX/STIX.zip -d $@;
 
 STIX: STIX/stix
-	 # Copy the fonts
-	 # TODO: copy license.
-	cp $</STIXTwoText-Regular.otf $</STIXTwoText-Bold.otf $</STIXTwoText-Italic.otf $</STIXTwoText-BoldItalic.otf $</STIXTwoMath-Regular.otf $@
-	 # TODO: don't bother compressing woff2, just keep upstream version.
-	cd $@; \
-	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf *.woff2
-	cp $</STIXTwoText-Regular.woff2 $</STIXTwoText-Bold.woff2 $</STIXTwoText-Italic.woff2 $</STIXTwoText-BoldItalic.woff2 $</STIXTwoMath-Regular.woff2 $@
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/STIXTwoMath-Regular.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
@@ -450,10 +342,6 @@ XITS/xits:
 	cd XITS; @WGET@ $(XITS_URL); @UNZIP@ xits.zip;
 
 XITS: XITS/xits
-	 # Copy the fonts and doc and convert them into WOFF
-	cp $</FONTLOG.txt $</OFL*.txt $</README.txt $</*.otf $@;
-	cd $@; \
-	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/XITSMath-Regular.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
