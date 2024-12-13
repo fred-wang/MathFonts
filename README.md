@@ -62,11 +62,18 @@ Build Instructions
 ------------------
 
 You need [GNU Core Utilities](https://en.wikipedia.org/wiki/GNU_Core_Utilities)
-(or equivalent on UNIX systems) as well as `sed`, `grep`, `unzip`, `wget`,
-[fonttools](https://github.com/fonttools/fonttools),
-[zopfli](https://github.com/fonttools/py-zopfli) and
-[brotli](https://github.com/google/brotli). Type the following command
-to build the font directories:
+(or equivalent on UNIX systems) as well as `grep`,
+[python ≥ 3.8](https://www.python.org/), `sed`, `unzip`, `wget` and `zip`.
+
+You must also install the following Python dependencies:
+- For `compress-font.py`: [fonttools](https://github.com/fonttools/fonttools),
+  [zopfli](https://github.com/fonttools/py-zopfli) and
+  [brotli](https://github.com/google/brotli).
+- For `CheckFont.py` and `GenerateHTMLTest.py`:
+  [fontforge](https://github.com/fontforge/fontforge).
+
+Once all the dependencies are satisfied, type the following command to build the
+font directories:
 
     ./configure
     make
