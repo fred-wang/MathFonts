@@ -102,7 +102,7 @@ FiraMath: FiraMath/firamath
 # Garamond
 
 GARAMOND_URL=https://bitbucket.org/georgd/eb-garamond/downloads/EBGaramond-0.016.zip
-GARAMONDMATH_URL=https://raw.githubusercontent.com/YuanshengZhao/Garamond-Math/master/
+GARAMONDMATH_URL=https://mirrors.ctan.org/fonts/garamond-math.zip
 
 Garamond/garamond:
 	 # Get the Garamond font
@@ -110,12 +110,14 @@ Garamond/garamond:
 	cd Garamond; @WGET@ $(GARAMOND_URL) -O garamond.zip; \
 	@UNZIP@ -j garamond.zip -d garamond;
 	 # Get the Garamond Math font
-	cd $@; @WGET@ $(GARAMONDMATH_URL)/Garamond-Math.otf; \
-	@WGET@ $(GARAMONDMATH_URL)/LICENSE $(GARAMONDMATH_URL)/README.md;
+	cd Garamond; @WGET@ $(GARAMONDMATH_URL); \
+	@UNZIP@ -j garamond-math.zip -d garamond;
 
 Garamond: Garamond/garamond
 	 # Copy the fonts and doc and convert into WOFF
-	cp $</LICENSE $</README.md $@
+	cp $</COPYING $@/Garamond-COPYING
+	cp $</README.markdown $@/Garamond-README
+	cp $</README.md $@/GaramondMath-README
 	cp $</EBGaramond12-Regular.otf \
 	   $</EBGaramond12-Italic.otf \
 	   $</Garamond-Math.otf $@
@@ -339,7 +341,7 @@ TEXGYREPAGELLAMATH_URL="https://www.gust.org.pl/projects/e-foundry/tg-math/downl
 TeXGyrePagella/texgyrepagella:
 	 # Get the TeX Gyre Pagella from GUST
 	cd TeXGyrePagella; @WGET@ $(TEXGYREPAGELLA_URL); \
-	mkdir texgyrepagella; @UNZIP@ qpl*otf.zip -d texgyrepagella;
+	mkdir texgyrepagella; @UNZIP@ -j qpl*otf.zip -d texgyrepagella;
 	@WGET@ $(TEXGYREPAGELLA_HISTORY_URL) -O $@/qpl-hist.txt
 	@WGET@ $(TEXGYREPAGELLA_MANIFEST_URL) -O $@/MANIFEST-TeX-Gyre-Pagella.TXT
 	@WGET@ $(TEXGYREPAGELLA_README_URL) -O $@/README-TeX-Gyre-Pagella.TXT
