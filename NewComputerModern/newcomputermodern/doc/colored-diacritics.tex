@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage[olddefault]{fontsetup}
+\usepackage{luacolor}
+\pagestyle{empty}
+\newfontfamily{\ncmtest}[Renderer=Harfbuzz]{NewCM10-Regular.otf}
+
+\definecolor{orange}{RGB}{255,191,0}
+
+\definecolor{colorone}{RGB}{91,0,250}
+\definecolor{colortwo}{RGB}{250,0,121}
+\definecolor{colorthree}{RGB}{0,204,250}
+\definecolor{colorfour}{RGB}{14,250,0}
+\definecolor{colorfive}{RGB}{255,150,0}
+\definecolor{colorgray}{gray}{0.8}
+
+\newcommand{\emptydiacritic}{\char"034F}
+
+\begin{document}
+\Huge
+{\ncmtest \color{colorgray}a\color{colorfour}̖\color{colortwo}̗\emptydiacritic\color{colorthree}́\color{colorone}̀\color{colorfive}̐}
+\end{document}

@@ -1,0 +1,46 @@
+
+v1.02, 12/July/2022
+====================
+
+The font GFSNeohellenicMath was commissioned to the Greek Font Society (GFS)
+by the Graduate Studies program "Studies in Mathematics" of the Department
+of Mathematics of the University of the Aegean, located on the Samos island, Greece.
+
+The design copyright belongs to the main designer of GFS, George Matthiopoulos.
+The OpenType Math Table embedded in the font was developed by the
+Mathematics Professor Antonis Tsolomitis.
+
+The font is released under the latest OFL license, and it is available
+from the GFS site at http://www.greekfontsociety-gfs.gr
+
+The font is an almost Sans Serif font and one of its main uses is for presentations,
+an area where (we believe) a commercial grade sans math font was not available
+up to now.
+
+The font contains an extened glyph set including more than the standard math symbols such
+as vertically extended integrals, chess symbols, etc. Vertically extended integrals
+are useful for large constructions although they are still not accessible by unicode-math
+(developement of this feature is in the works). To facilitate access to these symbols
+a style file is included (gfsneohllenicot.sty). Larger integrals are accessible with the
+commands \Bigint, \biggint, \Biggint, \bigggint. Smaller integrals, sums and products
+are also available with the commands \smallprod, \smallcoprod, \smallsum and \smallint.
+
+This style file does two additional things. First, it scales the font to 1.2 of it's design size
+to match the xheight of GFSDidot if a serif font is needed to be used with it, and
+fixes accordingly the interline skip. Second it modifies interword spacing to 75% 
+for a tighter look, and adds interletter spacing (tracking) to the \scshape command.
+Oldstyle numbers are also accessible with \scshape.
+
+A math sample is bundled with the font courtesy of Alain Aubord who has converted
+to LaTeX the work of Steve Seiden named "Theoretical Computer Science Cheat Sheet".
+(The name was switched to "Mathematics Cheat Sheet" by Antonis Tsolomitis). 
+(Note that Steve Seiden in his license allows redistribution not for profit
+if his copyright is not altered (it appears on page 4 of the the cheat sheet)).
+
+A Greek Math sample is available
+at http://myria.math.aegean.gr/~atsol/newpage/lecturenotes/convex-geometry/cga.pdf
+
+We want to thank Alain Aubord for providing the cheat sheet and for running several tests
+with the font that provided important feedback.
+
+George Matthiopoulos, Antonis Tsolomitis.

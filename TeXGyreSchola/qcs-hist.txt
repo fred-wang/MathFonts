@@ -1,0 +1,177 @@
+This file belongs to the TeX Gyre collection of fonts. The work is
+released under the GUST Font License. See the MANIFEST-TeX-Gyre-Schola.txt
+and README-TeX-Gyre-Schola.txt files for the details.
+For the most recent version of this license see
+http://www.gust.org.pl/fonts/licenses/GUST-FONT-LICENSE.txt or
+http://tug.org/fonts/licenses/GUST-FONT-LICENSE.txt
+
+Ver 2.005: 30.10.2009
+* path directions in a few glyps corrected
+
+Ver 2.004: 07.10.2009
+* malformed `estimated' glyph corrected
+* accents repositioned to work better with the \accent primitive
+
+Ver 2.003: 16.09.2009
+* this is the first official release of the TeX Gyre Schola fonts since
+  June 22, 2009, when URW++, represented by Dr. Peter Rosenfeld, its
+  Managing Director, kindly agreed to release the original 35 base
+  PostScript fonts as shipped with Ghostscript ver. 4.00 under the LPPL
+  (LaTeX Project Public License). This should be understood so that the
+  35 base Postscript fonts may be used and developed either under the
+  LPPL or one of the GPL (GNU Public Licence) or AFPL (Aladdin Free
+  Public Licence). The latter were put in force with the initial release
+  of the base fonts with Ghostscript ver. 4.00 in 1996. Hereby we thank
+  Dr. Rosenfeld. The TeX Gyre fonts are being develped from the
+  Ghostscript ver. 4.00 base. For reasons explained elsewhere, we prefer
+  to provide our work under the GUST Font Licence (GFL) which is legally
+  equivallent to the LPPL. However, since 1996 the 35 PostScript base
+  fonts were enhanced under the GNU Public License with Vietnamese glyphs
+  by Han The Thanh and Cyrillic glyphs by Valek Filippov. Han The Thanh
+  kindly permitted his additions to be retained under under GFL/LPPL in
+  this and future TeX Gyre fonts releases. Unfortunately, we were unable
+  to receive a similar permission from Valek Filippov for his Cyrillic
+  glyphs, thus there are no Cyrillic glyphs in any of the TeX Gyre fonts.
+* with the removal of the Cyrillic glyphs all t2a-*.tfm, t2b-*.tfm
+  t2c-*.tfm files and the relevant LaTeX *.fd files were also removed.
+* typos in ligature schemes in `comm_mph.mp' corrected
+  (`quotedblbase' and `quotedblleft' instead `quotedblright')
+* spaceskip make consistent with the width of space --
+  qcsb, qcsbi: 0.287em plus 0.144em minus 0.096em,
+  qcsr, qcsr1: 0.278em plus 0.139em minus 0.093em;
+  thanks to Jarmo Niemel\"a for pointing out the problem;
+  previous spacing (0.333em  plus 0.167em minus 0.111em) can be restored:
+  (a) in plain -- by setting \spaceskip=0.333em plus 0.167em minus 0.111em
+  (b) in LaTeX -- by using option `oldspacing' (see below)
+* OTF structure corrected and improved (in particular, the ligature ffi
+  works now properly)
+* `visiblespace' renamed to `uni2423' (suggestion of Werner Lemberg and
+  Karl Berry) -- hopefully everywhere...
+* `Dblgravecomb' renamed to `dblGravecomb'
+* `nomero'  in MT1 sources renamed to `numero', shape altered,
+  name `afii61352' no more used
+* undertie added (suggestion of Werner Lemberg)
+  U+203F -- undertie (smile-shaped glyph placed below baseline)
+  U+2040 -- tie (frown-shaped glyph placed at the top line)
+  U+2054 -- undertieinverted (frown-shaped glyph placed below baseline)
+  nota bene, there is no code point in the Unicode table for the inverted tie...
+* glyphs `acaron', `Acaron', `icaron', `Icaron', `idieresisacute',
+  `Idieresisacute', `jcaron', `J_caron', `ocaron', `Ocaron', `ucaron',
+  `Ucaron', `udieresisacute', `Udieresisacute', `udieresiscaron',
+  `Udieresiscaron', `udieresisgrave', and `Udieresisgrave' added
+  (proposal of Oliver Corff) -- all the glyphs but `J_caron' have code
+  points in the Unicode table and names assigned in the Adobe Glyph List
+  (incidentaly, in J_caron apostrophe is used alike in lcaron and tcaron --
+  cf. http://en.wikipedia.org/wiki/J-caron), small caps were assigned
+  code points in Private Unicode Area  
+* glyps orogate and Orogate (`rogate' in Polish means `with horns')
+  added -- they are used to denote nasal vowels in ancient Polish texts
+  (ca. XIV century)
+* uni2010 (hyphen duplicate) i uni2011 (non-breakable hyphen duplicate) added
+  (suggestion of Hans Hagen)
+* LaTeX *.sty and *.fd files reworked:
+  -- option `oldspacing' provided because of the change of default spacing
+     (see above),
+  -- files l7x*.fd (Lithuanian) refer to `L7x', as they should,
+  -- scheme of referring to slanted variants improved,
+  -- option `scaled=<size>' added which allows to rescale font
+     at loading,
+  -- in TeX Gyre LaTeX packages, text bold is defined as
+     \renewcommand\bfdefault{b} (`b' instead of `bx')
+  -- options `matchlowercase'/`matchuppercase' added which scale
+     the font such that its `x_height'/`cap_height' matches
+     the respective dimension of the main font of the document;
+     one can say also, e.g., `matchlowercase=1.1' if scaling to 110%
+     of the `x_height' of the main font of the document is needed;
+     sample usage:
+       \documentclass{article}
+       \usepackage[T1]{fontenc}
+       \usepackage[matchlowercase]{tgtermes,tgadventor,tgheros}
+       \begin{document}
+         We put TG Termes (main) with \textsf{TG Heros} and
+         {\fontfamily{qag}\selectfont TG Adventor}. \textsf{As~a~result},
+         all small letters have the same heights.
+       \end{document}
+  (note that now TeX Gyre LaTeX styles require the `kvoptions' module
+  which, in turn, necessitates using etex)
+  very many thanks to Marcin Woli\'nski
+
+REMARKS:
+* we are not going to introduce any extensions that would result
+  in yet more TFMs files (e.g., for more convenient handling
+  of oldstyle/normal digits) -- in such cases we suggest using
+  the OTF fonts versions
+* improving hints is a kind of Sisyphean job -- there are no tools
+  for automatic hinting checking; the only method is to check
+  optically/manually each and every character with various display
+  agents, on various screens under various operating systems and various
+  resolutions. We are not totally opposing Sisyphean jobs in general,
+  but having had that much time as we had, we decided to spend it on
+  other improvements...
+
+Ver. 1.103: 22.02.2008
+* math glyphs shifted horizontally (widths left intact)
+* kerns between half rings and `A' (also `a.sc') added 
+* in the OTF files, the features `salt', `ss01', `ss02',
+  `ss03', `ss04' added
+
+Ver. 1.102: 19.02.2008 -- inofficial release
+* compatibility with the recent Latin Modern release (1.106) implemented,
+  see -- http://www.gust.org.pl/projects/e-foundry/latin-modern/
+  main changes: the repertoire of glyphs extended by Arabic transliteration
+  glyphs, OTF structure modified (`size' feature implemented, the ligatures
+  `i_j' and `I_J' available only for Dutch, the ligature `f_k' -- for Polish,
+  the `locl' feature reimplemented -- an artificial glyph `i.TRK' is no
+  longer needed)
+* glyphs uni03C6 and uni03D5 used to be interchanged in all TeX Gyre fonts;
+  the unicode specification is not explicit too much:
+    03C6;GREEK SMALL LETTER PHI
+    03D5;GREEK PHI SYMBOL
+  but FileFormat.Info is:
+    http://www.fileformat.info/info/unicode/char/03c6/index.htm
+    http://www.fileformat.info/info/unicode/char/03d5/index.htm
+  (spotted by Michael Zedler, thanks)
+
+Ver. 1.099: 30.01.2008 -- unpublished
+* a shape of a few glyphs touched (`colonmonetary', `rho.alt', `Delta',
+  `Sigma')
+* `copyright.alt' added
+
+Ver. 1.010, 12.09.2007:
+* width of trademark, servicemark, copyright, copyleft, published,
+  registered, and registered.alt changed; now, the widths
+  of the TeX Gyre Schola glyphs are consistent with the relevant
+  Adobe metric data (for the glyphs from the Adobe Standard Encoding):
+    ftp://ftp.adobe.com/pub/adobe/type/win/all/afmfiles/base35/ncb_____.afm
+    ftp://ftp.adobe.com/pub/adobe/type/win/all/afmfiles/base35/ncbi____.afm
+    ftp://ftp.adobe.com/pub/adobe/type/win/all/afmfiles/base35/nci_____.afm
+    ftp://ftp.adobe.com/pub/adobe/type/win/all/afmfiles/base35/ncr_____.afm
+  moreover, the lslash outlines in all variants were corrected 
+* width of fraction.alt set to 0, widths of hyphen.alt and hyphendbl.alt
+  set to the half of the hyphen width
+* oldstyle numerals in the ts1 encoding replaced by tabular oldstyle ones
+* Type 1 names `lessorequalslant' and `greaterorequalslant' translated
+  to `lessequal.slant' and `greaterequal.slant', respectively, in OTF
+
+Ver. 1.000 -- never published
+
+Ver. 0.996x, 16.04.2007 (internal version number not changed):
+* only OTF files re-generated, hhea and OS/2 tables set explicitly
+  following the recommendations contained in
+  http://typophile.com/wiki/Vertical%20Metrics%20How-To
+  http://typophile.com/node/28277
+
+22.01.2007: no version change
+* Lithuanian *.fd file corrected (reported by Sigitas Tolusis): L7X -> L7x
+
+Ver. 0.996, 14.01.2007:
+* LM-compatible corrections: `[Ll]dotaccent' renamed to `[Ll]dot'
+  (in both PS and OTF), [SsTt]commaaccent renamed to uni0218, uni0219,
+  uni021A, and uni021B, respectively (in OTF only), `[gklnr]commaaccent'
+  duplicated to `[gklnr]cedilla', combining accents supplemented
+  (`commaaccentcomb', `Breveinvertedcomb'), AFDKO's Glyph Order
+  and Alias DB file (GOADB) modified (now both Latin Modern and
+  TeX Gyre engines fonts share the same GOADB)
+* OTF feature locl fixed
+
+Ver. 0.995, 18.12.2006

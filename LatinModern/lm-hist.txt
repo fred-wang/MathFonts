@@ -1,0 +1,331 @@
+This file belongs to the Latin Modern package. The work is released under
+the GUST Font License. See the MANIFEST-Latin-Modern.txt and
+README-Latin-Modern.txt files for the details. For the most recent version of
+this license see http://www.gust.org.pl/fonts/licenses/GUST-FONT-LICENSE.txt
+or http://tug.org/fonts/licenses/GUST-FONT-LICENSE.txt
+
+Ver. 2.005, 21.03.2021:
+* a bug in *lm*tt.fd files, corrected on 01.05.2015, installed
+  belatedly (thanks to Enrico Malizia); fonts were not touched
+
+Ver. 2.004, 30.10.2009:
+* a bug in *lssq.fd files corrected (thanks to Heiko Oberdiek);
+  fonts were not touched, only the time stamp changed
+
+Ver. 2.004, 07.10.2009:
+* malformed `Euro' sign in oblique fonts corrected (thanks to
+  G\"unter Spahlinger)
+* LaTeX *.fd files improved (better substitutions for unavailable
+  variants)
+
+Ver. 2.003, 16.09.2009: main modification: shapes of LM glyps consistent
+with D.E. Knuth's recent changes in CMs plus lots of tiny changes;
+most important changes are described in details below:
+* fonts and glyphs modified according to D.E. Knuth's changes in CMs
+  (note that the corrections related to glyph shapes, not metric data):
+  -- leftward arrow (char '040), rightward arrow (char '041),
+     upward arrow (char '042), downward arrow (char '043),
+     left-and-right arrow (char '044), northeast arrow (char '045),
+     southeast arrow (char '046), northwest arrow (char '055),
+     southwest arrow (char '056), up-and-down arrow (char char '154)
+     lmsy5 lmbsy5 lmsy6 lmsy7 lmbsy7 lmsy8 lmsy9 lmsy10 lmbsy10
+  -- upward arrow (char '013), downward arrow (char '014),
+     lmcsc10 lmtcsc10 lmtti10 lmtt8 lmtt9 lmtt10 lmtt12
+  -- calligraphic F [less swashy], H [extended crossbow],
+     I [lower right corner], T [foot]
+     lmsy5 lmbsy5 lmsy6 lmsy7 lmbsy7 lmsy8 lmsy9 lmsy10 lmbsy10
+  -- lowercase beta (char '014), delta (char '016), omega (char '041)
+     lmmi5 lmmib5 lmmi6 lmmi7 lmmib7 lmmi8 lmmi9 lmmi10 lmmi12 lmmib10
+  -- sans serif C and G [smaller overshoot]
+     lmss8 lmss9 lmss10 lmss12 lmss17 lmssbx10 lmssdc10 lmssq8 lmssqbx8
+  very many thanks to Barbara Beeton, David M. Jones and Karl Berry
+* glyphs `eth', `Eth', `thorn', and `Thorn' reworked (as suggested by
+  Arni Magnusson); it turned that there is no adequate template for all
+  fonts, in particular the EC fonts contain apparent bugs; cf. e.g.,
+  `eth' (char 240) in ecdh1000 (counterpart of lmdunh10 -- enormously long
+  cross) or eclb8 (counterpart of lmssqbx8 -- the cross hidden in the stem);
+  COMMENT: Arni Magnusson wrote: ``I would love to use lmodern instead of
+  cm-super''. Alas, this cannot be easily accomplished: the CM-SUPER fonts
+  are based on the EC fonts, and both collections are not compatible
+  with the CM (and thus LM) fonts! The reason is that the EC and thus
+  CM-SUPER fonts have in most cases widths slightly smaller
+  (with the coefficient ca. 99.975%) than the relevant CM fonts;
+  exceptions are ecssdc10 and ecsql8, where the width coefficients
+  are equal 100%, and ecrm1728, where the widths are greater
+  by 1.5%--2.5% in comparison with cmr17, hence switching
+  between EC/CM-SUPER and CM/LM is in general bound to produce
+  different results
+* a bug in encodings fixed (sometimes instead of `backslash' other
+  characters were typeset)
+* typos in ligature schemes in `comm_mph.mp' corrected
+  (`quotedblbase' and `quotedblleft' instead `quotedblright')
+* `\pound' in math used to be typeset as dollar -- fixed; in ordinary
+  text, however, the result may depend on the current encoding
+  (for T1 is OK) -- thanks to Caity Ross for pointing out the problem
+* OTF structure corrected and improved (in particular, the ligature ffi
+  works now properly)
+* `visiblespace' renamed to `uni2423' (suggestion of Werner Lemberg and
+  Karl Berry) -- hopefully everywhere...
+* `Dblgravecomb' renamed to `dblGravecomb'
+* `nomero' in MT1 sources renamed to `numero', name `afii61352' no more used
+* undertie added (suggestion of Werner Lemberg)
+  U+203F -- undertie (smile-shaped glyph placed below baseline)
+  U+2040 -- tie (frown-shaped glyph placed at the top line)
+  U+2054 -- undertieinverted (frown-shaped glyph placed below baseline)
+  nota bene, there is no code point in the Unicode table for the inverted tie...
+* uppercase Greek completed (duplicates of Latin capitals; suggestion
+  of Hans Hagen)
+* glyphs `acaron', `Acaron', `icaron', `Icaron', `idieresisacute',
+  `Idieresisacute', `jcaron', `J_caron', `ocaron', `Ocaron', `ucaron',
+  `Ucaron', `udieresisacute', `Udieresisacute', `udieresiscaron',
+  `Udieresiscaron', `udieresisgrave', and `Udieresisgrave' added
+  (proposal of Oliver Corff) -- all the glyphs but `J_caron' have code
+  points in the Unicode table and names assigned in the Adobe Glyph List
+  (incidentaly, in J_caron apostrophe is used alike in lcaron and tcaron --
+  cf. http://en.wikipedia.org/wiki/J-caron)
+* glyps orogate and Orogate (`rogate' in Polish means `with horns')
+  added -- they are used to denote nasal vowels in ancient Polish texts
+  (ca. XIV century)
+* uni2010 (hyphen duplicate) i uni2011 (non-breakable hyphen duplicate) added
+  (suggestion of Hans Hagen)
+* LaTeX *.sty and *.fd files reworked, options `nomath' (prevents loading
+  LM math fonts), `lighttt' and `variablett' added; sample usage:
+     \usepackage{lmodern}
+     \usepackage[nomath]{lmodern}
+     \usepackage[variablett]{lmodern}
+     \usepackage[lighttt,variablett]{lmodern}
+  very many thanks to Marcin Woli\'nski
+
+REMARKS:
+* we are not going to introduce any extensions that would result
+  in yet more TFMs files (e.g., for more convenient handling
+  of oldstyle/normal digits) -- in such cases we suggest using
+  the OTF fonts versions
+* improving hints is a kind of Sisyphean job -- there are no tools
+  for automatic hinting checking; the only method is to check
+  optically/manually each and every character with various display
+  agents, on various screens under various operating systems and various
+  resolutions. We are not totally opposing Sisyphean jobs in general,
+  but having had that much time as we had, we decided to spend it on
+  other improvements...
+
+Ver. 1.106, 22.01.2008: several meaningful fixes and enhancements
+* at the suggestion of Hans Hagen and Jonathan Kew (very many thanks
+  for the interesting discussions and willing assistance), the `size'
+  feature (opical sizing) implemented in the OTF files; this triggered
+  a chain of changes of internal names in order to provide adequate
+  family grouping (complying nolens volens with the "4-member family"
+  paradigm) and resulted eventually in a completely new naming scheme
+* beware of the change of the OTF file names:
+      OLD NAMES                          CHANGED     NEW NAMES
+  lmroman10-bold.otf                             lmroman10-bold.otf
+  lmroman10-bolditalic.otf                       lmroman10-bolditalic.otf
+  lmroman10-boldoblique.otf                 +    lmromanslant10-bold.otf
+  lmroman10-capsoblique.otf                 +    lmromancaps10-oblique.otf
+  lmroman10-capsregular.otf                 +    lmromancaps10-regular.otf
+  lmroman10-demi.otf                        +    lmromandemi10-regular.otf
+  lmroman10-demioblique.otf                 +    lmromandemi10-oblique.otf
+  lmroman10-dunhill.otf                     +    lmromandunh10-oblique.otf
+  lmroman10-dunhilloblique.otf              +    lmromandunh10-regular.otf
+  lmroman10-italic.otf                           lmroman10-italic.otf
+  lmroman10-oblique.otf                     +    lmromanslant10-regular.otf
+  lmroman10-regular.otf                          lmroman10-regular.otf
+  lmroman10-unslanted.otf                   +    lmromanunsl10-regular.otf
+  lmroman12-bold.otf                             lmroman12-bold.otf
+  lmroman12-italic.otf                           lmroman12-italic.otf
+  lmroman12-oblique.otf                     +    lmromanslant12-regular.otf
+  lmroman12-regular.otf                          lmroman12-regular.otf
+  lmroman17-oblique.otf                     +    lmromanslant17-regular.otf
+  lmroman17-regular.otf                          lmroman17-regular.otf
+  lmroman5-bold.otf                              lmroman5-bold.otf
+  lmroman5-regular.otf                           lmroman5-regular.otf
+  lmroman6-bold.otf                              lmroman6-bold.otf
+  lmroman6-regular.otf                           lmroman6-regular.otf
+  lmroman7-bold.otf                              lmroman7-bold.otf
+  lmroman7-italic.otf                            lmroman7-italic.otf
+  lmroman7-regular.otf                           lmroman7-regular.otf
+  lmroman8-bold.otf                              lmroman8-bold.otf
+  lmroman8-italic.otf                            lmroman8-italic.otf
+  lmroman8-oblique.otf                      +    lmromanslant8-regular.otf
+  lmroman8-regular.otf                           lmroman8-regular.otf
+  lmroman9-bold.otf                              lmroman9-bold.otf
+  lmroman9-italic.otf                            lmroman9-italic.otf
+  lmroman9-oblique.otf                      +    lmromanslant9-regular.otf
+  lmroman9-regular.otf                           lmroman9-regular.otf
+  lmsans10-bold.otf                              lmsans10-bold.otf
+  lmsans10-boldoblique.otf                       lmsans10-boldoblique.otf
+  lmsans10-demicondensed.otf                +    lmsansdemicond10-regular.otf
+  lmsans10-demicondensedoblique.otf         +    lmsansdemicond10-oblique.otf
+  lmsans10-oblique.otf                           lmsans10-oblique.otf
+  lmsans10-regular.otf                           lmsans10-regular.otf
+  lmsans12-oblique.otf                           lmsans12-oblique.otf
+  lmsans12-regular.otf                           lmsans12-regular.otf
+  lmsans17-oblique.otf                           lmsans17-oblique.otf
+  lmsans17-regular.otf                           lmsans17-regular.otf
+  lmsans8-oblique.otf                            lmsans8-oblique.otf
+  lmsans8-regular.otf                            lmsans8-regular.otf
+  lmsans9-oblique.otf                            lmsans9-oblique.otf
+  lmsans9-regular.otf                            lmsans9-regular.otf
+  lmsansquotation8-bold.otf                 +    lmsansquot8-bold.otf
+  lmsansquotation8-boldoblique.otf          +    lmsansquot8-boldoblique.otf
+  lmsansquotation8-oblique.otf              +    lmsansquot8-oblique.otf
+  lmsansquotation8-regular.otf              +    lmsansquot8-regular.otf
+  lmtypewriter10-capsoblique.otf            +    lmmonocaps10-oblique.otf
+  lmtypewriter10-capsregular.otf            +    lmmonocaps10-regular.otf
+  lmtypewriter10-dark.otf                   +    lmmonolt10-bold.otf
+  lmtypewriter10-darkoblique.otf            +    lmmonolt10-boldoblique.otf
+  lmtypewriter10-italic.otf                 +    lmmono10-italic.otf
+  lmtypewriter10-light.otf                  +    lmmonolt10-regular.otf
+  lmtypewriter10-lightcondensed.otf         +    lmmonoltcond10-regular.otf
+  lmtypewriter10-lightcondensedoblique.otf  +    lmmonoltcond10-oblique.otf
+  lmtypewriter10-lightoblique.otf           +    lmmonolt10-oblique.otf
+  lmtypewriter10-oblique.otf                +    lmmonoslant10-regular.otf
+  lmtypewriter10-regular.otf                +    lmmono10-regular.otf
+  lmtypewriter12-regular.otf                +    lmmono12-regular.otf
+  lmtypewriter8-regular.otf                 +    lmmono8-regular.otf
+  lmtypewriter9-regular.otf                 +    lmmono9-regular.otf
+  lmtypewritervarwd10-dark.otf              +    lmmonoproplt10-bold.otf
+  lmtypewritervarwd10-darkoblique.otf       +    lmmonoproplt10-boldoblique.otf
+  lmtypewritervarwd10-light.otf             +    lmmonoproplt10-oblique.otf
+  lmtypewritervarwd10-lightoblique.otf      +    lmmonoproplt10-regular.otf
+  lmtypewritervarwd10-oblique.otf           +    lmmonoprop10-oblique.otf
+  lmtypewritervarwd10-regular.otf           +    lmmonoprop10-regular.otf
+* and beware of the change of the PostScript Type 1 internal font names --
+  we've fallen into this trap (in particular, all font maps have changed,
+  also lm-rep-*.maps -- thanks, Mojca)
+* ligatures I_J and i_j are now available (in OTFs; feature `liga') only
+  for Dutch; similarly, the ligature f_k -- for Polish; the `locl' feature
+  reimplemented -- using an artificial glyph i.TRK is no longer needed
+  (thanks to Arthur Reutenauer for comments and suggestions)
+* the metric bugs (spotted by Karel P\'\i\v{s}ka -- thanks!) corrected;
+  actually, they turned out to be the consequence of a bug in CM fonts --
+  this is a serious matter, hence a few words of explanation;
+  Karel observed that widths of `j' (lmri*), `x' (lmu10)
+  and `sterling' (lmu10) were different from their CM counterparts;
+  the latter two were just mistakes, while the discrepancy between the
+  widths of the letters `j' in all italic fonts (hence lmu10,
+  and also lmbxi10) is the result of apparently wrong setting of the
+  width of `dottlessj' in MF sources:
+     italsp.mf:
+     cmchar "Dotless italic letter i";
+     beginchar(oct"020",5u#,x_height#,0);
+     [...]
+     cmchar "Dotless italic letter j";
+     beginchar(oct"021",5.5u#,x_height#,desc_depth#);
+     [...]
+     itall.mf:
+     cmchar "Italic letter i";
+     beginchar("i",5u#,min(asc_height#,10/7x_height#+.5flare#),0);
+     [...]
+     cmchar "Italic letter j";
+     beginchar("j",5u#,min(asc_height#,10/7x_height#+.5flare#),desc_depth#);
+     [...]
+  The value `5.5u#' was perhaps brought to `italsp.mf' from romansp.mf...
+  Whatever, we decided that the glyphs `dotlessj' and `j' should have
+  the same width as the letter `dotlessi' (and `i') in italic fonts
+  in both CMs and LMs -- retaining the discrepancy between the width
+  of `j' and `dotlessj' we considered unfounded; note that the width
+  of j-derivatives changed
+* indefatigable Karel P\'\i\v{s}ka pointed out also that small caps
+  have non-uniform heights which resulted in uneven positioning
+  of accents -- corrected
+* dots over the ij ligature aligned horizontally with dots over i and j
+  (for a misterious reason they were placed slightly higher)
+* the heights of digits are now uniform (spotted by Mojca Miklavec and Taco
+  Hoekwater -- thanks); they differ, however, from CM ones because of
+  the limitation of 16 different heights per TFM
+* at the request of Idris Samawi Hamid, several glyphs added for
+  romanized Arabic transliteration: `[Dd]linebelow', `[Hh]brevebelow',
+  `[Hh]dieresis', `[Hh]tilde', `[Ll]tilde', `[Ss]dotbelow',
+  `[Tt]linebelow', `[Th]dieresis', `[Th]tilde', `[Zz]dotbelow',
+  ringhalfleft, ringhalfright, and, additionally, narrower `macron.alt'
+  and `[Ii]macron.alt'; these changes implied also the addition of
+  `linebelow' and `macronbelow' accents (also as ``combined'', i.e.,
+  zero-width variants) which, in turn, resulted in changes
+  of Private Unicode Area  codes (we abandoned the idea of being fully
+  consistent with Adobe's PUA or PUA of such popular fonts like Minion);
+  by the way, all accents having attributes `below' and `inverted' are
+  named uniformly -- first `below', then `inverted'
+* `[Ee].reversed' renamed to `[Ee]reversed' (exist in Adobe Glyph List 2.0),
+  added `eturned' and `schwa', all glyphs assigned proper unicodes
+  (suggestion of Mojca Miklavec)
+* as an ``at leisure'' exercise, one more glyph, `infinity', was added
+  (programmed on the base of MF sources)
+* at the request of V\'{\i}t Z\'yka, variants of the `cs' encoding
+  for small caps and monospace fonts were introduced; at the suggestion of
+  Staszek Wawrykiewicz, a similar variant was introduced for the `qx'
+  ecoding (Polish; actually, `qx' had already a buggy implementation
+  for monospaced fonts) and -- at the suggestion of Marcin Woli\'nski -- for
+  the `rm' encoding (``Regular Math'', i.e., for fonts to be used as text
+  fonts in math, e.g., \fam0) encodings.
+* wrong path directions corrected in `onequarter' and `threequarters'
+  in lmth10 and lmtk10 -- thanks to Karel Hor\'ak
+* kerns specific only for the T5 encoding (i.e., Vietnamese) removed
+  from AFMs and thus from OTFs; in particular, the deprecated `ka' kern
+  pair removed from serif fonts (from TFMs it was removed long ago); also,
+  strange pairs `eacute V', `ecircumflex V', `ecircumflexacute V', ...,
+  etc., occuring in T5 encoding, now do not migrate to AFMs
+* math fonts (PostScript Type 1) have been equipped with PFMs for installing
+  under Win systems; there are two AFM files for each PFB file: (1) *.AFT --
+  consistent with TFM; (2) *.AFM -- consistent with PFB
+* LaTeX fd files slightly modified by Marcin Woli\'nski -- thanks
+  (no functional changes expected)
+
+Ver. 1.010x, 28.02.2007 (internal version number not changed):
+* only OTFs re-generated (files lm1.010x-bas.zip, lm1.010x-otf.zip); reasons:
+  1. hhea and OS/2 tables set explicitly
+     following the recommendations contained in:
+       http://typophile.com/wiki/Vertical%20Metrics%20How-To
+       http://typophile.com/node/28277
+  2. widths of characters in the CFF table
+     used to be rational (inherited from Type 1), but should be integers;
+     the documentation http://www.microsoft.com/OpenType/OTSpec/hmtx.htm
+     says:
+        In CFF OpenType fonts, every glyph's advanceWidth as recorded in
+        the hmtx table must be identical to its x width in the CFF table.
+     and entries in the hmtx table must be unsigned short numbers.
+
+22.01.2007: no version change
+* Lithuanian *.fd files corrected (reported by Sigitas Tolusis): L7X -> L7x
+
+Ver. 1.010, 16.01.2007:
+* important bugs fixed:
+    Richard Kinch in 1995, http://www.truetex.com/tug95ps.zip,
+    Karel P\'\i\v{s}ka, http://www-hep.fzu.cz/~piska/lm2006.html
+  thanks to both; moreover, `perthousand' and `permyriad' corrected
+  in all italic fonts (wrong path directions)
+* LaTeX support fixed and enhanced with LM math (thanks to Marcin
+  Woli\'nski)
+* math text metric files (rm-*.tfm) provided
+* the letter `mu' corrected (other Greek letters must wait for a while)
+* `[lL]dotaccent' renamed to `[lL]dot', wrong shapes (dot above) corrected
+* `cedilla' adjusted in lmri*, lmu10, and lmdunh10
+* `[CcSs]cedilla' reprogrammed in lmri* and lmu10
+* `ogonek' and `cedilla' have forced height=0 now (in TFMs)
+* new encodings (cs, l7x) added
+* some glyphs renamed: `*superior' -> `*.superior', `*.oldstyle' ->
+  `*.taboldstyle', `*.oldstyle.prop' -> `*.oldstyle' (names `*oldstyle',
+  i.e., without a dot, removed)
+* several glyphs added: combining accents, `sfthyphen' (a duplicate of
+  `hyphen' for non-TeX applications), `[eE].reversed', `[tT]cedilla',
+  Romanized Sanskrit letters (`[dD]dotbelow', `[hH]dotbelow', `[lL]dotbelow',
+  `[lL]dotbelowmacron', `[mM]dotbelow', `[nN]dotaccent', `[nN]dotbelow',
+  `[rR]dotbelow', `[rR]dotbelowmacron', `[tT]dotbelow' -- the suggestion
+  of R (Chandra) Chandrasekhar)
+* the structure of OTF files corrected -- grouping within families changed
+  (following Adam Twardoch's suggestions -- thanks), features made more
+  reasonable, glyph naming adjusted to standard recommendations, OTF version
+  number consistent with the PS one
+* the technical documentation provided
+* a few minor changes in sources
+
+Ver. 1.000, 13.04.2006: the first official release
+
+...
+
+Ver. 0.500, 09.11.2002: the first Latin Modern pre-release
+
+Ver. 0.100, 17.09.2002: the first results (then called AE, after L. Engebretsen)
+
+Ver. 0.000, 29.04.2002--03.05.2002: project started (EuroBachoTeX)
+

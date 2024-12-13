@@ -1,0 +1,29 @@
+%\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{newcomputermodern}[v7.0.0 NewCM fonts by Antonis Tsolomitis]
+\typeout{Loading NewCM fonts by Antonis Tsolomitis}
+\RequirePackage{fontspec}
+\RequirePackage{unicode-math}
+
+\newif\if@olddefault
+\DeclareOption{regular}{\@olddefaulttrue}
+\ProcessOptions\relax
+
+\newif\if@sansdefault
+\DeclareOption{sansdefault}{\@sansdefaulttrue}
+\ProcessOptions\relax
+
+%Next command has been moved to fspolddefault.tex and
+% fspdefault.tex 
+%\let\prosgegrammeni=\undefined %Babel compatibility
+
+\if@olddefault
+ \input{fspolddefault.tex}
+ \else
+\if@sansdefault
+\input{fspsansdefault.tex}
+\else
+ \input{fspdefault.tex}
+ \fi
+\fi
+\endinput
+

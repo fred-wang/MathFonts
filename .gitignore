@@ -16,3 +16,4 @@ config.log
 config.status
 webextension/fonts
 webextension-mathml-fonts.zip
+virtualenv

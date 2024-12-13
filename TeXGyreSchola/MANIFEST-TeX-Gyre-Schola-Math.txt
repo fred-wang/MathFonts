@@ -1,0 +1,59 @@
+###########################################################################
+############          The TeX Gyre Collection of Fonts         ############
+###########################################################################
+
+Font: TeX Gyre Schola Math
+Authors: Bogus\l{}aw Jackowski, Piotr Strzelczyk and Piotr Pianowski
+Version: 1.533
+Date: 5 IX 2014 / 19 V 2016 (documentation update)
+
+Copyright 2014 for TeX Gyre math extensions by B. Jackowski,
+P. Strzelczyk and P. Pianowski (on behalf of TeX Users Groups).
+
+This work can be freely used and distributed under
+the GUST Font License (GFL -- see GUST-FONT-LICENSE.txt)
+which is actually an instance of the LaTeX Project Public License
+(LPPL -- see http://www.latex-project.org/lppl.txt).
+
+This work has the maintenance status "maintained". The Current Maintainer
+of this work is Bogus\l{}aw Jackowski, Piotr Strzelczyk and Piotr Pianowski.
+
+This work consists of the files listed in this file.
+
+Below, in three sections required by the GUST Font License,
+font names and file names specific for the TeX Gyre Schola Math
+font are listed.
+
+NOTE: the names of the directories are not subject to the renaming
+restrictions.
+
+1. Fonts whose names should be changed in derived works as requested
+   by clause 1 of GUST-FONT-LICENSE.txt
+
+   1.1 OTF menu names
+       TeX Gyre Schola Math
+       TeXGyreScholaMath-Regular
+
+2. Files whose names should be changed in derived works as requested
+   by clause 1 of GUST-FONT-LICENSE.txt
+
+   2.1 opentype/texgyreschola-math.otf
+
+   2.2 doc/MANIFEST-TeX-Gyre-Schola-Math.txt
+       doc/README-TeX-Gyre-Schola-Math.txt
+       doc/math-test.tex
+       doc/math-test-context.tex
+       doc/test-context-texgyre_schola_math.pdf
+       doc/test-context-texgyre_schola_math.tex
+       doc/test-lualatex-texgyre_schola_math.pdf
+       doc/test-lualatex-texgyre_schola_math.tex
+       doc/test-xelatex-texgyre_schola_math.pdf
+       doc/test-xelatex-texgyre_schola_math.tex
+       doc/test-word-texgyre_schola_math.docx
+       doc/test-word-texgyre_schola_math.pdf
+
+3. Files whose names need not be changed in derived works as requested
+   by clause 1 of GUST-FONT-LICENSE.txt
+
+       doc/GUST-FONT-LICENSE.txt
+       doc/INSTALL.txt
