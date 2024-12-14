@@ -1,0 +1,51 @@
+/*
+IBM Plex is released under the SIL Open Font License, Version 1.1. See the files in this
+directory for details. The font can be obtained from several TeX distributions
+or package managers.
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: IBMPlexMath;
+    src: local('IBMPlexMath-Regular'),
+         url('IBMPlexMath-Regular.woff2'), url('IBMPlexMath-Regular.woff');
+}
+
+@font-face {
+    font-family: "IBMPlexSerif";
+    src: local('IBMPlexSerif-Regular'),
+         url('IBMPlexSerif-Regular.woff2'),
+         url('IBMPlexSerif-Regular.woff');
+}
+@font-face {
+    font-family: "IBMPlexSerif";
+    src: local('IBMPlexSerif-Bold'),
+         url('IBMPlexSerif-Bold.woff2'),
+         url('IBMPlexSerif-Bold.woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: "IBMPlexSerif";
+    src: local('IBMPlexSerif-Italic'),
+         url('IBMPlexSerif-Italic.woff2'),
+         url('IBMPlexSerif-Italic.woff');
+    font-style: italic;
+}
+@font-face {
+    font-family: "IBMPlexSerif";
+    src: local('IBMPlexSerif-BoldItalic'),
+         url('IBMPlexSerif-BoldItalic.woff2'),
+         url('IBMPlexSerif-BoldItalic.woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: "IBMPlexSerif";
+}
+m|math {
+    font-family: "IBMPlexMath";
+}
+

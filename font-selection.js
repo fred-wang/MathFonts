@@ -13,6 +13,7 @@ const mathfont_list = {
     "NewComputerModern": "New Computer Modern",
     "NewComputerModernSans": "New Computer Modern Sans",
     "Minion": "Minion (local only)",
+    "Plex": "IBM Plex",
     "STIX": "STIX",
     "TeXGyreBonum": "TeX Gyre Bonum",
     "TeXGyrePagella": "TeX Gyre Pagella",

@@ -5,13 +5,13 @@
 COMPRESS=@PYTHON@ ../compress-font.py
 
 # Build all the open source fonts
-all: Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NewComputerModern NewComputerModernSans STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NewComputerModern NewComputerModernSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
 # FIXME: This is no longer true with woff2 compression.
 # See https://github.com/fred-wang/MathFonts/issues/5
-.PHONY: clean distclean Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NeoEuler NewComputerModern NewComputerModernSans STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NeoEuler NewComputerModern NewComputerModernSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -302,6 +302,31 @@ NewComputerModernSans: NewComputerModern/newcomputermodern
 	@PYTHON@ GenerateHTMLTest.py $@ NewCMSansMath-Regular.woff
 
 
+# Plex
+PLEXMATH_URL="https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-math%401.1.0/ibm-plex-math.zip"
+PLEXSERIF_URL="https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-serif%401.1.0/ibm-plex-serif.zip"
+
+Plex/ibm-plex-math:
+	cd Plex; @WGET@ $(PLEXMATH_URL); @UNZIP@ ibm-plex-math.zip
+
+Plex/ibm-plex-serif:
+	cd Plex; @WGET@ $(PLEXSERIF_URL); @UNZIP@ ibm-plex-serif.zip
+
+Plex: Plex/ibm-plex-math Plex/ibm-plex-serif
+	cp Plex/ibm-plex-math/fonts/complete/woff2/IBMPlexMath-Regular.woff2 Plex/
+	cp Plex/ibm-plex-math/fonts/complete/woff/IBMPlexMath-Regular.woff Plex/
+	cp Plex/ibm-plex-math/LICENSE.txt Plex/license-ibm-plex-math.txt
+	for i in Regular Italic Bold BoldItalic ; do \
+		cp Plex/ibm-plex-serif/fonts/complete/woff/IBMPlexSerif-$$i.woff Plex/ ; \
+		cp Plex/ibm-plex-serif/fonts/complete/woff2/IBMPlexSerif-$$i.woff2 Plex/ ; \
+	done
+	cp Plex/ibm-plex-serif/LICENSE.txt Plex/license-ibm-plex-serif.txt
+	# Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/IBMPlexMath-Regular.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+	 # Generate the testcase
+	@PYTHON@ GenerateHTMLTest.py $@ IBMPlexMath-Regular.woff
+
 # TeXGyreBonum
 TEXGYREBONUM_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/qbk2.004otf.zip"
 TEXGYREBONUM_HISTORY_URL="http://www.gust.org.pl/projects/e-foundry/tex-gyre/bonum/qbk-hist.txt/at_download/file"
@@ -483,6 +508,7 @@ clean:
 	rm -rf Libertinus/*.zip Libertinus/libertinus;
 	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;
 	rm -rf NewComputerModern/*.zip NewComputerModern/newcomputermodern;
+	rm -rf Plex/*.zip Plex/ibm-plex-math Plex/ibm-plex-serif;
 	rm -rf STIX/*.zip STIX/stix;
 	rm -rf TeXGyre*/*.zip TeXGyre*/texgyre*;
 	rm -rf XITS/*.zip XITS/xits;
