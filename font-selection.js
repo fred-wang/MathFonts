@@ -1,4 +1,4 @@
-let mathfont_list = {
+const mathfont_list = {
     "Default":  "Default fonts (local only)",
     "Asana": "Asana",
     "Cambria": "Cambria (local only)",
@@ -27,7 +27,32 @@ document.addEventListener("DOMContentLoaded", () => {
     mathfont_link.setAttribute("type", "text/css");
     document.head.appendChild(mathfont_link);
 
-    let mathfont_select = document.querySelector("select.mathfont");
+    const mathfont_select = document.querySelector("select.mathfont");
+    const mathmlonly_checkbox =
+        document.querySelector("input[type='checkbox'].mathmlonly")
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const fontFamily = urlParams.get('fontFamily');
+    const mathFontOnly = urlParams.get('mathFontOnly') === 'true';
+    function updateQueryStrings() {
+        const url = new URL(window.location.href);
+        if (mathfont_select) {
+            if (mathfont_select.value !== "Default") {
+              url.searchParams.set('fontFamily',  mathfont_select.value);
+            } else {
+              url.searchParams.delete('fontFamily');
+            }
+        }
+        if (mathmlonly_checkbox) {
+            if (mathmlonly_checkbox.checked) {
+                url.searchParams.set('mathFontOnly', mathmlonly_checkbox.checked);
+            } else {
+              url.searchParams.delete('mathFontOnly');
+            }
+        }
+        window.history.pushState(null /* state */, '' /* unused */, url.toString());
+    }
+
     if (mathfont_select) {
         function updateMathFont()
         {
@@ -37,19 +62,21 @@ document.addEventListener("DOMContentLoaded", () => {
             else
                 mathfont_link.setAttribute("href",
                                            `/MathFonts/${mathfont}/mathfonts.css`);
+            updateQueryStrings();
         }
         for (let value in mathfont_list) {
             let option = document.createElement("option");
-            option.setAttribute("value", value);
+            option.value = value;
             option.innerText = mathfont_list[value];
+            if (value === fontFamily) {
+              option.selected = true;
+            }
             mathfont_select.appendChild(option);
         }
         updateMathFont();
         mathfont_select.addEventListener("change", updateMathFont);
     }
 
-    let mathmlonly_checkbox =
-        document.querySelector("input[type='checkbox'].mathmlonly")
     if (mathmlonly_checkbox) {
         function updateCheckBox()
         {
@@ -57,7 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.body.removeAttribute("class");
             else
                 document.body.setAttribute("class", "htmlmathparagraph");
+            updateQueryStrings();
         }
+        mathmlonly_checkbox.checked = mathFontOnly;
         updateCheckBox();
         mathmlonly_checkbox.addEventListener("change", updateCheckBox);
     }
