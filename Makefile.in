@@ -5,13 +5,13 @@
 COMPRESS=@PYTHON@ ../compress-font.py
 
 # Build all the open source fonts
-all: Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NewComputerModern NewComputerModernSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NewComputerModern NewComputerModernSans NotoSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
 # FIXME: This is no longer true with woff2 compression.
 # See https://github.com/fred-wang/MathFonts/issues/5
-.PHONY: clean distclean Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NeoEuler NewComputerModern NewComputerModernSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NeoEuler NewComputerModern NewComputerModernSans NotoSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -301,6 +301,32 @@ NewComputerModernSans: NewComputerModern/newcomputermodern
 	# Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ NewCMSansMath-Regular.woff
 
+# NotoSans
+NOTOSANSMATH_URL="https://notofonts.github.io/math/fonts/NotoSansMath/full/otf/NotoSansMath-Regular.otf"
+NOTOSANS_BASE_URL="https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSans/full/otf"
+NOTOSANS_FONT_LICENSE="https://raw.githubusercontent.com/notofonts/notofonts.github.io/refs/heads/main/fonts/LICENSE"
+
+
+NotoSans/noto-sans-downloaded:
+	cd NotoSans; \
+	  @WGET@ $(NOTOSANSMATH_URL); \
+	  for i in Regular Bold Italic BoldItalic ; do \
+	    @WGET@ $(NOTOSANS_BASE_URL)/NotoSans-$$i.otf ; \
+	  done ; \
+	  @WGET@ $(NOTOSANS_FONT_LICENSE)
+	touch NotoSans/noto-sans-downloaded
+
+NotoSans: NotoSans/noto-sans-downloaded
+	cd $@ ; for i in Math-Regular -Regular -Italic -Bold -BoldItalic ; do \
+	  $(COMPRESS) NotoSans$$i.otf ; \
+	  rm NotoSans$$i.otf ; \
+	done
+	# Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/NotoSansMath-Regular.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+	 # Generate the testcase
+	@PYTHON@ GenerateHTMLTest.py $@ NotoSansMath-Regular.woff
+
 
 # Plex
 PLEXMATH_URL="https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-math%401.1.0/ibm-plex-math.zip"
@@ -508,6 +534,7 @@ clean:
 	rm -rf Libertinus/*.zip Libertinus/libertinus;
 	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;
 	rm -rf NewComputerModern/*.zip NewComputerModern/newcomputermodern;
+	rm -rf NotoSans/*.zip NotoSans/noto-sans-downloaded;
 	rm -rf Plex/*.zip Plex/ibm-plex-math Plex/ibm-plex-serif;
 	rm -rf STIX/*.zip STIX/stix;
 	rm -rf TeXGyre*/*.zip TeXGyre*/texgyre*;
