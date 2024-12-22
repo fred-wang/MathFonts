@@ -75,6 +75,41 @@ DejaVu: DejaVu/dejavu-fonts-ttf
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ DejaVuMathTeXGyre.woff
 
+# Euler Math
+#
+EULER_URL="http://mirrors.ctan.org/fonts/euler-math.zip"
+OFL_LICENSE_URL="https://openfontlicense.org/documents/OFL.txt"
+OFL_FAQ_URL="https://openfontlicense.org/documents/OFL-FAQ.txt"
+
+Euler/euler-math:
+	 # Get the package from CTAN and add the OFL text documents.
+	cd Euler; @WGET@ $(EULER_URL); @UNZIP@ euler-math.zip; \
+	cd euler-math; @WGET@ $(OFL_FAQ_URL) -O OFL-FAQ.txt; \
+	@WGET@ $(OFL_LICENSE_URL) -O OFL.txt;
+
+Euler: Euler/euler-math
+	 # Keep only the otf files and doc and convert into WOFF.
+	cp $</*.otf $@; cd $@; \
+	$(COMPRESS) Euler-Math.otf; rm *.otf;
+	 # The Euler Math package on CTAN does not contain any OFL license, so we
+	 # complete the copyright information here.
+	cp $</OFL-FAQ.txt $@;
+	cp $</OFL.txt $@;
+	cd $@; \
+	cat OFL.txt | @GREP@ -v "additional Copyright Holder>" | \
+		@GREP@ -v "<additional Reserved Font Name>" \
+		> OFL-tmp.txt; mv OFL-tmp.txt OFL.txt; \
+	@SED@ -i "s/<dates>/2024/" OFL.txt; \
+	@SED@ -i "s/<Copyright Holder>/Daniel Flipo/" OFL.txt; \
+	@SED@ -i "s/ (<URL|email>)//" OFL.txt; \
+	@SED@ -i "s/<Reserved Font Name>/Euler Math/" OFL.txt;
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/Euler-Math.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+	 # Generate the testcase
+	@PYTHON@ GenerateHTMLTest.py $@ Euler-Math.woff
+
+
 # Fira Math
 
 FIRAMATH_VERSION=0.3.4
@@ -526,6 +561,7 @@ extension: webextension-mathml-fonts.zip
 clean:
 	rm -rf Asana/*.zip Asana/Asana-Math;
 	rm -rf DejaVu/*.zip DejaVu/dejavu-fonts-ttf;
+	rm -rf Euler/*.zip Euler/euler-math
 	rm -rf FiraMath/firamath;
 	rm -rf Garamond/garamond;
 	rm -rf GFS_NeoHellenic/gfs_neohellenic;
