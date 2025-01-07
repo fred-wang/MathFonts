@@ -3,6 +3,7 @@ const mathfont_list = {
     "Asana": "Asana",
     "Cambria": "Cambria (local only)",
     "DejaVu": "DejaVu",
+    "Euler": "Euler Math",
     "FiraMath": "FiraMath",
     "Garamond": "Garamond",
     "GFS_NeoHellenic": "GFS NeoHellenic",

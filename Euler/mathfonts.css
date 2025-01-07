@@ -1,0 +1,33 @@
+/*
+Euler Math is released under the SIL Open Font License. See the files in this
+directory for details. The font can be obtained from several TeX distributions
+or package managers. The font does not have a corresponding non-math font,
+examples of text fonts that are used are CMU Concrete and Palatino-like fonts
+like TeX Gyre Pagella.
+
+The OTF fonts have been obtained from http://mirrors.ctan.org/fonts/ and
+converted to WOFF.
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: Euler;
+    src: local('Euler Math'), local('Euler-Math'), url('Euler-Math.woff2'), url('Euler-Math.woff');
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: Euler;
+}
+m|math {
+    font-family: Euler;
+}
+
+.oldstylenumbers {
+    font-variant-numeric: oldstyle-nums;   /* Recommended syntax */
+    font-feature-settings: 'onum';         /* OpenType feature syntax */
+    -moz-font-feature-settings: 'onum';    /* Gecko <= 33 syntax */
+    -webkit-font-feature-settings: 'onum'; /* Blink syntax */
+}
+

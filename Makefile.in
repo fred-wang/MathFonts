@@ -5,13 +5,13 @@
 COMPRESS=@PYTHON@ ../compress-font.py
 
 # Build all the open source fonts
-all: Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NewComputerModern NewComputerModernSans NotoSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana DejaVu Euler FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NewComputerModern NewComputerModernSans NotoSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
 # FIXME: This is no longer true with woff2 compression.
 # See https://github.com/fred-wang/MathFonts/issues/5
-.PHONY: clean distclean Asana DejaVu FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NeoEuler NewComputerModern NewComputerModernSans NotoSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana DejaVu Euler FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NewComputerModern NewComputerModernSans NotoSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -74,6 +74,41 @@ DejaVu: DejaVu/dejavu-fonts-ttf
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ DejaVuMathTeXGyre.woff
+
+# Euler Math
+#
+EULER_URL="http://mirrors.ctan.org/fonts/euler-math.zip"
+OFL_LICENSE_URL="https://openfontlicense.org/documents/OFL.txt"
+OFL_FAQ_URL="https://openfontlicense.org/documents/OFL-FAQ.txt"
+
+Euler/euler-math:
+	 # Get the package from CTAN and add the OFL text documents.
+	cd Euler; @WGET@ $(EULER_URL); @UNZIP@ euler-math.zip; \
+	cd euler-math; @WGET@ $(OFL_FAQ_URL) -O OFL-FAQ.txt; \
+	@WGET@ $(OFL_LICENSE_URL) -O OFL.txt;
+
+Euler: Euler/euler-math
+	 # Keep only the otf files and doc and convert into WOFF.
+	cp $</*.otf $@; cd $@; \
+	$(COMPRESS) Euler-Math.otf; rm *.otf;
+	 # The Euler Math package on CTAN does not contain any OFL license, so we
+	 # complete the copyright information here.
+	cp $</OFL-FAQ.txt $@;
+	cp $</OFL.txt $@;
+	cd $@; \
+	cat OFL.txt | @GREP@ -v "additional Copyright Holder>" | \
+		@GREP@ -v "<additional Reserved Font Name>" \
+		> OFL-tmp.txt; mv OFL-tmp.txt OFL.txt; \
+	@SED@ -i "s/<dates>/2024/" OFL.txt; \
+	@SED@ -i "s/<Copyright Holder>/Daniel Flipo/" OFL.txt; \
+	@SED@ -i "s/ (<URL|email>)//" OFL.txt; \
+	@SED@ -i "s/<Reserved Font Name>/Euler Math/" OFL.txt;
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/Euler-Math.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+	 # Generate the testcase
+	@PYTHON@ GenerateHTMLTest.py $@ Euler-Math.woff
+
 
 # Fira Math
 
@@ -245,24 +280,6 @@ Libertinus: Libertinus/libertinus
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ libertinusmath-regular.woff
-
-# Neo Euler
-
-NEO_EULER_URL="https://github.com/khaledhosny/euler-otf/archive/master.zip"
-
-NeoEuler/euler-otf-master:
-	 # Get the package from GitHub
-	cd NeoEuler; @WGET@ $(NEO_EULER_URL); @UNZIP@ master.zip;
-
-NeoEuler: NeoEuler/euler-otf-master
-	 # Copy the fonts and doc and convert into WOFF
-	cp $</README $</OFL*.txt $</*.otf $@
-	cd $@; $(COMPRESS) euler.otf; rm *.otf
-	 # Generate CheckFont logs
-	@PYTHON@ CheckFont.py $@/euler.woff \
-	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
-	 # Generate the testcase
-	@PYTHON@ GenerateHTMLTest.py $@ euler.woff
 
 # NewComputerModern
 NEWCOMPUTERMODERN_URL="https://mirrors.ctan.org/fonts/newcomputermodern.zip"
@@ -526,13 +543,13 @@ extension: webextension-mathml-fonts.zip
 clean:
 	rm -rf Asana/*.zip Asana/Asana-Math;
 	rm -rf DejaVu/*.zip DejaVu/dejavu-fonts-ttf;
+	rm -rf Euler/*.zip Euler/euler-math
 	rm -rf FiraMath/firamath;
 	rm -rf Garamond/garamond;
 	rm -rf GFS_NeoHellenic/gfs_neohellenic;
 	rm -rf LatinModern/*.zip LatinModern/latinmodern;
 	rm -rf LeteSansMath/*.zip LeteSansMath/lete-sans-math;
 	rm -rf Libertinus/*.zip Libertinus/libertinus;
-	rm -rf NeoEuler/*.zip NeoEuler/euler-otf-master;
 	rm -rf NewComputerModern/*.zip NewComputerModern/newcomputermodern;
 	rm -rf NotoSans/*.zip NotoSans/noto-sans-downloaded;
 	rm -rf Plex/*.zip Plex/ibm-plex-math Plex/ibm-plex-serif;
