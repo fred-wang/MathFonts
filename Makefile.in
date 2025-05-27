@@ -5,13 +5,13 @@
 COMPRESS=@PYTHON@ ../compress-font.py
 
 # Build all the open source fonts
-all: Asana DejaVu Euler FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NewComputerModern NewComputerModernSans NotoSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+all: Asana DejaVu Euler FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus Luciole NewComputerModern NewComputerModernSans NotoSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 # Make all the commands for font generations PHONY as they are very fast.
 # The download operations are slower and will only be performed once.
 # FIXME: This is no longer true with woff2 compression.
 # See https://github.com/fred-wang/MathFonts/issues/5
-.PHONY: clean distclean Asana DejaVu Euler FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus NewComputerModern NewComputerModernSans NotoSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
+.PHONY: clean distclean Asana DejaVu Euler FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus Luciole NewComputerModern NewComputerModernSans NotoSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
 
 
 # Asana
@@ -280,6 +280,45 @@ Libertinus: Libertinus/libertinus
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
 	 # Generate the testcase
 	@PYTHON@ GenerateHTMLTest.py $@ libertinusmath-regular.woff
+
+# Luciole
+#
+LUCIOLE_URL="https://mirrors.ctan.org/fonts/luciole.zip"
+OFL_LICENSE_URL="https://openfontlicense.org/documents/OFL.txt"
+OFL_FAQ_URL="https://openfontlicense.org/documents/OFL-FAQ.txt"
+CCBY_LICENSE_URL="https://creativecommons.org/licenses/by/4.0/legalcode.txt"
+Luciole/luciole:
+	 # Get the package from CTAN and add the OFL text documents.
+	cd Luciole; @WGET@ $(LUCIOLE_URL); @UNZIP@ luciole.zip; \
+	cd luciole; @WGET@ $(OFL_FAQ_URL) -O OFL-FAQ.txt; \
+	@WGET@ $(OFL_LICENSE_URL) -O OFL.txt; \
+	@WGET@ $(CCBY_LICENSE_URL) -O CC-BY.txt;
+
+Luciole: Luciole/luciole
+	 # Copy the fonts and doc and convert into WOFF
+	cp $</README.md $</OFL-FAQ.txt $</OFL.txt $</CC-BY.txt $@
+	cp $</Luciole-Regular.ttf \
+	   $</Luciole-Bold.ttf \
+	   $</Luciole-Regular-Italic.ttf \
+	   $</Luciole-Bold-Italic.ttf \
+	   $</Luciole-Math.otf \
+	   $</Luciole-Math-Bold.otf \
+	   $@
+	cd $@; \
+	for f in `ls *.ttf *.otf`; do $(COMPRESS) $$f; done; rm *.ttf *.otf
+	cd $@; \
+	cat OFL.txt | @GREP@ -v "additional Copyright Holder>" | \
+		@GREP@ -v "<additional Reserved Font Name>" \
+		> OFL-tmp.txt; mv OFL-tmp.txt OFL.txt; \
+	@SED@ -i "s/<dates>/2024-2025/" OFL.txt; \
+	@SED@ -i "s/<Copyright Holder>/Laurent Bourcellier, Jonathan Fabreguettes, Daniel Flipo/" OFL.txt; \
+	@SED@ -i "s/ (<URL|email>)//" OFL.txt; \
+	@SED@ -i "s/<Reserved Font Name>/Luciole Math/" OFL.txt;
+	 # Generate CheckFont logs
+	@PYTHON@ CheckFont.py $@/Luciole-Math.woff \
+	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
+	 # Generate the testcase
+	@PYTHON@ GenerateHTMLTest.py $@ Luciole-Math.woff
 
 # NewComputerModern
 NEWCOMPUTERMODERN_URL="https://mirrors.ctan.org/fonts/newcomputermodern.zip"
