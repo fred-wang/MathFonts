@@ -3,6 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 COMPRESS=@PYTHON@ ../compress-font.py
+OTSSANITIZE=@OTSSANITIZE@
 
 # Build all the open source fonts
 all: Asana DejaVu Euler FiraMath Garamond GFS_NeoHellenic LatinModern LeteSansMath Libertinus Luciole NewComputerModern NewComputerModernSans NotoSans Plex STIX TeXGyreBonum TeXGyrePagella TeXGyreSchola TeXGyreTermes XITS
@@ -28,8 +29,9 @@ Asana/Asana-Math:
 
 Asana: Asana/Asana-Math
 	 # Keep only the otf files and doc and convert into WOFF.
-	cp $</* $@; cd $@; rm *.TTC; \
-	$(COMPRESS) Asana-Math.otf; rm *.otf;
+	cp $</* $@; cd $@; rm *.TTC;
+	cd $@ && $(OTSSANITIZE) Asana-Math.otf
+	cd $@ && $(COMPRESS) Asana-Math.otf; rm *.otf;
 	 # The Asana package on CTAN does not contain any OFL license, so we
 	 # complete the copyright information here.
 	cp $</OFL-FAQ.txt $@;
@@ -127,7 +129,7 @@ FiraMath: FiraMath/firamath
 	 # Copy the fonts and doc and convert into WOFF
 	cp $</LICENSE $/README.md $</*.otf $@
 	cd $@; \
-	for f in `ls *.otf`; do $(COMPRESS) $$f; done; rm *.otf
+	for f in `ls *.otf`; do $(OTSSANITIZE) $$f ; $(COMPRESS) $$f; done; rm *.otf
 	 # Generate CheckFont logs
 	@PYTHON@ CheckFont.py $@/FiraMath-Regular.woff \
 	> $@/CheckFontLog.txt 2> $@/CheckFontError.txt
