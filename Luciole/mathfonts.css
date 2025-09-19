@@ -1,0 +1,65 @@
+/*
+/*
+Luciole Math is released under the SIL Open Font License. The other Luciole fonts
+are released under the CC-BY License. See the files in this directory for details.
+The font can be obtained from several TeX distributions or package managers.
+
+The TTF/OTF fonts have been obtained from http://mirrors.ctan.org/fonts/ and
+converted to WOFF.
+*/
+
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+@font-face {
+    font-family: Luciole;
+    src: local('Luciole Regular'), local('Luciole-Regular'),
+         url('Luciole-Regular.woff2'),
+         url('Luciole-Regular.woff');
+}
+@font-face {
+    font-family: Luciole;
+    src: local('Luciole Bold'), local('Luciole-Bold'),
+         url('Luciole-Bold.woff2'),
+         url('Luciole-Bold.woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: Luciole;
+    src: local('Luciole Italic'), local('Luciole-Italic'),
+         url('Luciole-Regular-Italic.woff2'),
+         url('Luciole-Regular-Italic.woff');
+    font-style: italic;
+}
+@font-face {
+    font-family: Luciole;
+    src: local('Luciole Bold Italic'), local('Luciole-BoldItalic'),
+         url('Luciole-Bold-Italic.woff2'),
+         url('Luciole-Bold-Italic.woff');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: Luciole Math;
+    src: local('Luciole Math'), local('Luciole-Math'),
+         url('Luciole-Math.woff2'),
+         url('Luciole-Math.woff');
+}
+@font-face {
+    font-family: Luciole Math;
+    src: local('Luciole Math Bold'), local('Luciole-Math-Bold'),
+         url('Luciole-Math-Bold.woff2'),
+         url('Luciole-Math-Bold.woff');
+    font-weight: bold;
+}
+
+.htmlmathparagraph, m|mtext {
+    font-family: Luciole;
+}
+m|math {
+    font-family: Luciole Math;
+}
+
+/* No math script */
+m|*.calligraphic {
+}
